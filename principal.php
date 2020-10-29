@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['id'])) {
   header("Location: index.php");
 }
-
+//Session
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
