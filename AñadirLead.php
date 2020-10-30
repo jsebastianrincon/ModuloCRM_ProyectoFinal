@@ -362,6 +362,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 <input type="submit" value="Guardar" id="guardarlead">
 
           </fieldset>
+          =======
+          <!-- Formulario de adicion de leads -->
+
+          <form class="form1" method="post" action="" name="" id="" onsubmit="">
+            <label for="nombre">Nombre:</label> <input type="text" name="nombre" id="nombre" required placeholder="Ingrese Nombre ">
+            <label for="primerApellido">Primer Apellido:</label> <input type="text" name="primerApellido" id="primerApellido" required placeholder="Ingrese Primer Apellido">
+            <label for="segundoApellido">Segundo Apellido:</label> <input type="text" name="segundoApellido" id="segundoApellido" required placeholder="Ingrese Segundo Apellido">
+            <br>
+            <label for="telefono">Telefono:</label> <input type="text" name="telefono" id="telefono" required placeholder="Ingrese Telefono">
+            <label for="email">Email: </label><input type="mail" name="email" id="email" required placeholder="Ingrese Email">
+            <label for="direccion">Direccion: </label><input type="text" name="direccion" id="direccion" required placeholder="Ingrese Direccion de domicilio">
+            <br>
+            <label for="pais">Pais: </label><input type="text" name="pais" id="pais" required placeholder="Ingrese Pais de residencia">
+            <label for="ciudad">Ciudad: </label><input type="text" name="ciudad" id="ciudad" required placeholder="Ingrese Ciudad de residencia">
+            <label for="estado">Estado: </label><input type="text" name="estado" id="estado" required placeholder="Ingrese Estado del cliente">
+            <label for="asignado">Asignado Por: </label><input type="text" name="asignado" id="asignado" required placeholder="Asignado Por:">
+            <label for="comentario">Comentario: </label><input type="text" name="comentario" id="comentario" required placeholder="Ingrese Comentario">
+            <br>
+            <input type="submit" value="Guardar" id="guardarlead">
+
+            >>>>>>> aa4ddd058d23b499e83304a631bfd01978c1b7a0
           </form>
         </div>
       </div>
