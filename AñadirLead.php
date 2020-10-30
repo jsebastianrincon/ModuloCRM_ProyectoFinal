@@ -332,7 +332,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <h1 class="h3 mb-0 text-gray-800">Añadir Lead</h1>
 
           </div>
-          <!-- Formulario de Adicion de leads -->
+          <!-- Formulario para Adicion de leads -->
           <fieldset>
             <div class="group">
               <form class="form1" method="POST" action="RegistroLead.php">
