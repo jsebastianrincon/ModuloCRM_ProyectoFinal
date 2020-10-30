@@ -329,7 +329,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Añadir Lead</h1>
 
-          </div> <!-- Formulario de adicion de leads -->
+          </div>
+          <!-- Formulario de Adicion de leads -->
 
           <form class="form1" method="post" action="" name="" id="" onsubmit="">
             <label for="nombre">Nombre:</label> <input type="text" name="nombre" id="nombre" required placeholder="Ingrese Nombre ">
