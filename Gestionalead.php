@@ -410,7 +410,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               /*
                             echo $mostrar['comentario'];
                             echo "</td>";
-                            */
+                            *.../
                             }
 
                             ?>
