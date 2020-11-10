@@ -333,139 +333,164 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </div>
           <!-- Gestion de leads -->
           <fieldset>
-            <div class="container p-9">
+            <div class="container p-8">
               <div class="group">
                 <div class="card card-body">
                   <div class="form-group" id="responsive-form">
-                    <br>
+
                     <fieldset>
-                      <br>
-                      <div>
+
+                      <div class="col md-8 col md-offset-2">
                         <!-- Tabla de Leads Registrados -->
-                        <table id="data_table" class="table table-striped">
-                          <thead>
-                            <tr>
-                              <th>Id</th>
-                              <th>Nombre</th>
-                              <th>Apellido</th>
-                              <th>Compañia</th>
-                              <th>Telefono</th>
-                              <th>Email</th>
-                              <th>Direccion</th>
-                              <th>Pais</th>
-                              <th>Ciudad</th>
-                              <th>Estado</th>
-                              <th>Asignado</th>
-                              <th>Comentario</th>
-                              <th>Accion</th>
-                            </tr>
-                          </thead>
-                          <?php
-                          $sql = "SELECT * FROM leads";
-                          $result = mysqli_query($conexion2, $sql);
-                          while ($mostrar = mysqli_fetch_array($result)) {
-                            //Impresion tabla
-                            echo "<tr>";
-                            echo "<td>";
-                            echo $mostrar['id'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['nombre'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['apellido'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['compañia'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['telefono'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['email'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['direccion'];
-                            echo "</td>";
-                            echo "<td>";
+                      </div>
+
+                      <div class="card-header py-3">
+
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
+                            <thead>
+                              <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Compañia</th>
+                                <th>Telefono</th>
+                                <th>Email</th>
+                                <th>Direccion</th>
+                                <th>Ciudad</th>
+                                <th>Estado</th>
+                                <th>Asignado</th>
+                                <th>Accion</th>
+                              </tr>
+                            </thead>
+                            <?php
+                            $sql = "SELECT * FROM leads";
+                            $result = mysqli_query($conexion2, $sql);
+                            while ($mostrar = mysqli_fetch_array($result)) {
+                              //Impresion tabla
+                              echo "<tr>";
+                              echo "<td>";
+                              echo $mostrar['id'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['nombre'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['apellido'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['compañia'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['telefono'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['email'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['direccion'];
+                              echo "</td>";
+                              echo "<td>";
+                              /*
                             echo $mostrar['pais'];
                             echo "</td>";
                             echo "<td>";
-                            echo $mostrar['ciudad'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['estado'];
-                            echo "</td>";
-                            echo "<td>";
-                            echo $mostrar['asignado'];
-                            echo "</td>";
-                            echo "<td>";
+                            */
+                              echo $mostrar['ciudad'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['estado'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['asignado'];
+                              echo "</td>";
+                              echo "<td>";
+                              /*
                             echo $mostrar['comentario'];
                             echo "</td>";
-                          }
+                            */
+                            }
 
-                          ?>
-                        </table>
+                            ?>
+                          </table>
 
 
 
 
+                        </div>
                       </div>
+                  </div> <!-- /.container-fluid -->
+
+                </div>
+                <!-- End of Main Content -->
+
+
+
+              </div>
+              <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class=" scroll-to-top rounded" href="#page-top">
+              <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
                   </div>
-                </div> <!-- /.container-fluid -->
-
-              </div>
-              <!-- End of Main Content -->
-
-
-
-            </div>
-            <!-- End of Content Wrapper -->
-
-        </div>
-        <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-          <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">¿Desea Cerrar Sesion?</div>
-              <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
+                  <div class="modal-body">¿Desea Cerrar Sesion?</div>
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
+            <!-- Page level plugins -->
+            <script src="vendor/chart.js/Chart.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <!-- Page level custom scripts -->
+            <script src="js/demo/chart-area-demo.js"></script>
+            <script src="js/demo/chart-pie-demo.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <!-- Bootstrap core JavaScript-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+            <!-- Core plugin JavaScript-->
+            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+            <!-- Custom scripts for all pages-->
+            <script src="js/sb-admin-2.min.js"></script>
+
+            <!-- Page level plugins -->
+            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+            <!-- Page level custom scripts -->
+            <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
