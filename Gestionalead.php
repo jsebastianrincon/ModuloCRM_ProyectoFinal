@@ -30,9 +30,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" href="css/kanso.css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -362,9 +363,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 <th>Ciudad</th>
                                 <th>Estado</th>
                                 <th>Asignado</th>
-                                <th>Accion</th>
+
+
                               </tr>
                             </thead>
+
                             <?php
                             $sql = "SELECT * FROM leads";
                             $result = mysqli_query($conexion2, $sql);
@@ -406,11 +409,17 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-                              echo "<td>";
+
+                              echo "<td><a href=''><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a></td>";
+
+                              echo "<td><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a></td>";
+                              echo "<td><a href=''><button type='button' class='btn btn-sm btn-success' src''>Convertir en cliente</button></a></td>";
+
+
                               /*
                             echo $mostrar['comentario'];
                             echo "</td>";
-                            *.../
+                            */
                             }
 
                             ?>
