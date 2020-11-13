@@ -353,16 +353,39 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
                             <thead>
                               <tr>
-                                <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Compañia</th>
-                                <th>Telefono</th>
-                                <th>Email</th>
-                                <th>Direccion</th>
-                                <th>Ciudad</th>
-                                <th>Estado</th>
-                                <th>Asignado</th>
+                                <th>
+                                  <center>Nombre</center>
+                                </th>
+                                <th>
+                                  <center>Apellido </center>
+                                </th>
+                                <th>
+                                  <center>Compañia</center>
+                                </th>
+                                <th>
+                                  <center>Telefono</center>
+                                </th>
+                                <th>
+                                  <center>Email</center>
+                                </th>
+                                <th>
+                                  <center>Direccion</center>
+                                </th>
+                                <th>
+                                  <center>Ciudad</center>
+                                </th>
+                                <th>
+                                  <center>Estado</center>
+                                </th>
+                                <th>
+                                  <center>Asignado</center>
+                                </th>
+                                <th>
+                                  <center>Acciones</center>
+                                </th>
+
+
+
 
 
                               </tr>
@@ -374,9 +397,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
                               echo "<tr>";
-                              echo "<td>";
-                              echo $mostrar['id'];
+                              //echo "<td>";
+                              /*echo $mostrar['id'];
+                              */
                               echo "</td>";
+
                               echo "<td>";
                               echo $mostrar['nombre'];
                               echo "</td>";
@@ -409,11 +434,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-
-                              echo "<td><a href=''><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a></td>";
-
-                              echo "<td><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a></td>";
-                              echo "<td><a href=''><button type='button' class='btn btn-sm btn-success' src''>Convertir en cliente</button></a></td>";
+                              echo "<colspan='6'><div class='btn-group'><th><a href=''><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
+                              <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
+                              </td>";
 
 
                               /*
