@@ -9,6 +9,7 @@
 <body>
 
   <?php
+  
 /*
   $documento = $_REQUEST["documento"];
 
