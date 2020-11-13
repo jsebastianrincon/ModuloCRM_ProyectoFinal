@@ -383,14 +383,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 <th>
                                   <center>Acciones</center>
                                 </th>
-
-
-
-
-
                               </tr>
                             </thead>
-
+                            <!-- Mostrar Datos en tabla de leads -->
                             <?php
                             $sql = "SELECT * FROM leads";
                             $result = mysqli_query($conexion2, $sql);
