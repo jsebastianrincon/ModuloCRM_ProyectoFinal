@@ -437,7 +437,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-                              echo "<colspan='7'><div class='btn-group'><th><button type='button' class='btn btn-sm btn-primary'width='100' height='40'>Modificar</button></a><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
+                              echo "<colspan='7'><div class='btn-group'><th><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
                               <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
 
