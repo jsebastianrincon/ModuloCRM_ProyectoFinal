@@ -354,9 +354,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             <thead>
                               <tr>
                                 <th>
-                                  <center>Nombre</center>
+                                  <center style="visibility: hidden">--------------------</center>
+                                  <center>Nombre </center>
                                 </th>
                                 <th>
+                                  <center style="visibility: hidden">---------------------</center>
                                   <center>Apellido </center>
                                 </th>
                                 <th>
@@ -369,19 +371,25 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                   <center>Email</center>
                                 </th>
                                 <th>
+                                  <center style="visibility: hidden">-------------------------------</center>
                                   <center>Direccion</center>
                                 </th>
                                 <th>
                                   <center>Ciudad</center>
                                 </th>
                                 <th>
+                                  <center style="visibility: hidden">------------------</center>
                                   <center>Estado</center>
                                 </th>
                                 <th>
+                                  <center style="visibility: hidden">--------------------</center>
                                   <center>Asignado</center>
                                 </th>
                                 <th>
+
+                                  <center style="visibility: hidden">------------------------------------------</center>
                                   <center>Acciones</center>
+
                                 </th>
                               </tr>
                             </thead>
@@ -429,7 +437,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-                              echo "<colspan='6'><div class='btn-group'><th><a href=''><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
+                              echo "<colspan='7'><div class='btn-group'><th><button type='button' class='btn btn-sm btn-primary'width='100' height='40'>Modificar</button></a><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
                               <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
 
