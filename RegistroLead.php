@@ -4,6 +4,7 @@
 
 $nombre = $_REQUEST["nombre"];
 $apellido = $_REQUEST["apellido"];
+$documento = $_REQUEST["documento"];
 $compañia = $_REQUEST["compañia"];
 $telefono = $_REQUEST["telefono"];
 $email = $_REQUEST["email"];
@@ -13,7 +14,7 @@ $ciudad = $_REQUEST["ciudad"];
 $estado = $_REQUEST["estado"];
 $asignado = $_REQUEST["asignado"];
 $comentario = $_REQUEST["comentario"];
-//$foto = $_REQUEST["pic_art"] ;
+
 
 require("conlead.php");
 $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
@@ -21,7 +22,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
 
-$instruccion_SQL = "INSERT INTO leads (nombre, apellido,compañia,telefono, email, direccion, pais,ciudad,estado,asignado,comentario) VALUES ('$nombre','$apellido','$compañia','$telefono','$email','$direccion','$pais','$ciudad','$estado','$asignado','$comentario')";
+$instruccion_SQL = "INSERT INTO leads (nombre, apellido,documento,compañia,telefono, email, direccion, pais,ciudad,estado,asignado,comentario) VALUES ('$nombre','$apellido','$documento','$compañia','$telefono','$email','$direccion','$pais','$ciudad','$estado','$asignado','$comentario')";
 
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {

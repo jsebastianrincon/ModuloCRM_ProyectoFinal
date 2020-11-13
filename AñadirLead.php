@@ -345,11 +345,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <label>Apellidos: </label><input type="text" size="43" name="apellido" placeholder="Ingrese Primer Apellido" required>
                       <br>
                       <br>
-                      <label>Telefono: </label><input type="text" size="15" name="telefono" placeholder="Ingrese Telefono" required>
-                      <label>Email: </label><input type="mail" size="35" name="email" placeholder="Ingrese Email" required>
-                      <label>Direccion: </label><input type="text" size="29" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
+                      <label>Documento: </label><input type="text" size="24" name="documento" placeholder="Ingrese Documento" required>
+                      <label>Telefono: </label><input type="text" size="24" name="telefono" placeholder="Ingrese Telefono" required>
+                      <label>Email: </label><input type="mail" size="29" name="email" placeholder="Ingrese Email" required>
                       <br>
                       <br>
+                      <label>Direccion: </label><input type="text" size="22" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
                       <label>Region: </label>
                       <select name="pais">
                         <option type="text" size="30" value="Elegir" id="AF">Seleccion Pais Residencia</option>
@@ -592,12 +593,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="Zimbabue" id="ZW">Zimbabue</option>
                       </select>
 
-                      <label>Ciudad: </label><input type="text" size="25" name="ciudad" placeholder="Ingrese Ciudad de residencia" required>
+                      <label>Ciudad: </label><input type="text" size="22" name="ciudad" placeholder="Ingrese Ciudad de residencia" required>
+                      <br>
+                      <br>
                       <label>Estado: </label><input type="text" size="21" name="estado" placeholder="Ingrese Estado del cliente" required>
-                      <br>
-                      <br>
-                      <label>Compañia: </label><input type="text" size="43" name="compañia" placeholder="Ingrese Compañia" required>
-                      <label>Asignado: </label><input type="text" size="42" name="asignado" placeholder="Asignado Por" required>
+                      <label>Compañia: </label><input type="text" size="27" name="compañia" placeholder="Ingrese Compañia" required>
+                      <label>Asignado: </label><input type="text" size="28" name="asignado" placeholder="Asignado Por" required>
                       <br>
                       <br>
                       <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>

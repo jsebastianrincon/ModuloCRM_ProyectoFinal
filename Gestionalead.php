@@ -248,7 +248,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
@@ -258,7 +258,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+
                     <div class="status-indicator"></div>
                   </div>
                   <div>
@@ -268,7 +268,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
@@ -278,7 +278,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
@@ -362,6 +362,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                   <center>Apellido </center>
                                 </th>
                                 <th>
+                                  <center>Documento</center>
+                                </th>
+                                <th>
                                   <center>Compañia</center>
                                 </th>
                                 <th>
@@ -412,6 +415,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo $mostrar['apellido'];
                               echo "</td>";
                               echo "<td>";
+                              echo $mostrar['documento'];
+                              echo "</td>";
+                              echo "<td>";
                               echo $mostrar['compañia'];
                               echo "</td>";
                               echo "<td>";
@@ -437,8 +443,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-                              echo "<colspan='7'><div class='btn-group'><th><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a><a href=''><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
-                              <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
+                              echo "<colspan='7'><div class='btn-group'><th><a href='modificar.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
+                                                                            <a href='borrarlead.php'><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
+                                                                            <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
 
 
@@ -470,28 +477,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <!-- End of Page Wrapper -->
 
             <!-- Scroll to Top Button-->
-            <a class=" scroll-to-top rounded" href="#page-top">
+            <a class="scroll-to-top rounded" href="#page-top">
               <i class="fas fa-angle-up"></i>
             </a>
 
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">×</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">¿Desea Cerrar Sesion?</div>
-                  <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
 
             <!-- Bootstrap core JavaScript-->
             <script src="vendor/jquery/jquery.min.js"></script>
