@@ -9,7 +9,7 @@
 <body>
 
   <?php
-  // Actualizamos en funcion del id que recibimos
+
 /*
   $documento = $_REQUEST["documento"];
 
