@@ -6,7 +6,6 @@
   <META name='robot' content='noindex, nofollow'>
 </head>
 
-
 <body>
   <?php
 /*
