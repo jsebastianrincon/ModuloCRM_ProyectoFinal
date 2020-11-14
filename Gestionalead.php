@@ -354,9 +354,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             <thead>
                               <tr>
                                 <th>
+                                  <center>Id </center>
+                                </th>
+                                <th>
                                   <center style="visibility: hidden">--------------------</center>
                                   <center>Nombre </center>
                                 </th>
+
                                 <th>
                                   <center style="visibility: hidden">---------------------</center>
                                   <center>Apellido </center>
@@ -403,9 +407,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
                               echo "<tr>";
-                              //echo "<td>";
-                              /*echo $mostrar['id'];
-                              */
+                              echo "<td>";
+                              echo $mostrar['id'];
+
                               echo "</td>";
 
                               echo "<td>";
@@ -443,7 +447,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-                              echo "<colspan='7'><div class='btn-group'><th><a href='modificar.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
+                              echo "<colspan='7'><div class='btn-group'><th><a href='modificarlead.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
                                                                             <a href='borrarlead.php'><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
                                                                             <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
