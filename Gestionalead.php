@@ -404,7 +404,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 </th>
                                 <th>
 
-                                  <center style="visibility: hidden">------------------------------------------</center>
+                                  <center style="visibility: hidden">--------------------------------------------------</center>
                                   <center>Acciones</center>
 
                                 </th>
@@ -416,10 +416,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
-
-
-                              echo "</td>";
-
+                              echo "<tr>";
                               echo "<td>";
                               echo $mostrar['nombre'];
                               echo "</td>";
@@ -448,12 +445,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo $mostrar['direccion'];
                               echo "</td>";
                               echo "<td>";
-
-                              /*
-                            echo $mostrar['pais'];
-                            echo "</td>";
-                            echo "<td>";
-                            */
                               echo $mostrar['estado'];
                               echo "</td>";
                               echo "<td>";
@@ -462,16 +453,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-                              echo "<colspan='7'><div class='btn-group'><th><a href='modificarlead.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
+                              echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
                                                                             <a href='borrarlead.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
                                                                             <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
-
-
-                              /*
-                            echo $mostrar['comentario'];
-                            echo "</td>";
-                            */
+                              echo "<br>";
                             }
 
                             ?>
