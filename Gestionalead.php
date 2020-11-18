@@ -97,6 +97,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="Reuniones.php">Agendar Reuniones</a>
 
             </div>
           </div>
@@ -353,9 +354,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
                             <thead>
                               <tr>
-                                <th>
-                                  <center>Id </center>
-                                </th>
+
                                 <th>
                                   <center style="visibility: hidden">--------------------</center>
                                   <center>Nombre </center>
@@ -363,30 +362,41 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <th>
                                   <center style="visibility: hidden">---------------------</center>
-                                  <center>Apellido </center>
+                                  <center>Primer Apellido </center>
+                                </th>
+                                <th>
+                                  <center style="visibility: hidden">---------------------</center>
+                                  <center>Segundo Apellido </center>
                                 </th>
                                 <th>
                                   <center>Documento</center>
                                 </th>
-                                <th>
-                                  <center>Compañia</center>
-                                </th>
+
                                 <th>
                                   <center>Telefono</center>
                                 </th>
                                 <th>
+                                  <center style="visibility: hidden">-------------------------------</center>
                                   <center>Email</center>
                                 </th>
                                 <th>
-                                  <center style="visibility: hidden">-------------------------------</center>
-                                  <center>Direccion</center>
+                                  <center>Departamento</center>
                                 </th>
                                 <th>
                                   <center>Ciudad</center>
                                 </th>
                                 <th>
+                                  <center style="visibility: hidden">-------------------------------</center>
+                                  <center>Direccion</center>
+                                </th>
+
+                                <th>
                                   <center style="visibility: hidden">------------------</center>
                                   <center>Estado</center>
+                                </th>
+                                <th>
+                                  <center style="visibility: hidden">------------------</center>
+                                  <center>Compañia</center>
                                 </th>
                                 <th>
                                   <center style="visibility: hidden">--------------------</center>
@@ -406,9 +416,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
-                              echo "<tr>";
-                              echo "<td>";
-                              echo $mostrar['id'];
+
 
                               echo "</td>";
 
@@ -416,13 +424,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo $mostrar['nombre'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['apellido'];
+                              echo $mostrar['primer_apellido'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['documento'];
+                              echo $mostrar['segundo_apellido'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['compañia'];
+                              echo $mostrar['tipodocumento'], '.', $mostrar['documento'];
                               echo "</td>";
                               echo "<td>";
                               echo $mostrar['telefono'];
@@ -431,24 +439,31 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo $mostrar['email'];
                               echo "</td>";
                               echo "<td>";
+                              echo $mostrar['departamento'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['ciudad'];
+                              echo "</td>";
+                              echo "<td>";
                               echo $mostrar['direccion'];
                               echo "</td>";
                               echo "<td>";
+
                               /*
                             echo $mostrar['pais'];
                             echo "</td>";
                             echo "<td>";
                             */
-                              echo $mostrar['ciudad'];
+                              echo $mostrar['estado'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['estado'];
+                              echo $mostrar['compañia'];
                               echo "</td>";
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
                               echo "<colspan='7'><div class='btn-group'><th><a href='modificarlead.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
-                                                                            <a href='borrarlead.php'><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
+                                                                            <a href='borrarlead.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
                                                                             <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
 

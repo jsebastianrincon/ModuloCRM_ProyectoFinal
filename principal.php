@@ -95,15 +95,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
-
-            </div>
+              <a class="collapse-item" href="Reuniones.php">Agendar Reuniones</div>
           </div>
-        </li>
-
-
-
-
-        <!-- Nav Item - Pages Collapse Menu -->
+        </li> <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
@@ -118,6 +112,22 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </div>
         </li>
 
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Proyectos</span></a>
+        </li>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item">
+          <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Reportes</span></a>
+        </li>
+      <?php } ?>
+
+      <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
           <a class="nav-link" href="charts.html">

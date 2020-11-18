@@ -96,7 +96,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
-              <a class="collapse-item" href="Reuniones.php">Agendar Reuniones</a>
+              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
 
             </div>
           </div>
@@ -327,13 +327,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          <!-- Titulo Formulario de adicion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Añadir Lead</h1>
-
+            <h1 class="h3 mb-0 text-gray-800">Agendar Reuniones</h1>
           </div>
-          <!-- Formulario para Adicion de leads -->
+          <!-- Titulo Formulario de adicion de leads -->
           <fieldset>
             <div class="container p-4">
               <div class="group">
@@ -342,100 +339,39 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Nombres: </label><input type="text" size="20" name="nombre" required placeholder="Ingrese Nombre ">
-                      <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required>
-                      <label>Segundo Apellido: </label><input type="text" size="22" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
+                      <center><label>Lead: </label><input type="text" size="50" name="lead"></center>
                       <br>
                       <br>
-
-                      <label>Tipo de Documento: </label>
-                      <select name="tipodocumento">
-                        <option type="text" size="30" value="Elegir" id="TD">Seleccionar Tipo de documento</option>
-                        <option value="CC" id="CC">Cedula de Ciudadania</option>
-                        <option value="CE" id="CE">Cedula de Extranjeria</option>
-                      </select>
-                      <label>Documento: </label><input type="text" size="21" name="documento" placeholder="Ingrese Documento" required>
-                      <label>Telefono: </label><input type="text" size="20" name="telefono" placeholder="Ingrese Telefono" required>
-                      <br>
-                      <br>
-                      <label>Email: </label><input type="mail" size="31" name="email" placeholder="Ingrese Email" required>
-
-                      <label>Departamento: </label>
-                      <select name="departamento">
-                        <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>
-                        <option value="Amazonas" id="AZ<">Amazonas</option>
-                        <option value="Antioquia" id="AN">Antioquia</option>
-                        <option value="Arauca" id="AR">Arauca</option>
-                        <option value="Atlantico" id="AT">Atlantico</option>
-                        <option value="Bogota D.C." id="BO">Bogota DC</option>
-                        <option value="Bolivar" id="BL">Bolivar</option>
-                        <option value="Boyaca" id="BY">Boyaca</option>
-                        <option value="Caldas" id="CL">Caldas</option>
-                        <option value="Caqueta" id="CQ">Caqueta</option>
-                        <option value="Casanare" id="CS">Casanare</option>
-                        <option value="Cauca" id="CA">Cauca</option>
-                        <option value="Cesar" id="CE">Cesar</option>
-                        <option value="Choco" id="CH">Choco</option>
-                        <option value="Cordoba" id="CO">Cordoba</option>
-                        <option value="Cundinamarca" id="CU">Cundinamarca</option>
-                        <option value="Guainia" id="GU">Guania</option>
-                        <option value="Guaviare" id="GV">Guaviare</option>
-                        <option value="Huila" id="HU">Huila</option>
-                        <option value="Quindio" id="QU">Quindio</option>
-                        <option value="Risaralda" id="RS">Risaralda</option>
-                        <option value="San Andres" id="SA">Risaralda</option>
-                        <option value="Santander" id="ST">Santander</option>
-                        <option value="Sucre" id="SU">Sucre</option>
-                        <option value="Tolima" id="TO">Tolima</option>
-                        <option value="Valle" id="VA">Valle</option>
-                        <option value="Vaupes" id="VU">Vaupes</option>
-                        <option value="Vichada" id="VI">Vichada</option>
-                      </select>
-
-                      <label>Ciudad: </label><input type="text" size="15" name="ciudad" placeholder="Ciudad de residencia" required>
-                      <br>
-                      <br>
-                      <label>Direccion: </label><input type="text" size="31" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
-                      <label>Estado: </label>
-                      <select name="estado">
-                        <option value="Seleccione Estado">Asigne un Estado</option>
-                        <option value="Nuevo" id="NV">Nuevo</option>
-                        <option value="Cliente" id="CL">Cliente</option>
+                      <p><label>Fecha: </label><input type="date" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required></center>
+                        <label>Hora: </label><input type="time" size="22" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required></center>
+                        <br>
+                        <br>
 
 
-                      </select>
-
-                      <label>Compañia: </label><input type="text" size="31" name="compañia" placeholder="Ingrese Compañia" required>
-                      <br>
-                      <br>
-                      <label>Asignado: </label>
-                      <select name="asignado">
-                        <option value="Asignado por">Seleccione Area</option>
-                        <option value="Area Comercial" id="ArC">Area Comercial</option>
-                        <option value="Area Marketing" id="ArM">Area de Marketing</option>
-                      </select>
-                      <br>
-                      <br>
-                      <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
-                      <br>
-                      <br>
-                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
+                        <label>Asignado Por: </label>
+                        <select name="asignado">
+                          <option value="Asignado por">Seleccione Area</option>
+                          <option value="Area Comercial" id="ArC">Area Comercial</option>
+                          <option value="Area Marketing" id="ArM">Area de Marketing</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Descripcion: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese Descripcion..." required></textarea>
+                        <br>
+                        <br>
+                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
 
           </fieldset>
 
+        </div> <!-- /.container-fluid -->
 
-
-        </div>
       </div>
-    </div> <!-- /.container-fluid -->
-
-  </div>
-  <!-- End of Main Content -->
+      <!-- End of Main Content -->
 
 
 
-  </div>
-  <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
