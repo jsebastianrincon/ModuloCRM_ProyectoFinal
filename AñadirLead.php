@@ -353,8 +353,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option type="text" size="30" value="Elegir" id="TD">Seleccionar Tipo de documento</option>
                         <option value="CC" id="CC">Cedula de Ciudadania</option>
                         <option value="CE" id="CE">Cedula de Extranjeria</option>
-                      </select>
-                      <label>Documento: </label><input type="text" size="21" name="documento" placeholder="Ingrese Documento" required>
+                        <option value="PA" id="PA">Pasaporte</option>
+                      </select> <label>Documento: </label><input type="text" size="21" name="documento" placeholder="Ingrese Documento" required>
                       <label>Telefono: </label><input type="text" size="20" name="telefono" placeholder="Ingrese Telefono" required>
                       <br>
                       <br>
