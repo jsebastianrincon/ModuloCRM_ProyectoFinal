@@ -335,7 +335,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
-                  <form class="form-contact" action="RegistroLead.php" method='POST'>
+                  <form class="form-contact" action="" method='POST'>
                     <div class="form-group" id="responsive-form">
 
                       <br>
