@@ -95,8 +95,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
-              <a class="collapse-item" href="Reuniones.php">Agendar Reuniones</div>
-          </div>
+              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
+
+            </div>
         </li> <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
