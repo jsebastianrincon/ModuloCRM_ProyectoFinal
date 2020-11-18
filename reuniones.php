@@ -339,27 +339,25 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <center><label>Lead: </label><input type="text" size="50" name="lead"></center>
+                      <center><label>Lead: </label><input type="text" size="55" name="lead"></center>
                       <br>
                       <br>
-                      <p><label>Fecha: </label><input type="date" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required></center>
-                        <label>Hora: </label><input type="time" size="22" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required></center>
-                        <br>
-                        <br>
-
-
+                      <center><label>Fecha: </label>
+                        <input type="date" size="40" name="fecha" required>
+                        <label>Hora: </label><input type="time" size="50" name="hora" required>
                         <label>Asignado Por: </label>
                         <select name="asignado">
                           <option value="Asignado por">Seleccione Area</option>
                           <option value="Area Comercial" id="ArC">Area Comercial</option>
                           <option value="Area Marketing" id="ArM">Area de Marketing</option>
                         </select>
-                        <br>
-                        <br>
-                        <label>Descripcion: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese Descripcion..." required></textarea>
-                        <br>
-                        <br>
-                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
+                      </center>
+                      <br>
+
+                      <center><label>Descripcion: </label><br><textarea name="comentario" rows="2" cols="55" placeholder="Ingrese Descripcion..." required></textarea></center>
+                      <br>
+                      <br>
+                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
 
           </fieldset>
 
