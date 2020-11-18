@@ -454,7 +454,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo $mostrar['asignado'];
                               echo "</td>";
                               echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
-                                                                            <a href='borrarlead.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
+                                                                            <a href='CambiarEstado.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
                                                                             <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
                               echo "<br>";
