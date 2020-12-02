@@ -332,7 +332,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Gestion de Leads</h1>
+            <h1 class="h3 mb-0 text-gray-800">Gestion</h1>
           </div>
           <!-- Gestion de leads -->
           <fieldset>
@@ -419,7 +419,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               //Impresion tabla
                               echo "<tr>";
                               echo "<td>";
-                              echo $mostrar['nombre'];
+                              echo $mostrar['nombre_lead'];
                               echo "</td>";
                               echo "<td>";
                               echo $mostrar['primer_apellido'];
@@ -454,7 +454,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
-                              echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php'><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
+                              echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
                                                                             <a href='CambiarEstado.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
                                                                             <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";

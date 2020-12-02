@@ -344,7 +344,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <label>Nombres: </label><input type="text" size="20" name="nombre" required placeholder="Ingrese Nombre ">
                       <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required>
-                      <label>Segundo Apellido: </label><input type="text" size="22" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
+                      <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
                       <br>
                       <br>
 
@@ -354,7 +354,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="CC" id="CC">Cedula de Ciudadania</option>
                         <option value="CE" id="CE">Cedula de Extranjeria</option>
                         <option value="PA" id="PA">Pasaporte</option>
-                      </select> <label>Documento: </label><input type="text" size="21" name="documento" placeholder="Ingrese Documento" required>
+                      </select> <label>Documento: </label><input type="text" size="20" name="documento" placeholder="Ingrese Documento" required>
                       <label>Telefono: </label><input type="text" size="20" name="telefono" placeholder="Ingrese Telefono" required>
                       <br>
                       <br>
@@ -392,7 +392,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="Vichada" id="VI">Vichada</option>
                       </select>
 
-                      <label>Ciudad: </label><input type="text" size="15" name="ciudad" placeholder="Ciudad de residencia" required>
+                      <label>Ciudad: </label><input type="text" size="14" name="ciudad" placeholder="Ciudad de residencia" required>
                       <br>
                       <br>
                       <label>Direccion: </label><input type="text" size="31" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
