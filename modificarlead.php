@@ -345,134 +345,58 @@ $id = $_GET['id'];
                       $sql = "SELECT * FROM crmpry.leads WHERE id = '$id'";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
-
+                        //echo "<input type='text' name='nombre'>";
                         echo 'Id :';
                         echo "<td>" . $mostrar['id'] . "</td>";
                         echo " <br>";
-                        echo 'Nombre :';
-                        echo "<td>" . $mostrar['nombre_lead'] . "</td>";
                         echo " <br>";
-                        echo 'Primer Apellido :';
-                        echo "<td>" . $mostrar['primer_apellido'] . "</td>";
+                        echo 'Nombres : ';
+                        echo "<input type='text' size='20' name='nombre' value ='$mostrar[nombre_lead]'> ";
+                        echo 'Primer Apellido : ';
+                        echo "<input type='text' size='20' name='primer_apellido' value ='$mostrar[primer_apellido]'> ";
+                        echo 'Segundo Apellido : ';
+                        echo "<input type='text' size='20' name='segundo_apellido' value ='$mostrar[segundo_apellido]'> ";
                         echo " <br>";
-                        echo 'Segundo Apellido :';
-                        echo "<td>" . $mostrar['segundo_apellido'] . "</td>";
                         echo " <br>";
-                        echo 'Tipo Documento :';
-                        echo "<td>" . $mostrar['tipodocumento'] . "</td>";
+                        echo 'Tipo de Documento : ';
+                        echo "<input type='text' size='23' name='tipodocumento' value ='$mostrar[tipodocumento]'> ";
+                        echo 'Documento : ';
+                        echo "<input type='text' size='20' name='documento' value ='$mostrar[documento]'> ";
+                        echo 'Telefono : ';
+                        echo "<input type='text' size='19' name='telefono' value ='$mostrar[telefono]'> ";
                         echo " <br>";
-                        echo 'Documento :';
-                        echo "<td>" . $mostrar['documento'] . "</td>";
                         echo " <br>";
-                        echo 'Telefono :';
-                        echo "<td>" . $mostrar['telefono'] . "</td>";
+                        echo 'Email : ';
+                        echo "<input type='text' size='31' name='email' value ='$mostrar[email]'> ";
+                        echo 'Departamento : ';
+                        echo "<input type='text' size='21' name='departamento' value ='$mostrar[departamento]'> ";
+                        echo 'Ciudad : ';
+                        echo "<input type='text' size='20' name='ciudad' value ='$mostrar[ciudad]'> ";
                         echo " <br>";
-                        echo 'Email:';
-                        echo "<td>" . $mostrar['email'] . "</td>";
                         echo " <br>";
-                        echo 'Departamento :';
-                        echo "<td>" . $mostrar['departamento'] . "</td>";
+                        echo 'Direccion : ';
+                        echo "<input type='text' size='21' name='direccion' value ='$mostrar[direccion]'> ";
+                        echo 'Estado : ';
+                        echo "<input type='text' size='20' name='estado' value ='$mostrar[estado]'> ";
+                        echo 'Compañia : ';
+                        echo "<input type='text' size='32' name='compañia' value ='$mostrar[compañia]'> ";
                         echo " <br>";
-                        echo 'Ciudad :';
-                        echo "<td>" . $mostrar['ciudad'] . "</td>";
                         echo " <br>";
-                        echo 'Direccion :';
-                        echo "<td>" . $mostrar['direccion'] . "</td>";
+                        echo 'Asignado : ';
+                        echo "<input type='text' size='20' name='asignado' value ='$mostrar[asignado]'> ";
                         echo " <br>";
-                        echo 'Estado :';
-                        echo "<td>" . $mostrar['estado'] . "</td>";
                         echo " <br>";
-                        echo 'Compañia :';
-                        echo "<td>" . $mostrar['compañia'] . "</td>";
+                        echo 'Comentario:';
                         echo " <br>";
-                        echo 'Asignado :';
-                        echo "<td>" . $mostrar['asignado'] . "</td>";
-                        echo " <br>";
-                        echo 'Comentario :';
-                        echo "<td>" . $mostrar['comentario'] . "</td>";
+                        echo "<input type='textarea' name='comentario' rows='3' cols='60' value ='$mostrar[comentario]'></textarea>";
                       }
                       ?>
-                      <br>
-                      <br>
-
-                      <label>Nombre: </label><input type="text" size="20" name="nombre" placeholder="Ingrese Nombre" value="<?php echo $nombre_lead ?>">
-                      <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" value="">
-                      <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
-                      <br>
-                      <br>
-
-                      <label>Tipo de Documento: </label>
-                      <select name="tipodocumento">
-                        <option type="text" size="30" value="Elegir" id="TD">Seleccionar Tipo de documento</option>
-                        <option value="CC" id="CC">Cedula de Ciudadania</option>
-                        <option value="CE" id="CE">Cedula de Extranjeria</option>
-                        <option value="PA" id="PA">Pasaporte</option>
-                      </select> <label>Documento: </label><input type="text" size="20" name="documento" placeholder="Ingrese Documento" required>
-                      <label>Telefono: </label><input type="text" size="20" name="telefono" placeholder="Ingrese Telefono" required>
-                      <br>
-                      <br>
-                      <label>Email: </label><input type="mail" size="31" name="email" placeholder="Ingrese Email" required>
-
-                      <label>Departamento: </label>
-                      <select name="departamento">
-                        <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>
-                        <option value="Amazonas" id="AZ<">Amazonas</option>
-                        <option value="Antioquia" id="AN">Antioquia</option>
-                        <option value="Arauca" id="AR">Arauca</option>
-                        <option value="Atlantico" id="AT">Atlantico</option>
-                        <option value="Bogota D.C." id="BO">Bogota DC</option>
-                        <option value="Bolivar" id="BL">Bolivar</option>
-                        <option value="Boyaca" id="BY">Boyaca</option>
-                        <option value="Caldas" id="CL">Caldas</option>
-                        <option value="Caqueta" id="CQ">Caqueta</option>
-                        <option value="Casanare" id="CS">Casanare</option>
-                        <option value="Cauca" id="CA">Cauca</option>
-                        <option value="Cesar" id="CE">Cesar</option>
-                        <option value="Choco" id="CH">Choco</option>
-                        <option value="Cordoba" id="CO">Cordoba</option>
-                        <option value="Cundinamarca" id="CU">Cundinamarca</option>
-                        <option value="Guainia" id="GU">Guania</option>
-                        <option value="Guaviare" id="GV">Guaviare</option>
-                        <option value="Huila" id="HU">Huila</option>
-                        <option value="Quindio" id="QU">Quindio</option>
-                        <option value="Risaralda" id="RS">Risaralda</option>
-                        <option value="San Andres" id="SA">Risaralda</option>
-                        <option value="Santander" id="ST">Santander</option>
-                        <option value="Sucre" id="SU">Sucre</option>
-                        <option value="Tolima" id="TO">Tolima</option>
-                        <option value="Valle" id="VA">Valle</option>
-                        <option value="Vaupes" id="VU">Vaupes</option>
-                        <option value="Vichada" id="VI">Vichada</option>
-                      </select>
-
-                      <label>Ciudad: </label><input type="text" size="14" name="ciudad" placeholder="Ciudad de residencia" required>
-                      <br>
-                      <br>
-                      <label>Direccion: </label><input type="text" size="31" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
-                      <label>Estado: </label>
-                      <select name="estado">
-                        <option value="Seleccione Estado">Asigne un Estado</option>
-                        <option value="Nuevo" id="NV">Nuevo</option>
-                        <option value="Cliente" id="CL">Cliente</option>
 
 
-                      </select>
 
-                      <label>Compañia: </label><input type="text" size="31" name="compañia" placeholder="Ingrese Compañia" required>
                       <br>
                       <br>
-                      <label>Asignado: </label>
-                      <select name="asignado">
-                        <option value="Asignado por">Seleccione Area</option>
-                        <option value="Area Comercial" id="ArC">Area Comercial</option>
-                        <option value="Area Marketing" id="ArM">Area de Marketing</option>
-                      </select>
-                      <br>
-                      <br>
-                      <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
-                      <br>
-                      <br>
-                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Modificar">
+                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Actualizar">
 
           </fieldset>
 
