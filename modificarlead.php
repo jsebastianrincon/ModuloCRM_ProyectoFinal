@@ -388,7 +388,7 @@ $id = $_GET['id'];
                         echo " <br>";
                         echo 'Comentario:';
                         echo " <br>";
-                        echo "<input type='textarea' name='comentario' rows='3' cols='60' value ='$mostrar[comentario]'></textarea>";
+                        echo "<input type='text' name='comentario' size='50' value ='$mostrar[comentario]'></textarea>";
                       }
                       ?>
 
