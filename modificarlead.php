@@ -351,7 +351,7 @@ $id = $_GET['id'];
                         echo " <br>";
                         echo " <br>";
                         echo 'Nombres : ';
-                        echo "<input type='text' size='20' name='nombre' value ='$mostrar[nombre_lead]'> ";
+                        echo "<input type='text' size='20' name='nombre_lead' value ='$mostrar[nombre_lead]'> ";
                         echo 'Primer Apellido : ';
                         echo "<input type='text' size='20' name='primer_apellido' value ='$mostrar[primer_apellido]'> ";
                         echo 'Segundo Apellido : ';
@@ -397,7 +397,7 @@ $id = $_GET['id'];
 
                       <br>
                       <br>
-                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Actualizar">
+                      <input type="submit" class="btn btn-success btn-block" name="actualizar" value="Actualizar">
 
           </fieldset>
 
