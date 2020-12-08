@@ -434,10 +434,28 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Reuniones Pendientes</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">...</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $db_name = "crmpry";
+                        $con = mysqli_connect($servername, $username, $password, $db_name);
+
+                        $sql = "SELECT count(id) AS TOTAL FROM reuniones ";
+                        $resultado = mysqli_query($con, $sql);
+                        $values = mysqli_fetch_assoc($resultado);
+                        $num_rows = $values['TOTAL'];
+                        echo $num_rows;
+                        ?>
+                        <?php
+
+                        ?>
+                      </div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-gray-300"></i>
+
                     </div>
                   </div>
                 </div>
