@@ -396,12 +396,16 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                   <center>Estado</center>
                                 </th>
                                 <th>
-                                  <center style="visibility: hidden">------------------</center>
+                                  <center style="visibility: hidden">------------------------</center>
                                   <center>Compañia</center>
                                 </th>
                                 <th>
                                   <center style="visibility: hidden">--------------------</center>
                                   <center>Asignado</center>
+                                </th>
+                                <th>
+                                  <center style="visibility: hidden">--------------------</center>
+                                  <center>Recurso</center>
                                 </th>
                                 <th>
 
@@ -454,6 +458,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<td>";
                               echo $mostrar['asignado'];
                               echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['recurso'];
+                              echo "</td>";
+
                               echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
                                                                             <a href='CambiarEstado.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
                                                                             <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>

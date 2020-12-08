@@ -385,6 +385,8 @@ $id = $_GET['id'];
                         echo " <br>";
                         echo 'Asignado : ';
                         echo "<input type='text' size='20' name='asignado' value ='$mostrar[asignado]'> ";
+                        echo 'Recurso : ';
+                        echo "<input type='text' size='20' name='recurso' value ='$mostrar[recurso]'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Comentario:';

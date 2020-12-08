@@ -414,6 +414,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="Area Comercial" id="ArC">Area Comercial</option>
                         <option value="Area Marketing" id="ArM">Area de Marketing</option>
                       </select>
+                      <label>Recurso: </label>
+                      <select name="recurso">
+                        <option value="Asignado por">Seleccione Recurso</option>
+                        <option value="Facebook" id="F">Facebook</option>
+                        <option value="Google" id="G">Google</option>
+                        <option value="Twitter" id="T">Twitter</option>
+                        <option value="Anuncio" id="A">Anuncio</option>
+
+                      </select>
                       <br>
                       <br>
                       <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
