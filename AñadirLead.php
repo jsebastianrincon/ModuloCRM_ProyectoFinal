@@ -342,7 +342,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Nombres: </label><input type="text" size="20" name="nombre" required placeholder="Ingrese Nombre ">
+                      <label>Nombres: </label><input type="text" size="20" name="nombre_lead" required placeholder="Ingrese Nombre ">
                       <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required>
                       <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
                       <br>

@@ -338,7 +338,7 @@ $id = $_GET['id'];
             <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
-                  <form class="form-contact" action="" method="POST">
+                  <form class="form-contact" action="ModificacionLead.php" method="POST">
                     <div class="form-group" id="responsive-form">
 
                       <?php
