@@ -25,7 +25,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Añadir Lead</title>
+  <title>Agendar Reuniones</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -335,11 +335,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
-                  <form class="form-contact" action="" method='POST'>
+                  <form class="form-contact" action="RegistroReunion.php" method='POST'>
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <center><label>Lead: </label><input type="text" size="55" name="lead"></center>
+                      <center><label>Lead: </label><input type="text" size="55" name="nombre"></center>
                       <br>
                       <br>
                       <center><label>Fecha: </label>
@@ -354,10 +354,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </center>
                       <br>
 
-                      <center><label>Descripcion: </label><br><textarea name="comentario" rows="2" cols="55" placeholder="Ingrese Descripcion..." required></textarea></center>
+                      <center><label>Descripcion: </label><br><textarea name="descripcion" rows="2" cols="55" placeholder="Ingrese Descripcion..." required></textarea></center>
                       <br>
                       <br>
-                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
+                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Programar Reunion">
 
           </fieldset>
 

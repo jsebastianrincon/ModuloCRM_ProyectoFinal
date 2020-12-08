@@ -9,7 +9,7 @@ if (!isset($_SESSION['id'])) {
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
+$id = $_GET['id'];
 
 
 ?>
@@ -25,15 +25,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Gestion de Leads</title>
+  <title>Modificar Reuniones</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  <link rel="stylesheet" href="css/kanso.css">
+
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 
 </head>
 
@@ -98,7 +97,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
               <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-
 
             </div>
           </div>
@@ -250,7 +248,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
@@ -260,7 +258,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
                     <div class="status-indicator"></div>
                   </div>
                   <div>
@@ -270,7 +268,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
@@ -280,7 +278,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
@@ -329,207 +327,97 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Gestion De Leads</h1>
+            <h1 class="h3 mb-0 text-gray-800">Modificar Reuniones</h1>
           </div>
-          <!-- Gestion de leads -->
+          <!-- Titulo Formulario de adicion de leads -->
           <fieldset>
-            <div class="container p-8">
+            <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
-                  <div class="form-group" id="responsive-form">
+                  <form class="form-contact" action="ModificacionReunion.php" method="POST">
+                    <div class="form-group" id="responsive-form">
+                      <?php
+                      $sql = "SELECT * FROM crmpry.reuniones WHERE id = '$id'";
+                      $result = mysqli_query($conexion2, $sql);
+                      while ($mostrar = mysqli_fetch_array($result)) {
+                        echo "<br>";
+                        echo "<center>Lead:<input type='text' size='50' name='nombre' value ='$mostrar[nombre]'></center>";
+                        echo "<br>";
+                        echo "<br>";
+                        echo "<center>";
+                        echo 'Fecha : ';
+                        echo "<input type='text' size='10' name='fecha' value ='$mostrar[fecha]'> ";
+                        echo 'Hora : ';
+                        echo "<input type='text' size='9' name='hora' value ='$mostrar[hora]'> ";
+                        echo 'Asignado : ';
+                        echo "<input type='text' size='11' name='asignado' value ='$mostrar[asignado]'> ";
+                        echo "<br>";
+                        echo "<br>";
+                        echo 'Descripcion : ';
+                        echo "<br>";
+                        echo "<input type='text' size='50' name='descripcion' value ='$mostrar[descripcion]'> ";
+                        echo " <br>";
+                        echo " <br>";
+                      }
+                      ?>
 
-                    <fieldset>
+                      <input type="submit" class="btn btn-success btn-block" name="actualizar" value="Actualizar">
+          </fieldset>
 
-                      <div class="col md-8 col md-offset-2">
-                        <!-- Tabla de Leads Registrados -->
-                      </div>
+        </div> <!-- /.container-fluid -->
 
-                      <div class="card-header py-3">
-
-                      </div>
-                      <div class="card-body">
-                        <div class="table-responsive">
-                          <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                              <tr>
-
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Nombre </center>
-                                </th>
-
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Primer Apellido </center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Segundo Apellido </center>
-                                </th>
-                                <th>
-                                  <center>Documento</center>
-                                </th>
-
-                                <th>
-                                  <center>Telefono</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">-------------------------------</center>
-                                  <center>Email</center>
-                                </th>
-                                <th>
-                                  <center>Departamento</center>
-                                </th>
-                                <th>
-                                  <center>Ciudad</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">-------------------------------</center>
-                                  <center>Direccion</center>
-                                </th>
-
-                                <th>
-                                  <center style="visibility: hidden">------------------</center>
-                                  <center>Estado</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">------------------------</center>
-                                  <center>Compañia</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Asignado</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Recurso</center>
-                                </th>
-                                <th>
-
-                                  <center style="visibility: hidden">--------------------------------------------------</center>
-                                  <center>Acciones</center>
-
-                                </th>
-                              </tr>
-                            </thead>
-                            <!-- Mostrar Datos en tabla de leads... -->
-                            <?php
-                            $sql = "SELECT * FROM leads";
-                            $result = mysqli_query($conexion2, $sql);
-                            while ($mostrar = mysqli_fetch_array($result)) {
-                              //Impresion tabla
-                              echo "<tr>";
-                              echo "<td>";
-                              echo $mostrar['nombre_lead'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['primer_apellido'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['segundo_apellido'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['tipodocumento'], '.', $mostrar['documento'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['telefono'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['email'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['departamento'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['ciudad'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['direccion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['estado'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['compañia'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['asignado'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['recurso'];
-                              echo "</td>";
-
-                              echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
-                                                                            <a href='CambiarEstado.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
-                                                                            <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
-                              </td>";
-                              echo "<br>";
-                            }
-
-                            ?>
-                          </table>
+      </div>
+      <!-- End of Main Content -->
 
 
 
+    </div>
+    <!-- End of Content Wrapper -->
 
-                        </div>
-                      </div>
-                  </div> <!-- /.container-fluid -->
+  </div>
+  <!-- End of Page Wrapper -->
 
-                </div>
-                <!-- End of Main Content -->
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">¿Desea Cerrar Sesion?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-              </div>
-              <!-- End of Content Wrapper -->
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            </div>
-            <!-- End of Page Wrapper -->
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-              <i class="fas fa-angle-up"></i>
-            </a>
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
 
-
-
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
-
-            <!-- Page level plugins -->
-            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-            <!-- Page level custom scripts -->
-            <script src="js/demo/datatables-demo.js"></script>
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

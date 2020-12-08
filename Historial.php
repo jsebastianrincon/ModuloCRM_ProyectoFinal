@@ -25,7 +25,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Gestion de Leads</title>
+  <title>Reuniones Programadas</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -332,7 +332,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Gestion De Leads</h1>
+            <h1 class="h3 mb-0 text-gray-800">Reuniones Programadas</h1>
           </div>
           <!-- Gestion de leads -->
           <fieldset>
@@ -363,109 +363,42 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <th>
                                   <center style="visibility: hidden">---------------------</center>
-                                  <center>Primer Apellido </center>
+                                  <center>Fecha </center>
                                 </th>
                                 <th>
                                   <center style="visibility: hidden">---------------------</center>
-                                  <center>Segundo Apellido </center>
+                                  <center>Hora </center>
                                 </th>
                                 <th>
-                                  <center>Documento</center>
-                                </th>
-
-                                <th>
-                                  <center>Telefono</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">-------------------------------</center>
-                                  <center>Email</center>
-                                </th>
-                                <th>
-                                  <center>Departamento</center>
-                                </th>
-                                <th>
-                                  <center>Ciudad</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">-------------------------------</center>
-                                  <center>Direccion</center>
-                                </th>
-
-                                <th>
-                                  <center style="visibility: hidden">------------------</center>
-                                  <center>Estado</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">------------------------</center>
-                                  <center>Compañia</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
                                   <center>Asignado</center>
                                 </th>
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Recurso</center>
-                                </th>
-                                <th>
 
-                                  <center style="visibility: hidden">--------------------------------------------------</center>
-                                  <center>Acciones</center>
-
+                                <th>
+                                  <center>Accion</center>
                                 </th>
                               </tr>
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM leads";
+                            $sql = "SELECT * FROM reuniones";
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
                               echo "<tr>";
                               echo "<td>";
-                              echo $mostrar['nombre_lead'];
+                              echo $mostrar['nombre'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['primer_apellido'];
+                              echo $mostrar['fecha'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['segundo_apellido'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['tipodocumento'], '.', $mostrar['documento'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['telefono'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['email'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['departamento'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['ciudad'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['direccion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['estado'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['compañia'];
+                              echo $mostrar['hora'];
                               echo "</td>";
                               echo "<td>";
                               echo $mostrar['asignado'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['recurso'];
-                              echo "</td>";
-
-                              echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
-                                                                            <a href='CambiarEstado.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
-                                                                            <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
-                              </td>";
+                              echo "<colspan='6'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
+                                                                            <a href='eliminarreunion.php'><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
+                                                                                                          </td>";
                               echo "<br>";
                             }
 
