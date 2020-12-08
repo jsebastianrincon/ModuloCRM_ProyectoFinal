@@ -359,6 +359,7 @@ $id = $_GET['id'];
                         echo " <br>";
                         echo " <br>";
                         echo 'Tipo de Documento : ';
+
                         echo "<input type='text' size='23' name='tipodocumento' value ='$mostrar[tipodocumento]'> ";
                         echo 'Documento : ';
                         echo "<input type='text' size='20' name='documento' value ='$mostrar[documento]'> ";
