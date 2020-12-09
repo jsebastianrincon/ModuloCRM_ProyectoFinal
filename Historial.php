@@ -37,6 +37,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 </head>
 
+
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -70,7 +71,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
-
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -98,8 +98,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-
+              <a class="collapse-item" href="Reuniones.php">Agendar Reuniones</a>
 
             </div>
           </div>

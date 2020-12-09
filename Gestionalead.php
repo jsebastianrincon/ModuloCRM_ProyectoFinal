@@ -34,7 +34,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-
 </head>
 
 <body id="page-top">
@@ -70,8 +69,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
-        <!-- Nav Item -Clientes -->
-
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -99,8 +96,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-
+              <a class="collapse-item" href="Reuniones.php">Agendar Reuniones</a>
 
             </div>
           </div>
@@ -163,9 +159,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -252,7 +245,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
@@ -262,7 +255,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
                     <div class="status-indicator"></div>
                   </div>
                   <div>
@@ -272,7 +265,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
                     <div class="status-indicator bg-warning"></div>
                   </div>
                   <div>
@@ -282,7 +275,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="dropdown-list-image mr-3">
-
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div>
