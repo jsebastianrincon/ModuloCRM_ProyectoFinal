@@ -119,6 +119,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="bg-white py-2 collapse-inner rounded">
 
               <a class="collapse-item" href="propuestas.php">Añadir Propuestas</a>
+              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
 
 
             </div>
@@ -342,31 +343,34 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
-                  <form class="form-contact" action="RegistroLead.php" method='POST'>
+                  <form class="form-contact" action="RegistroPropuesta.php" method='POST'>
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Tema: </label><input type="text" size="20" name="nombre_lead" required placeholder="Ingrese Nombre ">
-                      <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required>
-                      <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
+                      <label>Tema: </label><input type="text" size="31" name="tema" required placeholder="Ingrese Informacion ">
                       <br>
                       <br>
+                      <label>Asignado A: </label>
+                      <select name="asignado">
+                        <option type="text" size="50" value="Elegir" id="TA">Seleccionar</option>
+                        <option value="lead" id="lead">Lead</option>
+                        <option value="cliente" id="cliente">Cliente</option>
+                      </select>
+                      <label>Lead: </label>
+                      <select name="asignado">
+                        <option type="text" size="30" value="Elegir" id="TA">Seleccionar</option>
+                      </select>
 
-                      <label>Tipo de Documento: </label>
-                      <select name="tipodocumento">
-                        <option type="text" size="30" value="Elegir" id="TD">Seleccionar Tipo de documento</option>
-                        <option value="CC" id="CC">Cedula de Ciudadania</option>
-                        <option value="CE" id="CE">Cedula de Extranjeria</option>
-                        <option value="PA" id="PA">Pasaporte</option>
-                      </select> <label>Documento: </label><input type="text" size="20" name="documento" placeholder="Ingrese Documento" required>
-                      <label>Telefono: </label><input type="text" size="20" name="telefono" placeholder="Ingrese Telefono" required>
-                      <br>
-                      <br>
-                      <label>Email: </label><input type="mail" size="31" name="email" placeholder="Ingrese Email" required>
+                      <label>Fecha: </label>
+                      <input type="date" size="40" name="fecha_inicio" required>
 
+                      <label>Abierto Hasta: </label>
+                      <input type="date" size="40" name="fecha_final" required>
+                      <br>
+                      <br>
                       <label>Departamento: </label>
                       <select name="departamento">
-                        <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>
+                        <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento </option>
                         <option value="Amazonas" id="AZ<">Amazonas</option>
                         <option value="Antioquia" id="AN">Antioquia</option>
                         <option value="Arauca" id="AR">Arauca</option>
@@ -399,102 +403,124 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <label>Ciudad: </label><input type="text" size="14" name="ciudad" placeholder="Ciudad de residencia" required>
                       <br>
                       <br>
-                      <label>Direccion: </label><input type="text" size="31" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
-                      <label>Estado: </label>
-                      <select name="estado">
-                        <option value="Seleccione Estado">Asigne un Estado</option>
-                        <option value="Nuevo" id="NV">Nuevo</option>
-                        <option value="Cliente" id="CL">Cliente</option>
-
-
-                      </select>
-
-                      <label>Compañia: </label><input type="text" size="31" name="compañia" placeholder="Ingrese Compañia" required>
-                      <br>
-                      <br>
                       <label>Asignado: </label>
                       <select name="asignado">
                         <option value="Asignado por">Seleccione Area</option>
                         <option value="Area Comercial" id="ArC">Area Comercial</option>
                         <option value="Area Marketing" id="ArM">Area de Marketing</option>
                       </select>
-                      <label>Recurso: </label>
-                      <select name="recurso">
-                        <option value="Asignado por">Seleccione Recurso</option>
-                        <option value="Facebook" id="F">Facebook</option>
-                        <option value="Google" id="G">Google</option>
-                        <option value="Twitter" id="T">Twitter</option>
-                        <option value="Anuncio" id="A">Anuncio</option>
+                      <label>Email: </label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" required>
+                      <label>Telefono: </label><input type="text" size="14" name="telefono" placeholder="Ingrese Telefono" required>
+                      <br>
+                      <br>
 
-                      </select>
-                      <br>
-                      <br>
-                      <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
-                      <br>
-                      <br>
-                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
+
 
           </fieldset>
+        </div>
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 
+          <!-- Titulo Gestion de leads -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Detalles de la Propuesta</h1>
+          </div>
+          <!-- Formulario para Adicion de leads -->
+          <fieldset>
+            <div class="container p-4">
+              <div class="group">
+                <div class="card card-body">
+                  <div class="form-group" id="responsive-form">
+                    <br>
+                    <label>ADICION DE REQUERIMIENTOS </label>
+                    <br>
+                    <br>
+                    <th>
+                      <label style="visibility:hidden">...................</label>
+                      <label>Nombre </label>
 
+                      <label style="visibility: hidden">.............................................
+                      </label>
+                      <label>Descripcion</label>
+                      <label style="visibility: hidden">.......................
+                      </label>
+                      <label>Cantidad</label>
+                      <label style="visibility: hidden">....
+                      </label>
+                      <label>Costo Unitario($)</label>
+                      <label style="visibility: hidden">...... </label>
+                      <label>Costo Total</label>
+                      <label style="visibility:hidden">..............</label>
+                      <label>Accion</label>
+                    </th>
+                    <br>
+                    <input name="nombre" placeholder="Ingrese Nombre" size="25" required>
+                    <input name="descripcion" rows="1" cols="30" placeholder="Ingrese Descripcion" required></textarea>
+                    <input type="number" name="cantidad" required min="1" max="10" size="7">
+                    <input name="costo" placeholder="Ingrese Costo" size="12" required><label style="visibility: hidden">.</label>
+                    <input name="costototal" size="10" required><label style="visibility: hidden">...........</label>
+                    <a href=''><button type='button' class='btn btn-sm btn-danger'>+</button></a>
+                    <br>
+
+                  </div>
+                  <center><a href=''><button type='button' class='btn btn-sm btn-primary'>Calcular</button></a></center>
+                </div>
+                <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
+              </div> <!-- /.container-fluid -->
+              <div>
+                <br>
+              </div>
+            </div>
+            <!-- End of Main Content -->
 
 
 
         </div>
+        <!-- End of Content Wrapper -->
+
       </div>
-    </div> <!-- /.container-fluid -->
+      <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Main Content -->
-
-
-
-  </div>
-  <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
 
 
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+      <!-- Page level plugins -->
+      <script src="vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Page level custom scripts -->
+      <script src="js/demo/chart-area-demo.js"></script>
+      <script src="js/demo/chart-pie-demo.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+      <!-- Page level plugins -->
+      <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+      <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="js/demo/datatables-demo.js"></script>
+      <!-- Page level custom scripts -->
+      <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

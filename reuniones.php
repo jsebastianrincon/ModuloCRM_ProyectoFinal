@@ -116,6 +116,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="bg-white py-2 collapse-inner rounded">
 
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
 
             </div>
           </div>
