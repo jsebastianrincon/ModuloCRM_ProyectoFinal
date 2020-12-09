@@ -370,10 +370,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                   <center>Hora </center>
                                 </th>
                                 <th>
+                                  <center style="visibility: hidden">--------------------</center>
                                   <center>Asignado</center>
                                 </th>
-
                                 <th>
+                                  <center style="visibility: hidden">--------------------------</center>
+                                  <center>Descripcion</center>
+                                </th>
+                                <th>
+                                  <center style="visibility: hidden">--------------------------</center>
                                   <center>Accion</center>
                                 </th>
                               </tr>
@@ -396,7 +401,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "</td>";
                               echo "<td>";
                               echo $mostrar['asignado'];
-                              echo "<colspan='6'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
+                              echo "<td>";
+                              echo $mostrar['descripcion'];
+                              echo "</td>";
+                              echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
                                                                             <a href='eliminarreunion.php'><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
                                                                                                           </td>";
                               echo "<br>";

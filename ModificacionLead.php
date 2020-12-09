@@ -32,7 +32,7 @@ $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
-  echo "<script> alert('Registro de Lead Actualizado Correctamente');
+  echo "<script> alert('Lead Actualizado Correctamente');
   window.location.href= 'Gestionalead.php';
   </script>";
 }
