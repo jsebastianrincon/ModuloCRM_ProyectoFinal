@@ -25,7 +25,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Gestion de Leads</title>
+  <title>Añadir Propuesta</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -119,7 +119,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
+              <a class="collapse-item" href="propuestas.php">Añadir Propuestas</a>
+
 
             </div>
           </div>
@@ -335,8 +336,107 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Añadir Propuestas</h1>
+            <h1 class="h3 mb-0 text-gray-800">Añadir Propuesta</h1>
           </div>
+          <!-- Formulario para Adicion de leads -->
+          <fieldset>
+            <div class="container p-4">
+              <div class="group">
+                <div class="card card-body">
+                  <form class="form-contact" action="RegistroLead.php" method='POST'>
+                    <div class="form-group" id="responsive-form">
+
+                      <br>
+                      <label>Tema: </label><input type="text" size="20" name="nombre_lead" required placeholder="Ingrese Nombre ">
+                      <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required>
+                      <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
+                      <br>
+                      <br>
+
+                      <label>Tipo de Documento: </label>
+                      <select name="tipodocumento">
+                        <option type="text" size="30" value="Elegir" id="TD">Seleccionar Tipo de documento</option>
+                        <option value="CC" id="CC">Cedula de Ciudadania</option>
+                        <option value="CE" id="CE">Cedula de Extranjeria</option>
+                        <option value="PA" id="PA">Pasaporte</option>
+                      </select> <label>Documento: </label><input type="text" size="20" name="documento" placeholder="Ingrese Documento" required>
+                      <label>Telefono: </label><input type="text" size="20" name="telefono" placeholder="Ingrese Telefono" required>
+                      <br>
+                      <br>
+                      <label>Email: </label><input type="mail" size="31" name="email" placeholder="Ingrese Email" required>
+
+                      <label>Departamento: </label>
+                      <select name="departamento">
+                        <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>
+                        <option value="Amazonas" id="AZ<">Amazonas</option>
+                        <option value="Antioquia" id="AN">Antioquia</option>
+                        <option value="Arauca" id="AR">Arauca</option>
+                        <option value="Atlantico" id="AT">Atlantico</option>
+                        <option value="Bogota D.C." id="BO">Bogota DC</option>
+                        <option value="Bolivar" id="BL">Bolivar</option>
+                        <option value="Boyaca" id="BY">Boyaca</option>
+                        <option value="Caldas" id="CL">Caldas</option>
+                        <option value="Caqueta" id="CQ">Caqueta</option>
+                        <option value="Casanare" id="CS">Casanare</option>
+                        <option value="Cauca" id="CA">Cauca</option>
+                        <option value="Cesar" id="CE">Cesar</option>
+                        <option value="Choco" id="CH">Choco</option>
+                        <option value="Cordoba" id="CO">Cordoba</option>
+                        <option value="Cundinamarca" id="CU">Cundinamarca</option>
+                        <option value="Guainia" id="GU">Guania</option>
+                        <option value="Guaviare" id="GV">Guaviare</option>
+                        <option value="Huila" id="HU">Huila</option>
+                        <option value="Quindio" id="QU">Quindio</option>
+                        <option value="Risaralda" id="RS">Risaralda</option>
+                        <option value="San Andres" id="SA">Risaralda</option>
+                        <option value="Santander" id="ST">Santander</option>
+                        <option value="Sucre" id="SU">Sucre</option>
+                        <option value="Tolima" id="TO">Tolima</option>
+                        <option value="Valle" id="VA">Valle</option>
+                        <option value="Vaupes" id="VU">Vaupes</option>
+                        <option value="Vichada" id="VI">Vichada</option>
+                      </select>
+
+                      <label>Ciudad: </label><input type="text" size="14" name="ciudad" placeholder="Ciudad de residencia" required>
+                      <br>
+                      <br>
+                      <label>Direccion: </label><input type="text" size="31" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
+                      <label>Estado: </label>
+                      <select name="estado">
+                        <option value="Seleccione Estado">Asigne un Estado</option>
+                        <option value="Nuevo" id="NV">Nuevo</option>
+                        <option value="Cliente" id="CL">Cliente</option>
+
+
+                      </select>
+
+                      <label>Compañia: </label><input type="text" size="31" name="compañia" placeholder="Ingrese Compañia" required>
+                      <br>
+                      <br>
+                      <label>Asignado: </label>
+                      <select name="asignado">
+                        <option value="Asignado por">Seleccione Area</option>
+                        <option value="Area Comercial" id="ArC">Area Comercial</option>
+                        <option value="Area Marketing" id="ArM">Area de Marketing</option>
+                      </select>
+                      <label>Recurso: </label>
+                      <select name="recurso">
+                        <option value="Asignado por">Seleccione Recurso</option>
+                        <option value="Facebook" id="F">Facebook</option>
+                        <option value="Google" id="G">Google</option>
+                        <option value="Twitter" id="T">Twitter</option>
+                        <option value="Anuncio" id="A">Anuncio</option>
+
+                      </select>
+                      <br>
+                      <br>
+                      <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
+                      <br>
+                      <br>
+                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
+
+          </fieldset>
+
 
 
 
