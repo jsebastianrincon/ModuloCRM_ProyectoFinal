@@ -70,6 +70,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
+        <!-- Nav Item -Clientes -->
+
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -77,9 +79,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Custom Components:</h6>
-              <a class="collapse-item" href="buttons.html">Buttons</a>
-              <a class="collapse-item" href="cards.html">Cards</a>
+
+              <a class="collapse-item" href="añadircliente.php">Añadir Clientes</a>
+              <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
           </div>
         </li>
@@ -116,7 +118,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="login.html">Añadir Requerimientos</a>
+              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
 
             </div>
           </div>
@@ -464,7 +466,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                               echo "<colspan='6'><div class='btn-group'><th><a href='modificarlead.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
                                                                             <a href='CambiarEstado.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
-                                                                            <a href=''><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
+                                                                            <a href='ConvertirCliente.php'><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                               </td>";
                               echo "<br>";
                             }
