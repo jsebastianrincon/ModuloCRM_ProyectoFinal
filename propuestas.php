@@ -329,6 +329,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </ul>
 
         </nav>
+
+
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -347,7 +349,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Tema: </label><input type="text" size="31" name="tema" required placeholder="Ingrese Informacion ">
+                      <label>Tema Propuesta: </label><input type="text" size="31" name="tema" required placeholder="Ingrese Informacion ">
                       <br>
                       <br>
                       <label>Asignado A: </label>
@@ -459,7 +461,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <input type="number" name="cantidad" required min="1" max="10" size="7">
                     <input name="costo" placeholder="Ingrese Costo" size="12" required><label style="visibility: hidden">.</label>
                     <input name="costototal" size="10" required><label style="visibility: hidden">...........</label>
-                    <a href=''><button type='button' class='btn btn-sm btn-danger'>+</button></a>
+                    <a href=''><button type='button' class='btn btn-sm btn-danger' id="añadir">+</button></a>
                     <br>
 
                   </div>

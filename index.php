@@ -85,44 +85,48 @@ if ($_POST) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
       </head>
 
-      <body class="bg-primary">
+      <div id="layoutAuthentication">
         <div id="layoutAuthentication">
-          <div id="layoutAuthentication_content">
-            <main>
-
-              <div class="row justify-content-center">
-                <div class="col-lg-5">
-                  <div class="card shadow-lg border-1 rounded-lg mt-5">
-                    <div class="card-header">
-                      <h3 class="text-center font-weight-light my-3">Login</h3>
-                    </div>
-                    <div class="card-body">
-                      <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+          <main>
+            <div class="row justify-content-center">
+              <div class="col-lg-4">
+                <div class="card shadow-lg border-1 rounded-lg mt-5">
+                  <div class="card-header">
+                    <h4 class="text-center font-weight-light my-3">Inicio De Sesión</h4>
+                    <center><img width="100" height="100" src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/users.png"></center>
+                  </div>
+                  <div class="card-body">
+                    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                      <center>
                         <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Usuario</label><input class="form-control py-4" id="inputEmailAddress" name="usuario" type="text" placeholder="Enter email address" /></div>
-                        <div class="form-group"><label class="small mb-1" for="inputPassword">Password</label><input class="form-control py-4" id="inputPassword" name="password" type="password" placeholder="Enter password" /></div>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Recordar Contraseña</label></div>
-                        </div>
-                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="password.html">¿Olvido La Contraseña?</a>
-                          <button type="submit" class="btn btn-primary">Iniciar Sesion</button></div>
-                      </form>
-                    </div>
+                      </center>
+                      <center>
+                        <div class="form-group"><label class="small mb-1" for="inputPassword">Contraseña</label><input class="form-control py-4" id="inputPassword" name="password" type="password" placeholder="Enter password" /></div>
+                      </center>
+                      <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+
+
+                        <button type="submit" class="btn btn-primary"> Iniciar Sesion</button>
+
+                      </div>
                     </form>
                   </div>
-
+                  </form>
                 </div>
+
               </div>
-          </div>
-
-          </main>
-        </div>
-        <div id="layoutAuthentication_footer">
-          <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-
             </div>
-          </footer>
         </div>
+
+        </main>
+      </div>
+      <div id="layoutAuthentication_footer">
+        <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid">
+
+          </div>
+        </footer>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
