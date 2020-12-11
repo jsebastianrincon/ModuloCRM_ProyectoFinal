@@ -405,7 +405,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 </th>
                                 <th>
 
-                                  <center style="visibility: hidden">-----------------------------------------------------------------------</center>
+                                  <center style="visibility: hidden">-----------------------------------------------------</center>
                                   <center>Acciones</center>
 
                                 </th>
@@ -459,8 +459,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "</td>";
 
                               echo "<colspan='20'><div class='btn-group'><th><a href='modificarlead.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-warning'>Modificar</button></a>
-                                                                            <a href='CambiarEstado.php'><button type='button' class='btn btn-sm btn-danger'>Cambiar Estado</button></a>
-                                                                            <a href='ConvertirCliente.php'><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
+                                                                                                                                                    <a href='ConvertirCliente.php'><button type='button' class='btn btn-sm btn-success'>Convertir en cliente</button></a>
                                                                             <a href='Confirmacion.php'><button type='button' class='btn btn-sm btn-primary'>Enviar Confirmacion</button></a>
                               </td>";
                               echo "<br>";

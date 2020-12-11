@@ -405,7 +405,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo $mostrar['descripcion'];
                               echo "</td>";
                               echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id] '><button type='button' class='btn btn-sm btn-primary'>Modificar</button></a>
-                                                                            <a href='eliminarreunion.php'><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
+                                                                            <a href='eliminarReunion.php?id= $mostrar[id]'><button type='button' class='btn btn-sm btn-danger'>Eliminar</button></a>
                                                                                                           </td>";
                               echo "<br>";
                             }

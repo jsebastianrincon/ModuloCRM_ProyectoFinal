@@ -361,6 +361,8 @@ $id = $_GET['id'];
                       }
                       ?>
 
+
+
                       <input type="submit" class="btn btn-success btn-block" name="actualizar" value="Actualizar">
           </fieldset>
 
