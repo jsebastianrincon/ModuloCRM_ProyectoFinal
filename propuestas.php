@@ -423,45 +423,47 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Detalles de la Propuesta</h1>
+            <h1 class="h3 mb-0 text-gray-800">ADICION DE REQUERIMIENTOS</h1>
           </div>
           <!-- Formulario para Adicion de leads -->
           <fieldset>
-            <div class="container p-4">
+            <div class="container">
+
               <div class="group">
                 <div class="card card-body">
                   <div class="form-group" id="responsive-form">
-                    <br>
-                    <label>ADICION DE REQUERIMIENTOS </label>
+
+
+                    <label>&nbsp Añadir Requerimiento &nbsp &nbsp &nbsp &nbsp</label>
+                    <td><button type="button" name="add" id="add" class="btn-xsm btn-primary">+ </button></td>
                     <br>
                     <br>
                     <th>
-                      <label style="visibility:hidden">...................</label>
+                      <label style="visibility:hidden">.......................</label>
                       <label>Nombre </label>
 
-                      <label style="visibility: hidden">.............................................
-                      </label>
+                      <label style="visibility: hidden">........................................</label>
                       <label>Descripcion</label>
-                      <label style="visibility: hidden">.......................
+                      <label style="visibility: hidden">........................
                       </label>
                       <label>Cantidad</label>
-                      <label style="visibility: hidden">....
-                      </label>
+                      <label style="visibility: hidden">.............. </label>
                       <label>Costo Unitario($)</label>
-                      <label style="visibility: hidden">...... </label>
+                      <label style="visibility: hidden">................. </label>
                       <label>Costo Total</label>
-                      <label style="visibility:hidden">..............</label>
-                      <label>Accion</label>
-                    </th>
-                    <br>
-                    <input name="nombre" placeholder="Ingrese Nombre" size="25" required>
-                    <input name="descripcion" rows="1" cols="30" placeholder="Ingrese Descripcion" required></textarea>
-                    <input type="number" name="cantidad" required min="1" max="10" size="7">
-                    <input name="costo" placeholder="Ingrese Costo" size="12" required><label style="visibility: hidden">.</label>
-                    <input name="costototal" size="10" required><label style="visibility: hidden">...........</label>
-                    <a href=''><button type='button' class='btn btn-sm btn-danger'>+</button></a>
-                    <br>
+                      <label style="visibility: hidden">................. </label>
+                      <label><i class="fas fa-fw fa-cog"></i></label>
 
+                    </th>
+
+                    <form name="add_name" id="add_name">
+                      <div class="table-responsive">
+                        <table class="table table-bordered" id="dynamic_field">
+
+
+                        </table>
+                      </div>
+                    </form>
                   </div>
                   <center><a href=''><button type='button' class='btn btn-sm btn-primary'>Calcular</button></a></center>
                 </div>
@@ -521,7 +523,43 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <!-- Page level custom scripts -->
       <script src="js/demo/datatables-demo.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+      <!-------- Script Tabla dinamica------------>
+      <script>
+        $(document).ready(function() {
+          var i = 1;
+
+          $('#add').click(function() {
+            i++;
+            $('#dynamic_field').append('<tr id="row' + i + '">' +
+              '<td><input type="text" name="nombre[]" "size="15" "placeholder="Ingrese Nombre" class="form-control name_list" /></td>' +
+              '<td><input type="text" name="descripcion[]" "size="15" "placeholder="Ingrese descripcion" class="form-control name_list" /></td>' +
+
+              '<td><input type="number" name="cantidad[]" size="4" class="form-control name_list" /></td>' +
+
+              '<td><input type="number" name="costoU[]" class="form-control name_list" /></td> ' +
+              '<td><input type = "text" name = "costoT[]"placeholder = "$"class = "form-control name_list"/></td>' +
+              '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">-</button></td>'
+            );
+
+          });
+
+          $(document).on('click', '.btn_remove', function() {
+            var id = $(this).attr('id');
+            $('#row' + id).remove();
+          });
+
+
+        })
+      </script>
+
+
+</body>
+
+</html>
 </body>
 
 </html>
