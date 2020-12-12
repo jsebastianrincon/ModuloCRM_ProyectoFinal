@@ -23,7 +23,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="Juan Sebastian">
 
   <title>Dashboard</title>
 
@@ -76,7 +76,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="añadircliente.php">Añadir Clientes</a>
               <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
@@ -170,9 +169,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 

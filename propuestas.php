@@ -345,15 +345,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <br>
                       <label>Asignado A: </label>
-                      <select name="asignado">
-                        <option type="text" size="50" value="Elegir" id="TA">Seleccionar</option>
-                        <option value="lead" id="lead">Lead</option>
-                        <option value="cliente" id="cliente">Cliente</option>
-                      </select>
-                      <label>Lead: </label>
-                      <select name="asignado">
-                        <option type="text" size="30" value="Elegir" id="TA">Seleccionar</option>
-                      </select>
+                      <input type="text" size="31" name="asignado" required placeholder="Ingrese Nombre">
+
 
                       <label>Fecha: </label>
                       <input type="date" size="40" name="fecha_inicio" required>
