@@ -84,7 +84,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Leads</span>
@@ -100,6 +100,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class=" fas fa-cart-plus"></i></i>
             <span>Ventas</span>
@@ -107,7 +108,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
+              <a class="collapse-item" href="propuestas.php">Añadir Propuestas</a>
               <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
 
 
