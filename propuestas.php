@@ -346,15 +346,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <label>Asignado A: </label>
                       <input type="text" size="31" name="asignado" required placeholder="Ingrese Nombre">
+                      <label>Telefono: </label><input type="text" size="14" name="telefono" placeholder="Ingrese Telefono" required>
 
-
-                      <label>Fecha: </label>
-                      <input type="date" size="40" name="fecha_inicio" required>
-
-                      <label>Abierto Hasta: </label>
-                      <input type="date" size="40" name="fecha_final" required>
-                      <br>
-                      <br>
                       <label>Departamento: </label>
                       <select name="departamento">
                         <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento </option>
@@ -386,20 +379,25 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="Vaupes" id="VU">Vaupes</option>
                         <option value="Vichada" id="VI">Vichada</option>
                       </select>
-
+                      <br>
+                      <br>
                       <label>Ciudad: </label><input type="text" size="14" name="ciudad" placeholder="Ciudad de residencia" required>
-                      <br>
-                      <br>
+                      <label>Fecha: </label>
+                      <input type="date" size="40" name="fecha_inicio" required>
+
+                      <label>Abierto Hasta: </label>
+                      <input type="date" size="40" name="fecha_final" required>
                       <label>Asignado: </label>
                       <select name="asignado">
                         <option value="Asignado por">Seleccione Area</option>
                         <option value="Area Comercial" id="ArC">Area Comercial</option>
                         <option value="Area Marketing" id="ArM">Area de Marketing</option>
                       </select>
+                      <br>
+                      <br>
                       <label>Email: </label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" required>
-                      <label>Telefono: </label><input type="text" size="14" name="telefono" placeholder="Ingrese Telefono" required>
-                      <br>
-                      <br>
+
+
 
 
 
@@ -453,7 +451,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     </form>
                   </div>
                   <center><a href=''><button type='button' class='btn btn-sm btn-primary'>Calcular</button></a></center>
+                  <br>
+                  <br>
+
+                  <label>Subtotal: $</label>
+                  <label>IVA: 19%</label>
+                  <label>Total: $</label>
+
                 </div>
+
                 <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
               </div> <!-- /.container-fluid -->
               <div>
@@ -527,8 +533,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
               '<td><input type="number" name="cantidad[]" size="4" class="form-control name_list" /></td>' +
 
-              '<td><input type="number" name="costoU[]" class="form-control name_list" /></td> ' +
-              '<td><input type = "text" name = "costoT[]"placeholder = "$"class = "form-control name_list"/></td>' +
+              '<td><input type="number" name="costoU[]" class="form-control name_list"  /></td> ' +
+              '<td><input type = "text" name = "costoT[]"placeholder = "$"class = "form-control name_list "/></td>' +
               '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">-</button></td>'
             );
 
