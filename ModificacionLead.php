@@ -3,6 +3,7 @@
 <?php
 //$id = $_POST["id"];
 $nombre_lead = $_REQUEST["nombre_lead"];
+$segundo_nombre = $_REQUEST["segundo_nombre"];
 $primer_apellido = $_POST["primer_apellido"];
 $segundo_apellido = $_POST["segundo_apellido"];
 $tipodocumento = $_POST["tipodocumento"];
@@ -26,7 +27,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
 
-$instruccion_SQL = "UPDATE leads SET nombre_lead ='$nombre_lead',primer_apellido='$primer_apellido',segundo_apellido='$segundo_apellido',tipodocumento='$tipodocumento',documento='$documento',telefono='$telefono',email='$email',departamento='$departamento',ciudad='$ciudad',direccion='$direccion',estado='$estado',compañia='$compañia',asignado='$asignado',comentario='$comentario', recurso='$recurso' WHERE documento='$documento'";
+$instruccion_SQL = "UPDATE leads SET nombre_lead ='$nombre_lead',segundo_nombre='$segundo_nombre',primer_apellido='$primer_apellido',segundo_apellido='$segundo_apellido',tipodocumento='$tipodocumento',documento='$documento',telefono='$telefono',email='$email',departamento='$departamento',ciudad='$ciudad',direccion='$direccion',estado='$estado',compañia='$compañia',asignado='$asignado',comentario='$comentario', recurso='$recurso' WHERE documento='$documento'";
 
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {

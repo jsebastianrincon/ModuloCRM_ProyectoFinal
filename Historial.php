@@ -345,7 +345,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Reuniones Programadas</h1>
+            <h1 class="h3 mb-0 text-gray-800">Reuniones Pendientes</h1>
           </div>
           <!-- Gestion de leads -->
           <fieldset>
@@ -398,7 +398,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM reuniones";
+                            $sql = "SELECT * FROM reuniones WHERE fecha > CURDATE() ";
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla

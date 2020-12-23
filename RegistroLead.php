@@ -3,6 +3,7 @@
 <?php
 
 $nombre_lead = $_REQUEST["nombre_lead"];
+$segundo_nombre = $_REQUEST["segundo_nombre"];
 $primer_apellido = $_REQUEST["primer_apellido"];
 $segundo_apellido = $_REQUEST["segundo_apellido"];
 $tipodocumento = $_REQUEST["tipodocumento"];
@@ -26,7 +27,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
 
-$instruccion_SQL = "INSERT INTO leads (nombre_lead, primer_apellido,segundo_apellido,tipodocumento,documento,telefono,email,departamento,ciudad,direccion,estado,compañia,asignado,recurso,comentario) VALUES ('$nombre_lead','$primer_apellido','$segundo_apellido','$tipodocumento','$documento','$telefono','$email','$departamento','$ciudad','$direccion','$estado','$compañia','$asignado','$recurso','$comentario')";
+$instruccion_SQL = "INSERT INTO leads (nombre_lead, segundo_nombre,primer_apellido,segundo_apellido,tipodocumento,documento,telefono,email,departamento,ciudad,direccion,estado,compañia,asignado,recurso,comentario) VALUES ('$nombre_lead','$segundo_nombre','$primer_apellido','$segundo_apellido','$tipodocumento','$documento','$telefono','$email','$departamento','$ciudad','$direccion','$estado','$compañia','$asignado','$recurso','$comentario')";
 
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {

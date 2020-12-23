@@ -367,6 +367,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                 </th>
 
                                 <th>
+                                  <center style="visibility: hidden">--------------------</center>
+                                  <center>Segundo Nombre </center>
+                                </th>
+
+                                <th>
                                   <center style="visibility: hidden">---------------------</center>
                                   <center>Primer Apellido </center>
                                 </th>
@@ -422,13 +427,16 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM leads";
+                            $sql = "SELECT * FROM leads WHERE estado <> 'inactivo'";
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
                               echo "<tr>";
                               echo "<td>";
                               echo $mostrar['nombre_lead'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['segundo_nombre'];
                               echo "</td>";
                               echo "<td>";
                               echo $mostrar['primer_apellido'];

@@ -354,24 +354,24 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Nombres: </label><input type="text" size="20" name="nombre_lead" required placeholder="Ingrese Nombre ">
+                      <label>Primer Nombre: </label><input type="text" size="18" name="nombre_lead" required placeholder="Ingrese Primer Nombre ">
+                      <label>Segundo Nombre: </label><input type="text" size="19" name="segundo_nombre" placeholder="Ingrese Segundo Nombre ">
                       <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido" placeholder="Ingrese Primer Apellido" required>
-                      <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido" placeholder="Ingrese Segundo Apellido" required>
                       <br>
                       <br>
-
+                      <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido" placeholder="Ingrese Segundo Apellido">
                       <label>Tipo de Documento: </label>
                       <select name="tipodocumento">
-                        <option type="text" size="30" value="Elegir" id="TD">Seleccionar Tipo de documento</option>
+                        <option type="text" size="25" value="Elegir" id="TD">Seleccione Tipo de documento</option>
                         <option value="CC" id="CC">Cedula de Ciudadania</option>
                         <option value="CE" id="CE">Cedula de Extranjeria</option>
                         <option value="PA" id="PA">Pasaporte</option>
-                      </select> <label>Documento: </label><input type="text" size="20" name="documento" placeholder="Ingrese Documento" required>
-                      <label>Telefono: </label><input type="text" size="20" name="telefono" placeholder="Ingrese Telefono" required>
+                      </select>
+                      <label>Documento: </label><input type="text" size="13" name="documento" placeholder="Ingrese Documento" required>
                       <br>
                       <br>
-                      <label>Email: </label><input type="mail" size="31" name="email" placeholder="Ingrese Email" required>
-
+                      <label>Telefono: </label><input type="text" size="18" name="telefono" placeholder="Ingrese Telefono" required>
+                      <label>Email: </label><input type="mail" size="26" name="email" placeholder="Ingrese Email" required>
                       <label>Departamento: </label>
                       <select name="departamento">
                         <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>
@@ -403,23 +403,19 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="Vaupes" id="VU">Vaupes</option>
                         <option value="Vichada" id="VI">Vichada</option>
                       </select>
-
-                      <label>Ciudad: </label><input type="text" size="14" name="ciudad" placeholder="Ciudad de residencia" required>
                       <br>
                       <br>
-                      <label>Direccion: </label><input type="text" size="31" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
+                      <label>Ciudad: </label><input type="text" size="23" name="ciudad" placeholder="Ciudad de residencia" required>
+                      <label>Direccion: </label><input type="text" size="23" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
+                      <label>Compañia: </label><input type="text" size="30" name="compañia" placeholder="Ingrese Compañia" required>
+                      <br>
+                      <br>
                       <label>Estado: </label>
                       <select name="estado">
                         <option value="Seleccione Estado">Asigne un Estado</option>
                         <option value="Nuevo" id="NV">Nuevo</option>
                         <option value="Cliente" id="CL">Cliente</option>
-
-
                       </select>
-
-                      <label>Compañia: </label><input type="text" size="31" name="compañia" placeholder="Ingrese Compañia" required>
-                      <br>
-                      <br>
                       <label>Asignado: </label>
                       <select name="asignado">
                         <option value="Asignado por">Seleccione Area</option>
