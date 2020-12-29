@@ -443,48 +443,127 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
             </div>
             <!-- End of Page Wrapper -->
+            <div class="container-fluid">
 
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-              <i class="fas fa-angle-up"></i>
-            </a>
+              <!-- Titulo Gestion de leads -->
+
+              <!-- Scroll to Top Button-->
+              <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+              </a>
 
 
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+              <!-- Bootstrap core JavaScript-->
+              <script src="vendor/jquery/jquery.min.js"></script>
+              <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+              <!-- Core plugin JavaScript-->
+              <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+              <!-- Custom scripts for all pages-->
+              <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
+              <!-- Page level plugins -->
+              <script src="vendor/chart.js/Chart.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+              <!-- Page level custom scripts -->
+              <script src="js/demo/chart-area-demo.js"></script>
+              <script src="js/demo/chart-pie-demo.js"></script>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+              <!-- Bootstrap core JavaScript-->
+              <script src="vendor/jquery/jquery.min.js"></script>
+              <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+              <!-- Core plugin JavaScript-->
+              <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+              <!-- Custom scripts for all pages-->
+              <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+              <!-- Page level plugins -->
+              <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+              <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/datatables-demo.js"></script>
+              <!-- Page level custom scripts -->
+              <script src="js/demo/datatables-demo.js"></script>
+            </div>
+            <br>
+            <br>
+            <!---Reuniones Vencidas--->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <h1 class="h3 mb-0 text-gray-800">Reuniones Vencidas</h1>
+            </div>
+            <fieldset>
+              <div class="container p-8">
+                <div class="group">
+                  <div class="card card-body">
+                    <div class="form-group" id="responsive-form">
 
+                      <fieldset>
+
+                        <div class="col md-8 col md-offset-2">
+                          <!-- Tabla de Leads Registrados -->
+                        </div>
+
+                        <div class="card-header py-3">
+
+                        </div>
+                        <div class="card-body">
+                          <div class="table-responsive">
+                            <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
+                              <thead>
+                                <tr>
+
+                                  <th>
+                                    <center style="visibility: hidden">--------------------</center>
+                                    <center>Nombre </center>
+                                  </th>
+
+                                  <th>
+                                    <center style="visibility: hidden">---------------------</center>
+                                    <center>Fecha </center>
+                                  </th>
+                                  <th>
+                                    <center style="visibility: hidden">---------------------</center>
+                                    <center>Hora </center>
+                                  </th>
+                                  <th>
+                                    <center style="visibility: hidden">--------------------</center>
+                                    <center>Asignado</center>
+                                  </th>
+                                  <th>
+                                    <center style="visibility: hidden">--------------------------</center>
+                                    <center>Descripcion</center>
+                                  </th>
+
+                                </tr>
+                              </thead>
+                              <!-- Mostrar Datos en tabla de leads... -->
+                              <?php
+                              $sql = "SELECT * FROM reuniones WHERE fecha < CURDATE() ";
+                              $result = mysqli_query($conexion2, $sql);
+                              while ($mostrar = mysqli_fetch_array($result)) {
+                                //Impresion tabla
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $mostrar['nombre'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['fecha'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['hora'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['asignado'];
+                                echo "<td>";
+                                echo $mostrar['descripcion'];
+                              }
+
+                              ?>
+                            </table>
+                          </div>
 </body>
 
 </html>

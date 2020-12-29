@@ -363,13 +363,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <th>
                                   <center style="visibility: hidden">--------------------</center>
-                                  <center>Nombre </center>
+                                  <center>Nombres </center>
                                 </th>
 
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Segundo Nombre </center>
-                                </th>
 
                                 <th>
                                   <center style="visibility: hidden">---------------------</center>
@@ -433,11 +429,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               //Impresion tabla
                               echo "<tr>";
                               echo "<td>";
-                              echo $mostrar['nombre_lead'];
+                              echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre'];
                               echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['segundo_nombre'];
-                              echo "</td>";
+
                               echo "<td>";
                               echo $mostrar['primer_apellido'];
                               echo "</td>";

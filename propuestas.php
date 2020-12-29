@@ -346,6 +346,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <label>Asignado A: </label>
                       <input type="text" size="31" name="asignado" required placeholder="Ingrese Nombre">
+
+
                       <label>Telefono: </label><input type="text" size="14" name="telefono" placeholder="Ingrese Telefono" required>
 
                       <label>Departamento: </label>
