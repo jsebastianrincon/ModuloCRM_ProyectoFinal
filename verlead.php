@@ -9,7 +9,7 @@ if (!isset($_SESSION['id'])) {
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
+$id = $_GET['id'];
 
 
 ?>
@@ -25,7 +25,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta name="description" content="">
   <meta name="author" content="Juan Sebastian">
 
-  <title>Gestion de Leads</title>
+  <title>Ver Leads</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -337,7 +337,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Gestion De Leads</h1>
+            <h1 class="h3 mb-0 text-gray-800">Detalles Del Lead</h1>
           </div>
           <!-- Gestion de leads -->
           <fieldset>
@@ -354,156 +354,106 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                       <div class="card-header py-3">
 
+
+                        <?php
+
+                        $sql = "SELECT * FROM crmpry.leads WHERE id = '$id'";
+                        $result = mysqli_query($conexion2, $sql);
+                        while ($mostrar = mysqli_fetch_array($result)) {
+                          //Impresion tabla
+
+                          echo "Nombres:";
+                          echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre'];
+                          echo '<br>';
+                          echo "Apellidos:    ";
+                          echo $mostrar['primer_apellido'], ' ', $mostrar['segundo_apellido'];
+                          echo '<br>';
+                          echo "Documento: ";
+                          echo $mostrar['tipodocumento'], '.', $mostrar['documento'];
+                          echo '<br>';
+                          echo "Telefono: ";
+                          echo $mostrar['telefono'];
+                          echo '<br>';
+                          echo "Email: ";
+                          echo $mostrar['email'];
+                          echo '<br>';
+                          echo "Departamento: ";
+                          echo $mostrar['departamento'];
+                          echo '<br>';
+                          echo "Ciudad: ";
+                          echo $mostrar['ciudad'];
+                          echo '<br>';
+                          echo "Direccion: ";
+                          echo $mostrar['direccion'];
+                          echo '<br>';
+                          echo "Compañia: ";
+                          echo $mostrar['compañia'];
+                          echo '<br>';
+                          echo "Asignado Por: ";
+                          echo $mostrar['asignado'];
+                          echo '<br>';
+                          echo "Recurso: ";
+                          echo $mostrar['recurso'];
+                          echo "</td>";
+                        }
+
+                        ?>
                       </div>
-                      <div class="card-body">
-                        <div class="table-responsive">
-                          <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                              <tr>
 
-                                <th>
-                                  <center style="visibility: hidden">----------------</center>
-                                  <center>Nombres </center>
-                                </th>
-
-
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Apellidos </center>
-                                </th>
-
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Compañia</center>
-                                </th>
-
-                                <th>
-                                  <center>Telefono</center>
-                                </th>
-
-
-
-                                <th>
-                                  <center style="visibility: hidden">----------------</center>
-                                  <center>Asignado</center>
-                                </th>
-
-
-
-
-                                <th>
-                                  <center style="visibility: hidden">--------</center>
-                                  <center>Estado</center>
-                                </th>
-
-
-
-                                <th>
-
-                                  <center style="visibility: hidden">---------------------------------------------------------------------</center>
-                                  <center>Acciones</center>
-
-                                </th>
-                              </tr>
-                            </thead>
-                            <!-- Mostrar Datos en tabla de leads... -->
-                            <?php
-                            $sql = "SELECT * FROM leads WHERE estado <> 'inactivo'";
-                            $result = mysqli_query($conexion2, $sql);
-                            while ($mostrar = mysqli_fetch_array($result)) {
-                              //Impresion tabla
-                              echo "<tr>";
-                              echo "<td>";
-                              echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre'];
-                              echo "</td>";
-
-                              echo "<td>";
-                              echo $mostrar['primer_apellido'], ' ', $mostrar['segundo_apellido'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['compañia'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['telefono'];
-                              echo "</td>";
-
-                              echo "<td>";
-                              echo $mostrar['asignado'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['estado'];
-                              echo "</td>";
-
-
-                              echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='verlead.php?id=$mostrar[id]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
-                              <a href='modificarlead.php?id=$mostrar[id]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                              <a href='ConvertirCliente.php'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>
-                              <a href='Confirmacion.php'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>";
-                              echo "</td>";
-                            }
-
-                            ?>
-                          </table>
-
-
-
-
-                        </div>
-                      </div>
-                  </div> <!-- /.container-fluid -->
-
-                </div>
-                <!-- End of Main Content -->
-
-
+                  </div>
+                </div> <!-- /.container-fluid -->
 
               </div>
-              <!-- End of Content Wrapper -->
+              <!-- End of Main Content -->
+
+
 
             </div>
-            <!-- End of Page Wrapper -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-              <i class="fas fa-angle-up"></i>
-            </a>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fas fa-angle-up"></i>
+        </a>
 
 
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/datatables-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
