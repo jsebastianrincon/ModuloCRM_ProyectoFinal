@@ -408,7 +408,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM leads WHERE estado <> 'inactivo'";
+                            $sql = "SELECT * FROM leads WHERE estado_lead = '1'";
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
@@ -431,7 +431,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo $mostrar['asignado'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['estado'];
+                              if ($mostrar['estado_lead'] = '1') {
+                                echo 'Activo';
+                              }
+
                               echo "</td>";
 
 

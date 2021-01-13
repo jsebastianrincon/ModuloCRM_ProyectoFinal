@@ -383,8 +383,7 @@ $id = $_GET['id'];
                         echo "<input type='text' size='32' name='compañia' value ='$mostrar[compañia]'> ";
                         echo " <br>";
                         echo " <br>";
-                        echo 'Estado : ';
-                        echo "<input type='text' size='20' name='estado' value ='$mostrar[estado]'> ";
+
                         echo 'Asignado : ';
                         echo "<input type='text' size='20' name='asignado' value ='$mostrar[asignado]'> ";
                         echo 'Recurso : ';

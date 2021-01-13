@@ -349,22 +349,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <center><label>Lead: </label><input type="text" size="55" name="nombre"></center>
+                      <center><label>Lead: </label><input type="text" size="55" name="nombre_reunion"></center>
                       <br>
                       <br>
                       <center><label>Fecha: </label>
-                        <input type="date" size="40" name="fecha" required>
-                        <label>Hora: </label><input type="time" size="50" name="hora" required>
+                        <input type="date" size="40" name="fecha_reunion" required>
+                        <label>Hora: </label><input type="time" size="50" name="hora_reunion" required>
                         <label>Asignado Por: </label>
-                        <select name="asignado">
+                        <select name="asignado_reunion">
                           <option value="Asignado por">Seleccione Area</option>
                           <option value="Area Comercial" id="ArC">Area Comercial</option>
                           <option value="Area Marketing" id="ArM">Area de Marketing</option>
                         </select>
+                        <br>
+                        <br>
+                        <center><label>Estado: </label><input type="text" size="15" name="nombre_reunion"></center>
+
                       </center>
                       <br>
 
-                      <center><label>Descripcion: </label><br><textarea name="descripcion" rows="2" cols="55" placeholder="Ingrese Descripcion..." required></textarea></center>
+                      <center><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="55" placeholder="Ingrese Descripcion..." required></textarea></center>
+
                       <br>
                       <br>
                       <input type="submit" class="btn btn-success btn-block" name="submit" value="Programar Reunion">

@@ -2,12 +2,12 @@
 
 <?php
 
-$nombre = $_REQUEST["nombre"];
-$fecha = $_REQUEST["fecha"];
-$hora = $_REQUEST["hora"];
-$asignado = $_REQUEST["asignado"];
-$descripcion = $_REQUEST["descripcion"];
-
+$nombre_reunion = $_REQUEST["nombre"];
+$fecha_reunion = $_REQUEST["fecha_reunion"];
+$hora_reunion = $_REQUEST["hora_reunion"];
+$asignado_reunion = $_REQUEST["asignado_reunion"];
+$descripcion_reunion = $_REQUEST["descripcion_reunion"];
+$estado_reunion = $_REQUEST["estado_reunion"];
 
 
 

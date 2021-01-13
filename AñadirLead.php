@@ -407,21 +407,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <label>Ciudad: </label><input type="text" size="23" name="ciudad" placeholder="Ciudad de residencia" required>
                       <label>Direccion: </label><input type="text" size="23" name="direccion" placeholder="Ingrese Direccion de domicilio" required>
-                      <label>Compañia: </label><input type="text" size="30" name="compañia" placeholder="Ingrese Compañia" required>
-                      <br>
-                      <br>
                       <label>Estado: </label>
-                      <select name="estado">
+                      <select name="estado_lead">
                         <option value="Seleccione Estado">Asigne un Estado</option>
                         <option value="Nuevo" id="NV">Nuevo</option>
                         <option value="Cliente" id="CL">Cliente</option>
                       </select>
+                      <br>
+                      <br>
+                      <label>Compañia: </label><input type="text" size="30" name="compañia" placeholder="Ingrese Compañia" required>
+
                       <label>Asignado: </label>
                       <select name="asignado">
                         <option value="Asignado por">Seleccione Area</option>
                         <option value="Area Comercial" id="ArC">Area Comercial</option>
                         <option value="Area Marketing" id="ArM">Area de Marketing</option>
                       </select>
+                      <br>
+                      <br>
+                      <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
+                      <br>
+                      <br>
                       <label>Recurso: </label>
                       <select name="recurso">
                         <option value="Asignado por">Seleccione Recurso</option>
@@ -429,11 +435,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="Google" id="G">Google</option>
                         <option value="Twitter" id="T">Twitter</option>
                         <option value="Anuncio" id="A">Anuncio</option>
-
                       </select>
-                      <br>
-                      <br>
-                      <label>Comentario: </label><br><textarea name="comentario" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
                       <br>
                       <br>
                       <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
