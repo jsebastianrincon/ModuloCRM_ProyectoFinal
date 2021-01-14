@@ -404,21 +404,21 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               //Impresion tabla
                               echo "<tr>";
                               echo "<td>";
-                              echo $mostrar['nombre'];
+                              echo $mostrar['nombre_reunion'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['fecha'];
+                              echo $mostrar['fecha_reunion'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['hora'];
+                              echo $mostrar['hora_reunion'];
                               echo "</td>";
                               echo "<td>";
-                              echo $mostrar['asignado'];
+                              echo $mostrar['asignado_reunion'];
                               echo "<td>";
-                              echo $mostrar['descripcion'];
+                              echo $mostrar['descripcion_reunion'];
                               echo "</td>";
-                              echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                                                                            <a href='eliminarReunion.php?id= $mostrar[id] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
+                              echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                                                                            <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                           </td>";
                               echo "<br>";
                             }

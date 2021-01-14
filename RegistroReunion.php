@@ -2,7 +2,7 @@
 
 <?php
 
-$nombre_reunion = $_REQUEST["nombre"];
+$nombre_reunion = $_REQUEST["nombre_reunion"];
 $fecha_reunion = $_REQUEST["fecha_reunion"];
 $hora_reunion = $_REQUEST["hora_reunion"];
 $asignado_reunion = $_REQUEST["asignado_reunion"];
@@ -17,7 +17,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
 
-$instruccion_SQL = "INSERT INTO reuniones (nombre,fecha,hora,asignado,descripcion) VALUES ('$nombre','$fecha','$hora','$asignado','$descripcion')";
+$instruccion_SQL = "INSERT INTO reuniones (nombre_reunion,fecha_reunion,hora_reunion,asignado_reunion,descripcion_reunion,estado_reunion) VALUES ('$nombre_reunion','$fecha_reunion','$hora_reunion','$asignado_reunion','$descripcion_reunion','$estado_reunion')";
 
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {

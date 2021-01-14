@@ -11,7 +11,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 
 
-$id = $_GET['id'];
+$id_reunion = $_GET['id'];
 
 
 ?>
@@ -339,25 +339,25 @@ $id = $_GET['id'];
                   <form class="form-contact" action="ModificacionReunion.php" method="POST">
                     <div class="form-group" id="responsive-form">
                       <?php
-                      $sql = "SELECT * FROM crmpry.reuniones WHERE id = '$id'";
+                      $sql = "SELECT * FROM crmpry.reuniones WHERE id_reunion = '$id_reunion'";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
                         echo "<br>";
-                        echo "<center>Lead:<input type='text' size='50' name='nombre' value ='$mostrar[nombre]'></center>";
+                        echo "<center>Lead:<input type='text' size='50' name='nombre_reunion' value ='$mostrar[nombre_reunion]'></center>";
                         echo "<br>";
                         echo "<br>";
                         echo "<center>";
                         echo 'Fecha : ';
-                        echo "<input type='text' size='10' name='fecha' value ='$mostrar[fecha]'> ";
+                        echo "<input type='text' size='10' name='fecha_reunion' value ='$mostrar[fecha_reunion]'> ";
                         echo 'Hora : ';
-                        echo "<input type='text' size='9' name='hora' value ='$mostrar[hora]'> ";
+                        echo "<input type='text' size='9' name='hora_reunion' value ='$mostrar[hora_reunion]'> ";
                         echo 'Asignado : ';
-                        echo "<input type='text' size='11' name='asignado' value ='$mostrar[asignado]'> ";
+                        echo "<input type='text' size='11' name='asignado_reunion' value ='$mostrar[asignado_reunion]'> ";
                         echo "<br>";
                         echo "<br>";
                         echo 'Descripcion : ';
                         echo "<br>";
-                        echo "<input type='text' size='50' name='descripcion' value ='$mostrar[descripcion]'> ";
+                        echo "<input type='text' size='50' name='descripcion_reunion' value ='$mostrar[descripcion_reunion]'> ";
                         echo " <br>";
                         echo " <br>";
                       }

@@ -365,7 +365,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </select>
                         <br>
                         <br>
-                        <center><label>Estado: </label><input type="text" size="15" name="nombre_reunion"></center>
+                        <center><label>Estado: </label><input type="text" size="15" name="estado_reunion"></center>
 
                       </center>
                       <br>
