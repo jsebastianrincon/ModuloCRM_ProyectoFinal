@@ -2,7 +2,7 @@
 include("conlead.php");
 session_start();
 
-if (!isset($_SESSION['id'])) {
+if (!isset($_SESSION['id_usuario'])) {
   header("Location: index.php");
 }
 //Validacion variables de session
@@ -398,7 +398,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM reuniones WHERE fecha > CURDATE() ";
+                            $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE() ";
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
@@ -541,24 +541,24 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               </thead>
                               <!-- Mostrar Datos en tabla de leads... -->
                               <?php
-                              $sql = "SELECT * FROM reuniones WHERE fecha < CURDATE() ";
+                              $sql = "SELECT * FROM reuniones WHERE fecha_reunion < CURDATE() ";
                               $result = mysqli_query($conexion2, $sql);
                               while ($mostrar = mysqli_fetch_array($result)) {
                                 //Impresion tabla
                                 echo "<tr>";
                                 echo "<td>";
-                                echo $mostrar['nombre'];
+                                echo $mostrar['nombre_reunion'];
                                 echo "</td>";
                                 echo "<td>";
-                                echo $mostrar['fecha'];
+                                echo $mostrar['fecha_reunion'];
                                 echo "</td>";
                                 echo "<td>";
-                                echo $mostrar['hora'];
+                                echo $mostrar['hora_reunion'];
                                 echo "</td>";
                                 echo "<td>";
-                                echo $mostrar['asignado'];
+                                echo $mostrar['asignado_reunion'];
                                 echo "<td>";
-                                echo $mostrar['descripcion'];
+                                echo $mostrar['descripcion_reunion'];
                               }
 
                               ?>
