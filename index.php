@@ -9,7 +9,7 @@ if ($_POST) {
   $usuario = $_POST['usuario'];
   $password = $_POST['password'];
 
-  $sql = "SELECT id, password, nombre, tipo_usuario FROM usuarios WHERE usuario='$usuario'";
+  $sql = "SELECT id_usuario, usuario, password, tipo_usuario FROM usuarios WHERE usuario='$usuario'";
   //echo $sql;
   $resultado = $mysqli->query($sql);
   $num = $resultado->num_rows;
@@ -22,7 +22,7 @@ if ($_POST) {
 
     if ($password_bd == $pass_c) {
 
-      $_SESSION['id'] = $row['id'];
+      $_SESSION['id_usuario'] = $row['id_usuario'];
       $_SESSION['nombre'] = $row['nombre'];
       $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
 
