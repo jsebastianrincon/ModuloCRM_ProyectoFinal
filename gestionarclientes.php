@@ -69,7 +69,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-user-friends"></i>
             <span>Clientes</span>
@@ -83,7 +83,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Leads</span>
@@ -337,7 +337,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Gestion De Leads</h1>
+            <h1 class="h3 mb-0 text-gray-800">Gestion de Clientes</h1>
           </div>
           <!-- Gestion de leads -->
           <fieldset>
@@ -400,7 +400,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <th>
 
-                                  <center style="visibility: hidden">---------------------------------------------</center>
+                                  <center style="visibility: hidden">----------------------------------------------</center>
                                   <center>Acciones</center>
 
                                 </th>
@@ -408,7 +408,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM leads WHERE estado_lead = '0'";
+                            $sql = "SELECT * FROM leads WHERE estado_lead = '1'";
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
@@ -432,7 +432,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "</td>";
                               echo "<td>";
                               if ($mostrar['estado_lead'] = '1') {
-                                echo 'Lead';
+                                echo 'Cliente';
                               }
 
                               echo "</td>";
@@ -441,7 +441,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<colspan='24'><div class='btn-group'><th>
                               <a href='verlead.php?id=$mostrar[id]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
                               <a href='modificarlead.php?id=$mostrar[id]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                              <a href='ConvertirCliente.php'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>";
+                              
+                              <a href='Confirmacion.php'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>";
                               echo "</td>";
                             }
 
@@ -456,56 +457,62 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                   </div> <!-- /.container-fluid -->
 
                 </div>
-                <!-- End of Main Content -->
-
-
 
               </div>
-              <!-- End of Content Wrapper -->
-
             </div>
-            <!-- End of Page Wrapper -->
+        </div> <!-- /.container-fluid -->
 
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-              <i class="fas fa-angle-up"></i>
-            </a>
+      </div>
+      <!-- End of Main Content -->
 
 
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <!-- End of Content Wrapper -->
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  </div>
+  <!-- End of Page Wrapper -->
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/datatables-demo.js"></script>
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

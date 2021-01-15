@@ -340,6 +340,7 @@ $id = $_GET['id'];
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Detalles Del Lead</h1>
           </div>
+
           <!-- Gestion de leads -->
           <fieldset>
             <div class="container p-8">
@@ -402,13 +403,18 @@ $id = $_GET['id'];
                       </div>
 
                   </div>
+
                 </div> <!-- /.container-fluid -->
 
               </div>
               <!-- End of Main Content -->
 
 
-
+            </div>
+            <br>
+            <!--
+            <div>
+              <h1 class="h3 mb-0 text-gray-800">Reuniones Pendientes</h1>
             </div>
             <!-- End of Content Wrapper -->
 
