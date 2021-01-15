@@ -1,23 +1,23 @@
 <!-- Desarrollo de Formulario de Adicion de Leads -->
 
 <?php
-//$id = $_POST["id"];
+//$id = $_REQUEST["id"];
 $nombre_lead = $_REQUEST["nombre_lead"];
-$segundo_nombre = $_REQUEST["segundo_nombre"];
-$primer_apellido = $_POST["primer_apellido"];
-$segundo_apellido = $_POST["segundo_apellido"];
-$tipodocumento = $_POST["tipodocumento"];
-$documento = $_POST["documento"];
-$telefono = $_POST["telefono"];
-$email = $_POST["email"];
-$departamento = $_POST["departamento"];
-$ciudad = $_POST["ciudad"];
-$direccion = $_POST["direccion"];
-//$estado = $_POST["estado"];
-$compañia = $_POST["compañia"];
-$asignado = $_POST["asignado"];
-$comentario = $_POST["comentario"];
-$recurso = $_POST["recurso"];
+$segundo_nombre_lead = $_REQUEST["segundo_nombre_lead"];
+$primer_apellido_lead = $_REQUEST["primer_apellido_lead"];
+$segundo_apellido_lead = $_REQUEST["segundo_apellido_lead"];
+$tipodocumento_lead = $_REQUEST["tipodocumento_lead"];
+$documento_lead = $_REQUEST["documento_lead"];
+$telefono_lead = $_REQUEST["telefono_lead"];
+$email_lead = $_REQUEST["email_lead"];
+$departamento_lead = $_REQUEST["departamento_lead"];
+$ciudad_lead = $_REQUEST["ciudad_lead"];
+$direccion_lead = $_REQUEST["direccion_lead"];
+//$estado_lead = $_REQUEST["estado_lead"];
+$compañia_lead = $_REQUEST["compañia_lead"];
+$asignado_lead = $_REQUEST["asignado_lead"];
+$comentario_lead = $_REQUEST["comentario_lead"];
+$recurso_lead = $_REQUEST["recurso_lead"];
 
 
 
@@ -27,7 +27,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
 
-$instruccion_SQL = "UPDATE leads SET nombre_lead ='$nombre_lead',segundo_nombre='$segundo_nombre',primer_apellido='$primer_apellido',segundo_apellido='$segundo_apellido',tipodocumento='$tipodocumento',documento='$documento',telefono='$telefono',email='$email',departamento='$departamento',ciudad='$ciudad',direccion='$direccion',compañia='$compañia',asignado='$asignado',comentario='$comentario', recurso='$recurso' WHERE documento='$documento'";
+$instruccion_SQL = "UPDATE leads SET nombre_lead ='$nombre_lead',segundo_nombre_lead='$segundo_nombre_lead',primer_apellido_lead='$primer_apellido_lead',segundo_apellido_lead='$segundo_apellido_lead',tipodocumento_lead='$tipodocumento_lead',documento_lead='$documento_lead',telefono_lead='$telefono_lead',email_lead='$email_lead',departamento_lead='$departamento_lead',ciudad_lead='$ciudad_lead',direccion_lead='$direccion_lead',compañia_lead='$compañia_lead',asignado_lead='$asignado_lead',comentario_lead='$comentario_lead', recurso_lead='$recurso_lead' WHERE documento_lead='$documento_lead'";
 
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {

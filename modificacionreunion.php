@@ -8,6 +8,7 @@ $asignado_reunion = $_REQUEST["asignado_reunion"];
 $descripcion_reunion = $_REQUEST["descripcion_reunion"];
 
 require("conlead.php");
+
 $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 

@@ -13,7 +13,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
 
-$id = $_GET['id'];
+$id_lead = $_GET['id'];
 
 ?>
 
@@ -346,56 +346,56 @@ $id = $_GET['id'];
                     <div class="form-group" id="responsive-form">
 
                       <?php
-                      $sql = "SELECT * FROM crmpry.leads WHERE id = '$id'";
+                      $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id_lead'";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
                         //echo "<input type='text' name='nombre'>";
                         echo 'Id :';
-                        echo "<td>" . $mostrar['id'] . "</td>";
+                        echo "<td>" . $mostrar['id_lead'] . "</td>";
                         echo " <br>";
                         echo " <br>";
                         echo 'Primer Nombre:';
                         echo "<input type='text' size='18' name='nombre_lead' value ='$mostrar[nombre_lead]'> ";
                         echo 'Segundo Nombre:';
-                        echo "<input type='text' size='19' name='segundo_nombre' value ='$mostrar[segundo_nombre]'> ";
+                        echo "<input type='text' size='19' name='segundo_nombre_lead' value ='$mostrar[segundo_nombre_lead]'> ";
                         echo 'Primer Apellido:';
-                        echo "<input type='text' size='22' name='primer_apellido' value ='$mostrar[primer_apellido]'> ";
+                        echo "<input type='text' size='22' name='primer_apellido_lead' value ='$mostrar[primer_apellido_lead]'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Segundo Apellido:';
-                        echo "<input type='text' size='21' name='segundo_apellido' value ='$mostrar[segundo_apellido]'> ";
+                        echo "<input type='text' size='21' name='segundo_apellido_lead' value ='$mostrar[segundo_apellido_lead]'> ";
                         echo 'Tipo de Documento:';
-                        echo "<input type='text' size='20' name='tipodocumento' value ='$mostrar[tipodocumento]' > ";
+                        echo "<input type='text' size='20' name='tipodocumento_lead' value ='$mostrar[tipodocumento_lead]' > ";
                         echo 'Documento:';
-                        echo "<input type='text' size='17' name='documento' value ='$mostrar[documento]'> ";
+                        echo "<input type='text' size='17' name='documento_lead' value ='$mostrar[documento_lead]'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Telefono:';
-                        echo "<input type='text' size='20' name='telefono' value ='$mostrar[telefono]'> ";
+                        echo "<input type='text' size='20' name='telefono_lead' value ='$mostrar[telefono_lead]'> ";
                         echo 'Email:';
-                        echo "<input type='text' size='32' name='email' value ='$mostrar[email]'> ";
+                        echo "<input type='text' size='32' name='email_lead' value ='$mostrar[email_lead]'> ";
                         echo 'Departamento:';
-                        echo "<input type='text' size='22' name='departamento' value ='$mostrar[departamento]'> ";
+                        echo "<input type='text' size='22' name='departamento_lead' value ='$mostrar[departamento_lead]'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Ciudad : ';
-                        echo "<input type='text' size='21' name='ciudad' value ='$mostrar[ciudad]'> ";
+                        echo "<input type='text' size='21' name='ciudad_lead' value ='$mostrar[ciudad_lead]'> ";
                         echo 'Direccion : ';
-                        echo "<input type='text' size='20' name='direccion' value ='$mostrar[direccion]'> ";
+                        echo "<input type='text' size='20' name='direccion_lead' value ='$mostrar[direccion_lead]'> ";
                         echo 'Compañia : ';
-                        echo "<input type='text' size='32' name='compañia' value ='$mostrar[compañia]'> ";
+                        echo "<input type='text' size='32' name='compañia_lead' value ='$mostrar[compañia_lead]'> ";
                         echo " <br>";
                         echo " <br>";
 
                         echo 'Asignado : ';
-                        echo "<input type='text' size='20' name='asignado' value ='$mostrar[asignado]'> ";
+                        echo "<input type='text' size='20' name='asignado_lead' value ='$mostrar[asignado_lead]'> ";
                         echo 'Recurso : ';
-                        echo "<input type='text' size='20' name='recurso' value ='$mostrar[recurso]'> ";
+                        echo "<input type='text' size='20' name='recurso_lead' value ='$mostrar[recurso_lead]'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Comentario:';
                         echo " <br>";
-                        echo "<input type='text' name='comentario' size='50' value ='$mostrar[comentario]'></textarea>";
+                        echo "<input type='text' name='comentario_lead' size='50' value ='$mostrar[comentario_lead]'></textarea>";
                       }
                       ?>
 

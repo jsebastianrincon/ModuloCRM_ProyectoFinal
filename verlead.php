@@ -359,43 +359,43 @@ $id = $_GET['id'];
 
                         <?php
 
-                        $sql = "SELECT * FROM crmpry.leads WHERE id = '$id'";
+                        $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id'";
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {
                           //Impresion tabla
 
                           echo "Nombres:";
-                          echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre'];
+                          echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre_lead'];
                           echo '<br>';
                           echo "Apellidos:    ";
-                          echo $mostrar['primer_apellido'], ' ', $mostrar['segundo_apellido'];
+                          echo $mostrar['primer_apellido_lead'], ' ', $mostrar['segundo_apellido_lead'];
                           echo '<br>';
                           echo "Documento: ";
-                          echo $mostrar['tipodocumento'], '.', $mostrar['documento'];
+                          echo $mostrar['tipodocumento_lead'], '.', $mostrar['documento_lead'];
                           echo '<br>';
                           echo "Telefono: ";
-                          echo $mostrar['telefono'];
+                          echo $mostrar['telefono_lead'];
                           echo '<br>';
                           echo "Email: ";
-                          echo $mostrar['email'];
+                          echo $mostrar['email_lead'];
                           echo '<br>';
                           echo "Departamento: ";
-                          echo $mostrar['departamento'];
+                          echo $mostrar['departamento_lead'];
                           echo '<br>';
                           echo "Ciudad: ";
-                          echo $mostrar['ciudad'];
+                          echo $mostrar['ciudad_lead'];
                           echo '<br>';
                           echo "Direccion: ";
-                          echo $mostrar['direccion'];
+                          echo $mostrar['direccion_lead'];
                           echo '<br>';
                           echo "Compañia: ";
-                          echo $mostrar['compañia'];
+                          echo $mostrar['compañia_lead'];
                           echo '<br>';
                           echo "Asignado Por: ";
-                          echo $mostrar['asignado'];
+                          echo $mostrar['asignado_lead'];
                           echo '<br>';
                           echo "Recurso: ";
-                          echo $mostrar['recurso'];
+                          echo $mostrar['recurso_lead'];
                           echo "</td>";
                         }
 
@@ -416,7 +416,7 @@ $id = $_GET['id'];
             <div>
               <h1 class="h3 mb-0 text-gray-800">Reuniones Pendientes</h1>
             </div>
-            <!-- End of Content Wrapper -->
+            <!-  End of Content Wrapper -->
 
         </div>
         <!-- End of Page Wrapper -->
