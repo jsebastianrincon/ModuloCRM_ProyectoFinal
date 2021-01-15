@@ -344,7 +344,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div class="row">
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-2 col-md-6 mb-5">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -359,7 +359,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         $db_name = "crmpry";
                         $con = mysqli_connect($servername, $username, $password, $db_name);
 
-                        $sql = "SELECT count(id) AS TOTAL FROM leads ";
+                        $sql = "SELECT count(id_lead) AS TOTAL FROM leads WHERE estado_lead = 0 ";
                         $resultado = mysqli_query($con, $sql);
                         $values = mysqli_fetch_assoc($resultado);
                         $num_rows = $values['TOTAL'];
@@ -379,7 +379,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </div>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-3 col-md-6 mb-5">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -394,9 +394,42 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </div>
               </div>
             </div>
-
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-2 col-md-6 mb-5">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Clientes</div>
+
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $db_name = "crmpry";
+                        $con = mysqli_connect($servername, $username, $password, $db_name);
+
+                        $sql = "SELECT count(id_lead) AS TOTAL FROM leads WHERE estado_lead = 1 ";
+                        $resultado = mysqli_query($con, $sql);
+                        $values = mysqli_fetch_assoc($resultado);
+                        $num_rows = $values['TOTAL'];
+                        echo $num_rows;
+                        ?>
+                        <?php
+
+                        ?>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-2 col-md-6 mb-5">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -422,7 +455,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </div>
 
             <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-2 col-md-6 mb-5">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
