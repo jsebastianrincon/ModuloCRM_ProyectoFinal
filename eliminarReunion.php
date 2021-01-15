@@ -6,7 +6,9 @@ $id_reunion = $_GET['id'];
 $sql = "DELETE FROM crmpry.reuniones WHERE id_reunion='$id_reunion'";
 
 if (mysqli_query($connexion, $sql)) {
-  echo "Reunion Eliminada Correctamente";
+  echo "<script> alert ('Reunion Eliminada Correctamente');
+  window.location.href= 'Historial.php';
+  </script>";
 } else {
   echo "Error ";
 }

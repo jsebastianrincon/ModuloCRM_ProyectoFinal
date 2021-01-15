@@ -441,7 +441,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               echo "<colspan='24'><div class='btn-group'><th>
                               <a href='verlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
                               <a href='modificarlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                              <a href='ConvertirCliente.php'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>";
+                              <a href='ConvertirCliente.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>";
                               echo "</td>";
                             }
 
