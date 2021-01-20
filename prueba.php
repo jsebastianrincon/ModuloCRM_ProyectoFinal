@@ -19,9 +19,12 @@ $resultado = mysqli_query($connexion, $instruccion_SQL);
     while ($row = mysqli_fetch_array($resultado)) :;
     ?>
       <option value="<?php echo $row[0]; ?>"><?php echo $row[0]; ?></option>
-      <option value="<?php echo $row[0]; ?>"><?php echo $row[0]; ?></option>
+
     <?php endwhile; ?>
+
+
   </select>
-</body>
+  <br>
+  <br>
 
 </html>
