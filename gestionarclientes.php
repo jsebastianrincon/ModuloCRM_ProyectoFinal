@@ -408,7 +408,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM leads WHERE estado_lead = '1'";
+                            $sql = "SELECT * FROM leads WHERE estado_lead = '1' && id_lead <> '1'";
                             $result = mysqli_query($conexion2, $sql);
                             while ($mostrar = mysqli_fetch_array($result)) {
                               //Impresion tabla
@@ -439,7 +439,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                               echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='verlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
+                              <a href='vercliente.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
                               <a href='modificarlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                               
                               <a href='Confirmacion.php'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>";
