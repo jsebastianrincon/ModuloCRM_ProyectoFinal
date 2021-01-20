@@ -346,14 +346,39 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <br>
                       <label>Asignado A: </label>
-                      <input type="text" size="31" name="asignado" required placeholder="Ingrese Nombre">
+
+                      <?php
+
+                      require("conlead.php");
 
 
-                      <label>Telefono: </label><input type="text" size="14" name="telefono" placeholder="Ingrese Telefono" required>
+                      $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
+
+                      mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
+                      $instruccion_SQL = "SELECT concat_ws (' ',nombre_lead , segundo_nombre_lead ,primer_apellido_lead,segundo_apellido_lead) FROM leads WHERE estado_lead = 1 ORDER BY primer_apellido_lead";
+                      $resultado = mysqli_query($connexion, $instruccion_SQL);
+                      ?>
+
+                      <html>
+
+                      <body>
+                        <select>
+                          <?php
+                          while ($row = mysqli_fetch_array($resultado)) :;
+                          ?>
+
+                            <option value="<?php echo $row[0]; ?>"><?php echo $row[0]; ?></option>
+                          <?php endwhile; ?>
+                        </select>
+                      </body>
+
+                      </html>
+
+                      <label>Telefono: </label><input type="text" size="12" name="telefono" placeholder="Ingrese Telefono" required>
 
                       <label>Departamento: </label>
                       <select name="departamento">
-                        <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento </option>
+                        <option type="text" size="30" value="Elegir" id="AF">Seleccionar Departamento </option>
                         <option value="Amazonas" id="AZ<">Amazonas</option>
                         <option value="Antioquia" id="AN">Antioquia</option>
                         <option value="Arauca" id="AR">Arauca</option>
@@ -384,9 +409,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </select>
                       <br>
                       <br>
-                      <label>Ciudad: </label><input type="text" size="14" name="ciudad" placeholder="Ciudad de residencia" required>
+                      <label>Ciudad: </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" required>
                       <label>Fecha: </label>
-                      <input type="date" size="40" name="fecha_inicio" required>
+                      <input type="date" size="20" name="fecha_inicio" required>
 
                       <label>Abierto Hasta: </label>
                       <input type="date" size="40" name="fecha_final" required>
