@@ -11,7 +11,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 
 
-
 ?>
 
 
@@ -361,13 +360,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                       <html>
 
+
                       <body>
                         <select>
                           <?php
                           while ($row = mysqli_fetch_array($resultado)) :;
                           ?>
 
-                            <option value="<?php echo $row[0]; ?>"><?php echo $row[0];  ?></option>
+                            <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
+                                                                    ?></option>
                           <?php endwhile; ?>
                         </select>
                       </body>

@@ -20,10 +20,12 @@ $resultado = mysqli_query($connexion, $instruccion_SQL);
     ?>
       <option value="<?php echo $row[0]; ?>"><?php echo $row[0]; ?></option>
 
+
     <?php endwhile; ?>
 
 
   </select>
+
   <br>
   <br>
 
