@@ -410,7 +410,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         $db_name = "crmpry";
                         $con = mysqli_connect($servername, $username, $password, $db_name);
 
-                        $sql = "SELECT count(id_lead) AS TOTAL FROM leads WHERE estado_lead = 1 ";
+                        $sql = "SELECT count(id_lead) AS TOTAL FROM leads WHERE estado_lead = 1 && id_lead <> 1  ";
                         $resultado = mysqli_query($con, $sql);
                         $values = mysqli_fetch_assoc($resultado);
                         $num_rows = $values['TOTAL'];
