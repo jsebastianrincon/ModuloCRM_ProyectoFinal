@@ -337,12 +337,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
-                  <form class="form-contact" action="RegistroPropuesta.php" method='POST'>
+                  <form class="form-contact" action="RegistroProyectos.php" method='POST'>
                     <div class="form-group" id="responsive-form">
 
-                      <br>
-                      <label>Tema: </label><input type="text" size="31" name="tema" required placeholder="Ingrese Informacion ">
-                      <br>
                       <br>
                       <label>Asignado A: </label>
 
@@ -362,7 +359,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                       <body>
-                        <select>
+                        <select name='cliente'>
                           <?php
                           while ($row = mysqli_fetch_array($resultado)) :;
                           ?>
@@ -374,9 +371,18 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </body>
 
                       </html>
+                      <br>
+                      <br>
 
+                      <label>Fecha: </label>
+                      <input type="date" size="20" name="fecha_inicio" required>
+
+                      <label>Abierto Hasta: </label>
+                      <input type="date" size="40" name="fecha_final" required>
                       <label>Telefono: </label><input type="text" size="12" name="telefono" placeholder="Ingrese Telefono" required>
-
+                      <label>Tema: </label><input type="text" size="31" name="tema" required placeholder="Ingrese Informacion ">
+                      <br>
+                      <br>
                       <label>Departamento: </label>
                       <select name="departamento">
                         <option type="text" size="30" value="Elegir" id="AF">Seleccionar Departamento </option>
@@ -408,14 +414,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="Vaupes" id="VU">Vaupes</option>
                         <option value="Vichada" id="VI">Vichada</option>
                       </select>
-                      <br>
-                      <br>
                       <label>Ciudad: </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" required>
-                      <label>Fecha: </label>
-                      <input type="date" size="20" name="fecha_inicio" required>
 
-                      <label>Abierto Hasta: </label>
-                      <input type="date" size="40" name="fecha_final" required>
                       <label>Asignado: </label>
                       <select name="asignado">
                         <option value="Asignado por">Seleccione Area</option>
@@ -445,7 +445,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
               <div class="group">
                 <div class="card card-body">
-                  <div class="form-group" id="responsive-form">
+                  <div class="form-group" id="responsive-form" action="RegistroProyectos.php" method='POST'>
 
 
                     <label>&nbsp Añadir Requerimiento &nbsp &nbsp &nbsp &nbsp</label>
@@ -484,6 +484,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                   <br>
 
                   <label>Subtotal: $</label>
+
                   <label>IVA: 19%</label>
                   <label>Total: $</label>
 

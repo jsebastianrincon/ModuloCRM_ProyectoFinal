@@ -36,7 +36,16 @@ $id_lead = $_GET['id'];
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="files/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!--=====================================
+	  PLUGINS DE JAVASCRIPT
+	  ======================================-->
+  <!-- jQuery 3 -->
+  <script src="files/bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="files/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body id="page-top">
