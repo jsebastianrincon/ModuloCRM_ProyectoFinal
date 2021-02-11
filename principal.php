@@ -310,7 +310,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="verperfil.php">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
@@ -437,7 +437,23 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Proyectos</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">....</div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            <?php
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $db_name = "crmpry";
+                            $con = mysqli_connect($servername, $username, $password, $db_name);
+
+                            $sql = "SELECT count(id_proyecto) AS TOTAL FROM proyectos";
+                            $resultado = mysqli_query($con, $sql);
+                            $values = mysqli_fetch_assoc($resultado);
+                            $num_rows = $values['TOTAL'];
+                            echo $num_rows;
+                            ?>
+
+
+                          </div>
                         </div>
                         <div class="col">
                           <div>
