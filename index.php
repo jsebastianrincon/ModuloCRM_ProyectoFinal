@@ -17,7 +17,7 @@ if ($_POST) {
   if ($num > 0) {
     $row = $resultado->fetch_assoc();
     $password_bd = $row['password'];
-
+    $pass_c = ($password);
     $pass_c = sha1($password);
 
     if ($password_bd == $pass_c) {
