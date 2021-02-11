@@ -352,160 +352,162 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <!-- Tabla de Leads Registrados -->
                       </div>
 
-                      <div class="card-header py-3">
-
-                      </div>
-                      <div class="card-body">
-                        <div class="table-responsive">
-                          <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                              <tr>
-
-                                <th>
-                                  <center style="visibility: hidden">----------------</center>
-                                  <center>Nombres </center>
-                                </th>
 
 
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Apellidos </center>
-                                </th>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                          <tr>
 
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Compañia</center>
-                                </th>
-
-                                <th>
-                                  <center>Telefono</center>
-                                </th>
+                            <th>
+                              <center style="visibility: hidden">----------------</center>
+                              <center>Nombres </center>
+                            </th>
 
 
+                            <th>
+                              <center style="visibility: hidden">---------------------</center>
+                              <center>Apellidos </center>
+                            </th>
 
-                                <th>
-                                  <center style="visibility: hidden">----------------</center>
-                                  <center>Asignado</center>
-                                </th>
+                            <th>
+                              <center style="visibility: hidden">---------------------</center>
+                              <center>Compañia</center>
+                            </th>
+
+                            <th>
+                              <center>Telefono</center>
+                            </th>
 
 
 
-
-                                <th>
-                                  <center style="visibility: hidden">--------</center>
-                                  <center>Estado</center>
-                                </th>
-
+                            <th>
+                              <center style="visibility: hidden">----------------</center>
+                              <center>Asignado</center>
+                            </th>
 
 
-                                <th>
-
-                                  <center style="visibility: hidden">---------------------------------------------</center>
-                                  <center>Acciones</center>
-
-                                </th>
-                              </tr>
-                            </thead>
-                            <!-- Mostrar Datos en tabla de leads... -->
-                            <?php
-                            $sql = "SELECT * FROM leads WHERE estado_lead = '0'";
-                            $result = mysqli_query($conexion2, $sql);
-                            while ($mostrar = mysqli_fetch_array($result)) {
-                              //Impresion tabla
-                              echo "<tr>";
-                              echo "<td>";
-                              echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre_lead'];
-                              echo "</td>";
-
-                              echo "<td>";
-                              echo $mostrar['primer_apellido_lead'], ' ', $mostrar['segundo_apellido_lead'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['compañia_lead'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['telefono_lead'];
-                              echo "</td>";
-
-                              echo "<td>";
-                              echo $mostrar['asignado_lead'];
-                              echo "</td>";
-                              echo "<td>";
-                              if ($mostrar['estado_lead'] = '1') {
-                                echo 'Lead';
-                              }
-
-                              echo "</td>";
 
 
-                              echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='verlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
+                            <th>
+                              <center style="visibility: hidden">--------</center>
+                              <center>Estado</center>
+                            </th>
+
+
+
+                            <th>
+
+                              <center style="visibility: hidden">------------------------------------------------------------------------------</center>
+                              <center>Acciones</center>
+
+                            </th>
+                          </tr>
+                        </thead>
+                        <!-- Mostrar Datos en tabla de leads... -->
+                        <?php
+                        $sql = "SELECT * FROM leads WHERE estado_lead = '0'";
+                        $result = mysqli_query($conexion2, $sql);
+                        while ($mostrar = mysqli_fetch_array($result)) {
+                          //Impresion tabla
+                          echo "<tr>";
+                          echo "<td>";
+                          echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre_lead'];
+                          echo "</td>";
+
+                          echo "<td>";
+                          echo $mostrar['primer_apellido_lead'], ' ', $mostrar['segundo_apellido_lead'];
+                          echo "</td>";
+                          echo "<td>";
+                          echo $mostrar['compañia_lead'];
+                          echo "</td>";
+                          echo "<td>";
+                          echo $mostrar['telefono_lead'];
+                          echo "</td>";
+
+                          echo "<td>";
+                          echo $mostrar['asignado_lead'];
+                          echo "</td>";
+                          echo "<td>";
+                          if ($mostrar['estado_lead'] = '1') {
+                            echo 'Lead';
+                          }
+
+                          echo "</td>";
+
+
+                          echo "<colspan='24'><div class='btn-group'><th>
+                              <a href='verlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
                               <a href='modificarlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                              <a href='ConvertirCliente.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>";
-                              echo "</td>";
-                            }
+                              <a href='ConvertirCliente.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>
+                              <a href='AsignarInformacionContacto.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-phone-square-alt'></i> Agregar Informacion Contacto</button></a>";
 
-                            ?>
-                          </table>
+                          echo "</td>";
+                        }
 
-
-
-
-                        </div>
-                      </div>
-                  </div> <!-- /.container-fluid -->
-
-                </div>
-                <!-- End of Main Content -->
+                        ?>
+                      </table>
 
 
+
+
+                    </div>
+                  </div>
+                </div> <!-- /.container-fluid -->
 
               </div>
-              <!-- End of Content Wrapper -->
+              <!-- End of Main Content -->
+
+
 
             </div>
-            <!-- End of Page Wrapper -->
+            <!-- End of Content Wrapper -->
 
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-              <i class="fas fa-angle-up"></i>
-            </a>
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+          <i class="fas fa-angle-up"></i>
+        </a>
 
 
 
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/chart.js/Chart.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="vendor/chart.js/Chart.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="js/demo/chart-pie-demo.js"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-            <!-- Bootstrap core JavaScript-->
-            <script src="vendor/jquery/jquery.min.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/chart-area-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <!-- Core plugin JavaScript-->
-            <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            <!-- Custom scripts for all pages-->
-            <script src="js/sb-admin-2.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
 
-            <!-- Page level plugins -->
-            <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-            <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-            <!-- Page level custom scripts -->
-            <script src="js/demo/datatables-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
