@@ -400,6 +400,10 @@ $id = $_GET['id'];
                         }
 
                         ?>
+                        <br>
+                        <br>
+                        <a href='Confirmacion.php'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>
+                        <a href='registrarusuario.php'><button type='button' class='btn btn-sm btn-success'><i class='fas fa-user-lock'></i> Asignar Credenciales</button></a>
                       </div>
 
                   </div>
