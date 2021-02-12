@@ -84,7 +84,7 @@ $id = $_GET['id'];
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item inactive">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Leads</span>
@@ -99,7 +99,7 @@ $id = $_GET['id'];
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class=" fas fa-cart-plus"></i></i>
             <span>Ventas</span>
@@ -359,11 +359,16 @@ $id = $_GET['id'];
 
                         <?php
 
-                        $sql = "SELECT * FROM crmpry.proyectos ";
+                        $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto=$id ";
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {
                           //Impresion tabla
-
+                          echo "Codigo Proyecto:";
+                          echo $mostrar['codigo_proyecto'];
+                          echo '<br>';
+                          echo "Tema Proyecto:";
+                          echo $mostrar['tema_proyecto'];
+                          echo '<br>';
                           echo "Nombre Cliente:";
                           echo $mostrar['cliente_proyecto'];
                           echo '<br>';
