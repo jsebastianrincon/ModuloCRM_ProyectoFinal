@@ -13,7 +13,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
 
-$instruccion_SQL = "INSERT INTO usuarios (usuario,password,tipo_usuario) VALUES ('$usuario','$password','2')";
+$instruccion_SQL = "INSERT INTO usuarios (usuario,password,tipo_usuario) VALUES ('$usuario',sha1('$password'),'2')";
 
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {
