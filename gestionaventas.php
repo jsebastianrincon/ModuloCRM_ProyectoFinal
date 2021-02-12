@@ -25,7 +25,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta name="description" content="">
   <meta name="author" content="Juan Sebastian">
 
-  <title>Gestion de Leads</title>
+  <title>Gestion de Ventas</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -360,9 +360,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
                         <thead>
                           <tr>
-
                             <th>
                               <center style="visibility: hidden">----------------</center>
+                              <center>Codigo Proyecto </center>
+                            </th>
+                            <th>
+                              <center style="visibility: hidden">------------------------</center>
                               <center>Nombre Cliente </center>
                             </th>
 
@@ -378,14 +381,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </th>
 
                             <th>
-                            <center style="visibility: hidden">------------------</center>
+                              <center style="visibility: hidden">------------------</center>
                               <center>Estado Proyecto</center>
                             </th>
 
 
 
                             <th>
-                              <center style="visibility: hidden">----------------</center>
+                              <center style="visibility: hidden">---------------------</center>
                               <center>Tema Proyecto</center>
                             </th>
 
@@ -393,7 +396,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                             <th>
 
-                              <center style="visibility: hidden">-----------------------</center>
+                              <center style="visibility: hidden">------------------------------------------------</center>
                               <center>Acciones</center>
 
                             </th>
@@ -407,6 +410,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           //Impresion tabla
                           echo "<tr>";
                           echo "<td>";
+                          echo $mostrar['codigo_proyecto'];
+                          echo "</td>";
+                          echo "<td>";
                           echo $mostrar['cliente_proyecto'];
                           echo "</td>";
 
@@ -417,7 +423,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           echo $mostrar['fecha_fin_proyecto'];
                           echo "</td>";
                           echo "<td>";
-                         if ($mostrar['estado_proyecto'] = '2') {
+                          if ($mostrar['estado_proyecto'] = '2') {
                             echo 'Activo';
                           }
                           echo "</td>";
@@ -425,12 +431,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           echo "<td>";
                           echo $mostrar['tema_proyecto'];
                           echo "</td>";
-                         
+
 
 
                           echo "<colspan='24'><div class='btn-group'><th>
                               <a href='verproyecto.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
-                              <a href='modificarlead.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>";
+                              <a href='modificarproyecto.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                              <a href='añadirrequerimientos.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-edit'></i>Añadir Requerimientos</button></a>";
 
                           echo "</td>";
                         }
