@@ -104,7 +104,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class=" fas fa-cart-plus"></i></i>
             <span>Ventas</span>
@@ -372,6 +372,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </body>
 
                         </html>
+                        <label>Codigo Proyecto: </label><input type="text" size="31" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto">
                         <br>
                         <br>
 
@@ -436,76 +437,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
           </fieldset>
         </div>
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-
-          <!-- Titulo Gestion de leads -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">ADICION DE REQUERIMIENTOS</h1>
-          </div>
-          <!-- Formulario para Adicion de leads -->
-          <fieldset>
-            <div class="container">
-
-              <div class="group">
-                <div class="card card-body">
-                  <div class="form-group" id="responsive-form" action="RegistroProyectos.php" method='POST'>
-
-
-                    <label>&nbsp Añadir Requerimiento &nbsp &nbsp &nbsp &nbsp</label>
-                    <td><button type="button" name="add" id="add" class="btn-xsm btn-primary">+ </button></td>
-                    <br>
-                    <br>
-                    <th>
-                      <label style="visibility:hidden">.......................</label>
-                      <label>Nombre </label>
-
-                      <label style="visibility: hidden">........................................</label>
-                      <label>Descripcion</label>
-                      <label style="visibility: hidden">........................
-                      </label>
-                      <label>Cantidad</label>
-                      <label style="visibility: hidden">.............. </label>
-                      <label>Costo Unitario($)</label>
-                      <label style="visibility: hidden">................. </label>
-                      <label>Costo Total</label>
-                      <label style="visibility: hidden">................. </label>
-                      <label><i class="fas fa-fw fa-cog"></i></label>
-
-                    </th>
-
-                    <form name="add_name" id="add_name">
-                      <div class="table-responsive">
-                        <table class="table table-bordered" id="dynamic_field">
-
-
-                        </table>
-                      </div>
-                    </form>
-                  </div>
-                  <center><a href=''><button type='button' class='btn btn-sm btn-primary'>Calcular</button></a></center>
-                  <br>
-                  <br>
-
-                  <label>Subtotal: $</label>
-
-                  <label>IVA: 19%</label>
-                  <label>Total: $</label>
-
-                </div>
-
-
-              </div> <!-- /.container-fluid -->
-              <div>
-                <br>
-              </div>
-            </div>
-            <!-- End of Main Content -->
-
-
-
-        </div>
-        <!-- End of Content Wrapper -->
 
       </div>
       <!-- End of Page Wrapper -->
