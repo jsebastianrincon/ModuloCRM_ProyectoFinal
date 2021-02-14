@@ -351,7 +351,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <center><label>Lead: </label><input type="text" size="55" name="nombre_reunion"></center>
+                      <center><label>Tema Reunion: </label><input type="text" size="55" name="nombre_reunion"></center>
                       <br>
                       <br>
                       <center><label>Fecha: </label>
