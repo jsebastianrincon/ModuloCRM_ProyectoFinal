@@ -123,7 +123,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -139,7 +139,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>

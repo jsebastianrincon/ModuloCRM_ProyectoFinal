@@ -129,7 +129,7 @@ $id = $_GET['id'];
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -342,7 +342,7 @@ $id = $_GET['id'];
 
               <div class="group">
                 <div class="card card-body">
-                  <div class="form-group" id="responsive-form" action="RegistroProyectos.php" method='POST'>
+                  <div class="form-group" id="responsive-form" action="RegistrarRequerimientos.php" method='POST'>
 
 
                     <?php
@@ -374,19 +374,25 @@ $id = $_GET['id'];
                     <br>
                     <br>
                     <th>
-                      <label style="visibility:hidden">.......................</label>
-                      <label>Nombre </label>
+                      <label style="visibility:hidden">
+                        <div class=""></div>
+                      </label>
+                      <label>
+                        Nombre
+                      </label>
 
-                      <label style="visibility: hidden">........................................</label>
+                      <label style="visibility: hidden">..........................................</label>
                       <label>Descripcion</label>
-                      <label style="visibility: hidden">........................
+                      <label style="visibility: hidden">.......................... </label>
+                      <label>Dificultad</label>
+                      <label style="visibility: hidden">..................
                       </label>
                       <label>Cantidad</label>
-                      <label style="visibility: hidden">.............. </label>
+                      <label style="visibility: hidden">... </label>
                       <label>Costo Unitario($)</label>
-                      <label style="visibility: hidden">................. </label>
+                      <label style="visibility: hidden">...... </label>
                       <label>Costo Total</label>
-                      <label style="visibility: hidden">................. </label>
+                      <label style="visibility: hidden">.................. </label>
                       <label><i class="fas fa-fw fa-cog"></i></label>
 
                     </th>
@@ -399,16 +405,18 @@ $id = $_GET['id'];
                         </table>
                       </div>
                     </form>
+
+                    <center><a href=''><button type='button' class='btn btn-sm btn-primary'>Calcular</button></a></center>
+                    <br>
+                    <br>
+
+                    <label>Subtotal: $</label>
+                    <br>
+                    <label>IVA: 19%</label>
+                    <br>
+                    <label>Total: $</label>
+                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
                   </div>
-                  <center><a href=''><button type='button' class='btn btn-sm btn-primary'>Calcular</button></a></center>
-                  <br>
-                  <br>
-
-                  <label>Subtotal: $</label>
-
-                  <label>IVA: 19%</label>
-                  <label>Total: $</label>
-
                 </div>
 
 
@@ -481,10 +489,10 @@ $id = $_GET['id'];
             $('#dynamic_field').append('<tr id="row' + i + '">' +
               '<td><input type="text" name="nombre[]" "size="15" "placeholder="Ingrese Nombre" class="form-control name_list" /></td>' +
               '<td><input type="text" name="descripcion[]" "size="15" "placeholder="Ingrese descripcion" class="form-control name_list" /></td>' +
+              '<td><input type="text" name="dificultad[]" "size="15" "placeholder="" class="form-control name_list" /></td>' +
+              '<td><input type="number" name="cantidad[]" size="5" class="form-control name_list" /></td>' +
 
-              '<td><input type="number" name="cantidad[]" size="4" class="form-control name_list" /></td>' +
-
-              '<td><input type="number" name="costoU[]" class="form-control name_list"  /></td> ' +
+              '<td><input type="number" name="costoU[]" size="10" class="form-control name_list"  /></td> ' +
               '<td><input type = "text" name = "costoT[]"placeholder = "$"class = "form-control name_list "/></td>' +
               '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">-</button></td>'
             );
