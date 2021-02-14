@@ -1,4 +1,4 @@
-<!-- Desarrollo de Formulario de Adicion de Leads -->
+
 
 <?php
 //$estado_proyecto = $_GET['estado_proyecto'];
