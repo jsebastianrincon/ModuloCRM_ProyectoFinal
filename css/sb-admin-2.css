@@ -83,7 +83,7 @@ body {
 
 hr {
   box-sizing: content-box;
-  height: 0;
+  height: auto;
   overflow: visible
 }
 
@@ -1837,17 +1837,17 @@ pre code {
 }
 
 .table-bordered {
-  border: 1px solid #e3e6f0
+  border: auto solid #e3e6f0
 }
 
 .table-bordered td,
 .table-bordered th {
-  border: 1px solid #e3e6f0
+  border: auto solid #e3e6f0
 }
 
 .table-bordered thead td,
 .table-bordered thead th {
-  border-bottom-width: 2px
+  border-bottom-width: auto
 }
 
 .table-borderless tbody+tbody,
@@ -5019,7 +5019,8 @@ input[type=submit].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem
+  padding: 1.
+  
 }
 
 .card-title {

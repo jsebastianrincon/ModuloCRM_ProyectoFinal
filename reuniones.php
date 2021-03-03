@@ -348,16 +348,19 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <div class="group">
                 <div class="card card-body">
                   <form class="form-contact" action="RegistroReunion.php" method='POST'>
-                    <div class="form-group" id="responsive-form">
-
-                      <br>
-                      <center><label>Tema Reunion: </label><input type="text" size="55" name="nombre_reunion"></center>
-                      <br>
+                    <div class="form-group" id="responsive-form" display: flex;>
+                      <center><label>Tema Reunion </label>
+                        <br>
+                        <input type="text" size="40" name="nombre_reunion">
+                      </center>
                       <br>
                       <center><label>Fecha: </label>
                         <input type="date" size="40" name="fecha_reunion" required>
                         <label>Hora: </label><input type="time" size="50" name="hora_reunion" required>
+                        <br>
+                        <br>
                         <label>Asignado Por: </label>
+                        <br>
                         <select name="asignado_reunion">
                           <option value="Asignado por">Seleccione Area</option>
                           <option value="Area Comercial" id="ArC">Area Comercial</option>
@@ -365,12 +368,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </select>
                         <br>
                         <br>
-                        <center><label>Estado: </label><input type="text" size="15" name="estado_reunion"></center>
+                        <center><label>Estado: </label>
+                          <br>
+                          <input type="text" size="15" name="estado_reunion">
+                        </center>
 
                       </center>
                       <br>
 
-                      <center><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="55" placeholder="Ingrese Descripcion..." required></textarea></center>
+                      <center><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required></textarea></center>
 
                       <br>
                       <br>

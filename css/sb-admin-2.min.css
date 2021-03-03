@@ -44,7 +44,7 @@
 *,
 ::after,
 ::before {
-  box-sizing: border-box
+  box-sizing: auto
 }
 
 html {
@@ -612,7 +612,7 @@ pre code {
 .container-md,
 .container-sm,
 .container-xl {
-  width: 100%;
+  width: auto;
   padding-right: .75rem;
   padding-left: .75rem;
   margin-right: auto;
@@ -2148,7 +2148,7 @@ pre code {
 
 .table-responsive {
   display: block;
-  width: 100%;
+  width: auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch
 }
