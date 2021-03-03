@@ -362,6 +362,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           <tr>
 
                             <th>
+                            
                               <center style="visibility: hidden">----------------</center>
                               <center>Nombres </center>
                             </th>
