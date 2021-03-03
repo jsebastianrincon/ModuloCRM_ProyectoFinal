@@ -426,7 +426,7 @@ $id = $_GET['id'];
                       </div>
                     </form>
 
-                    <center><a href=''><button type='button' class='btn btn-sm btn-primary'>Calcular</button></a></center>
+                    <center><a href=''><button type='button' class='btn btn-sm btn-primary' action="RegistrarRequerimientos.php" method='POST'>Calcular</button></a></center>
                     <br>
                     <br>
 
@@ -503,19 +503,35 @@ $id = $_GET['id'];
       <script>
         $(document).ready(function() {
           var i = 1;
+          var row = $('#row');
+          row = [];
+          var nombre = $('#nombre');
+
+          var descripcion = $('#descripcion');
+
+          var dificultad = $('#dificultad');
+
+          var cantidad = $('#cantidad');
+
+          var costoU = $('#costoU');
+
+          var costoT = $('#costoT');
+
 
           $('#add').click(function() {
             i++;
             $('#dynamic_field').append('<tr id="row' + i + '">' +
-              '<td><input type="text" name="nombre[]" "size="15" "placeholder="Ingrese Nombre" class="form-control name_list" /></td>' +
-              '<td><input type="text" name="descripcion[]" "size="15" "placeholder="Ingrese descripcion" class="form-control name_list" /></td>' +
-              '<td><input type="text" name="dificultad[]" "size="15" "placeholder="" class="form-control name_list" /></td>' +
-              '<td><input type="number" name="cantidad[]" size="5" class="form-control name_list" /></td>' +
+              '<td><input type="text" id = "nombre" name="nombre" "size="15" "placeholder="Ingrese Nombre" class="form-control name_list" /></td>' +
+              '<td><input type="text" id = "descripcion" name="descripcion[]" "size="15" "placeholder="Ingrese descripcion" class="form-control name_list" /></td>' +
+              '<td><input type="text" id = "dificultad" "name="dificultad[]" "size="15" "placeholder="" class="form-control name_list" /></td>' +
+              '<td><input type="number" id = "cantidad" name="cantidad[]" size="5" class="form-control name_list" /></td>' +
 
-              '<td><input type="number" name="costoU[]" size="10" class="form-control name_list"  /></td> ' +
-              '<td><input type = "text" name = "costoT[]"placeholder = "$"class = "form-control name_list "/></td>' +
+              '<td><input type="number" id="costoU" name="costoU[]" size="10" class="form-control name_list"  /></td> ' +
+              '<td><input type = "text" id="costoT" name = "costoT[]"placeholder = "$"class = "form-control name_list "/></td>' +
               '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">-</button></td>'
             );
+            var nombre = $('#nombre')
+            console.log($('#row'));
 
           });
 
@@ -523,7 +539,17 @@ $id = $_GET['id'];
             var id = $(this).attr('id');
             $('#row' + id).remove();
           });
-
+          $('#submit').click(function() {
+            $.ajax({
+              url: "propuestas.php",
+              method: "POST",
+              data: $('#add_name').serialize(),
+              success: function(data) {
+                alert(data);
+                $('#add_name')[0].reset();
+              }
+            });
+          });
 
         })
       </script>
