@@ -389,7 +389,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </div>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-5">
+            <div class="col-xl-2 col-md-6 mb-5">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -481,7 +481,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </div>
 
             <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-5">
+            <div class="col-xl-2 col-md-6 mb-5">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -521,8 +521,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="card shadow mb-4">
+            <div class="col-xl- col-lg-6">
+              <div class="card shadow mb-3">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
@@ -549,7 +549,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </div>
 
             <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-5 col-lg-5">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">

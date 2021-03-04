@@ -11,6 +11,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 $id = $_GET['id'];
 
+$id_proyecto = $_GET['id'];
 ?>
 
 
@@ -358,201 +359,122 @@ $id = $_GET['id'];
           </div>
           <!-- Formulario para Adicion de requerimientos -->
           <fieldset>
-            <div class="container">
-
+            <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
-                  <div class="form-group" id="responsive-form" action="RegistrarRequerimientos.php" method='POST'>
-
-
-                    <?php
-
-                    $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto=$id ";
-                    $result = mysqli_query($conexion2, $sql);
-                    while ($mostrar = mysqli_fetch_array($result)) {
-                      //Impresion tabla
-                      echo 'Codigo Proyecto:';
-                      echo "<td>" . $mostrar['codigo_proyecto'] . "</td>";
-                      echo " <br>";
-                      echo " <br>";
-                      echo "<td>" . $mostrar['tema_proyecto'] . "</td>";
-                      echo " <br>";
-                      echo " <br>";
-                      echo 'Cliente Proyecto:';
-                      echo "<td>" . $mostrar['cliente_proyecto'] . "</td>";
-                      echo " <br>";
-                      echo " -------------------------------------------------------------------------------------------------------------------------------------------------";
-                    }
-
-                    ?>
+                  <form class="form-contact" action="RegistrarRequerimientos.php" method='POST'>
                     <br>
                     <br>
 
+                    <label>&nbsp Añadir Requerimiento &nbsp &nbsp &nbsp &nbsp &nbsp</label>
 
-                    <label>&nbsp Añadir Requerimiento &nbsp &nbsp &nbsp &nbsp</label>
-                    <td><button type="button" name="add" id="add" class="btn-xsm btn-primary">+ </button></td>
                     <br>
                     <br>
                     <th>
-                      <label style="visibility:hidden">
-                        <div class=""></div>
-                      </label>
                       <label>
-                        Nombre
+                        &nbsp Proyecto Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       </label>
+                      <name='proyecto_requerimiento'>
+                        <?php
+                        $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto = '$id_proyecto'";
+                        $result = mysqli_query($conexion2, $sql);
+                        while ($mostrar = mysqli_fetch_array($result)) {
+                          echo "<input type='text' size='50' name='proyecto_requerimiento' value ='$mostrar[tema_proyecto]'> ";
+                        }
+                        ?>
 
-                      <label style="visibility: hidden">..........................................</label>
-                      <label>Descripcion</label>
-                      <label style="visibility: hidden">.......................... </label>
-                      <label>Dificultad</label>
-                      <label style="visibility: hidden">..................
-                      </label>
-                      <label>Cantidad</label>
-                      <label style="visibility: hidden">... </label>
-                      <label>Costo Unitario($)</label>
-                      <label style="visibility: hidden">...... </label>
-                      <label>Costo Total</label>
-                      <label style="visibility: hidden">.................. </label>
-                      <label><i class="fas fa-fw fa-cog"></i></label>
-
+                        <br>
+                        <label>
+                          &nbsp Nombre Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                        <input type="text" size="50" name="nombre_requerimiento" required placeholder="Ingrese Nombre Requerimiento ">
+                        </label>
+                        <br>
+                        <label>
+                          &nbsp Descripcion Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+                        <input type="text" size="50" name="descripcion_requerimiento" required placeholder="Ingrese Descripcion ">
+                        </label>
+                        <br>
+                        <label>
+                          &nbsp Costo Requerimiento($): &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
+                        <input type="text" size="25" name="costo_requerimiento" required placeholder="Ingrese Costo Requerimiento">
+                        </label>
+                        <br>
+                        <label>
+                          &nbsp Tiempo Requerimiento(Horas): &nbsp</label>
+                        <input type="number" size="5" name="tiempo_requerimiento" required placeholder=" ">
+                        </label>
                     </th>
-
-                    <form name="add_name" id="add_name">
-                      <div class="table-responsive">
-                        <table class="table table-bordered" id="dynamic_field">
-
-
-                        </table>
-                      </div>
-                    </form>
-
-                    <center><a href=''><button type='button' class='btn btn-sm btn-primary' action="RegistrarRequerimientos.php" method='POST'>Calcular</button></a></center>
                     <br>
                     <br>
-
-                    <label>Subtotal: $</label>
-                    <br>
-                    <label>IVA: 19%</label>
-                    <br>
-                    <label>Total: $</label>
                     <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
-                  </div>
-                </div>
+                    <br>
+                    <br>
 
-
-              </div> <!-- /.container-fluid -->
-              <div>
-                <br>
-              </div>
-            </div>
-            <!-- End of Main Content -->
-
-
-
+          </fieldset>
         </div>
-        <!-- End of Content Wrapper -->
-
       </div>
-      <!-- End of Page Wrapper -->
-
-      <!-- Scroll to Top Button-->
-      <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-      </a>
 
 
-
-      <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
-
-      <!-- Page level plugins -->
-      <script src="vendor/chart.js/Chart.min.js"></script>
-
-      <!-- Page level custom scripts -->
-      <script src="js/demo/chart-area-demo.js"></script>
-      <script src="js/demo/chart-pie-demo.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-      <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
-
-      <!-- Page level plugins -->
-      <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-      <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-      <!-- Page level custom scripts -->
-      <script src="js/demo/datatables-demo.js"></script>
-      <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-      <!-------- Script Tabla dinamica------------>
-      <script>
-        $(document).ready(function() {
-          var i = 1;
-          var row = $('#row');
-          row = [];
-          var nombre = $('#nombre');
-
-          var descripcion = $('#descripcion');
-
-          var dificultad = $('#dificultad');
-
-          var cantidad = $('#cantidad');
-
-          var costoU = $('#costoU');
-
-          var costoT = $('#costoT');
+    </div> <!-- /.container-fluid -->
+    <div>
+      <br>
+    </div>
+  </div>
+  <!-- End of Main Content -->
 
 
-          $('#add').click(function() {
-            i++;
-            $('#dynamic_field').append('<tr id="row' + i + '">' +
-              '<td><input type="text" id = "nombre" name="nombre" "size="15" "placeholder="Ingrese Nombre" class="form-control name_list" /></td>' +
-              '<td><input type="text" id = "descripcion" name="descripcion[]" "size="15" "placeholder="Ingrese descripcion" class="form-control name_list" /></td>' +
-              '<td><input type="text" id = "dificultad" "name="dificultad[]" "size="15" "placeholder="" class="form-control name_list" /></td>' +
-              '<td><input type="number" id = "cantidad" name="cantidad[]" size="5" class="form-control name_list" /></td>' +
 
-              '<td><input type="number" id="costoU" name="costoU[]" size="10" class="form-control name_list"  /></td> ' +
-              '<td><input type = "text" id="costoT" name = "costoT[]"placeholder = "$"class = "form-control name_list "/></td>' +
-              '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">-</button></td>'
-            );
-            var nombre = $('#nombre')
-            console.log($('#row'));
+  </div>
+  <!-- End of Content Wrapper -->
 
-          });
+  </div>
+  <!-- End of Page Wrapper -->
 
-          $(document).on('click', '.btn_remove', function() {
-            var id = $(this).attr('id');
-            $('#row' + id).remove();
-          });
-          $('#submit').click(function() {
-            $.ajax({
-              url: "propuestas.php",
-              method: "POST",
-              data: $('#add_name').serialize(),
-              success: function(data) {
-                alert(data);
-                $('#add_name')[0].reset();
-              }
-            });
-          });
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-        })
-      </script>
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-------- Script Tabla dinamica------------>
 
 
 </body>

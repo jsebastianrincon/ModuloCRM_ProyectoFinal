@@ -390,6 +390,10 @@ $id = $_GET['id'];
 
 
                         ?>
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+                        </div>
+
                       </div>
 
                   </div>
@@ -401,56 +405,83 @@ $id = $_GET['id'];
 
 
             </div>
+
             <br>
-            <!--
+
             <div>
-              <h1 class="h3 mb-0 text-gray-800">Reuniones Pendientes</h1>
-            </div>
-            <!-  End of Content Wrapper -->
+              <h1 class="h3 mb-0 text-gray-800">Requerimientos</h1>
+              <div class="container p-8">
+                <div class="group">
+                  <div class="card card-body">
+                    <div class="form-group" id="responsive-form">
+                      <fieldset>
 
-        </div>
-        <!-- End of Page Wrapper -->
+                        <div class="col md-8 col md-offset-2">
+                          <!-- Tabla de Leads Registrados -->
+                        </div>
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-          <i class="fas fa-angle-up"></i>
-        </a>
+                        <div class="card-header py-3">
+                          <?php
+
+                          $sql = "SELECT nombre_requerimiento,descripcion_requerimiento FROM requerimientos_proyectos INNER JOIN proyectos ON requerimientos_proyectos.proyecto_requerimiento = proyectos.tema_proyecto  ";
+                          $result = mysqli_query($conexion2, $sql);
+                          while ($mostrar = mysqli_fetch_array($result)) {
+                            //Impresion tabla
+                            echo "Nombre Requerimiento:";
+                            echo $mostrar['nombre_requerimiento'];
+                            echo '<br>';
+                            echo "Descripcion Requerimiento:";
+                            echo $mostrar['descripcion_requerimiento'];
+                          }
+
+
+                          ?>
+                        </div>
+
+
+                    </div>
+                    <!-- End of Page Wrapper -->
+
+                    <!-- Scroll to Top Button-->
+                    <a class="scroll-to-top rounded" href="#page-top">
+                      <i class="fas fa-angle-up"></i>
+                    </a>
 
 
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <!-- Bootstrap core JavaScript-->
+                    <script src="vendor/jquery/jquery.min.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                    <!-- Core plugin JavaScript-->
+                    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
+                    <!-- Custom scripts for all pages-->
+                    <script src="js/sb-admin-2.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
+                    <!-- Page level plugins -->
+                    <script src="vendor/chart.js/Chart.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <!-- Bootstrap core JavaScript-->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <!-- Page level custom scripts -->
+                    <script src="js/demo/chart-area-demo.js"></script>
+                    <script src="js/demo/chart-pie-demo.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                    <!-- Bootstrap core JavaScript-->
+                    <script src="vendor/jquery/jquery.min.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Core plugin JavaScript-->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                    <!-- Core plugin JavaScript-->
+                    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for all pages-->
-        <script src="js/sb-admin-2.min.js"></script>
+                    <!-- Custom scripts for all pages-->
+                    <script src="js/sb-admin-2.min.js"></script>
 
-        <!-- Page level plugins -->
-        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+                    <!-- Page level plugins -->
+                    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+                    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-        <!-- Page level custom scripts -->
-        <script src="js/demo/datatables-demo.js"></script>
+                    <!-- Page level custom scripts -->
+                    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
