@@ -125,7 +125,30 @@ if ($_POST) {
           <div class="container-fluid">
 
           </div>
+
         </footer>
+
+        <style>
+          .btn-whatsapp {
+            display: block;
+            width: 70px;
+            height: 70px;
+            color: #fff;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            border-radius: 50%;
+            line-height: 80px;
+            text-align: center;
+            z-index: 999;
+          }
+        </style>
+
+        <div class="btn-whatsapp">
+          <a href="https://api.whatsapp.com/send?phone=5199999999" target="_blank">
+            <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+          </a>
+        </div>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
