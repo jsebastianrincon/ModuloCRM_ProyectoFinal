@@ -435,7 +435,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                           echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='verproyecto.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
+                              <a href='verproyecto.php?id=$mostrar[id_proyecto] & $mostrar[tema_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
                               <a href='modificarproyecto.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                               <a href='añadirrequerimientos.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-edit'></i>Añadir Requerimientos</button></a>";
 
