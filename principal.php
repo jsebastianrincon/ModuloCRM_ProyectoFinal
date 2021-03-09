@@ -495,7 +495,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         $db_name = "crmpry";
                         $con = mysqli_connect($servername, $username, $password, $db_name);
 
-                        $sql = "SELECT count(id_reunion) AS TOTAL FROM reuniones ";
+                        $sql = "SELECT count(id_reunion) AS TOTAL FROM reuniones WHERE fecha_reunion > CURDATE()  ";
                         $resultado = mysqli_query($con, $sql);
                         $values = mysqli_fetch_assoc($resultado);
                         $num_rows = $values['TOTAL'];
