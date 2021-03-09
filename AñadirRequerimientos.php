@@ -371,14 +371,19 @@ $id_proyecto = $_GET['id'];
                     <br>
                     <br>
                     <th>
-                      <label>
-                        &nbsp Proyecto Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      </label>
                       <name='proyecto_requerimiento'>
                         <?php
                         $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto = '$id_proyecto'";
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {
+                          echo "<th><label>
+                        &nbsp Id Proyecto: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                      </label>";
+                          echo "<input type='text' size='50' name='id_proyecto' value ='$mostrar[id_proyecto]'> ";
+                          echo "<br>";
+                          echo "  <label>
+                        &nbsp Proyecto Requerimiento: &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                      </label>";
                           echo "<input type='text' size='50' name='proyecto_requerimiento' value ='$mostrar[tema_proyecto]'> ";
                         }
                         ?>
