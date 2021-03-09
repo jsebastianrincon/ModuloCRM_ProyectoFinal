@@ -422,8 +422,8 @@ $id = $_GET['id'];
 
                         <div class="card-header py-3">
                           <?php
-
-                          $sql = "SELECT nombre_requerimiento,descripcion_requerimiento FROM requerimientos_proyectos INNER JOIN proyectos ON requerimientos_proyectos.proyecto_requerimiento = proyectos.tema_proyecto  ";
+                          $sql = "select * from requerimientos_proyectos WHERE id_proyecto = $id ";
+                          //$sql = "SELECT nombre_requerimiento,descripcion_requerimiento FROM requerimientos_proyectos INNER JOIN proyectos ON requerimientos_proyectos.proyecto_requerimiento = proyectos.tema_proyecto  ";
                           $result = mysqli_query($conexion2, $sql);
                           while ($mostrar = mysqli_fetch_array($result)) {
                             //Impresion tabla
@@ -432,10 +432,18 @@ $id = $_GET['id'];
                             echo '<br>';
                             echo "Descripcion Requerimiento:";
                             echo $mostrar['descripcion_requerimiento'];
+                            echo '<br>';
+                            echo '<br>';
                           }
 
-
+                          echo "Costo Total   ";
+                          $suma_costo = "select sum(costo_requerimiento) FROM requerimientos_proyectos WHERE id_proyecto = 18 ";
+                          $result = mysqli_query($conexion2, $suma_costo);
+                          while ($mostrar = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                            echo $result;
+                          }
                           ?>
+
                         </div>
 
 
