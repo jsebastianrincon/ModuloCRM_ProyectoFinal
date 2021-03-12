@@ -422,26 +422,41 @@ $id = $_GET['id'];
 
                         <div class="card-header py-3">
                           <?php
-                          $sql = "select * from requerimientos_proyectos WHERE id_proyecto = $id ";
+                          $sql = "SELECT * FROM requerimientos_proyectos WHERE id_proyecto = $id ";
                           //$sql = "SELECT nombre_requerimiento,descripcion_requerimiento FROM requerimientos_proyectos INNER JOIN proyectos ON requerimientos_proyectos.proyecto_requerimiento = proyectos.tema_proyecto  ";
                           $result = mysqli_query($conexion2, $sql);
                           while ($mostrar = mysqli_fetch_array($result)) {
                             //Impresion tabla
-                            echo "Nombre Requerimiento:";
+                            echo '<br>';
+                            echo "Nombre Requerimiento: ";
                             echo $mostrar['nombre_requerimiento'];
                             echo '<br>';
-                            echo "Descripcion Requerimiento:";
+                            echo "Descripcion Requerimiento: ";
                             echo $mostrar['descripcion_requerimiento'];
                             echo '<br>';
+                            echo "Tiempo Requerimiento: ";
+                            echo $mostrar['tiempo_requerimiento'],  '  Hora(s)';
+                            echo '<br>';
+                            echo "Costo Requimiento: ", "$ ";
+                            echo $mostrar['costo_requerimiento'];
                             echo '<br>';
                           }
+                          echo '<br>';
+                          echo "Tiempo Total Proyecto:";
+                          echo '<br>';
+                          $sql_total = "SELECT SUM(tiempo_requerimiento) as total FROM requerimeientos_proyectos WHERE id_proyecto=$id";
+                          $result_total = mysqli_query($conexion2, $sql_total);
 
-                          echo "Costo Total   ";
-                          $suma_costo = "select sum(costo_requerimiento) FROM requerimientos_proyectos WHERE id_proyecto = 18 ";
-                          $result = mysqli_query($conexion2, $suma_costo);
-                          while ($mostrar = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                            echo $result;
-                          }
+
+                          echo '<br>';
+
+                          echo "Costo Parcial Proyecto:";
+                          echo '<br>';
+                          echo "IVA : 19%";
+                          echo '<br>';
+                          echo "Costo Total Proyecto:";
+
+
                           ?>
 
                         </div>

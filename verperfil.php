@@ -355,8 +355,24 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <div class="col md-8 col md-offset-2">
                         <!-- Tabla de Leads Registrados -->
                       </div>
+                      <h1 class="h3 mb-0 text-gray-800">Datos Usuario </h1>
+                      <br>
+                      <?php
 
+                      $sql = "SELECT * FROM  usuarios where tipo_usuario = $tipo_usuario";
+                      $result = mysqli_query($conexion2, $sql);
+                      while ($mostrar = mysqli_fetch_array($result)) {
+                        echo "Usuario: ";
+                        echo $mostrar['tipo_usuario'];
+                        echo "<br>";
+                        echo "Nombre Usuario: ";
+                        echo $mostrar['usuario'];
+                        echo "<br>";
+                        echo "Contraseña: ";
+                        echo $mostrar['password'];
+                      }
 
+                      ?>
 
                   </div>
                   <div class="card-body">
