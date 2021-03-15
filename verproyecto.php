@@ -336,7 +336,11 @@ $id = $_GET['id'];
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Detalles De Proyecto</h1>
           </div>
+          <div>
+            <div>
 
+            </div>
+          </div>
           <!-- Gestion de leads -->
           <fieldset>
             <div class="container p-8">
@@ -405,79 +409,89 @@ $id = $_GET['id'];
             <br>
 
             <div>
-              <h1 class="h3 mb-0 text-gray-800">Requerimientos</h1>
-              <div class="container p-8">
-                <div class="group">
-                  <div class="card card-body">
-                    <div class="form-group" id="responsive-form">
-                      <fieldset>
+              <div>
+                <h1 class="h3 mb-0 text-gray-800">Requerimientos</h1>
+                <div class="container p-8">
+                  <div class="group">
+                    <div class="card card-body">
+                      <div class="form-group" id="responsive-form">
+                        <fieldset>
 
-                        <div class="col md-8 col md-offset-2">
-                          <!-- Tabla de Leads Registrados -->
-                        </div>
+                          <div class="col md-8 col md-offset-2">
+                            <!-- Tabla de Leads Registrados -->
+                          </div>
 
-                        <div class="card-header py-3">
-                          <?php
-                          $sql = "SELECT * FROM requerimientos_proyectos WHERE id_proyecto = $id ";
+                          <div class="card-header py-3">
+                            <?php
+                            $sql = "SELECT * FROM requerimientos_proyectos WHERE id_proyecto = $id ";
 
-                          $result = mysqli_query($conexion2, $sql);
-                          while ($mostrar = mysqli_fetch_array($result)) {
-                            //Impresion tabla
+                            $result = mysqli_query($conexion2, $sql);
+                            while ($mostrar = mysqli_fetch_array($result)) {
+                              //Impresion tabla
+                              echo '<br>';
+                              echo "Nombre Requerimiento: ";
+                              echo $mostrar['nombre_requerimiento'];
+                              echo '<br>';
+                              echo "Descripcion Requerimiento: ";
+                              echo $mostrar['descripcion_requerimiento'];
+                              echo '<br>';
+                              echo "Tiempo Requerimiento: ";
+                              echo $mostrar['tiempo_requerimiento'],  '  Hora(s)';
+                              echo '<br>';
+                              echo "Costo Requimiento: ", "$ ";
+                              echo number_format($mostrar['costo_requerimiento']);
+                              echo '<br>';
+                            }
                             echo '<br>';
-                            echo "Nombre Requerimiento: ";
-                            echo $mostrar['nombre_requerimiento'];
+
+                            $sql_total = "SELECT SUM(costo_requerimiento * tiempo_requerimiento) as total from requerimientos_proyectos WHERE id_proyecto =$id ";
+                            $sql_total_tiempo = "SELECT SUM(tiempo_requerimiento) as total_tiempo from requerimientos_proyectos WHERE id_proyecto =$id ";
+                            $total_tiempo = mysqli_query($conexion2, $sql_total_tiempo);
+                            $rows_tiempo = mysqli_fetch_array($total_tiempo);
+                            echo "Tiempo Total Proyecto: " . $rows_tiempo['total_tiempo'], ' Horas';
+
                             echo '<br>';
-                            echo "Descripcion Requerimiento: ";
-                            echo $mostrar['descripcion_requerimiento'];
+
+
+                            $total = mysqli_query($conexion2, $sql_total);
+
+                            $rows = mysqli_fetch_array($total);
+                            echo "Costo Parcial Proyecto: $ " . number_format($rows['total']);
+                            echo "<br>";
+                            echo "IVA 19%";
+                            if (!$total) {
+                              var_dump(mysqli_error($conexion2));
+                              exit;
+                            }
                             echo '<br>';
-                            echo "Tiempo Requerimiento: ";
-                            echo $mostrar['tiempo_requerimiento'],  '  Hora(s)';
-                            echo '<br>';
-                            echo "Costo Requimiento: ", "$ ";
-                            echo number_format($mostrar['costo_requerimiento']);
-                            echo '<br>';
-                          }
-                          echo '<br>';
+                            $iva = '0.19';
+                            $sql_total_proyecto = "SELECT SUM((costo_requerimiento * tiempo_requerimiento)* $iva) as total_proyecto from requerimientos_proyectos WHERE id_proyecto = $id";
+                            $total_proyecto = mysqli_query($conexion2, $sql_total_proyecto);
 
-                          $sql_total = "SELECT SUM(costo_requerimiento * tiempo_requerimiento) as total from requerimientos_proyectos WHERE id_proyecto =$id ";
-                          $sql_total_tiempo = "SELECT SUM(tiempo_requerimiento) as total_tiempo from requerimientos_proyectos WHERE id_proyecto =$id ";
-                          $total_tiempo = mysqli_query($conexion2, $sql_total_tiempo);
-                          $rows_tiempo = mysqli_fetch_array($total_tiempo);
-                          echo "Tiempo Total Proyecto: " . $rows_tiempo['total_tiempo'], ' Horas';
+                            $rows_tiempo = mysqli_fetch_array($total_proyecto);
 
-                          echo '<br>';
+                            $prueba = number_format($rows_tiempo[0] + $rows['total']);
 
 
-                          $total = mysqli_query($conexion2, $sql_total);
-
-                          $rows = mysqli_fetch_array($total);
-                          echo "Costo Parcial Proyecto: $ " . number_format($rows['total']);
-                          echo "<br>";
-                          echo "IVA 19%";
-                          if (!$total) {
-                            var_dump(mysqli_error($conexion2));
-                            exit;
-                          }
-                          echo '<br>';
-                          $iva = '0.19';
-                          $sql_total_proyecto = "SELECT SUM((costo_requerimiento * tiempo_requerimiento)* $iva) as total_proyecto from requerimientos_proyectos WHERE id_proyecto = $id";
-                          $total_proyecto = mysqli_query($conexion2, $sql_total_proyecto);
-
-                          $rows_tiempo = mysqli_fetch_array($total_proyecto);
-
-                          $prueba = number_format($rows_tiempo[0] + $rows['total']);
-
-
-                          echo "Total Proyecto: $ " . $prueba;
+                            echo "Total Proyecto: $ " . $prueba;
 
 
 
 
-                          ?>
+                            ?>
 
-                        </div>
+                          </div>
+                      </div>
+                      <?php
+                      echo "<td>";
+                      echo "<colspan='24'><div class='btn-group'><th>
+                              <a href='factura.php'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-file-pdf'></i> Descargar </button></a>";
 
+                      echo "<br>";
 
+                      echo "</td>";
+
+                      ?>
                     </div>
                     <!-- End of Page Wrapper -->
 
