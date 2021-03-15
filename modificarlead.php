@@ -134,11 +134,7 @@ $id_lead = $_GET['id'];
 
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-clipboard-list "></i>
-            <span>Proyectos</span></a>
-        </li>
+
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">

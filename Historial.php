@@ -398,31 +398,36 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE() ";
+                            //$sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
+
+                            $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE() AND id_usuario = '25' ";
                             $result = mysqli_query($conexion2, $sql);
+
+
                             while ($mostrar = mysqli_fetch_array($result)) {
-                              //Impresion tabla
-                              echo "<tr>";
-                              echo "<td>";
-                              echo $mostrar['nombre_reunion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['fecha_reunion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['hora_reunion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['asignado_reunion'];
-                              echo "<td>";
-                              echo $mostrar['descripcion_reunion'];
-                              echo "</td>";
-                              echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                              if (isset($mostrar['id_usuario'])) {
+                                //Impresion tabla
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $mostrar['nombre_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['fecha_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['hora_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['asignado_reunion'];
+                                echo "<td>";
+                                echo $mostrar['descripcion_reunion'];
+                                echo "</td>";
+                                echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                                                                             <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                           </td>";
-                              echo "<br>";
+                                echo "<br>";
+                              }
                             }
-
                             ?>
                           </table>
 

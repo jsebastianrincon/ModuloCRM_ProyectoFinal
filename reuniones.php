@@ -118,11 +118,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </li>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-clipboard-list "></i>
-            <span>Proyectos</span></a>
-        </li>
+
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
@@ -134,11 +130,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Proyectos</span></a>
-        </li>
+
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">

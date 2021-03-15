@@ -118,11 +118,7 @@ $id_proyecto = $_GET['id'];
         </li>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-clipboard-list "></i>
-            <span>Proyectos</span></a>
-        </li>
+
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
@@ -134,11 +130,7 @@ $id_proyecto = $_GET['id'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Proyectos</span></a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>

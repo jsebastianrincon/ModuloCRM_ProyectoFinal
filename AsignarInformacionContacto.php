@@ -115,11 +115,7 @@ $id = $_GET['id'];
         </li>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-clipboard-list "></i>
-            <span>Proyectos</span></a>
-        </li>
+
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
@@ -131,11 +127,6 @@ $id = $_GET['id'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Proyectos</span></a>
-        </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
