@@ -116,7 +116,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </div>
         </li>
 
-      
+
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
