@@ -474,7 +474,8 @@ $id = $_GET['id'];
 
 
                             echo "Total Proyecto: $ " . $prueba;
-
+                            echo '<br>';
+                            echo '<br>';
 
 
 
@@ -483,14 +484,13 @@ $id = $_GET['id'];
                           </div>
                       </div>
                       <?php
-                      echo "<td>";
-                      echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='factura.php'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-file-pdf'></i> Descargar </button></a>";
-
-                      echo "<br>";
-
-                      echo "</td>";
-
+                      $sql = "SELECT * FROM proyectos WHERE id_proyecto = $id ";
+                      $result = mysqli_query($conexion2, $sql);
+                      while ($mostrar = mysqli_fetch_array($result)) {
+                        echo "<colspan='24'><div class='btn-group'><th>
+                              <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-file-pdf'></i> Generar Factura</button></a>";
+                        echo "</td>";
+                      }
                       ?>
                     </div>
                     <!-- End of Page Wrapper -->
