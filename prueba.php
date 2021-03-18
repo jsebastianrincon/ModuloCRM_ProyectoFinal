@@ -24,5 +24,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     </a>
   </div>
 </body>
+<a href='factura.php?id=$mostrar[id_proyecto] & $mostrar[tema_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Factura</button></>
 
 </html>
