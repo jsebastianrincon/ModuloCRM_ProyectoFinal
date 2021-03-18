@@ -119,11 +119,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </li>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="charts.html">
-            <i class="fas fa-clipboard-list "></i>
-            <span>Proyectos</span></a>
-        </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
@@ -400,7 +395,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             <?php
                             //$sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
 
-                            $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE() AND id_usuario = '25' ";
+                            $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()";
                             $result = mysqli_query($conexion2, $sql);
 
 
