@@ -9,11 +9,16 @@ class ComposerStaticInitbfd911d3ed64d2eaff259fda44b5540d
     public static $prefixLengthsPsr4 = array (
         'P' => 
         array (
+            'Picqer\\Barcode\\' => 15,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Picqer\\Barcode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/picqer/php-barcode-generator/src',
+        ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',

@@ -1,29 +1,15 @@
 <?php
-include("conlead.php");
-session_start();
 
-if (!isset($_SESSION['id_usuario'])) {
-  header("Location: index.php");
+include 'barcode.php';
+function generarCodigo($longitud)
+{
+  $key = '000100255590';
+  $pattern = '';
+  $max = strlen($pattern) - 1;
+  for ($i = 0; $i < $longitud; $i++) $key .= $pattern{
+    mt_rand(0, $max)};
+  return $key;
+  barcode('images/' . $key . '.png', $key, 50, 'horizontal', 'code128', true);
 }
-//Validacion variables de session
-$nombre = $_SESSION['nombre'];
-$tipo_usuario = $_SESSION['tipo_usuario'];
-//echo $tipo_usuario;
 ?>
-
-<!DOCTYPE html>
-<html>
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
-<head>
-
-<body>
-  <div class="btn-whatsapp">
-    <a href="https://api.whatsapp.com/send?phone=5199999999" target="_blank">
-      <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
-    </a>
-  </div>
-</body>
-<a href='factura.php?id=$mostrar[id_proyecto] & $mostrar[tema_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Factura</button></>
-
-</html>
+<img src="codigos/<?php echo $key . '.png'; ?>">
