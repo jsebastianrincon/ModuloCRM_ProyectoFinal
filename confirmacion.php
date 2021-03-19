@@ -1,5 +1,6 @@
-<?php
 
+<?php
+/* ARCHIVO PARA EL ENVIO DE CORREO COMO CONFIRMACION DE REGISTRO EN EL CRM */
 include 'conlead.php';
 
 use PHPMailer\PHPMailer\PHPMailer;

@@ -1,14 +1,20 @@
 <?php
+
+/* CARGAR CONEXION PARA LA VALIDACION DE LA SESION */
+
 include("conlead.php");
 session_start();
 
 if (!isset($_SESSION['id_usuario'])) {
   header("Location: index.php");
 }
-//Validacion variables de session
+/* VALIDACION VARIABLES DE SESION */
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
+
+/* DECLARACION VARIABLES ID PARA EL USUARIO Y EL PROYECTO */
+
 $id = $_GET['id'];
 
 $id_proyecto = $_GET['id'];
@@ -365,6 +371,9 @@ $id_proyecto = $_GET['id'];
                     <th>
                       <name='proyecto_requerimiento'>
                         <?php
+
+                        /* FUNCIONALIDAD PARA LISTAR LA INFORMACION DEL PROYECTO AL QUE SE LE RELACIONARAN LOS REQUERIMIENTOS */
+
                         $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto = '$id_proyecto'";
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {

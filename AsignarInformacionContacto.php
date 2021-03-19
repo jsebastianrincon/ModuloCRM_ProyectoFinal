@@ -337,6 +337,7 @@ $id = $_GET['id'];
                 <div class="card card-body">
                   <form class="form-contact" action="RegistroContacto.php" method='POST'>
                     <?php
+                    /* REGISTRO INFORMACION SOBRE LA TABLA CONTACTOS */
 
                     $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id'";
                     $result = mysqli_query($conexion2, $sql);
