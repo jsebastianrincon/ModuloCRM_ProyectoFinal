@@ -121,11 +121,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </li>
 
         <!-- Nav Item - Charts -->
-
+        <li class="nav-item">
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-clipboard-list "></i>
+            <span>Proyectos</span></a>
+        </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -481,34 +485,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-      <!-------- Script Tabla dinamica------------>
-      <script>
-        $(document).ready(function() {
-          var i = 1;
-
-          $('#add').click(function() {
-            i++;
-            $('#dynamic_field').append('<tr id="row' + i + '">' +
-              '<td><input type="text" name="nombre[]" "size="15" "placeholder="Ingrese Nombre" class="form-control name_list" /></td>' +
-              '<td><input type="text" name="descripcion[]" "size="15" "placeholder="Ingrese descripcion" class="form-control name_list" /></td>' +
-
-              '<td><input type="number" name="cantidad[]" size="4" class="form-control name_list" /></td>' +
-
-              '<td><input type="number" name="costoU[]" class="form-control name_list"  /></td> ' +
-              '<td><input type = "text" name = "costoT[]"placeholder = "$"class = "form-control name_list "/></td>' +
-              '<td><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">-</button></td>'
-            );
-
-          });
-
-          $(document).on('click', '.btn_remove', function() {
-            var id = $(this).attr('id');
-            $('#row' + id).remove();
-          });
-
-
-        })
-      </script>
 
 
 </body>
