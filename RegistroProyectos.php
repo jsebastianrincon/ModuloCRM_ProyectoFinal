@@ -1,4 +1,4 @@
-
+<!-- Desarrollo de Formulario de Adicion de Leads -->
 
 <?php
 //$estado_proyecto = $_GET['estado_proyecto'];
@@ -29,12 +29,3 @@ if ($resultado == FALSE) {
   window.location.href= 'propuestas.php';
   </script>";
 }
-
-
-
-//header("Location: AñadirLead.php");
-
-//mysqli_close($connexion);
-
-
-?>
