@@ -363,6 +363,7 @@ $id = $_GET['id'];
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {
                           //Impresion tabla
+
                           echo "Codigo Proyecto:";
                           echo $mostrar['codigo_proyecto'];
                           echo '<br>';
@@ -487,9 +488,10 @@ $id = $_GET['id'];
                       $sql = "SELECT * FROM proyectos WHERE id_proyecto = $id ";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
-                        echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-file-pdf'></i> Generar Factura</button></a>";
-                        echo "</td>";
+                        echo "<colspan='24'><div class='btn-group'><th> 
+                               <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-file-pdf'></i> Generar Factura</button></a> ";
+                        echo "</td> &nbsp&nbsp&nbsp
+                         <a href='guardarfactura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-save'></i> Guardar Factura</button></a>";
                       }
                       ?>
                     </div>
