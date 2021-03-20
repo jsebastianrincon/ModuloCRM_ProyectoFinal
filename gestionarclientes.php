@@ -56,7 +56,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item inactive">
+      <li class="nav-item active">
         <a class="nav-link" href="principal.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -69,7 +69,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-user-friends"></i>
             <span>Clientes</span>
@@ -132,7 +132,17 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-headset"></i>
+            <span>Reuniones</span>
+          </a>
+          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
 
+              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+            </div>
+        </li>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
@@ -188,22 +198,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               </div>
             </li>
 
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-
-              <!-- Dropdown - Alerts -->
 
 
-            </li>
 
-            <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
 
-            </li>
-
-            <div class="topbar-divider d-none d-sm-block"></div>
-
-            <!-- Nav Item - User Information -->
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -231,11 +229,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
               </div>
             </li>
-
           </ul>
 
         </nav>
         <!-- End of Topbar -->
+
+
+
+
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
