@@ -344,9 +344,15 @@ $id = $_GET['id'];
                     while ($mostrar = mysqli_fetch_array($result)) {
                       //Impresion tabla
 
-                      echo 'Id :';
-                      echo "<td>" . $mostrar['id_lead'] . "</td>";
+                      echo "<th><label>
+                        Id Lead:  &nbsp&nbsp
+                      </label>";
+                      echo "<input type='text' size='15' name='id_lead' value ='$mostrar[id_lead]'> ";
+                      echo "<br>";
                       echo " <br>";
+                      echo "<th><label>
+                        Lead o Cliente:  &nbsp&nbsp
+                      </label>";
                       echo "<input type='text' size='18' name='lead_telefono' value ='$mostrar[nombre_lead] $mostrar[segundo_nombre_lead] $mostrar[primer_apellido_lead]'> ";
                       echo '<br>';
                       echo '<br>';
@@ -358,8 +364,8 @@ $id = $_GET['id'];
                     <label>Tipo de Telefono </label>
                     <select name="tipo_telefono">
                       <option type="text" size="25" value="Elegir" id="TT">Seleccione Tipo Telefono</option>
-                      <option value="TF" id="TF">Telefono Fijo</option>
-                      <option value="TM" id="TM">Telefono Movil</option>
+                      <option value="Telefono Fijo" id="TF">Telefono Fijo</option>
+                      <option value="Telefono Movil" id="TM">Telefono Movil</option>
 
                     </select>
 
