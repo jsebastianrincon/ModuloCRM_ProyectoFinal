@@ -257,7 +257,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Primer Nombre: </label><input type="text" size="18" name="nombre_lead" required placeholder="Ingrese Primer Nombre ">
+                      <label>Primer Nombre: </label><input type="text" size="18" name="nombre_lead" required placeholder="Ingrese Primer Nombre " maxlength=50>
                       <label>Segundo Nombre: </label><input type="text" size="19" name="segundo_nombre_lead" placeholder="Ingrese Segundo Nombre ">
                       <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido_lead" placeholder="Ingrese Primer Apellido" required>
                       <br>
@@ -274,7 +274,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <br>
                       <label>Telefono: </label><input type="text" size="18" name="telefono_lead" placeholder="Ingrese Telefono" required>
-                      <label>Email: </label><input type="mail" size="26" name="email_lead" placeholder="Ingrese Email" required>
+                      <label>Email: </label><input type="email" size="26" name="email_lead" placeholder="Ingrese Email" required>
                       <label>Departamento: </label>
                       <select name="departamento_lead">
                         <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>

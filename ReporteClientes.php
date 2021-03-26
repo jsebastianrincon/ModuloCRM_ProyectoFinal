@@ -6,6 +6,7 @@ $sql = "SELECT nombre_lead AS Primer_Nombre, segundo_nombre_lead AS Segundo_Nomb
 $resultset = mysqli_query($conexion2, $sql) or die("database error:" . mysqli_error($conexion2));
 
 
+
 $pdf = new FPDF();
 $pdf->AddPage();
 
@@ -14,6 +15,7 @@ $pdf->SetFont('Arial', 'B', 5);
 $pdf->Ln(10);
 
 $pdf->Cell(200, 30, 'REPORTE DE CLIENTES ', 20, 20, 'C');
+
 while ($field_info = mysqli_fetch_field($resultset)) {
   $pdf->Cell(24, 10, $field_info->name, 1);
 };

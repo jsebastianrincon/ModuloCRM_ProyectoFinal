@@ -2,6 +2,7 @@
 
 <?php
 
+$cliente_reunion = $_REQUEST["cliente_reunion"];
 $nombre_reunion = $_REQUEST["nombre_reunion"];
 $fecha_reunion = $_REQUEST["fecha_reunion"];
 $hora_reunion = $_REQUEST["hora_reunion"];
@@ -11,13 +12,14 @@ $estado_reunion = $_REQUEST["estado_reunion"];
 
 
 
+
 require("conlead.php");
 $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
 
-$instruccion_SQL = "INSERT INTO reuniones (nombre_reunion,fecha_reunion,hora_reunion,asignado_reunion,descripcion_reunion,estado_reunion) VALUES ('$nombre_reunion','$fecha_reunion','$hora_reunion','$asignado_reunion','$descripcion_reunion','$estado_reunion')";
+$instruccion_SQL = "INSERT INTO reuniones (cliente_reunion,nombre_reunion,fecha_reunion,hora_reunion,asignado_reunion,descripcion_reunion,estado_reunion) VALUES ('$cliente_reunion','$nombre_reunion','$fecha_reunion','$hora_reunion','$asignado_reunion','$descripcion_reunion','$estado_reunion')";
 
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 if ($resultado == FALSE) {

@@ -269,6 +269,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                                 <th>
                                   <center style="visibility: hidden">--------------------</center>
+                                  <center>Cliente </center>
+                                </th>
+
+                                <th>
+                                  <center style="visibility: hidden">--------------------</center>
                                   <center>Nombre </center>
                                 </th>
 
@@ -303,29 +308,32 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                             while ($mostrar = mysqli_fetch_array($result)) {
-                              if (isset($mostrar['id_usuario'])) {
-                                //Impresion tabla
-                                echo "<tr>";
-                                echo "<td>";
-                                echo $mostrar['nombre_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['fecha_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['hora_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['asignado_reunion'];
-                                echo "<td>";
-                                echo $mostrar['descripcion_reunion'];
-                                echo "</td>";
-                                echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+
+                              //Impresion tabla
+                              echo "<tr>";
+                              echo "<td>";
+                              echo $mostrar['cliente_reunion'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['nombre_reunion'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['fecha_reunion'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['hora_reunion'];
+                              echo "</td>";
+                              echo "<td>";
+                              echo $mostrar['asignado_reunion'];
+                              echo "<td>";
+                              echo $mostrar['descripcion_reunion'];
+                              echo "</td>";
+                              echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                                                                             <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                           </td>";
-                                echo "<br>";
-                              }
+                              echo "<br>";
                             }
+
                             ?>
                           </table>
 
@@ -417,7 +425,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
                               <thead>
                                 <tr>
-
+                                  <th>
+                                    <center style="visibility: hidden">--------------------</center>
+                                    <center>Cliente </center>
+                                  </th>
                                   <th>
                                     <center style="visibility: hidden">--------------------</center>
                                     <center>Nombre </center>
@@ -449,6 +460,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               while ($mostrar = mysqli_fetch_array($result)) {
                                 //Impresion tabla
                                 echo "<tr>";
+                                echo "<td>";
+                                echo $mostrar['cliente_reunion'];
+                                echo "</td>";
                                 echo "<td>";
                                 echo $mostrar['nombre_reunion'];
                                 echo "</td>";
