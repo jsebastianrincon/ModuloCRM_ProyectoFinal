@@ -1,14 +1,4 @@
 <?php
-include("conlead.php");
-session_start();
-
-if (!isset($_SESSION['id_usuario'])) {
-  header("Location: index.php");
-}
-//Validacion variables de session
-$nombre = $_SESSION['nombre'];
-$tipo_usuario = $_SESSION['tipo_usuario'];
-//echo $tipo_usuario;
 
 include_once "barcode/src/BarcodeGenerator.php";
 include_once "barcode/src/BarcodeGeneratorHTML.php";

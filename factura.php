@@ -6,18 +6,6 @@ $id = $_GET['id'];
 $sql = "SELECT codigo_proyecto AS Codigo ,tema_proyecto AS Tema  FROM proyectos WHERE id_proyecto = $id";
 $resultset = mysqli_query($conexion2, $sql) or die("database error:" . mysqli_error($conexion2));
 
-function generarCodigo($longitud)
-{
-  $key = '';
-  $pattern = '1234567891011';
-  $max = strlen($pattern) - 1;
-  for ($i = 0; $i < $longitud; $i++) $key .= $pattern{
-    mt_rand(0, $max)};
-  return $key;
-}
-
-//Ejemplo de uso
-
 
 
 $pdf = new FPDF();
@@ -25,6 +13,7 @@ $pdf->AddPage();
 
 $pdf->Image('images/LOGO.jpg', 12, 12, 40);
 $pdf->SetFont('Arial', 'B', 5);
+
 
 $pdf->Cell(200, 30, 'FACTURA PROYECTO ', 20, 20, 'C');
 $pdf->Cell(200, 30, 'DATOS PROYECTO ', 20, 20, 'L');
