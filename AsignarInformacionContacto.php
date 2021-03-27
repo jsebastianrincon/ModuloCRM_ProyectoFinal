@@ -8,9 +8,8 @@ if (!isset($_SESSION['id_usuario'])) {
 //Validacion variables de session
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
-//echo $tipo_usuario;
-$id = $_GET['id'];
 
+$id = $_GET['id'];
 
 ?>
 
@@ -235,6 +234,7 @@ $id = $_GET['id'];
                 <div class="card card-body">
                   <form class="form-contact" action="RegistroContacto.php" method='POST'>
                     <?php
+
                     /* REGISTRO INFORMACION SOBRE LA TABLA CONTACTOS */
 
                     $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id'";

@@ -81,19 +81,18 @@ $total_proyecto = mysqli_query($conexion2, $sql_total_proyecto);
 while ($field_info = mysqli_fetch_field($total_proyecto)) {
   $pdf->Cell(48, 10, $field_info->name, 1);
 };
+
 while ($rows = mysqli_fetch_assoc($total_proyecto)) {
   $pdf->SetFont('Arial', '', 4.6);
   $pdf->Ln();
   foreach ($rows as $column) {
-    $pdf->Cell(48, 10, $column, 1);
+    $pdf->Cell(4, 10, '$', 1);
+    $pdf->Cell(44, 10, $column, 1,);
   }
 }
 $pdf->Ln();
 $pdf->Ln();
 
-// genera un código de 6 caracteres de longitud.
+
 
 $pdf->Output();
-/* Consulta para generar los requerimientos con los proyectos 
-SELECT nombre_requerimiento AS 'Requerimiento', costo_requerimiento AS 'Costo',tiempo_requerimiento AS 'Tiempo' FROM proyectos INNER JOIN requerimientos_proyectos ON proyectos.id_proyecto = requerimientos_proyectos.id_proyecto WHERE proyectos.id_proyecto = '19' 
-*/

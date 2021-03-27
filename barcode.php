@@ -1,5 +1,5 @@
 <?php
-
+/* Libreria para la generacion de codigos de barras*/
 
 // For demonstration purposes, get pararameters that are passed in through $_GET or set to the default value
 $filepath = (isset($_GET["filepath"]) ? $_GET["filepath"] : "");

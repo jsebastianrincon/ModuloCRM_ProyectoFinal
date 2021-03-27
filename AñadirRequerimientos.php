@@ -11,12 +11,10 @@ if (!isset($_SESSION['id_usuario'])) {
 /* VALIDACION VARIABLES DE SESION */
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
-//echo $tipo_usuario;
 
 /* DECLARACION VARIABLES ID PARA EL USUARIO Y EL PROYECTO */
 
 $id = $_GET['id'];
-
 $id_proyecto = $_GET['id'];
 ?>
 
