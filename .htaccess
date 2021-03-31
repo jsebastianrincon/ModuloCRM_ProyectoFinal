@@ -8,8 +8,12 @@ options -indexes
 RewriteEngine on 
 RewriteBase /ModuloCRM_ProyectoFinal/
 RewriteCond %{SCRIPT_FILENAME} !-d
-RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME}.php -f
 
+RewriteEngine On
+
+    RewriteEngine On
+  
 
 RewriteRule ^(.*)$ $1.php
 
