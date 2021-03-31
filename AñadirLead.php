@@ -3,7 +3,7 @@
 /* CARGAR CONEXION PARA LA VALIDACION DE LA SESION */
 
 include("conlead.php");
-session_start();
+
 
 if (!isset($_SESSION['id_usuario'])) {
   header("Location: index.php");
@@ -12,6 +12,11 @@ if (!isset($_SESSION['id_usuario'])) {
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 
+session_start();
+
+if (session_abort()) {
+  header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
