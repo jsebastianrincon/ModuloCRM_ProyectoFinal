@@ -15,6 +15,10 @@ require('reportes\fpdf.php');
 
 include('conlead.php');
 $id = $_GET['id'];
+
+$sql_fecha = "SELECT fecha_factura,fecha_pago_factura FROM facturas where proyecto_factura = $id";
+$resultset5 = mysqli_query($conexion2, $sql_fecha) or die("database error:" . mysqli_error($conexion2));
+
 $sql = "SELECT codigo_proyecto AS Codigo ,tema_proyecto AS Tema  FROM proyectos WHERE id_proyecto = $id";
 $resultset = mysqli_query($conexion2, $sql) or die("database error:" . mysqli_error($conexion2));
 
@@ -27,24 +31,39 @@ $pdf->AddPage();
 
 $pdf->Image('images/LOGO.jpg', 12, 12, 40);
 $pdf->SetFont('Arial', 'B', 5);
+$pdf->Ln(2);
 
+$pdf->Cell(200, 25, 'FACTURA PROYECTO ', 15, 15, 'C');
 
-$pdf->Cell(200, 30, 'FACTURA PROYECTO ', 20, 20, 'C');
-$pdf->Cell(200, 25, 'DATOS PROYECTO ', 15, 15, 'L');
+$pdf->Cell(200, 25, 'FECHA PAGO', 10, 10, 'L');
 
-
-while ($field_info = mysqli_fetch_field($resultset)) {
+while ($field_info = mysqli_fetch_field($resultset5)) {
   $pdf->Cell(40, 10, $field_info->name, 1);
 };
-while ($rows = mysqli_fetch_assoc($resultset)) {
+while ($rows = mysqli_fetch_assoc($resultset5)) {
   $pdf->SetFont('Arial', '',);
   $pdf->Ln();
   foreach ($rows as $column) {
     $pdf->Cell(40, 10, $column, 1);
   }
-}
-$pdf->Ln(10);
 
+  $pdf->Ln(5);
+  $pdf->SetFont('Arial', 'B', 5);
+  $pdf->Cell(200, 25, 'DATOS PROYECTO ', 10, 10, 'L');
+
+
+  while ($field_info = mysqli_fetch_field($resultset)) {
+    $pdf->Cell(40, 10, $field_info->name, 1);
+  };
+  while ($rows = mysqli_fetch_assoc($resultset)) {
+    $pdf->SetFont('Arial', '',);
+    $pdf->Ln();
+    foreach ($rows as $column) {
+      $pdf->Cell(40, 10, $column, 1);
+    }
+  }
+  $pdf->Ln(10);
+}
 
 $pdf->SetFont('Arial', 'B', 5);
 $pdf->Cell(200, 30, 'REQUERIMIENTOS DEL PROYECTO ', 20, 20, 'C');
@@ -85,7 +104,7 @@ while ($rows = mysqli_fetch_assoc($resultset4)) {
 }
 
 $pdf->Ln();
-$pdf->Ln();
+
 
 $pdf->SetFont('Arial', 'B', 5);
 $iva = '0.19';
@@ -101,13 +120,13 @@ $numero_aleatorio = rand(1000000000000, 9999999999999);
 $string = (string)$numero_aleatorio;
 
 while ($rows = mysqli_fetch_assoc($total_proyecto)) {
-  $pdf->SetFont('Arial', '', 5.6);
+  $pdf->SetFont('Arial', '', 5);
   $pdf->Ln();
   foreach ($rows as $column) {
     $pdf->Cell(4, 10, '$', 1);
     $pdf->Cell(44, 10, $column, 1,);
-    $pdf->Image('images/Barcode.jpg', 85, 230, 50);
-    $pdf->Cell(105, 90, $numero_aleatorio, 20, 20, 'C');
+    $pdf->Image('images/Barcode.jpg', 90, 235, 25);
+    $pdf->Cell(90, 45, $numero_aleatorio, 20, 20, 'C');
   }
 }
 $pdf->Ln();
