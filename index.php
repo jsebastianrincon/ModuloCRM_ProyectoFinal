@@ -9,9 +9,9 @@ if ($_POST) {
   $usuario = $_POST['usuario'];
   $password = $_POST['password'];
 
-  //$sql = "SELECT id_usuario, usuario, password, tipo_usuario FROM usuarios WHERE usuario='$usuario' ";
+
   $sql = "SELECT id_usuario, usuario, password, tipo_usuario FROM usuarios WHERE usuario='$usuario' ";
-  //echo $sql;
+
   $resultado = $mysqli->query($sql);
   $num = $resultado->num_rows;
 

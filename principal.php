@@ -519,8 +519,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript"></script>
   <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript">
+  </script>
   <script>
     google.charts.load('current', {
       'packages': ['corechart']
