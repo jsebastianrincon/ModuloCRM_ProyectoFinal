@@ -37,7 +37,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 </head>
 
 <body id="page-top">
-
+  <div id="viewer"></div>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
