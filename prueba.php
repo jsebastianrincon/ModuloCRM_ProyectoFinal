@@ -1,32 +1,11 @@
-<?php
-include("conlead.php");
-session_start();
-
-if (!isset($_SESSION['id_usuario'])) {
-  header("Location: index.php");
-}
-//Validacion variables de session
-$nombre = $_SESSION['nombre'];
-$tipo_usuario = $_SESSION['tipo_usuario'];
-//echo $tipo_usuario;
-
-
-?>
-
-
-
-<html>
-
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript"></script>
-  <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
-
-<body>
-  <div id="piechart" style="width: 900px; height: 500px;"></div>
-
-</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.1/chart.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript"></script>
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<script src="vendor/chart.js/Chart.min.js"></script>
 
 <script>
   google.charts.load('current', {
@@ -50,7 +29,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         ]);
 
         var options = {
-          title: 'Graficas'
+
+          title: 'Leads-Clientes Registrados',
+          fontSize: 20,
+          legend: {
+            alignment: 'center',
+
+          },
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -64,5 +49,3 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
   }
 </script>
-
-</html>
