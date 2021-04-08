@@ -236,14 +236,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       $sql = "SELECT * FROM  usuarios where tipo_usuario = $tipo_usuario";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
-                        echo "Usuario: ";
-                        echo $mostrar['tipo_usuario'];
-                        echo "<br>";
+
                         echo "Nombre Usuario: ";
                         echo $mostrar['usuario'];
-                        echo "<br>";
-                        echo "Contraseña: ";
-                        echo $mostrar['password'];
                       }
 
                       ?>

@@ -146,7 +146,7 @@ if ($_POST) {
         </style>
 
         <div class="btn-whatsapp">
-          <a href="https://api.whatsapp.com/send?phone=3124672351" target="_blank">
+          <a href="https://api.whatsapp.com/send?phone=+57 3124672351" target="_blank">
             <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
           </a>
         </div>
