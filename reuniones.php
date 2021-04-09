@@ -238,7 +238,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form" display: flex;>
                       <center><label>Tema Reunion </label>
                         <br>
-                        <input type="text" size="40" name="nombre_reunion">
+                        <input type="text" onkeypress="return SoloLetras(event);" size="40" name="nombre_reunion">
                       </center>
                       <br>
                       <center><label>Fecha: </label>
@@ -357,7 +357,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  <script>
+    function darFormato(cadena) {
 
+      let resultado = enieMinus.replace(/[$%&()=!#*]/gi, '');
+      return resultado;
+    }
+  </script>
 </body>
 
 </html>
