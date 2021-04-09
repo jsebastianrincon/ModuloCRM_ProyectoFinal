@@ -56,7 +56,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="principal.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -69,7 +69,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-user-friends"></i>
             <span>Clientes</span>

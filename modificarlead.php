@@ -233,20 +233,29 @@ $id_lead = $_GET['id'];
           </ul>
 
         </nav>
+
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+          <a href='gestionarclientes.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+            </button></a>
+          <?php
+          echo "<br>";
+          echo "<br>";
+          ?>
           <!-- Titulo Formulario de adicion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
             <h1 class="h3 mb-0 text-gray-800">Modificar Lead</h1>
 
           </div>
           <!-- Formulario para Adicion de leads -->
+
           <fieldset>
             <div class="container p-4">
               <div class="group">
+
                 <div class="card card-body">
                   <form class="form-contact" action="ModificacionLead.php" method="POST">
                     <div class="form-group" id="responsive-form">

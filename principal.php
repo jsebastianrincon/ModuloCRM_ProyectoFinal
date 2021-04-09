@@ -55,6 +55,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
+
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="principal.php">
@@ -199,9 +200,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </li>
 
 
-
-
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -218,10 +216,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                   Perfil
                 </a>
 
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Modificar Informacion
-                </a>
+
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -236,13 +231,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <div>
+            <?php
 
+            $sql = "SELECT * FROM  usuarios where tipo_usuario = $tipo_usuario";
+            $result = mysqli_query($conexion2, $sql);
+            while ($mostrar = mysqli_fetch_array($result)) {
+              echo "<h1 class='h3 mb-0 text-gray-800'>Bienvenido al panel de $mostrar[usuario]</h1> ";
+            }
+            echo "<br>";
+            echo "<br>";
+            ?>
+          </div>
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 
           </div>
+          <div>
 
+
+          </div>
           <!-- Content Row -->
           <div class="row">
             <?php if ($tipo_usuario == 1) { ?>

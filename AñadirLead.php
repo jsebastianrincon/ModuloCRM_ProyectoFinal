@@ -262,7 +262,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido_lead" placeholder="Ingrese Primer Apellido" required>
                       <br>
                       <br>
-                      <label>Segundo Apellido: </label><input type="text" size="21" name="segundo_apellido_lead" placeholder="Ingrese Segundo Apellido">
+                      <label>Segundo Apellido: </label><input type="text" size="19" name="segundo_apellido_lead" placeholder="Ingrese Segundo Apellido">
                       <label>Tipo de Documento: </label>
                       <select name="tipodocumento_lead">
                         <option type="text" size="25" value="Elegir" id="TD">Seleccione Tipo de documento</option>
@@ -270,7 +270,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="CE" id="CE">Cedula de Extranjeria</option>
                         <option value="PA" id="PA">Pasaporte</option>
                       </select>
-                      <label>Documento: </label><input type="text" size="13" name="documento_lead" placeholder="Ingrese Documento" required>
+                      <label>Documento: </label><input type="text" size="15" name="documento_lead" placeholder="Ingrese Documento" required>
                       <br>
                       <br>
                       <label>Telefono: </label><input type="text" size="18" name="telefono_lead" placeholder="Ingrese Telefono" required>
@@ -320,7 +320,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <label>Compañia: </label><input type="text" size="30" name="compañia_lead" placeholder="Ingrese Compañia" required>
 
-                      <label>Asignado: </label>
+                      <label>Asignado Por: </label>
                       <select name="asignado_lead">
                         <option value="Asignado por">Seleccione Area</option>
                         <option value="Area Comercial" id="ArC">Area Comercial</option>

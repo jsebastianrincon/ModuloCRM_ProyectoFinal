@@ -285,7 +285,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <div class="group">
                 <div class="card card-body">
                   <div class="form-group" id="responsive-form">
-
+                    <?php
+                    echo "<th>";
+                    echo "<a href='añadirlead.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Lead</i></button></a>"; ?>
                     <fieldset>
 
                       <div class="col md-8 col md-offset-2">
@@ -353,6 +355,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         while ($mostrar = mysqli_fetch_array($result)) {
                           //Impresion tabla
                           echo "<tr>";
+
                           echo "<td>";
                           echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre_lead'];
                           echo "</td>";

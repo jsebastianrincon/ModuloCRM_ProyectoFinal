@@ -205,7 +205,10 @@ $id = $_GET['id'];
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+          <a href='gestionaventas.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+            </button></a>
+          <br>
+          <br>
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Detalles De Proyecto</h1>

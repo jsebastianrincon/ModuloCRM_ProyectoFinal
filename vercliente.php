@@ -70,7 +70,7 @@ $id = $_GET['id'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-user-friends"></i>
             <span>Clientes</span>
@@ -84,7 +84,7 @@ $id = $_GET['id'];
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Leads</span>
@@ -227,7 +227,8 @@ $id = $_GET['id'];
                       <div class="col md-8 col md-offset-2">
                         <!-- Tabla de Leads Registrados -->
                       </div>
-
+                      <a href='gestionarclientes.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+                        </button></a>
                       <div class="card-header py-3">
 
 

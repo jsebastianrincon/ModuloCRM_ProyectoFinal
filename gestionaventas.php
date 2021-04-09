@@ -242,9 +242,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               <div class="group">
                 <div class="card card-body">
                   <div class="form-group" id="responsive-form">
-
+                    <?php
+                    echo "<th>";
+                    echo "<a href='propuestas.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Propuesta</i></button></a>"; ?>
                     <fieldset>
-
                       <div class="col md-8 col md-offset-2">
                         <!-- Tabla de Leads Registrados -->
                       </div>

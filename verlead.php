@@ -226,7 +226,8 @@ $id = $_GET['id'];
                       <div class="col md-8 col md-offset-2">
                         <!-- Tabla de Leads Registrados -->
                       </div>
-
+                      <a href='gestionalead.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+                        </button></a>
                       <div class="card-header py-3">
 
 

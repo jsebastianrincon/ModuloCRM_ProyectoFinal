@@ -73,7 +73,7 @@ $id_lead = $_GET['id'];
 
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-user-friends"></i>
             <span>Clientes</span>
@@ -88,7 +88,7 @@ $id_lead = $_GET['id'];
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item ">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Leads</span>
@@ -210,7 +210,12 @@ $id_lead = $_GET['id'];
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
+
         <div class="container-fluid">
+          <a href='gestionarclientes.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+            </button></a>
+          <br>
+          <br>
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Confirmar Correo</h1>
           </div>

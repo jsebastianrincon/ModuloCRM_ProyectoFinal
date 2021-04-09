@@ -86,7 +86,7 @@ $id_proyecto = $_GET['id'];
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
 
@@ -107,7 +107,7 @@ $id_proyecto = $_GET['id'];
 
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class=" fas fa-cart-plus"></i></i>
             <span>Ventas</span>
@@ -116,6 +116,8 @@ $id_proyecto = $_GET['id'];
             <div class="bg-white py-2 collapse-inner rounded">
 
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
+
 
             </div>
           </div>
@@ -227,7 +229,12 @@ $id_proyecto = $_GET['id'];
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
+
         <div class="container-fluid">
+          <a href='gestionaventas.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+            </button></a>
+          <br>
+          <br>
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Modificar Proyecto</h1>
           </div>

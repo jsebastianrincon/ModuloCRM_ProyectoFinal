@@ -222,60 +222,63 @@ $id = $_GET['id'];
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <a href='gestionalead.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+            </button></a>
+          <div>
+            <br>
+            <!-- Titulo Gestion de leads -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+              <h1 class="h3 mb-0 text-gray-800">Asignar Informacion De Contacto</h1>
+            </div>
+            <!-- Gestion de leads -->
+            <fieldset>
+              <div class="container p-8">
+                <div class="group">
+                  <div class="card card-body">
+                    <form class="form-contact" action="RegistroContacto.php" method='POST'>
+                      <?php
 
-          <!-- Titulo Gestion de leads -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Asignar Informacion De Contacto</h1>
-          </div>
-          <!-- Gestion de leads -->
-          <fieldset>
-            <div class="container p-8">
-              <div class="group">
-                <div class="card card-body">
-                  <form class="form-contact" action="RegistroContacto.php" method='POST'>
-                    <?php
+                      /* REGISTRO INFORMACION SOBRE LA TABLA CONTACTOS */
 
-                    /* REGISTRO INFORMACION SOBRE LA TABLA CONTACTOS */
+                      $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id'";
+                      $result = mysqli_query($conexion2, $sql);
+                      while ($mostrar = mysqli_fetch_array($result)) {
+                        //Impresion tabla
 
-                    $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id'";
-                    $result = mysqli_query($conexion2, $sql);
-                    while ($mostrar = mysqli_fetch_array($result)) {
-                      //Impresion tabla
-
-                      echo "<th><label>
+                        echo "<th><label>
                         Id Lead:  &nbsp&nbsp
                       </label>";
-                      echo "<input type='text' size='15' name='id_lead' value ='$mostrar[id_lead]'> ";
-                      echo "<br>";
-                      echo " <br>";
-                      echo "<th><label>
+                        echo "<input type='text' size='15' name='id_lead' value ='$mostrar[id_lead]'> ";
+                        echo "<br>";
+                        echo " <br>";
+                        echo "<th><label>
                         Lead o Cliente:  &nbsp&nbsp
                       </label>";
-                      echo "<input type='text' size='18' name='lead_telefono' value ='$mostrar[nombre_lead] $mostrar[segundo_nombre_lead] $mostrar[primer_apellido_lead]'> ";
-                      echo '<br>';
-                      echo '<br>';
-                    }
-                    ?>
+                        echo "<input type='text' size='18' name='lead_telefono' value ='$mostrar[nombre_lead] $mostrar[segundo_nombre_lead] $mostrar[primer_apellido_lead]'> ";
+                        echo '<br>';
+                        echo '<br>';
+                      }
+                      ?>
 
 
-                    <label>Telefono principal: </label><input type="text" size="18" name="telefono_telefono" required placeholder="Ingrese Numero Telefono ">
-                    <label>Tipo de Telefono </label>
-                    <select name="tipo_telefono">
-                      <option type="text" size="25" value="Elegir" id="TT">Seleccione Tipo Telefono</option>
-                      <option value="Telefono Fijo" id="TF">Telefono Fijo</option>
-                      <option value="Telefono Movil" id="TM">Telefono Movil</option>
+                      <label>Telefono principal: </label><input type="text" size="18" name="telefono_telefono" required placeholder="Ingrese Numero Telefono ">
+                      <label>Tipo de Telefono </label>
+                      <select name="tipo_telefono">
+                        <option type="text" size="25" value="Elegir" id="TT">Seleccione Tipo Telefono</option>
+                        <option value="Telefono Fijo" id="TF">Telefono Fijo</option>
+                        <option value="Telefono Movil" id="TM">Telefono Movil</option>
 
-                    </select>
+                      </select>
 
-                    <br>
-                    <br>
-                    <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar Informacion De Contacto">
+                      <br>
+                      <br>
+                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar Informacion De Contacto">
 
 
+                  </div>
                 </div>
-              </div>
-            </div> <!-- /.container-fluid -->
-
+              </div> <!-- /.container-fluid -->
+          </div>
         </div>
         <!-- End of Main Content -->
 

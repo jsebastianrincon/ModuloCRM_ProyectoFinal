@@ -105,7 +105,7 @@ $id_proyecto = $_GET['id'];
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class=" fas fa-cart-plus"></i></i>
             <span>Ventas</span>
@@ -246,7 +246,10 @@ $id_proyecto = $_GET['id'];
         </div>
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+          <a href='gestionaventas.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+            </button></a>
+          <br>
+          <br>
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">ADICION DE REQUERIMIENTOS</h1>

@@ -259,9 +259,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </div>
 
                       <div class="card-header py-3">
-
+                        <?php
+                        echo "<th>";
+                        echo "<a href='reuniones.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Reunion</i></button></a>"; ?>
                       </div>
                       <div class="card-body">
+
                         <div class="table-responsive">
                           <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
                             <thead>
