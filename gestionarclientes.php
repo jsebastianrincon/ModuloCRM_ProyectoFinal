@@ -347,7 +347,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           echo "<colspan='24'><div class='btn-group'><th>
                               <a href='vercliente.php?id=$mostrar[id_lead] + $mostrar[email_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
                               <a href='modificarlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                              <a href='Confirmacion.php?id=$mostrar[email_lead]'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>";
+                              <a href='formcorreo.php?id=$mostrar[id_lead] + $mostrar[email_lead]'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>";
                           echo "</td>";
                         }
 

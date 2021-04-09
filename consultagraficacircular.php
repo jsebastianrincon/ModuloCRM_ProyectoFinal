@@ -1,6 +1,10 @@
-<?
+<?php
+include("conlead.php");
+session_start();
 
-
+if (!isset($_SESSION['id_usuario'])) {
+  header("Location: index.php");
+}
 //Validacion variables de session
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
@@ -17,4 +21,3 @@ $rows = mysqli_fetch_all($total);
 $data = json_encode($rows);
 
 echo $data;
-?>
