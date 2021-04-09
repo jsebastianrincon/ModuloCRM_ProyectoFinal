@@ -1,61 +1,33 @@
-
 <?php
-/* ARCHIVO PARA EL ENVIO DE CORREO COMO CONFIRMACION DE REGISTRO EN EL CRM */
-include 'conlead.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+$result = "";
+if (isset($_POST['submit'])) {
 
-require 'phpmailer/Exception.php';
-require 'phpmailer/PHPMailer.php';
-require 'phpmailer/SMTP.php';
+  require 'phpmailer/PHPMailerAutoload.php';
 
-//$id_usuario = $_GET['id'];
+  $mail = new PHPMailer;
+  $mail->isSMTP();
+  $mail->Host = 'smtp.gmail.com';
+  $mail->Port = 587;
+  $mail->SMTPAuth = true;
+  $mail->SMTPSecure = 'tls';
+  $mail->Username = 'juanrinconaxl926@gmail.com';
+  $mail->Password = 'sebas20.121996';
 
-$mail = new PHPMailer(true);
+  $mail->setFrom($_POST['email_lead']);
+  $mail->addAddress('juanrinconaxl926@gmail.com');
+  //$mail->addReplyTo($_POST['email_lead']);
+  $mail->addReplyTo($_POST['email_lead']);
 
-try {
-  //Server settings
-  //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-  $mail->isSMTP();                                            //Send using SMTP
-  $mail->Host       = 'smtp.googlemail.com';                     //Set the SMTP server to send through
-  $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-  $mail->Username   = 'jsebastianrincon@ucundinamarca.edu.co';                     //SMTP username
-  $mail->Password   = 'secret';                               //SMTP password
-  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-  $mail->Port       = 465;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-  $mail->setFrom('from@example.com', 'Mailer');
-  //Recipients
+  $mail->isHTML(true);
+  $mail->Subject = 'Registro Sistema Nuevo Usuario';
+  $mail->Body = '<h1 align=center>BIENVENIDO A MOVIP S.A.S <br><br> Usted ha sido registrado como cliente en nuestro sistema CRM mediante el cual podra realizar el seguimiento de las facturas y las reuniones de los proyectos que usted desee desarrollar con nosotros,por este medio recibira los enlaces para las reuniones que se programen en el transcurso de la realizacion de sus proyectos.<br><br>Pronto nos contactaremos a sus numeros de domicilio para asignar las credenciales las cuales le permitan acceder y llevar un mejor seguimiento de sus proyectos y facturas <br><br> Gracias por contactarnos </h1>';
 
-  $sql = "SELECT usuarios.usuario,usuarios.password,usuarios.id_usuario, leads.nombre_lead,leads.primer_apellido_lead FROM usuarios INNER JOIN leads ON leads.email_lead = usuarios.usuario WHERE usuarios.id_usuario = '22'  ";
-
-  $data = mysqli_query($conexion2, $sql);
-  $resultado = mysqli_fetch_array($data);
-  foreach ($resultado as $r) {
-
-    $nombre = $resultado['nombre_lead'] . '' . $resultado['primer_apellido_lead'];
-
-    $mail->addAddress($resultado['usuario'], $nombre);     //Add a recipient
-
+  if (!$mail->send()) {
+    echo "ERROR";
+  } else {
+    echo "<script> alert('Correo Enviado');
+  window.location.href= 'gestionarclientes.php';
+  </script>";
   }
-  $subject = 'Confirmacion de Usuario';
-
-  $message = '';
-  $message .= "<h1>'.$subject.'</h1>";
-  $message .= '<p>.Usuario:.</p>' . $resultado['usuario'];
-  $message .= '<p>.Password:.</p>' . $resultado['password'];
-
-
-
-  //Content
-  $mail->CharSet = 'UTF-8';
-  $mail->isHTML(true);                                  //Set email format to HTML
-  $mail->Subject = $subject;
-  $mail->Body    = $message;
-
-
-  $mail->send();
-  echo 'Correo enviado correctamente';
-} catch (Exception $e) {
-  echo "Ha ocurrido un error. Mailer Error: {$mail->ErrorInfo}";
 }
