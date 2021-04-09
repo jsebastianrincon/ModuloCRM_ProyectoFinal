@@ -238,7 +238,7 @@ $id_lead = $_GET['id'];
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <a href='gestionarclientes.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+          <a href='gestionalead.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
             </button></a>
           <?php
           echo "<br>";

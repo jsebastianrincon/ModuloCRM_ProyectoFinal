@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
   $mail->Password = 'sebas20.121996';
 
   $mail->setFrom($_POST['email_lead']);
-  $mail->addAddress('juanrinconaxl926@gmail.com');
+  $mail->addAddress($_POST['email_lead']);
   //$mail->addReplyTo($_POST['email_lead']);
   $mail->addReplyTo($_POST['email_lead']);
 
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
   if (!$mail->send()) {
     echo "ERROR";
   } else {
-    echo "<script> alert('Correo Enviado');
+    echo "<script> alert('Confirmacion Enviada');
   window.location.href= 'gestionarclientes.php';
   </script>";
   }
