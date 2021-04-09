@@ -368,7 +368,8 @@ $id = $_GET['id'];
                         echo "<colspan='24'><div class='btn-group'><th> 
                                <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-file-pdf'></i> Generar Factura</button></a> ";
                         echo "</td> &nbsp&nbsp&nbsp
-                         <a href='guardarfactura.php?id=$mostrar[id_proyecto]& $mostrar[tema_proyecto]& $mostrar[codigo_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-save'></i> Guardar Factura</button></a>";
+                         <a href='guardarfactura.php?id=$mostrar[id_proyecto]& $mostrar[tema_proyecto]& $mostrar[codigo_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-save'></i> Guardar Factura</button></a>
+                          &nbsp&nbsp&nbsp";
                       }
                       ?>
                     </div>
