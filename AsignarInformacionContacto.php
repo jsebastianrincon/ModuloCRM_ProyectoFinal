@@ -265,8 +265,22 @@ $id = $_GET['id'];
                       <label>Tipo de Telefono </label>
                       <select name="tipo_telefono">
                         <option type="text" size="25" value="Elegir" id="TT">Seleccione Tipo Telefono</option>
+                        <option value="Email" id="EM">Email</option>
+                        <option value="Fax" id="FX">Fax</option>
                         <option value="Telefono Fijo" id="TF">Telefono Fijo</option>
                         <option value="Telefono Movil" id="TM">Telefono Movil</option>
+
+
+
+                      </select>
+                      <label>Prioridad </label>
+                      <select name="priorida_telefono">
+                        <option type="text" size="25" value="Elegir" id="TT">Seleccion Prioridad</option>
+                        <option value="1" id="1">Baja</option>
+                        <option value="2" id="2">Media</option>
+                        <option value="3" id="3">Alta</option>
+
+
 
                       </select>
 

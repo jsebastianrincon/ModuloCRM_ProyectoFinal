@@ -236,14 +236,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 <div class="card card-body">
                   <form class="form-contact" action="RegistroReunion.php" method='POST'>
                     <div class="form-group" id="responsive-form" display: flex;>
-                      <center><label>Tema Reunion </label>
+                      <center><label style="color: red;">(*)</label><label>Tema Reunion </label>
                         <br>
-                        <input type="text" onkeypress="return SoloLetras(event);" size="40" name="nombre_reunion">
+                        <input type="text" onkeypress="return SoloLetras(event);" size="40" name="nombre_reunion" required>
                       </center>
                       <br>
-                      <center><label>Fecha: </label>
+                      <center><label style="color: red;">(*)</label><label>Fecha: </label>
                         <input type="date" size="40" name="fecha_reunion" required>
-                        <label>Hora: </label><input type="time" size="50" name="hora_reunion" required>
+                        <label style="color: red;">(*)</label><label>Hora: </label><input type="time" size="50" name="hora_reunion" required>
                         <br>
                         <br>
                         <label>Asignado Por: </label>
@@ -255,7 +255,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </select>
                         <br>
                         <br>
-                        <label>Asignada A: </label>
+                        <label>Asignada A: </label><label style="color: red;">(*)</label>
                         <br>
                         <name='cliente_reunion'>
 
@@ -275,7 +275,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                           <body>
-                            <select name='cliente_reunion'>
+                            <select name='cliente_reunion' required>
                               <?php
                               while ($row = mysqli_fetch_array($resultado)) :;
                               ?>
@@ -296,7 +296,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </center>
                       <br>
 
-                      <center><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required></textarea></center>
+                      <center><label style="color: red;">(*)</label><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required></textarea></center>
 
                       <br>
                       <br>

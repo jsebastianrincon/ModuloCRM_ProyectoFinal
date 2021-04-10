@@ -257,25 +257,36 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Primer Nombre: </label><input type="text" size="18" name="nombre_lead" required placeholder="Ingrese Primer Nombre " maxlength=50>
-                      <label>Segundo Nombre: </label><input type="text" size="19" name="segundo_nombre_lead" placeholder="Ingrese Segundo Nombre ">
-                      <label>Primer Apellido: </label><input type="text" size="22" name="primer_apellido_lead" placeholder="Ingrese Primer Apellido" required>
+
+                      <p style="color: red;">(*) Campos Requeridos</p>
+
+
+
+                      <br>
+
+                      <label>Primer Nombre: </label> <label style="color: red;">(*)</label><input type="text" size="17" name="nombre_lead" required placeholder="Ingrese Primer Nombre " maxlength=50>
+                      <label>Segundo Nombre: </label> <input type="text" size="18" name="segundo_nombre_lead" placeholder="Ingrese Segundo Nombre ">
+
+                      <label>Primer Apellido: </label> <label style="color: red;">(*)</label><input type="text" size="19" name="primer_apellido_lead" placeholder="Ingrese Primer Apellido" required>
                       <br>
                       <br>
                       <label>Segundo Apellido: </label><input type="text" size="19" name="segundo_apellido_lead" placeholder="Ingrese Segundo Apellido">
-                      <label>Tipo de Documento: </label>
+
+                      <label>Tipo de Documento: </label><label style="color: red;">(*)</label>
                       <select name="tipodocumento_lead">
-                        <option type="text" size="25" value="Elegir" id="TD">Seleccione Tipo de documento</option>
+                        <option type="text" size="24" value="Elegir" id="TD">Seleccione Tipo de documento</option>
                         <option value="CC" id="CC">Cedula de Ciudadania</option>
                         <option value="CE" id="CE">Cedula de Extranjeria</option>
                         <option value="PA" id="PA">Pasaporte</option>
                       </select>
-                      <label>Documento: </label><input type="text" size="15" name="documento_lead" placeholder="Ingrese Documento" required>
+
+                      <label>Documento:</label><label style="color: red;">(*)</label><input type="text" size="11" name="documento_lead" placeholder="Ingrese Doc." required>
+
                       <br>
                       <br>
-                      <label>Telefono: </label><input type="text" size="18" name="telefono_lead" placeholder="Ingrese Telefono" required>
-                      <label>Email: </label><input type="email" size="26" name="email_lead" placeholder="Ingrese Email" required>
-                      <label>Departamento: </label>
+                      <label>Telefono: </label> <label style="color: red;">(*)</label><input type="text" size="15" name="telefono_lead" placeholder="Ingrese Telefono" required>
+                      <label>Email: </label> <label style="color: red;">(*)</label><input type="email" size="22" name="email_lead" placeholder="Ingrese Email" required>
+                      <label>Departamento: </label> <label style="color: red;">(*)</label>
                       <select name="departamento_lead">
                         <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>
                         <option value="Amazonas" id="AZ<">Amazonas</option>
@@ -308,9 +319,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </select>
                       <br>
                       <br>
-                      <label>Ciudad: </label><input type="text" size="23" name="ciudad_lead" placeholder="Ciudad de residencia" required>
-                      <label>Direccion: </label><input type="text" size="23" name="direccion_lead" placeholder="Ingrese Direccion de domicilio" required>
-                      <label>Estado: </label>
+                      <label>Ciudad: </label><label style="color: red;">(*)</label><input type="text" size="23" name="ciudad_lead" placeholder="Ciudad de residencia" required>
+                      <label>Direccion: </label><label style="color: red;">(*)</label><input type="text" size="23" name="direccion_lead" placeholder="Ingrese Direccion de domicilio" required>
+                      <label>Estado:<label style="color: red;">(*)</label> </label>
                       <select name="estado_lead">
                         <option value="Seleccione Estado">Asigne un Estado</option>
                         <option value="Nuevo" id="NV">Nuevo</option>
@@ -318,9 +329,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </select>
                       <br>
                       <br>
-                      <label>Compañia: </label><input type="text" size="30" name="compañia_lead" placeholder="Ingrese Compañia" required>
+                      <label>Compañia: </label><label style="color: red;">(*)</label><input type="text" size="30" name="compañia_lead" placeholder="Ingrese Compañia" required>
 
-                      <label>Asignado Por: </label>
+                      <label>Asignado Por: </label><label style="color: red;">(*)</label>
                       <select name="asignado_lead">
                         <option value="Asignado por">Seleccione Area</option>
                         <option value="Area Comercial" id="ArC">Area Comercial</option>
@@ -328,10 +339,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </select>
                       <br>
                       <br>
-                      <label>Comentario: </label><br><textarea name="comentario_lead" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
+                      <label>Comentario: </label><label style="color: red;">(*)</label><br><textarea name="comentario_lead" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
                       <br>
                       <br>
-                      <label>Recurso: </label>
+                      <label>Recurso: </label><label style="color: red;">(*)</label>
                       <select name="recurso_lead">
                         <option value="Asignado por">Seleccione Recurso</option>
                         <option value="Facebook" id="F">Facebook</option>

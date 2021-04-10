@@ -234,7 +234,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
                       <br>
-                      <label>Asignado A: </label>
+                      <p style="color: red;">(*) Campos Requeridos</p>
+                      <br>
+                      <label>Asignado A: </label><label style="color: red;">(*)</label>
                       <name='cliente_proyecto'>
 
                         <?php
@@ -265,20 +267,19 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </body>
 
                         </html>
-                        <label>Codigo Proyecto: </label><input type="text" size="31" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto">
+                        <label>Codigo Proyecto: </label><label style="color: red;">(*)</label><input type="text" size="31" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto">
                         <br>
                         <br>
 
-                        <label>Fecha: </label>
-                        <input type="date" size="20" name="fecha_ini_proyecto" required>
+                        <label>Fecha: <label style="color: red;">(*)</label></label>
+                        <input type="date" size="15" name="fecha_ini_proyecto" required>
 
-                        <label>Abierto Hasta: </label>
+                        <label>Abierto Hasta:<label style="color: red;">(*)</label> </label>
                         <input type="date" size="40" name="fecha_fin_proyecto" required>
-                        <label>Telefono: </label><input type="text" size="12" name="telefono" placeholder="Ingrese Telefono" required>
-                        <label>Tema: </label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion ">
+                        <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion ">
                         <br>
                         <br>
-                        <label>Departamento: </label>
+                        <label>Departamento: </label><label style="color: red;">(*)</label>
                         <select name="departamento">
                           <option type="text" size="30" value="Elegir" id="AF">Seleccionar Departamento </option>
                           <option value="Amazonas" id="AZ<">Amazonas</option>
@@ -309,9 +310,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           <option value="Vaupes" id="VU">Vaupes</option>
                           <option value="Vichada" id="VI">Vichada</option>
                         </select>
-                        <label>Ciudad: </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" required>
+                        <label>Ciudad:<label style="color: red;">(*)</label> </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" required>
 
-                        <label>Asignado: </label>
+                        <label>Asignado:<label style="color: red;">(*)</label> </label>
                         <select name="asignado">
                           <option value="Asignado por">Seleccione Area</option>
                           <option value="Area Comercial" id="ArC">Area Comercial</option>
@@ -319,10 +320,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </select>
                         <br>
                         <br>
-                        <label>Email: </label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" required>
+                        <label>Email: <label style="color: red;">(*)</label></label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" required>
                         <br>
                         <br>
-                        <label>Descripcion: </label><br><textarea name="descripcion_proyecto" rows="3" cols="60" placeholder="Ingrese Descripcion del proyecto..." required></textarea>
+                        <label>Descripcion:<label style="color: red;">(*)</label> </label><br><textarea name="descripcion_proyecto" rows="3" cols="60" placeholder="Ingrese Descripcion del proyecto..." required></textarea>
                         <br>
                         <br>
                         <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">

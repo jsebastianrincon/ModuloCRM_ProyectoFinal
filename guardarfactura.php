@@ -229,7 +229,7 @@ $id = $_GET['id'];
                       </div>
 
                       <div class="card-header py-3">
-                        <form class="form-contact" action="RegistroFactura.php" method="POST">
+                        <form class="form-contact" action="registrofactura.php" method="POST">
                           <div class="form-group" id="responsive-form">
 
                             <?php
@@ -244,15 +244,15 @@ $id = $_GET['id'];
                               echo "<br>";
                               echo "<br>";
                               echo 'Tema Proyecto:             ';
-                              echo "<input name = 'proyecto_factura' type='text' value = '$mostrar[id_proyecto]'>";
+                              echo "<input type='text' name ='proyecto_factura' value = '$mostrar[id_proyecto]'>";
                               echo "<br>";
                               echo "<br>";
                               echo "Fecha Factura:             ";
-                              echo "<input type='date' name= 'fecha_factura'>";
+                              echo "<input type='date' name='fecha_factura'>";
                               echo "<br>";
                               echo "<br>";
                               echo "Fecha Pago:             ";
-                              echo "<input type='date' name= 'fecha_pago_factura'>";
+                              echo "<input type='date' name='fecha_pago_factura'>";
                               echo "<br>";
                               echo "<br>";
                             }
@@ -260,7 +260,7 @@ $id = $_GET['id'];
                             echo "<br>";
 
                             ?>
-                            <input type="submit" class="btn btn-success btn-block" name="actualizar" value="Añadir Detalles">
+                            <input type="submit" class="btn btn-success btn-block" name="" value="Añadir Detalles">
                             <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
                             </div>

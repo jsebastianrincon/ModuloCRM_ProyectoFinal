@@ -298,13 +298,21 @@ $id = $_GET['id'];
                     <div class="card-header py-3">
                       <?php
 
-                      $sql = "SELECT * FROM telefonos WHERE id_lead = $id ";
+                      $sql = "SELECT * FROM telefonos WHERE id_lead = $id ORDER BY priorida_telefono";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
 
                         echo $mostrar['tipo_telefono'];
                         echo "<br>";
                         echo $mostrar['telefono_telefono'];
+                        echo "<br>";
+                        echo "Prioridad: ";
+                        echo $mostrar['priorida_telefono'];
+
+
+
+
+
                         echo "<br>";
                         echo "<br>";
                       }

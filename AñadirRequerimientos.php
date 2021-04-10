@@ -259,9 +259,10 @@ $id_proyecto = $_GET['id'];
             <div class="container p-4">
               <div class="group">
                 <div class="card card-body">
+                  <p style="color: red;">(*) Campos Requeridos</p>
                   <form class="form-contact" action="RegistrarRequerimientos.php" method='POST'>
                     <br>
-                    <br>
+
 
                     <label>&nbsp Añadir Requerimiento &nbsp &nbsp &nbsp &nbsp &nbsp</label>
 
@@ -276,12 +277,13 @@ $id_proyecto = $_GET['id'];
                         $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto = '$id_proyecto'";
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {
-                          echo "<th><label>
+                          echo "<th><label><label style='color: red;'>(*)</label>
                         &nbsp Id Proyecto: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       </label>";
                           echo "<input type='text' size='50' name='id_proyecto' value ='$mostrar[id_proyecto]'> ";
                           echo "<br>";
-                          echo "  <label>
+                          echo "  <label><label style='color: red;'>(*)</label>
+                          
                         &nbsp Proyecto Requerimiento: &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       </label>";
                           echo "<input type='text' size='50' name='proyecto_requerimiento' value ='$mostrar[tema_proyecto]'> ";
@@ -290,21 +292,25 @@ $id_proyecto = $_GET['id'];
 
                         <br>
                         <label>
+                          <label style="color: red;">(*)</label>
                           &nbsp Nombre Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
                         <input type="text" size="50" name="nombre_requerimiento" required placeholder="Ingrese Nombre Requerimiento ">
                         </label>
                         <br>
                         <label>
+                          <label style="color: red;">(*)</label>
                           &nbsp Descripcion Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
                         <input type="text" size="50" name="descripcion_requerimiento" required placeholder="Ingrese Descripcion ">
                         </label>
                         <br>
                         <label>
+                          <label style="color: red;">(*)</label>
                           &nbsp Costo Requerimiento($): &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
                         <input type="text" size="25" name="costo_requerimiento" required placeholder="Ingrese Costo Requerimiento">
                         </label>
                         <br>
                         <label>
+                          <label style="color: red;">(*)</label>
                           &nbsp Tiempo Requerimiento(Horas): &nbsp</label>
                         <input type="number" size="5" name="tiempo_requerimiento" required placeholder=" ">
                         </label>
