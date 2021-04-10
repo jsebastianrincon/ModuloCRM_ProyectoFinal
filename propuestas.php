@@ -10,7 +10,6 @@ $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 
-
 ?>
 
 
@@ -270,10 +269,15 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <label>Codigo Proyecto: </label><label style="color: red;">(*)</label><input type="text" size="31" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto">
                         <br>
                         <br>
-
-                        <label>Fecha: <label style="color: red;">(*)</label></label>
-                        <input type="date" size="15" name="fecha_ini_proyecto" required>
-
+                        <?php
+                        $fecha_americana = "10/27/2008";
+                        $fecha = DateTime::createFromFormat("m/d/Y", $fecha_americana, new DateTimeZone("Europe/Madrid"));
+                        $fecha_actual = date("y-m-d");
+                        $fecha_f = date("y-m-d", strtotime($fecha_actual . "-1 days"));
+                        $time = strtotime($fecha_f);
+                        $fecha = date('Y-m-d', $time);
+                        echo "Fecha:<input type='text' size='10' name='fecha_ini_proyecto' value='$fecha'><label style='color: red;'>(*)</label></center>";
+                        ?>
                         <label>Abierto Hasta:<label style="color: red;">(*)</label> </label>
                         <input type="date" size="40" name="fecha_fin_proyecto" required>
                         <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion ">
