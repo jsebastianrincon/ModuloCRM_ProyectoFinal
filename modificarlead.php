@@ -238,12 +238,7 @@ $id_lead = $_GET['id'];
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <a href='gestionalead.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
-            </button></a>
-          <?php
-          echo "<br>";
-          echo "<br>";
-          ?>
+          
           <!-- Titulo Formulario de adicion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
