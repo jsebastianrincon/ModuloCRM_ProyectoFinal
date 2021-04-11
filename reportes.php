@@ -247,7 +247,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 <h1 class="h3 mb-0 text-gray-800">Reportes</h1>
               </div>
               <div>
-                <a href='ReporteClientes.php'><button type='button' id="reportecliente" class='btn btn-outline-info btn-sm active'><i class="fas fa-user"></i> Generar Reporte Clientes</button></a>
+                <a href='ReporteClientes.php'><button type='button' id="reportecliente" class='btn btn-outline-info btn-sm active' onclick="alerta()"><i class=" fas fa-user"></i> Generar Reporte Clientes</button></a>
                 <br>
                 <br>
                 <a href='ReporteReuniones.php'><button type='button' class='btn btn-outline-info btn-sm active'><i class="fas fa-calendar-times"></i> Generar Reporte Reuniones Realizadas</button></a>

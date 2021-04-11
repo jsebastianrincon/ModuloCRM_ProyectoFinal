@@ -24,10 +24,13 @@ if ($_POST) {
     if ($password_bd == $pass_c) {
 
       $_SESSION['id_usuario'] = $row['id_usuario'];
-      $_SESSION['nombre'] = $row['nombre'];
+      // $_SESSION['nombre'] = $row['nombre'];
       $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
 
-      header("Location: principal.php");
+      $result = mysqli_query($mysqli, $sql);
+      while ($mostrar = mysqli_fetch_array($result)) {
+        header("Location: principal.php?id=$mostrar[id_usuario]");
+      }
     } else {
       echo "<script type=\"text/javascript\">alert(\"Usuario o Contraseña Incorrectos\");</script>";
     }
@@ -35,6 +38,7 @@ if ($_POST) {
     echo "<script type=\"text/javascript\">alert(\"Usuario o Contraseña Incorrectos\");</script>";
   }
 }
+
 ?>
 
 <!DOCTYPE html>

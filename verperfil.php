@@ -9,7 +9,7 @@ if (!isset($_SESSION['id_usuario'])) {
 $nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
+$id_usuario = $_SESSION['id_usuario'];
 
 
 ?>
@@ -233,7 +233,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <?php
 
-                      $sql = "SELECT * FROM  usuarios where tipo_usuario = $tipo_usuario";
+                      $sql = "SELECT * FROM  usuarios where id_usuario = $id_usuario";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
 
