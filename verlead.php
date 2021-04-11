@@ -12,7 +12,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 $id = $_GET['id'];
 
-
 ?>
 
 <!DOCTYPE html>
@@ -233,7 +232,7 @@ $id = $_GET['id'];
 
                         <?php
 
-                        $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id'";
+                        $sql = "SELECT * FROM crmpry.leads WHERE id_lead = $id";
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {
                           //Impresion tabla
