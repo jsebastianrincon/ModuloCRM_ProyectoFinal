@@ -6,7 +6,7 @@ if (!isset($_SESSION['id_usuario'])) {
   header("Location: index.php");
 }
 //Validacion variables de session
-$nombre = $_SESSION['nombre'];
+
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 $id_usuario = $_SESSION['id_usuario'];
@@ -127,8 +127,23 @@ $id_usuario = $_SESSION['id_usuario'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
+        <li class="nav-item">
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Proyectos</span></a>
 
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-headset"></i>
+            <span>Reuniones</span>
+          </a>
+          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
 
+              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+            </div>
+        </li>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
@@ -177,8 +192,7 @@ $id_usuario = $_SESSION['id_usuario'];
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                  <?php echo $nombre;
-                  ?>
+
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
