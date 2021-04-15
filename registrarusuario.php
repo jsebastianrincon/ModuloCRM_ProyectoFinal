@@ -10,7 +10,7 @@ if (!isset($_SESSION['id_usuario'])) {
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 
-
+$id = $_GET['id'];
 
 ?>
 
@@ -220,11 +220,24 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form">
 
 
-                      <center><label> Usuario: </label><input type="text" size="15" name="usuario"></center>
-                      <center><label>Contraseña: </label><input type="password" size="15" name="password"></center>
 
+
+
+
+
+                      <?php
+                      $consultausario = "SELECT email_lead,substring(email_lead,1,6) AS user FROM leads WHERE estado_lead = 1 AND id_lead = '$id'";
+                      $result = mysqli_query($conexion2, $consultausario);
+                      while ($mostrar = mysqli_fetch_array($result)) {
+
+                        echo "<center>Usuario: <input type='text' size='12' name='usuario' value ='$mostrar[user]'><center>";
+                        echo "<br>";
+                        echo " <center><label>Contraseña: </label> <input type='password' size='15' name='password'></center>";
+                        echo "<br>";
+                      }
+
+                      ?>
                       <input type="submit" class="btn btn-success btn-block" name="submit" value="Asignar Usuario">
-
           </fieldset>
 
         </div> <!-- /.container-fluid -->

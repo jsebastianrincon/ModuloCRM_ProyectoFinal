@@ -272,7 +272,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         $fecha_americana = "10/27/2008";
                         $fecha = DateTime::createFromFormat("m/d/Y", $fecha_americana, new DateTimeZone("Europe/Madrid"));
                         $fecha_actual = date("y-m-d");
-                        $fecha_f = date("y-m-d", strtotime($fecha_actual . "-1 days"));
+                        $fecha_f = date("y-m-d", strtotime($fecha_actual));
                         $time = strtotime($fecha_f);
                         $fecha = date('Y-m-d', $time);
                         echo "Fecha:<input type='text' size='10' name='fecha_ini_proyecto' value='$fecha'><label style='color: red;'>(*)</label></center>";

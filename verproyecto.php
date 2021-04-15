@@ -128,16 +128,23 @@ $id = $_GET['id'];
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="proyectos.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>
         </li>
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Reportes</span></a>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="reuniones.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-headset"></i>
+            <span>Reuniones</span>
+          </a>
+          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+            </div>
         </li>
       <?php } ?>
 

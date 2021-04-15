@@ -271,13 +271,16 @@ $id = $_GET['id'];
                           echo "Recurso: ";
                           echo $mostrar['recurso_lead'];
                           echo "</td>";
+                          echo "<br>";
+                          echo "<br>";
+                          echo " <a href='registrarusuario.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-sm btn-success'><i class='fas fa-user-lock'></i>Asignar Credenciales</button></a>";
                         }
 
                         ?>
                         <br>
                         <br>
 
-                        <a href='registrarusuario.php'><button type='button' class='btn btn-sm btn-success'><i class='fas fa-user-lock'></i> Asignar Credenciales</button></a>
+
                       </div>
 
                   </div>
