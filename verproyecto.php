@@ -225,13 +225,16 @@ $id = $_GET['id'];
                         <i class='fas fa-arrow-left'></i></i>
                       </button>
                     </a>
-                  </div>";
+                  </div>
+                  <br>";
           }
         }
         ?>
         <!-- Titulo Gestion de leads -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Detalles De Proyecto</h1>
+          <div class="container p-8">
+            <h1 class="h3 mb-0 text-gray-800">Detalles De Proyecto</h1>
+          </div>
         </div>
         <div>
           <div>
@@ -307,7 +310,7 @@ $id = $_GET['id'];
           <br>
 
           <div>
-            <div>
+            <div class="container p-8">
               <h1 class="h3 mb-0 text-gray-800">Requerimientos</h1>
               <div class="container p-8">
                 <div class="group">

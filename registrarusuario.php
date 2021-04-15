@@ -221,7 +221,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                       <center><label> Usuario: </label><input type="text" size="15" name="usuario"></center>
-                      <center><label>Contraseña: </label><input type="text" size="15" name="password"></center>
+                      <center><label>Contraseña: </label><input type="password" size="15" name="password"></center>
 
                       <input type="submit" class="btn btn-success btn-block" name="submit" value="Asignar Usuario">
 

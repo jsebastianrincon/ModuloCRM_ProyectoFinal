@@ -260,10 +260,10 @@ $id = $_GET['id'];
                       ?>
 
 
-                      <label>Telefono principal: </label><input type="text" size="18" name="telefono_telefono" required placeholder="Ingrese Numero Telefono ">
-                      <label>Tipo de Telefono </label>
+                      <label>Contacto: </label><input type="text" size="25" name="telefono_telefono" required placeholder="Ingrese Informacion de Contacto ">
+                      <label>Tipo Contacto: </label>
                       <select name="tipo_telefono">
-                        <option type="text" size="25" value="Elegir" id="TT">Seleccione Tipo Telefono</option>
+                        <option type="text" size="25" value="Elegir" id="TT">Seleccione Tipo Contacto</option>
                         <option value="Email" id="EM">Email</option>
                         <option value="Fax" id="FX">Fax</option>
                         <option value="Telefono Fijo" id="TF">Telefono Fijo</option>
