@@ -129,13 +129,13 @@ $id_usuario = $_SESSION['id_usuario'];
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="proyectos.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>
 
         </li>
         <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <a class="nav-link collapsed" href="reuniones.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Reuniones</span>
           </a>
@@ -146,11 +146,7 @@ $id_usuario = $_SESSION['id_usuario'];
             </div>
         </li>
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Reportes</span></a>
-        </li>
+
       <?php } ?>
 
       <!-- Divider -->
@@ -205,7 +201,7 @@ $id_usuario = $_SESSION['id_usuario'];
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                 
+
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>

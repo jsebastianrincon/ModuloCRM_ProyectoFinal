@@ -10,7 +10,7 @@ if (!isset($_SESSION['id_usuario'])) {
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 
-
+$id_usuario = $_SESSION['id_usuario'];
 
 ?>
 
@@ -131,17 +131,24 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="proyectos.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>
         </li>
 
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Reportes</span></a>
+        <li class="nav-item active">
+          <a class="nav-link collapsed" href="reuniones.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-headset"></i>
+            <span>Reuniones</span>
+          </a>
+          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+            </div>
         </li>
+        <!-- Nav Item - Tables -->
+
       <?php } ?>
 
 
@@ -259,8 +266,30 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                       <div class="card-header py-3">
                         <?php
+                        $sql = "SELECT * FROM  usuarios where id_usuario = $id_usuario";
+                        $result = mysqli_query($conexion2, $sql);
+                        while ($mostrar = mysqli_fetch_array($result)) {
+                          $id_usuario = $mostrar['id_usuario'];
+                        }
+
+                        if ($id_usuario != '2') {
+                          if ($tipo_usuario != '1') {
+                            echo '';
+                            $row = '';
+                          } else {
+                            echo "<a href='reuniones.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Reunion</i></button></a>";
+                            $fila = '<th>
+                                  <center style="visibility: hidden">---------------------------</center>
+                                  <center>Accion</center>
+                                </th>';
+                          }
+                        }
+                        echo "<br>";
+                        echo "<br>";
+
                         echo "<th>";
-                        echo "<a href='reuniones.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Reunion</i></button></a>"; ?>
+                        ?>
+
                       </div>
                       <div class="card-body">
 
@@ -295,53 +324,71 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                   <center style="visibility: hidden">--------------------------</center>
                                   <center>Descripcion</center>
                                 </th>
-                                <th>
-                                  <center style="visibility: hidden">---------------------------</center>
-                                  <center>Accion</center>
-                                </th>
+                                <?php
+                                if ($id_usuario != '2') {
+                                  if ($tipo_usuario != '1') {
+                                    echo '';
+                                  } else {
+                                    echo  "<th>
+                                        <center style='visibility: hidden'>---------------------------</center>
+                                        <center>Accion</center>
+                                      </th>";
+                                    echo "<br>";
+                                  }
+                                }
+                                ?>
                               </tr>
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
                             //$sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
 
-                            $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()";
+                            $sql = "SELECT * FROM reuniones WHERE id_usuario = " . $id_usuario . " AND fecha_reunion > CURDATE()";
                             $result = mysqli_query($conexion2, $sql);
 
 
                             while ($mostrar = mysqli_fetch_array($result)) {
 
-                              //Impresion tabla
-                              echo "<tr>";
-                              echo "<td>";
-                              echo $mostrar['cliente_reunion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['nombre_reunion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['fecha_reunion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['hora_reunion'];
-                              echo "</td>";
-                              echo "<td>";
-                              echo $mostrar['asignado_reunion'];
-                              echo "<td>";
-                              echo $mostrar['descripcion_reunion'];
-                              echo "</td>";
-                              echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                                                                            <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
-                                                                                                          </td>";
-                              echo "<br>";
+                              $id_us_proyecto = $mostrar['id_usuario'];
+
+                              if ($id_usuario == $id_us_proyecto) {
+
+                                //Impresion tabla
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $mostrar['cliente_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['nombre_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['fecha_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['hora_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['asignado_reunion'];
+                                echo "<td>";
+                                echo $mostrar['descripcion_reunion'];
+                                echo "</td>";
+                                if ($id_usuario != '2') {
+                                  if ($tipo_usuario != '1') {
+                                    echo '';
+                                  } else {
+                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                                                                              <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
+                                                                                                            </td>";
+                                    echo "<br>";
+                                  }
+                                }
+                              }
                             }
 
                             ?>
+
+
                           </table>
-
-
-
-
                         </div>
                       </div>
                   </div> <!-- /.container-fluid -->
@@ -404,85 +451,94 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <br>
             <br>
             <!---Reuniones Vencidas--->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
-              <h1 class="h3 mb-0 text-gray-800">Reuniones Vencidas</h1>
+            <?php
+            if ($id_usuario != '2') {
+              if ($tipo_usuario != '1') {
+                echo '';
+              } else {
+                echo "<div class='d-sm-flex align-items-center justify-content-between mb-4'>
+              <h1 class='h3 mb-0 text-gray-800'>Reuniones Vencidas</h1>
             </div>
             <fieldset>
-              <div class="container p-8">
-                <div class="group">
-                  <div class="card card-body">
-                    <div class="form-group" id="responsive-form">
+              <div class='container p-8'>
+                <div class='group'>
+                  <div class='card card-body'>
+                    <div class='form-group' id='responsive-form'>
 
                       <fieldset>
 
-                        <div class="col md-8 col md-offset-2">
+                        <div class='col md-8 col md-offset-2'>
                           <!-- Tabla de Leads Registrados -->
                         </div>
 
-                        <div class="card-header py-3">
+                        <div class='card-header py-3'>
 
                         </div>
-                        <div class="card-body">
-                          <div class="table-responsive">
-                            <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
+                        <div class='card-body'>
+                          <div class='table-responsive'>
+                            <table id='data_table' class='table table-bordered' cellspacing='0' width='100%'>
                               <thead>
                                 <tr>
                                   <th>
-                                    <center style="visibility: hidden">--------------------</center>
+                                    <center style='visibility: hidden'>--------------------</center>
                                     <center>Cliente </center>
                                   </th>
                                   <th>
-                                    <center style="visibility: hidden">--------------------</center>
+                                    <center style='visibility: hidden'>--------------------</center>
                                     <center>Nombre </center>
                                   </th>
 
                                   <th>
-                                    <center style="visibility: hidden">---------------------</center>
+                                    <center style='visibility: hidden'>---------------------</center>
                                     <center>Fecha </center>
                                   </th>
                                   <th>
-                                    <center style="visibility: hidden">---------------------</center>
+                                    <center style='visibility: hidden'>---------------------</center>
                                     <center>Hora </center>
                                   </th>
                                   <th>
-                                    <center style="visibility: hidden">--------------------</center>
+                                    <center style='visibility: hidden'>--------------------</center>
                                     <center>Asignado</center>
                                   </th>
                                   <th>
-                                    <center style="visibility: hidden">--------------------------</center>
+                                    <center style='visibility: hidden'>--------------------------</center>
                                     <center>Descripcion</center>
                                   </th>
 
                                 </tr>
                               </thead>
                               <!-- Mostrar Datos en tabla de leads... -->
-                              <?php
-                              $sql = "SELECT * FROM reuniones WHERE fecha_reunion < CURDATE() ";
+                              
+                              $sql = 'SELECT * FROM reuniones WHERE fecha_reunion < CURDATE() ';
                               $result = mysqli_query($conexion2, $sql);
                               while ($mostrar = mysqli_fetch_array($result)) {
                                 //Impresion tabla
-                                echo "<tr>";
-                                echo "<td>";
-                                echo $mostrar['cliente_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['nombre_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['fecha_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['hora_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['asignado_reunion'];
-                                echo "<td>";
-                                echo $mostrar['descripcion_reunion'];
+                                echo '<tr>';
+                                echo '<td>';
+                                echo $mostrar[cliente_reunion];
+                                echo '</td>';
+                                echo '<td>';
+                                echo $mostrar[nombre_reunion];
+                                echo '</td>';
+                                echo '<td>';
+                                echo $mostrar[fecha_reunion];
+                                echo '</td>';
+                                echo '<td>';
+                                echo $mostrar[hora_reunion];
+                                echo '</td>';
+                                echo '<td>';
+                                echo $mostrar[asignado_reunion];
+                                echo '<td>';
+                                echo $mostrar[descripcion_reunion];
                               }
 
                               ?>
                             </table>
-                          </div>
+                          </div>";
+              }
+            }
+            ?>
+
 </body>
 
 </html>

@@ -9,12 +9,10 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
+$id_usuario = $_SESSION['id_usuario'];
 
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,9 +23,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="Juan Sebastian">
 
-  <title>Agendar Reuniones</title>
+  <title>Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,7 +37,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 </head>
 
 <body id="page-top">
-
+  <div id="viewer"></div>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -57,8 +55,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
+
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item inactive">
+      <li class="nav-item active">
         <a class="nav-link" href="principal.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -79,14 +78,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-
               <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
           </div>
         </li>
 
         <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Leads</span>
@@ -130,15 +128,27 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
-
-
-        <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Reportes</span></a>
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Proyectos</span></a>
+
         </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-headset"></i>
+            <span>Reuniones</span>
+          </a>
+          <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+            </div>
+        </li>
+        <!-- Nav Item - Tables -->
+
       <?php } ?>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -163,9 +173,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
@@ -190,24 +197,28 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             </li>
 
 
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
 
+                </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                <?php
+                require "conexion.php";
+                $sql = "SELECT * FROM usuarios WHERE id_usuario = $id_usuario";
+                $result = mysqli_query($mysqli, $sql);
+                while ($mostrar = mysqli_fetch_array($result)) {
+                  echo "<a class='dropdown-item' href='verperfil.php?id=$mostrar[id_usuario] '>
+                  <i class='fas fa-user fa-sm fa-fw mr-2 text-gray-400'></i>
                   Perfil
-                </a>
+                </a>";
+                }
+                ?>
 
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Modificar Informacion
-                </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -215,152 +226,115 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
               </div>
             </li>
-
           </ul>
 
         </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Agendar Reuniones</h1>
-          </div>
-          <!-- Titulo Formulario de adicion de leads -->
-          <fieldset>
-            <div class="container p-4">
-              <div class="group">
-                <div class="card card-body">
-                  <form class="form-contact" action="RegistroReunion.php" method='POST'>
-                    <div class="form-group" id="responsive-form" display: flex;>
-                      <center><label style="color: red;">(*)</label><label>Tema Reunion </label>
-                        <br>
-                        <input type="text" onkeypress="return SoloLetras(event);" size="40" name="nombre_reunion" required>
-                      </center>
-                      <br>
-                      <center><label style="color: red;">(*)</label><label>Fecha: </label>
-                        <input type="date" size="40" name="fecha_reunion" required>
-                        <label style="color: red;">(*)</label><label>Hora: </label><input type="time" size="50" name="hora_reunion" required>
-                        <br>
-                        <br>
-                        <label>Asignado Por: </label>
-                        <br>
-                        <select name="asignado_reunion">
-                          <option value="Asignado por">Seleccione Area</option>
-                          <option value="Area Comercial" id="ArC">Area Comercial</option>
-                          <option value="Area Marketing" id="ArM">Area de Marketing</option>
-                        </select>
-                        <br>
-                        <br>
-                        <label>Asignada A: </label><label style="color: red;">(*)</label>
-                        <br>
-                        <name='cliente_reunion'>
-
-                          <?php
-
-                          require("conlead.php");
-
-
-                          $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
-
-                          mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
-                          $instruccion_SQL = "SELECT concat_ws (' ', nombre_lead , segundo_nombre_lead ,primer_apellido_lead,segundo_apellido_lead) FROM leads WHERE estado_lead = 1 ORDER BY primer_apellido_lead";
-                          $resultado = mysqli_query($connexion, $instruccion_SQL);
-                          ?>
-
-                          <html>
-
-
-                          <body>
-                            <select name='cliente_reunion' required>
-                              <?php
-                              while ($row = mysqli_fetch_array($resultado)) :;
-                              ?>
-
-                                <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
-                                                                        ?></option>
-                              <?php endwhile; ?>
-                            </select>
-                          </body>
-
-                          </html>
-
-                          <center><label>Estado: </label>
-                            <br>
-                            <input type="text" size="15" name="estado_reunion">
-                          </center>
-
-                      </center>
-                      <br>
-
-                      <center><label style="color: red;">(*)</label><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required></textarea></center>
-
-                      <br>
-                      <br>
-                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Programar Reunion">
-
-          </fieldset>
-
-        </div> <!-- /.container-fluid -->
 
       </div>
-      <!-- End of Main Content -->
-
-
-
     </div>
-    <!-- End of Content Wrapper -->
+
+
+    <?php if ($tipo_usuario == 2) { ?>
+      <!-- Earnings (Monthly) Card Example -->
+
+
+
+
+
+      <!-- Content Row -->
+
+
+
+      <!-- Pie Chart -->
+      <div class="col-lg-12 col-md-6 mb-5">
+        <div id="piechart" style="width: 980px; height: 500px;"></div>
+      </div>
+
+      <!-- Card Body -->
 
   </div>
-  <!-- End of Page Wrapper -->
+  </div>
+  </div>
+<?php } ?>
+<!-- Content Row -->
+<div class="row">
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+  <!-- Content Column -->
+  <div class="col-lg-6 mb-4">
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">¿Desea Cerrar Sesion?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
-        </div>
+
+    <body>
+
+
+    </body>
+
+
+
+
+  </div>
+
+
+</div>
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¿Desea Finaliza la sesion actual?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+        <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script>
-    function darFormato(cadena) {
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-      let resultado = enieMinus.replace(/[$%&()=!#*]/gi, '');
-      return resultado;
-    }
-  </script>
-</body>
-
-</html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>

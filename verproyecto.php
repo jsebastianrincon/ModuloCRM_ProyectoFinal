@@ -202,217 +202,246 @@ $id = $_GET['id'];
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <a href='gestionaventas.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
-            </button></a>
-          <br>
-          <br>
-          <!-- Titulo Gestion de leads -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Detalles De Proyecto</h1>
-          </div>
+        <?php
+        require "conexion.php";
+        $sql = "SELECT * FROM usuarios WHERE id_usuario = id_usuario";
+        $result = mysqli_query($mysqli, $sql);
+        while ($mostrar = mysqli_fetch_array($result)) {
+          $id_usuario = $mostrar['id_usuario'];
+        }
+        if ($id_usuario != '2') {
+          if ($tipo_usuario != '1') {
+            echo "<div class='container-fluid'>
+                    <a href='proyectos.php'>
+                      <button type='button' class='btn btn-sm btn-primary'>
+                        <i class='fas fa-arrow-left'></i></i>
+                      </button>
+                    </a>
+                  </div>";
+          } else {
+            echo "<div class='container-fluid'>
+                    <a href='gestionaventas.php'>
+                      <button type='button' class='btn btn-sm btn-primary'>
+                        <i class='fas fa-arrow-left'></i></i>
+                      </button>
+                    </a>
+                  </div>";
+          }
+        }
+        ?>
+        <!-- Titulo Gestion de leads -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Detalles De Proyecto</h1>
+        </div>
+        <div>
           <div>
-            <div>
 
-            </div>
           </div>
-          <!-- Gestion de leads -->
-          <fieldset>
-            <div class="container p-8">
-              <div class="group">
-                <div class="card card-body">
-                  <div class="form-group" id="responsive-form">
+        </div>
+        <!-- Gestion de leads -->
+        <fieldset>
+          <div class="container p-8">
+            <div class="group">
+              <div class="card card-body">
+                <div class="form-group" id="responsive-form">
 
-                    <fieldset>
+                  <fieldset>
 
-                      <div class="col md-8 col md-offset-2">
-                        <!-- Tabla de Leads Registrados -->
-                      </div>
+                    <div class="col md-8 col md-offset-2">
+                      <!-- Tabla de Leads Registrados -->
+                    </div>
 
-                      <div class="card-header py-3">
-
-
-                        <?php
-
-                        $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto=$id ";
-                        $result = mysqli_query($conexion2, $sql);
-                        while ($mostrar = mysqli_fetch_array($result)) {
-                          //Impresion tabla
-
-                          echo "Codigo Proyecto:";
-                          echo $mostrar['codigo_proyecto'];
-                          echo '<br>';
-                          echo "Tema Proyecto:";
-                          echo $mostrar['tema_proyecto'];
-                          echo '<br>';
-                          echo "Nombre Cliente:";
-                          echo $mostrar['cliente_proyecto'];
-                          echo '<br>';
-                          echo "Fecha Inicio:    ";
-                          echo $mostrar['fecha_ini_proyecto'];
-                          echo '<br>';
-                          echo "Fecha Fin: ";
-                          echo $mostrar['fecha_fin_proyecto'];
-                          echo '<br>';
-                          echo "Estado: ";
-                          if ($mostrar['estado_proyecto'] = '2') {
-                            echo 'Activo';
-                          }
-                          echo '<br>';
-                          echo "Descripcion: ";
-                          echo $mostrar['descripcion_proyecto'];
-                          echo "</td>";
-                        }
+                    <div class="card-header py-3">
 
 
-                        ?>
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-
-                        </div>
-
-                      </div>
-
-                  </div>
-
-                </div> <!-- /.container-fluid -->
-
-              </div>
-              <!-- End of Main Content -->
-
-
-            </div>
-
-            <br>
-
-            <div>
-              <div>
-                <h1 class="h3 mb-0 text-gray-800">Requerimientos</h1>
-                <div class="container p-8">
-                  <div class="group">
-                    <div class="card card-body">
-                      <div class="form-group" id="responsive-form">
-                        <fieldset>
-
-                          <div class="col md-8 col md-offset-2">
-                            <!-- Tabla de Leads Registrados -->
-                          </div>
-
-                          <div class="card-header py-3">
-                            <?php
-                            $sql = "SELECT * FROM requerimientos_proyectos WHERE id_proyecto = $id ";
-
-                            $result = mysqli_query($conexion2, $sql);
-                            while ($mostrar = mysqli_fetch_array($result)) {
-                              //Impresion tabla
-                              echo '<br>';
-                              echo "Nombre Requerimiento: ";
-                              echo $mostrar['nombre_requerimiento'];
-                              echo '<br>';
-                              echo "Descripcion Requerimiento: ";
-                              echo $mostrar['descripcion_requerimiento'];
-                              echo '<br>';
-                              echo "Tiempo Requerimiento: ";
-                              echo $mostrar['tiempo_requerimiento'],  '  Hora(s)';
-                              echo '<br>';
-                              echo "Costo Requimiento: ", "$ ";
-                              echo number_format($mostrar['costo_requerimiento']);
-                              echo '<br>';
-                            }
-                            echo '<br>';
-
-                            $sql_total = "SELECT SUM(costo_requerimiento * tiempo_requerimiento) as total from requerimientos_proyectos WHERE id_proyecto =$id ";
-                            $sql_total_tiempo = "SELECT SUM(tiempo_requerimiento) as total_tiempo from requerimientos_proyectos WHERE id_proyecto =$id ";
-                            $total_tiempo = mysqli_query($conexion2, $sql_total_tiempo);
-                            $rows_tiempo = mysqli_fetch_array($total_tiempo);
-                            echo "Tiempo Total Proyecto: " . $rows_tiempo['total_tiempo'], ' Horas';
-
-                            echo '<br>';
-
-
-                            $total = mysqli_query($conexion2, $sql_total);
-
-                            $rows = mysqli_fetch_array($total);
-                            echo "Costo Parcial Proyecto: $ " . number_format($rows['total']);
-                            echo "<br>";
-                            echo "IVA 19%";
-                            if (!$total) {
-                              var_dump(mysqli_error($conexion2));
-                              exit;
-                            }
-                            echo '<br>';
-                            $iva = '0.19';
-                            $sql_total_proyecto = "SELECT SUM((costo_requerimiento * tiempo_requerimiento)* $iva) as total_proyecto from requerimientos_proyectos WHERE id_proyecto = $id";
-                            $total_proyecto = mysqli_query($conexion2, $sql_total_proyecto);
-
-                            $rows_tiempo = mysqli_fetch_array($total_proyecto);
-
-                            $prueba = number_format($rows_tiempo[0] + $rows['total']);
-
-
-                            echo "Total Proyecto: $ " . $prueba;
-                            echo '<br>';
-                            echo '<br>';
-
-
-
-                            ?>
-
-                          </div>
-                      </div>
                       <?php
-                      $sql = "SELECT * FROM proyectos WHERE id_proyecto = $id ";
+
+                      $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto=$id ";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
-                        echo "<colspan='24'><div class='btn-group'><th> 
-                               <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-file-pdf'></i> Generar Factura</button></a> ";
-                        echo "</td> &nbsp&nbsp&nbsp
-                         <a href='guardarfactura.php?id=$mostrar[id_proyecto]& $mostrar[tema_proyecto]& $mostrar[codigo_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-save'></i> Guardar Factura</button></a>
-                          &nbsp&nbsp&nbsp";
+                        //Impresion tabla
+
+                        echo "Codigo Proyecto:";
+                        echo $mostrar['codigo_proyecto'];
+                        echo '<br>';
+                        echo "Tema Proyecto:";
+                        echo $mostrar['tema_proyecto'];
+                        echo '<br>';
+                        echo "Nombre Cliente:";
+                        echo $mostrar['cliente_proyecto'];
+                        echo '<br>';
+                        echo "Fecha Inicio:    ";
+                        echo $mostrar['fecha_ini_proyecto'];
+                        echo '<br>';
+                        echo "Fecha Fin: ";
+                        echo $mostrar['fecha_fin_proyecto'];
+                        echo '<br>';
+                        echo "Estado: ";
+                        if ($mostrar['estado_proyecto'] = '2') {
+                          echo 'Activo';
+                        }
+                        echo '<br>';
+                        echo "Descripcion: ";
+                        echo $mostrar['descripcion_proyecto'];
+                        echo "</td>";
                       }
+
+
                       ?>
+                      <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
+                      </div>
+
                     </div>
-                    <!-- End of Page Wrapper -->
 
-                    <!-- Scroll to Top Button-->
-                    <a class="scroll-to-top rounded" href="#page-top">
-                      <i class="fas fa-angle-up"></i>
-                    </a>
+                </div>
+
+              </div> <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+
+          </div>
+
+          <br>
+
+          <div>
+            <div>
+              <h1 class="h3 mb-0 text-gray-800">Requerimientos</h1>
+              <div class="container p-8">
+                <div class="group">
+                  <div class="card card-body">
+                    <div class="form-group" id="responsive-form">
+                      <fieldset>
+
+                        <div class="col md-8 col md-offset-2">
+                          <!-- Tabla de Leads Registrados -->
+                        </div>
+
+                        <div class="card-header py-3">
+                          <?php
+                          $sql = "SELECT * FROM requerimientos_proyectos WHERE id_proyecto = $id ";
+
+                          $result = mysqli_query($conexion2, $sql);
+                          while ($mostrar = mysqli_fetch_array($result)) {
+                            //Impresion tabla
+                            echo '<br>';
+                            echo "Nombre Requerimiento: ";
+                            echo $mostrar['nombre_requerimiento'];
+                            echo '<br>';
+                            echo "Descripcion Requerimiento: ";
+                            echo $mostrar['descripcion_requerimiento'];
+                            echo '<br>';
+                            echo "Tiempo Requerimiento: ";
+                            echo $mostrar['tiempo_requerimiento'],  '  Hora(s)';
+                            echo '<br>';
+                            echo "Costo Requimiento: ", "$ ";
+                            echo number_format($mostrar['costo_requerimiento']);
+                            echo '<br>';
+                          }
+                          echo '<br>';
+
+                          $sql_total = "SELECT SUM(costo_requerimiento * tiempo_requerimiento) as total from requerimientos_proyectos WHERE id_proyecto =$id ";
+                          $sql_total_tiempo = "SELECT SUM(tiempo_requerimiento) as total_tiempo from requerimientos_proyectos WHERE id_proyecto =$id ";
+                          $total_tiempo = mysqli_query($conexion2, $sql_total_tiempo);
+                          $rows_tiempo = mysqli_fetch_array($total_tiempo);
+                          echo "Tiempo Total Proyecto: " . $rows_tiempo['total_tiempo'], ' Horas';
+
+                          echo '<br>';
+
+
+                          $total = mysqli_query($conexion2, $sql_total);
+
+                          $rows = mysqli_fetch_array($total);
+                          echo "Costo Parcial Proyecto: $ " . number_format($rows['total']);
+                          echo "<br>";
+                          echo "IVA 19%";
+                          if (!$total) {
+                            var_dump(mysqli_error($conexion2));
+                            exit;
+                          }
+                          echo '<br>';
+                          $iva = '0.19';
+                          $sql_total_proyecto = "SELECT SUM((costo_requerimiento * tiempo_requerimiento)* $iva) as total_proyecto from requerimientos_proyectos WHERE id_proyecto = $id";
+                          $total_proyecto = mysqli_query($conexion2, $sql_total_proyecto);
+
+                          $rows_tiempo = mysqli_fetch_array($total_proyecto);
+
+                          $prueba = number_format($rows_tiempo[0] + $rows['total']);
+
+
+                          echo "Total Proyecto: $ " . $prueba;
+                          echo '<br>';
+                          echo '<br>';
 
 
 
-                    <!-- Bootstrap core JavaScript-->
-                    <script src="vendor/jquery/jquery.min.js"></script>
-                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                          ?>
 
-                    <!-- Core plugin JavaScript-->
-                    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                        </div>
+                    </div>
+                    <?php
+                    $sql = "SELECT * FROM proyectos WHERE id_proyecto = $id ";
+                    $result = mysqli_query($conexion2, $sql);
+                    while ($mostrar = mysqli_fetch_array($result)) {
+                      echo "<colspan='24'><div class='btn-group'><th> 
+                               <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-file-pdf'></i> Generar Factura</button></a> ";
 
-                    <!-- Custom scripts for all pages-->
-                    <script src="js/sb-admin-2.min.js"></script>
+                      if ($id_usuario != '2') {
+                        if ($tipo_usuario != '1') {
+                          echo "";
+                        } else {
+                          echo "</td> &nbsp&nbsp&nbsp
+                          <a href='guardarfactura.php?id=$mostrar[id_proyecto]& $mostrar[tema_proyecto]& $mostrar[codigo_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-save'></i> Guardar Factura</button></a>
+                          &nbsp&nbsp&nbsp";
+                        }
+                      }
+                    }
+                    ?>
+                  </div>
+                  <!-- End of Page Wrapper -->
 
-                    <!-- Page level plugins -->
-                    <script src="vendor/chart.js/Chart.min.js"></script>
+                  <!-- Scroll to Top Button-->
+                  <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                  </a>
 
-                    <!-- Page level custom scripts -->
-                    <script src="js/demo/chart-area-demo.js"></script>
-                    <script src="js/demo/chart-pie-demo.js"></script>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-                    <!-- Bootstrap core JavaScript-->
-                    <script src="vendor/jquery/jquery.min.js"></script>
-                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                    <!-- Core plugin JavaScript-->
-                    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                    <!-- Custom scripts for all pages-->
-                    <script src="js/sb-admin-2.min.js"></script>
+                  <!-- Bootstrap core JavaScript-->
+                  <script src="vendor/jquery/jquery.min.js"></script>
+                  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                    <!-- Page level plugins -->
-                    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-                    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+                  <!-- Core plugin JavaScript-->
+                  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                    <!-- Page level custom scripts -->
-                    <script src="js/demo/datatables-demo.js"></script>
+                  <!-- Custom scripts for all pages-->
+                  <script src="js/sb-admin-2.min.js"></script>
+
+                  <!-- Page level plugins -->
+                  <script src="vendor/chart.js/Chart.min.js"></script>
+
+                  <!-- Page level custom scripts -->
+                  <script src="js/demo/chart-area-demo.js"></script>
+                  <script src="js/demo/chart-pie-demo.js"></script>
+                  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+                  <!-- Bootstrap core JavaScript-->
+                  <script src="vendor/jquery/jquery.min.js"></script>
+                  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+                  <!-- Core plugin JavaScript-->
+                  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+                  <!-- Custom scripts for all pages-->
+                  <script src="js/sb-admin-2.min.js"></script>
+
+                  <!-- Page level plugins -->
+                  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+                  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+                  <!-- Page level custom scripts -->
+                  <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
