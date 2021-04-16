@@ -264,7 +264,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 
                           mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
-                          $instruccion_SQL = "SELECT concat_ws (' ', nombre_lead , segundo_nombre_lead ,primer_apellido_lead,segundo_apellido_lead) FROM leads WHERE estado_lead = 1 ORDER BY primer_apellido_lead";
+                          $instruccion_SQL = "SELECT concat_ws (' ', id_usuario, '-', nombre_lead , segundo_nombre_lead ,primer_apellido_lead,segundo_apellido_lead) 
+                                                FROM leads 
+                                                LEFT JOIN usuarios ON usuarios.id_cliente = leads.id_lead 
+                                                WHERE leads.estado_lead = 1 ORDER BY leads.primer_apellido_lead ";
+
                           $resultado = mysqli_query($connexion, $instruccion_SQL);
                           ?>
 
