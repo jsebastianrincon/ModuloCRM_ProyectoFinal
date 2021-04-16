@@ -235,7 +235,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                     <div class="form-group" id="responsive-form" display: flex;>
                       <center><label style="color: red;">(*)</label><label>Tema Reunion </label>
                         <br>
-                        <input type="text" onkeypress="return SoloLetras(event);" size="40" name="nombre_reunion" required>
+                        <input type="text" size="40" name="nombre_reunion" onkeypress="return soloLetras(event)" required>
                       </center>
                       <br>
                       <center><label style="color: red;">(*)</label><label>Fecha: </label>
@@ -287,13 +287,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                           <center><label>Estado: </label>
                             <br>
-                            <input type="text" size="15" name="estado_reunion">
+                            <input type="text" size="15" name="estado_reunion" onkeypress="return soloLetras(event)">
                           </center>
 
                       </center>
                       <br>
 
-                      <center><label style="color: red;">(*)</label><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required></textarea></center>
+                      <center><label style="color: red;">(*)</label><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required onkeypress="return soloLetras(event)"></textarea></center>
 
                       <br>
                       <br>
@@ -355,10 +355,23 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
   <script>
-    function darFormato(cadena) {
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
 
-      let resultado = enieMinus.replace(/[$%&()=!#*]/gi, '');
-      return resultado;
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
     }
   </script>
 </body>

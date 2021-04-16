@@ -247,20 +247,20 @@ $id = $_GET['id'];
                         echo "<th><label>
                         Id Lead:  &nbsp&nbsp
                       </label>";
-                        echo "<input type='text' size='15' name='id_lead' value ='$mostrar[id_lead]'> ";
+                        echo "<input type='text' size='15' name='id_lead' value ='$mostrar[id_lead]' onkeypress='return soloLetras(event)'> ";
                         echo "<br>";
                         echo " <br>";
                         echo "<th><label>
                         Lead o Cliente:  &nbsp&nbsp
                       </label>";
-                        echo "<input type='text' size='18' name='lead_telefono' value ='$mostrar[nombre_lead] $mostrar[segundo_nombre_lead] $mostrar[primer_apellido_lead]'> ";
+                        echo "<input type='text' size='18' name='lead_telefono' value ='$mostrar[nombre_lead] $mostrar[segundo_nombre_lead] $mostrar[primer_apellido_lead] 'onkeypress='return soloLetras(event)'> ";
                         echo '<br>';
                         echo '<br>';
                       }
                       ?>
 
 
-                      <label>Contacto: </label><input type="text" size="25" name="telefono_telefono" required placeholder="Ingrese Informacion de Contacto ">
+                      <label>Contacto: </label><input type="text" size="25" name="telefono_telefono" required placeholder="Ingrese Informacion de Contacto " onkeypress="return soloLetras(event)">
                       <label>Tipo Contacto: </label>
                       <select name="tipo_telefono">
                         <option type="text" size="25" value="Elegir" id="TT">Seleccione Tipo Contacto</option>
@@ -343,5 +343,24 @@ $id = $_GET['id'];
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    <script>
+      function soloLetras(e) {
+        var key = e.keyCode || e.which,
+          tecla = String.fromCharCode(key).toLowerCase(),
+          letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
+          especiales = [8, 37, 39, 46],
+          tecla_especial = false;
 
+        for (var i in especiales) {
+          if (key == especiales[i]) {
+            tecla_especial = true;
+            break;
+          }
+        }
+
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+          return false;
+        }
+      }
+    </script>
 </body>

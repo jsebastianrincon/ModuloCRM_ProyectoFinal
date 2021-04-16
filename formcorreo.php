@@ -232,7 +232,7 @@ $id_lead = $_GET['id'];
                         echo '<br>';
                         echo ' <center>';
                         echo 'Correo Electronico: ';
-                        echo "<input type='text' size='30' name='email_lead' value ='$mostrar[email_lead]'> ";
+                        echo "<input type='text' size='30' name='email_lead' value ='$mostrar[email_lead]' onkeypress='return soloLetras(event)'> ";
                         echo '<br>';
                         echo '<br>';
                         echo '<br>';
@@ -298,6 +298,26 @@ $id_lead = $_GET['id'];
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
+  <script>
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
+
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+  </script>
 </body>
 
 </html>

@@ -265,7 +265,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </body>
 
                         </html>
-                        <label>Codigo Proyecto: </label><label style="color: red;">(*)</label><input type="text" size="31" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto">
+                        <label>Codigo Proyecto: </label><label style="color: red;">(*)</label><input type="text" size="31" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto" onkeypress="return soloLetras(event)">
                         <br>
                         <br>
                         <?php
@@ -275,11 +275,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         $fecha_f = date("y-m-d", strtotime($fecha_actual));
                         $time = strtotime($fecha_f);
                         $fecha = date('Y-m-d', $time);
-                        echo "Fecha:<input type='text' size='10' name='fecha_ini_proyecto' value='$fecha'><label style='color: red;'>(*)</label></center>";
+                        echo "Fecha:<input type='text' size='10' name='fecha_ini_proyecto' value='$fecha' onkeypress='return soloLetras(event)'><label style='color: red;'>(*)</label></center>";
                         ?>
-                        <label>Abierto Hasta:<label style="color: red;">(*)</label> </label>
+                        <label>Abierto Hasta:<label style=" color: red;">(*)</label> </label>
                         <input type="date" size="40" name="fecha_fin_proyecto" required>
-                        <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion ">
+                        <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion " onkeypress="return soloLetras(event)">
                         <br>
                         <br>
                         <label>Departamento: </label><label style="color: red;">(*)</label>
@@ -313,7 +313,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           <option value="Vaupes" id="VU">Vaupes</option>
                           <option value="Vichada" id="VI">Vichada</option>
                         </select>
-                        <label>Ciudad:<label style="color: red;">(*)</label> </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" required>
+                        <label>Ciudad:<label style="color: red;">(*)</label> </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" onkeypress="return soloLetras(event)" required>
 
                         <label>Asignado:<label style="color: red;">(*)</label> </label>
                         <select name="asignado">
@@ -323,10 +323,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </select>
                         <br>
                         <br>
-                        <label>Email: <label style="color: red;">(*)</label></label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" required>
+                        <label>Email: <label style="color: red;">(*)</label></label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" onkeypress="return soloLetras(event)" required>
                         <br>
                         <br>
-                        <label>Descripcion:<label style="color: red;">(*)</label> </label><br><textarea name="descripcion_proyecto" rows="3" cols="60" placeholder="Ingrese Descripcion del proyecto..." required></textarea>
+                        <label>Descripcion:<label style="color: red;">(*)</label> </label><br><textarea name="descripcion_proyecto" rows="3" cols="60" placeholder="Ingrese Descripcion del proyecto..." onkeypress="return soloLetras(event)" required></textarea>
                         <br>
                         <br>
                         <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
@@ -381,7 +381,26 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script>
+        function soloLetras(e) {
+          var key = e.keyCode || e.which,
+            tecla = String.fromCharCode(key).toLowerCase(),
+            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/",
+            especiales = [8, 37, 39, 46],
+            tecla_especial = false;
 
+          for (var i in especiales) {
+            if (key == especiales[i]) {
+              tecla_especial = true;
+              break;
+            }
+          }
+
+          if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+            return false;
+          }
+        }
+      </script>
 
 
 </body>

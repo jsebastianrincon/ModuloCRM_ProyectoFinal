@@ -280,13 +280,13 @@ $id_proyecto = $_GET['id'];
                           echo "<th><label><label style='color: red;'>(*)</label>
                         &nbsp Id Proyecto: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       </label>";
-                          echo "<input type='text' size='50' name='id_proyecto' value ='$mostrar[id_proyecto]'> ";
+                          echo "<input type='text' size='50' name='id_proyecto' value ='$mostrar[id_proyecto]' onkeypress='return soloLetras(event)'> ";
                           echo "<br>";
                           echo "  <label><label style='color: red;'>(*)</label>
                           
                         &nbsp Proyecto Requerimiento: &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                       </label>";
-                          echo "<input type='text' size='50' name='proyecto_requerimiento' value ='$mostrar[tema_proyecto]'> ";
+                          echo "<input type='text' size='50' name='proyecto_requerimiento' value ='$mostrar[tema_proyecto]' onkeypress='return soloLetras(event)'> ";
                         }
                         ?>
 
@@ -294,25 +294,25 @@ $id_proyecto = $_GET['id'];
                         <label>
                           <label style="color: red;">(*)</label>
                           &nbsp Nombre Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                        <input type="text" size="50" name="nombre_requerimiento" required placeholder="Ingrese Nombre Requerimiento ">
+                        <input type="text" size="50" name="nombre_requerimiento" required placeholder="Ingrese Nombre Requerimiento " onkeypress="return soloLetras(event)">
                         </label>
                         <br>
                         <label>
                           <label style="color: red;">(*)</label>
                           &nbsp Descripcion Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
-                        <input type="text" size="50" name="descripcion_requerimiento" required placeholder="Ingrese Descripcion ">
+                        <input type="text" size="50" name="descripcion_requerimiento" required placeholder="Ingrese Descripcion " onkeypress="return soloLetras(event)">
                         </label>
                         <br>
                         <label>
                           <label style="color: red;">(*)</label>
                           &nbsp Costo Requerimiento($): &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
-                        <input type="text" size="25" name="costo_requerimiento" required placeholder="Ingrese Costo Requerimiento">
+                        <input type="text" size="25" name="costo_requerimiento" required placeholder="Ingrese Costo Requerimiento" onkeypress="return soloLetras(event)">
                         </label>
                         <br>
                         <label>
                           <label style="color: red;">(*)</label>
                           &nbsp Tiempo Requerimiento(Horas): &nbsp</label>
-                        <input type="number" size="5" name="tiempo_requerimiento" required placeholder=" ">
+                        <input type="number" size="5" name="tiempo_requerimiento" required placeholder=" " onkeypress="return soloLetras(event)">
                         </label>
                     </th>
                     <br>
@@ -384,7 +384,26 @@ $id_proyecto = $_GET['id'];
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
 
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+  </script>
   <!-------- Script Tabla dinamica------------>
 
 

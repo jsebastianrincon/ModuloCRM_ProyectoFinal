@@ -252,18 +252,18 @@ $id_proyecto = $_GET['id'];
                         echo "Cliente Proyecto: $mostrar[cliente_proyecto]";
                         echo "<br>";
                         echo "<br>";
-                        echo "Codigo Proyecto: <input type='text' size='30' name='codigo_proyecto' value ='$mostrar[codigo_proyecto]'> ";
-                        echo "Proyecto: <input type='text' size='30' name='tema_proyecto' value ='$mostrar[tema_proyecto]'></center>";
+                        echo "Codigo Proyecto: <input type='text' size='30' name='codigo_proyecto' value ='$mostrar[codigo_proyecto]' onkeypress='return soloLetras(event)'> ";
+                        echo "Proyecto: <input type='text' size='30' name='tema_proyecto' value ='$mostrar[tema_proyecto]'onkeypress='return soloLetras(event)'></center>";
                         echo "<br>";
                         echo "<br>";
                         echo 'Fecha : ';
-                        echo "<input type='text' size='10' name='fecha_ini_proyecto' value ='$mostrar[fecha_ini_proyecto]'> ";
+                        echo "<input type='text' size='10' name='fecha_ini_proyecto' value ='$mostrar[fecha_ini_proyecto]'onkeypress='return soloLetras(event)'> ";
                         echo 'Abierto Hasta : ';
-                        echo "<input type='text' size='9' name='fecha_fin_proyecto' value ='$mostrar[fecha_fin_proyecto]'> ";
+                        echo "<input type='text' size='9' name='fecha_fin_proyecto' value ='$mostrar[fecha_fin_proyecto]'onkeypress='return soloLetras(event)'> ";
                         echo "<br>";
                         echo "<br>";
                         echo 'Descripcion : ';
-                        echo "<input type='text' size='80' name='descripcion_proyecto' value ='$mostrar[descripcion_proyecto]'> ";
+                        echo "<input type='text' size='80' name='descripcion_proyecto' value ='$mostrar[descripcion_proyecto]'onkeypress='return soloLetras(event)'> ";
                         echo "<br>";
                         echo "<br>";
                       }
@@ -327,6 +327,27 @@ $id_proyecto = $_GET['id'];
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+  <script>
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
+
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+  </script>
 
 </body>
 

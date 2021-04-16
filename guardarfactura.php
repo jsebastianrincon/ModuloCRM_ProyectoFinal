@@ -239,11 +239,11 @@ $id = $_GET['id'];
                               //Impresion tabla
 
                               echo 'Codigo Factura: ';
-                              echo "<input type='text' name='cod_factura' value = '$mostrar[codigo_proyecto]'>";
+                              echo "<input type='text' name='cod_factura' value = '$mostrar[codigo_proyecto]' onkeypress='return soloLetras(event)'>";
                               echo "<br>";
                               echo "<br>";
                               echo 'Tema Proyecto:             ';
-                              echo "<input type='text' name ='proyecto_factura' value = '$mostrar[id_proyecto]'>";
+                              echo "<input type='text' name ='proyecto_factura' value = '$mostrar[id_proyecto]'onkeypress='return soloLetras(event)'>";
                               echo "<br>";
                               echo "<br>";
                               echo "Fecha Factura:             ";
@@ -319,6 +319,27 @@ $id = $_GET['id'];
 
               <!-- Page level custom scripts -->
               <script src="js/demo/datatables-demo.js"></script>
+
+              <script>
+                function soloLetras(e) {
+                  var key = e.keyCode || e.which,
+                    tecla = String.fromCharCode(key).toLowerCase(),
+                    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
+                    especiales = [8, 37, 39, 46],
+                    tecla_especial = false;
+
+                  for (var i in especiales) {
+                    if (key == especiales[i]) {
+                      tecla_especial = true;
+                      break;
+                    }
+                  }
+
+                  if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+                    return false;
+                  }
+                }
+              </script>
 
 </body>
 

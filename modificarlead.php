@@ -264,47 +264,47 @@ $id_lead = $_GET['id'];
                         echo " <br>";
                         echo " <br>";
                         echo 'Primer Nombre:';
-                        echo "<input type='text' size='18' name='nombre_lead' value ='$mostrar[nombre_lead]'> ";
+                        echo "<input type='text' size='18' name='nombre_lead' value ='$mostrar[nombre_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Segundo Nombre:';
-                        echo "<input type='text' size='19' name='segundo_nombre_lead' value ='$mostrar[segundo_nombre_lead]'> ";
+                        echo "<input type='text' size='19' name='segundo_nombre_lead' value ='$mostrar[segundo_nombre_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Primer Apellido:';
-                        echo "<input type='text' size='22' name='primer_apellido_lead' value ='$mostrar[primer_apellido_lead]'> ";
+                        echo "<input type='text' size='22' name='primer_apellido_lead' value ='$mostrar[primer_apellido_lead]' onkeypress='return soloLetras(event)'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Segundo Apellido:';
-                        echo "<input type='text' size='21' name='segundo_apellido_lead' value ='$mostrar[segundo_apellido_lead]'> ";
+                        echo "<input type='text' size='21' name='segundo_apellido_lead' value ='$mostrar[segundo_apellido_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Tipo de Documento:';
-                        echo "<input type='text' size='20' name='tipodocumento_lead' value ='$mostrar[tipodocumento_lead]' > ";
+                        echo "<input type='text' size='20' name='tipodocumento_lead' value ='$mostrar[tipodocumento_lead]' onkeypress='return soloLetras(event)' > ";
                         echo 'Documento:';
-                        echo "<input type='text' size='17' name='documento_lead' value ='$mostrar[documento_lead]'> ";
+                        echo "<input type='text' size='17' name='documento_lead' value ='$mostrar[documento_lead]' onkeypress='return soloLetras(event)'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Telefono:';
-                        echo "<input type='text' size='20' name='telefono_lead' value ='$mostrar[telefono_lead]'> ";
+                        echo "<input type='text' size='20' name='telefono_lead' value ='$mostrar[telefono_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Email:';
-                        echo "<input type='text' size='32' name='email_lead' value ='$mostrar[email_lead]'> ";
+                        echo "<input type='email' size='32' name='email_lead' value ='$mostrar[email_lead]'onkeypress='return soloLetras(event)'> ";
                         echo 'Departamento:';
-                        echo "<input type='text' size='22' name='departamento_lead' value ='$mostrar[departamento_lead]'> ";
+                        echo "<input type='text' size='22' name='departamento_lead' value ='$mostrar[departamento_lead]' onkeypress='return soloLetras(event)'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Ciudad : ';
-                        echo "<input type='text' size='21' name='ciudad_lead' value ='$mostrar[ciudad_lead]'> ";
+                        echo "<input type='text' size='21' name='ciudad_lead' value ='$mostrar[ciudad_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Direccion : ';
-                        echo "<input type='text' size='20' name='direccion_lead' value ='$mostrar[direccion_lead]'> ";
+                        echo "<input type='text' size='20' name='direccion_lead' value ='$mostrar[direccion_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Compañia : ';
-                        echo "<input type='text' size='32' name='compañia_lead' value ='$mostrar[compañia_lead]'> ";
+                        echo "<input type='text' size='32' name='compañia_lead' value ='$mostrar[compañia_lead]' onkeypress='return soloLetras(event)'> ";
                         echo " <br>";
                         echo " <br>";
 
                         echo 'Asignado : ';
-                        echo "<input type='text' size='20' name='asignado_lead' value ='$mostrar[asignado_lead]'> ";
+                        echo "<input type='text' size='20' name='asignado_lead' value ='$mostrar[asignado_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Recurso : ';
-                        echo "<input type='text' size='20' name='recurso_lead' value ='$mostrar[recurso_lead]'> ";
+                        echo "<input type='text' size='20' name='recurso_lead' value ='$mostrar[recurso_lead]' onkeypress='return soloLetras(event)'> ";
                         echo " <br>";
                         echo " <br>";
                         echo 'Comentario:';
                         echo " <br>";
-                        echo "<input type='text' name='comentario_lead' size='50' value ='$mostrar[comentario_lead]'></textarea>";
+                        echo "<input type='text' name='comentario_lead' size='50' value ='$mostrar[comentario_lead]' onkeypress='return soloLetras(event)'></textarea>";
                       }
                       ?>
 
@@ -373,7 +373,26 @@ $id_lead = $_GET['id'];
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  <script>
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
 
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+  </script>
 </body>
 
 </html>

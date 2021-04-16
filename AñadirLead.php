@@ -263,13 +263,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                       <br>
 
-                      <label>Primer Nombre: </label> <label style="color: red;">(*)</label><input type="text" size="17" name="nombre_lead" required placeholder="Ingrese Primer Nombre " maxlength=50>
-                      <label>Segundo Nombre: </label> <input type="text" size="18" name="segundo_nombre_lead" placeholder="Ingrese Segundo Nombre ">
+                      <label>Primer Nombre: </label> <label style="color: red;">(*)</label><input type="text" size="17" name="nombre_lead" required placeholder="Ingrese Primer Nombre " maxlength=50 onkeypress="return soloLetras(event)">
+                      <label>Segundo Nombre: </label> <input type="text" size="18" name="segundo_nombre_lead" placeholder="Ingrese Segundo Nombre " onkeypress="return soloLetras(event)">
 
-                      <label>Primer Apellido: </label> <label style="color: red;">(*)</label><input type="text" size="19" name="primer_apellido_lead" placeholder="Ingrese Primer Apellido" required>
+                      <label>Primer Apellido: </label> <label style="color: red;">(*)</label><input type="text" size="19" name="primer_apellido_lead" placeholder="Ingrese Primer Apellido" onkeypress="return soloLetras(event)" required>
                       <br>
                       <br>
-                      <label>Segundo Apellido: </label><input type="text" size="19" name="segundo_apellido_lead" placeholder="Ingrese Segundo Apellido">
+                      <label>Segundo Apellido: </label><input type="text" size="19" name="segundo_apellido_lead" placeholder="Ingrese Segundo Apellido" onkeypress="return soloLetras(event)">
 
                       <label>Tipo de Documento: </label><label style="color: red;">(*)</label>
                       <select name="tipodocumento_lead">
@@ -279,13 +279,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <option value="PA" id="PA">Pasaporte</option>
                       </select>
 
-                      <label>Documento:</label><label style="color: red;">(*)</label><input type="text" size="11" name="documento_lead" placeholder="Ingrese Doc." required>
+                      <label>Documento:</label><label style="color: red;">(*)</label><input type="text" size="11" name="documento_lead" placeholder="Ingrese Doc." required onkeypress="return soloLetras(event)">
 
                       <br>
                       <br>
-                      <label>Telefono: </label> <label style="color: red;">(*)</label><input type="text" size="15" name="telefono_lead" placeholder="Ingrese Telefono" required>
-                      <label>Email: </label> <label style="color: red;">(*)</label><input type="email" size="22" name="email_lead" placeholder="Ingrese Email" required>
-                      <label>Departamento: </label> <label style="color: red;">(*)</label>
+                      <label>Telefono: </label> <label style="color: red;">(*)</label><input type="text" size="15" name="telefono_lead" placeholder="Ingrese Telefono" required onkeypress="return soloLetras(event)">
+                      <label>Email: </label> <label style="color: red;">(*)</label><input type="email" size="22" name="email_lead" placeholder="Ingrese Email" required onkeypress="return soloLetras(event)">
+                      <label>Departamento: </label> <label style=" color: red;">(*)</label>
                       <select name="departamento_lead">
                         <option type="text" size="25" value="Elegir" id="AF">Seleccionar Departamento Residencia</option>
                         <option value="Amazonas" id="AZ<">Amazonas</option>
@@ -318,8 +318,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </select>
                       <br>
                       <br>
-                      <label>Ciudad: </label><label style="color: red;">(*)</label><input type="text" size="23" name="ciudad_lead" placeholder="Ciudad de residencia" required>
-                      <label>Direccion: </label><label style="color: red;">(*)</label><input type="text" size="23" name="direccion_lead" placeholder="Ingrese Direccion de domicilio" required>
+                      <label>Ciudad: </label><label style="color: red;">(*)</label><input type="text" size="23" name="ciudad_lead" placeholder="Ciudad de residencia" required onkeypress="return soloLetras(event)">
+                      <label>Direccion: </label><label style="color: red;">(*)</label><input type="text" size="23" name="direccion_lead" placeholder="Ingrese Direccion de domicilio" required onkeypress="return soloLetras(event)">
                       <label>Estado:<label style="color: red;">(*)</label> </label>
                       <select name="estado_lead">
                         <option value="Seleccione Estado">Asigne un Estado</option>
@@ -328,7 +328,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </select>
                       <br>
                       <br>
-                      <label>Compañia: </label><label style="color: red;">(*)</label><input type="text" size="30" name="compañia_lead" placeholder="Ingrese Compañia" required>
+                      <label>Compañia: </label><label style="color: red;">(*)</label><input type="text" size="30" name="compañia_lead" placeholder="Ingrese Compañia" required onkeypress="return soloLetras(event)">
 
                       <label>Asignado Por: </label><label style="color: red;">(*)</label>
                       <select name="asignado_lead">
@@ -338,7 +338,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       </select>
                       <br>
                       <br>
-                      <label>Comentario: </label><label style="color: red;">(*)</label><br><textarea name="comentario_lead" rows="3" cols="60" placeholder="Ingrese algun comentario..." required></textarea>
+                      <label>Comentario: </label><label style="color: red;">(*)</label><br><textarea name="comentario_lead" rows="3" cols="60" placeholder="Ingrese algun comentario..." required onkeypress="return soloLetras(event)"></textarea>
                       <br>
                       <br>
                       <label>Recurso: </label><label style="color: red;">(*)</label>
@@ -413,6 +413,26 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
 
+  <script>
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
+
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+  </script>
 </body>
 
 </html>
