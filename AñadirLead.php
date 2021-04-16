@@ -11,7 +11,7 @@ if (!isset($_SESSION['id_usuario'])) {
 /* VALIDACION VARIABLES DE SESION */
 
 $tipo_usuario = $_SESSION['tipo_usuario'];
-//echo $tipo_usuario;
+
 
 
 
