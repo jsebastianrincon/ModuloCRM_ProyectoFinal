@@ -3,7 +3,7 @@
 <?php
 /* VARIABLES */
 $id_cliente = $_REQUEST["id_cliente"];
-$$usuario = $_REQUEST["usuario"];
+$usuario = $_REQUEST["usuario"];
 $password = $_REQUEST["password"];
 
 

@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 
   $mail->isHTML(true);
   $mail->Subject = 'Registro Sistema Nuevo Usuario';
-  $mail->Body = '<h1 align=center>BIENVENIDO A MOVIP S.A.S <br><br> Usted ha sido registrado como cliente en nuestro sistema CRM mediante el cual podra realizar el seguimiento de las facturas y las reuniones de los proyectos que usted desee desarrollar con nosotros,por este medio recibira los enlaces para las reuniones que se programen en el transcurso de la realizacion de sus proyectos.<br><br>Pronto nos contactaremos a sus numeros de domicilio para asignar las credenciales las cuales le permitan acceder y llevar un mejor seguimiento de sus proyectos y facturas <br><br> Gracias por contactarnos </h1>';
+  $mail->Body = '<h3 align=center>BIENVENIDO A MOVIP S.A.S <br><br> Usted ha sido registrado como cliente en nuestro sistema CRM mediante el cual podra realizar el seguimiento de las facturas y las reuniones de los proyectos que usted desee desarrollar con nosotros,por este medio recibira los enlaces para las reuniones que se programen en el transcurso de la realizacion de sus proyectos.<br><br>Pronto nos contactaremos a sus numeros de domicilio para asignar las credenciales las cuales le permitan acceder y llevar un mejor seguimiento de sus proyectos y facturas <br><br> Gracias por contactarnos </h3>';
 
   if (!$mail->send()) {
     echo "ERROR";

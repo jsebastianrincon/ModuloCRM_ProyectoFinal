@@ -234,6 +234,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <br>
                       <p style="color: red;">(*) Campos Requeridos</p>
                       <br>
+
+
                       <label>Asignado A: </label><label style="color: red;">(*)</label>
                       <name='cliente_proyecto'>
 
@@ -245,15 +247,19 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 
                         mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
-                        $instruccion_SQL = "SELECT concat_ws (' ', nombre_lead , segundo_nombre_lead ,primer_apellido_lead,segundo_apellido_lead) FROM leads WHERE estado_lead = 1 ORDER BY primer_apellido_lead";
+                        $instruccion_SQL = "SELECT concat_ws (' ', id_usuario, '-', nombre_lead , segundo_nombre_lead ,primer_apellido_lead,segundo_apellido_lead) 
+                                                FROM leads 
+                                                LEFT JOIN usuarios ON usuarios.id_cliente = leads.id_lead 
+                                                WHERE leads.estado_lead = 1 ORDER BY leads.primer_apellido_lead ";
                         $resultado = mysqli_query($connexion, $instruccion_SQL);
                         ?>
+
 
                         <html>
 
 
                         <body>
-                          <select name='cliente_proyecto'>
+                          <select name='id_usuario'>
                             <?php
                             while ($row = mysqli_fetch_array($resultado)) :;
                             ?>
@@ -264,72 +270,107 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           </select>
                         </body>
 
-                        </html>
-                        <label>Codigo Proyecto: </label><label style="color: red;">(*)</label><input type="text" size="31" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto" onkeypress="return soloLetras(event)">
-                        <br>
-                        <br>
-                        <?php
-                        $fecha_americana = "10/27/2008";
-                        $fecha = DateTime::createFromFormat("m/d/Y", $fecha_americana, new DateTimeZone("Europe/Madrid"));
-                        $fecha_actual = date("y-m-d");
-                        $fecha_f = date("y-m-d", strtotime($fecha_actual));
-                        $time = strtotime($fecha_f);
-                        $fecha = date('Y-m-d', $time);
-                        echo "Fecha:<input type='text' size='10' name='fecha_ini_proyecto' value='$fecha' onkeypress='return soloLetras(event)'><label style='color: red;'>(*)</label></center>";
-                        ?>
-                        <label>Abierto Hasta:<label style=" color: red;">(*)</label> </label>
-                        <input type="date" size="40" name="fecha_fin_proyecto" required>
-                        <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion " onkeypress="return soloLetras(event)">
-                        <br>
-                        <br>
-                        <label>Departamento: </label><label style="color: red;">(*)</label>
-                        <select name="departamento">
-                          <option type="text" size="30" value="Elegir" id="AF">Seleccionar Departamento </option>
-                          <option value="Amazonas" id="AZ<">Amazonas</option>
-                          <option value="Antioquia" id="AN">Antioquia</option>
-                          <option value="Arauca" id="AR">Arauca</option>
-                          <option value="Atlantico" id="AT">Atlantico</option>
-                          <option value="Bogota D.C." id="BO">Bogota DC</option>
-                          <option value="Bolivar" id="BL">Bolivar</option>
-                          <option value="Boyaca" id="BY">Boyaca</option>
-                          <option value="Caldas" id="CL">Caldas</option>
-                          <option value="Caqueta" id="CQ">Caqueta</option>
-                          <option value="Casanare" id="CS">Casanare</option>
-                          <option value="Cauca" id="CA">Cauca</option>
-                          <option value="Cesar" id="CE">Cesar</option>
-                          <option value="Choco" id="CH">Choco</option>
-                          <option value="Cordoba" id="CO">Cordoba</option>
-                          <option value="Cundinamarca" id="CU">Cundinamarca</option>
-                          <option value="Guainia" id="GU">Guania</option>
-                          <option value="Guaviare" id="GV">Guaviare</option>
-                          <option value="Huila" id="HU">Huila</option>
-                          <option value="Quindio" id="QU">Quindio</option>
-                          <option value="Risaralda" id="RS">Risaralda</option>
-                          <option value="San Andres" id="SA">Risaralda</option>
-                          <option value="Santander" id="ST">Santander</option>
-                          <option value="Sucre" id="SU">Sucre</option>
-                          <option value="Tolima" id="TO">Tolima</option>
-                          <option value="Valle" id="VA">Valle</option>
-                          <option value="Vaupes" id="VU">Vaupes</option>
-                          <option value="Vichada" id="VI">Vichada</option>
-                        </select>
-                        <label>Ciudad:<label style="color: red;">(*)</label> </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" onkeypress="return soloLetras(event)" required>
+                        <label>Cod Cliente: </label><label style="color: red;">(*)</label>
+                        <name='id_usuario'>
 
-                        <label>Asignado:<label style="color: red;">(*)</label> </label>
-                        <select name="asignado">
-                          <option value="Asignado por">Seleccione Area</option>
-                          <option value="Area Comercial" id="ArC">Area Comercial</option>
-                          <option value="Area Marketing" id="ArM">Area de Marketing</option>
-                        </select>
-                        <br>
-                        <br>
-                        <label>Email: <label style="color: red;">(*)</label></label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" onkeypress="return soloLetras(event)" required>
-                        <br>
-                        <br>
-                        <label>Descripcion:<label style="color: red;">(*)</label> </label><br><textarea name="descripcion_proyecto" rows="3" cols="60" placeholder="Ingrese Descripcion del proyecto..." onkeypress="return soloLetras(event)" required></textarea>
-                        <br>
-                        <br>
-                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
+                          <?php
+
+                          require("conlead.php");
+
+
+                          $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
+
+                          mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
+                          $instruccion_SQL = "SELECT (id_usuario)
+                                                FROM leads 
+                                                LEFT JOIN usuarios ON usuarios.id_cliente = leads.id_lead 
+                                                WHERE leads.estado_lead = 1 ORDER BY leads.primer_apellido_lead ";
+                          $resultado = mysqli_query($connexion, $instruccion_SQL);
+                          ?>
+
+
+                          <html>
+
+
+                          <body>
+                            <select name='cliente_proyecto' required>
+                              <?php
+                              while ($row = mysqli_fetch_array($resultado)) :;
+                              ?>
+
+                                <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
+                                                                        ?></option>
+                              <?php endwhile; ?>
+                            </select>
+                          </body>
+
+                          </html>
+
+                          <label>Codigo Proyecto: </label><label style="color: red;">(*)</label><input type="text" size="25" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto" onkeypress="return soloLetras(event)">
+                          <br>
+                          <br>
+                          <?php
+                          $fecha_americana = "10/27/2008";
+                          $fecha = DateTime::createFromFormat("m/d/Y", $fecha_americana, new DateTimeZone("Europe/Madrid"));
+                          $fecha_actual = date("y-m-d");
+                          $fecha_f = date("y-m-d", strtotime($fecha_actual));
+                          $time = strtotime($fecha_f);
+                          $fecha = date('Y-m-d', $time);
+                          echo "Fecha:<input type='text' size='10' name='fecha_ini_proyecto' value='$fecha' onkeypress='return soloLetras(event)'><label style='color: red;'>(*)</label></center>";
+                          ?>
+                          <label>Abierto Hasta:<label style=" color: red;">(*)</label> </label>
+                          <input type="date" size="40" name="fecha_fin_proyecto" required>
+                          <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion " onkeypress="return soloLetras(event)">
+                          <br>
+                          <br>
+                          <label>Departamento: </label><label style="color: red;">(*)</label>
+                          <select name="departamento" required>
+                            <option type="text" size="30" value="Elegir" id="AF">Seleccionar Departamento </option>
+                            <option value="Amazonas" id="AZ<">Amazonas</option>
+                            <option value="Antioquia" id="AN">Antioquia</option>
+                            <option value="Arauca" id="AR">Arauca</option>
+                            <option value="Atlantico" id="AT">Atlantico</option>
+                            <option value="Bogota D.C." id="BO">Bogota DC</option>
+                            <option value="Bolivar" id="BL">Bolivar</option>
+                            <option value="Boyaca" id="BY">Boyaca</option>
+                            <option value="Caldas" id="CL">Caldas</option>
+                            <option value="Caqueta" id="CQ">Caqueta</option>
+                            <option value="Casanare" id="CS">Casanare</option>
+                            <option value="Cauca" id="CA">Cauca</option>
+                            <option value="Cesar" id="CE">Cesar</option>
+                            <option value="Choco" id="CH">Choco</option>
+                            <option value="Cordoba" id="CO">Cordoba</option>
+                            <option value="Cundinamarca" id="CU">Cundinamarca</option>
+                            <option value="Guainia" id="GU">Guania</option>
+                            <option value="Guaviare" id="GV">Guaviare</option>
+                            <option value="Huila" id="HU">Huila</option>
+                            <option value="Quindio" id="QU">Quindio</option>
+                            <option value="Risaralda" id="RS">Risaralda</option>
+                            <option value="San Andres" id="SA">Risaralda</option>
+                            <option value="Santander" id="ST">Santander</option>
+                            <option value="Sucre" id="SU">Sucre</option>
+                            <option value="Tolima" id="TO">Tolima</option>
+                            <option value="Valle" id="VA">Valle</option>
+                            <option value="Vaupes" id="VU">Vaupes</option>
+                            <option value="Vichada" id="VI">Vichada</option>
+                          </select>
+                          <label>Ciudad:<label style="color: red;">(*)</label> </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" onkeypress="return soloLetras(event)" required>
+
+                          <label>Asignado:<label style="color: red;">(*)</label> </label>
+                          <select name="asignado">
+                            <option value="Asignado por">Seleccione Area</option>
+                            <option value="Area Comercial" id="ArC">Area Comercial</option>
+                            <option value="Area Marketing" id="ArM">Area de Marketing</option>
+                          </select>
+                          <br>
+                          <br>
+                          <label>Email: <label style="color: red;">(*)</label></label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" onkeypress="return soloLetras(event)" required>
+                          <br>
+                          <br>
+                          <label>Descripcion:<label style="color: red;">(*)</label> </label><br><textarea name="descripcion_proyecto" rows="3" cols="60" placeholder="Ingrese Descripcion del proyecto..." onkeypress="return soloLetras(event)" required></textarea>
+                          <br>
+                          <br>
+                          <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
 
 
           </fieldset>
@@ -385,7 +426,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         function soloLetras(e) {
           var key = e.keyCode || e.which,
             tecla = String.fromCharCode(key).toLowerCase(),
-            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/",
+            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/1234567890",
             especiales = [8, 37, 39, 46],
             tecla_especial = false;
 

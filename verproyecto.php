@@ -401,7 +401,7 @@ $id = $_GET['id'];
 
 
 
-                      if ($id_usuario != '2') {
+                      if ($id_usuario != '1') {
                         if ($tipo_usuario != '1') {
                           echo "";
                         } else {

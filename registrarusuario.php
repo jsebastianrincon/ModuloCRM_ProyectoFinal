@@ -229,7 +229,7 @@ $id = $_GET['id'];
                       $consultausario = "SELECT id_lead, email_lead,substring(email_lead,1,6) AS user FROM leads WHERE estado_lead = 1 AND id_lead = '$id'";
                       $result = mysqli_query($conexion2, $consultausario);
                       while ($mostrar = mysqli_fetch_array($result)) {
-                        echo "<div style='visibility:hidden;display:none;'><center>id: <input type='text' size='12' name='id_cliente' value ='$mostrar[id_lead]'><center></div>";
+                        echo "<center>Id: <input type='text' size='12' name='id_cliente' value ='$mostrar[id_lead]'><center></div>";
                         echo "<br>";
                         echo "<center>Usuario: <input type='text' size='12' name='usuario' value ='$mostrar[user]'><center>";
                         echo "<br>";

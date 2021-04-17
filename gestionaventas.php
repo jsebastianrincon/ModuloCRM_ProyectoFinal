@@ -261,10 +261,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               <center style="visibility: hidden">----------------</center>
                               <center>Codigo Proyecto </center>
                             </th>
-                            <th>
-                              <center style="visibility: hidden">------------------------</center>
-                              <center>Nombre Cliente </center>
-                            </th>
+
 
 
                             <th>
@@ -309,9 +306,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           echo "<td>";
                           echo $mostrar['codigo_proyecto'];
                           echo "</td>";
-                          echo "<td>";
-                          echo $mostrar['cliente_proyecto'];
-                          echo "</td>";
+
 
                           echo "<td>";
                           echo $mostrar['fecha_ini_proyecto'];
