@@ -323,50 +323,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion " onkeypress="return soloLetras(event)">
                           <br>
                           <br>
-                          <label>Departamento: </label><label style="color: red;">(*)</label>
-                          <select name="departamento" required>
-                            <option type="text" size="30" value="Elegir" id="AF">Seleccionar Departamento </option>
-                            <option value="Amazonas" id="AZ<">Amazonas</option>
-                            <option value="Antioquia" id="AN">Antioquia</option>
-                            <option value="Arauca" id="AR">Arauca</option>
-                            <option value="Atlantico" id="AT">Atlantico</option>
-                            <option value="Bogota D.C." id="BO">Bogota DC</option>
-                            <option value="Bolivar" id="BL">Bolivar</option>
-                            <option value="Boyaca" id="BY">Boyaca</option>
-                            <option value="Caldas" id="CL">Caldas</option>
-                            <option value="Caqueta" id="CQ">Caqueta</option>
-                            <option value="Casanare" id="CS">Casanare</option>
-                            <option value="Cauca" id="CA">Cauca</option>
-                            <option value="Cesar" id="CE">Cesar</option>
-                            <option value="Choco" id="CH">Choco</option>
-                            <option value="Cordoba" id="CO">Cordoba</option>
-                            <option value="Cundinamarca" id="CU">Cundinamarca</option>
-                            <option value="Guainia" id="GU">Guania</option>
-                            <option value="Guaviare" id="GV">Guaviare</option>
-                            <option value="Huila" id="HU">Huila</option>
-                            <option value="Quindio" id="QU">Quindio</option>
-                            <option value="Risaralda" id="RS">Risaralda</option>
-                            <option value="San Andres" id="SA">Risaralda</option>
-                            <option value="Santander" id="ST">Santander</option>
-                            <option value="Sucre" id="SU">Sucre</option>
-                            <option value="Tolima" id="TO">Tolima</option>
-                            <option value="Valle" id="VA">Valle</option>
-                            <option value="Vaupes" id="VU">Vaupes</option>
-                            <option value="Vichada" id="VI">Vichada</option>
-                          </select>
-                          <label>Ciudad:<label style="color: red;">(*)</label> </label><input type="text" size="20" name="ciudad" placeholder="Ciudad de residencia" onkeypress="return soloLetras(event)" required>
-
-                          <label>Asignado:<label style="color: red;">(*)</label> </label>
-                          <select name="asignado">
-                            <option value="Asignado por">Seleccione Area</option>
-                            <option value="Area Comercial" id="ArC">Area Comercial</option>
-                            <option value="Area Marketing" id="ArM">Area de Marketing</option>
-                          </select>
-                          <br>
-                          <br>
-                          <label>Email: <label style="color: red;">(*)</label></label><input type="text" size="32" name="email" placeholder="Correo del personal quien asigno" onkeypress="return soloLetras(event)" required>
-                          <br>
-                          <br>
                           <label>Descripcion:<label style="color: red;">(*)</label> </label><br><textarea name="descripcion_proyecto" rows="3" cols="60" placeholder="Ingrese Descripcion del proyecto..." onkeypress="return soloLetras(event)" required></textarea>
                           <br>
                           <br>
