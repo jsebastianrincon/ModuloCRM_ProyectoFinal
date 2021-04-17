@@ -265,12 +265,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                             <th>
-                              <center style="visibility: hidden">-----------------------</center>
+                              <center style="visibility: hidden">---------------</center>
                               <center>Fecha Inicio Proyecto </center>
                             </th>
 
                             <th>
-                              <center style="visibility: hidden">---------------------</center>
+                              <center style="visibility: hidden">---------------</center>
                               <center>Fecha Fin Proyecto</center>
                             </th>
 
@@ -282,7 +282,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                             <th>
-                              <center style="visibility: hidden">---------------------</center>
+                              <center style="visibility: hidden">----------------</center>
                               <center>Tema Proyecto</center>
                             </th>
 
@@ -290,7 +290,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                             <th>
 
-                              <center style="visibility: hidden">------------------------------------------------</center>
+                              <center style="visibility: hidden">-------------------------------------------------</center>
                               <center>Acciones</center>
 
                             </th>

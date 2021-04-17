@@ -11,8 +11,8 @@ if (isset($_POST['submit'])) {
   $mail->Port = 587;
   $mail->SMTPAuth = true;
   $mail->SMTPSecure = 'tls';
-  $mail->Username = 'juanrinconaxl926@gmail.com';
-  $mail->Password = 'sebas20.121996';
+  $mail->Username = 'movipsas2@gmail.com';
+  $mail->Password = 'movipsasco222';
 
   $mail->setFrom($_POST['email_lead']);
   $mail->addAddress($_POST['email_lead']);
