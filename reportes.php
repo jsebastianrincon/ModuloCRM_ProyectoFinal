@@ -245,16 +245,16 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 <h1 class="h3 mb-0 text-gray-800">Reportes</h1>
               </div>
               <div>
-                <a href='ReporteClientes.php'><button type='button' id="reportecliente" class='btn btn-outline-info btn-sm active' onclick="alerta()"><i class=" fas fa-user"></i> Generar Reporte Clientes</button></a>
+                <a href='ReporteClientes.php'><button type='button' id="reportecliente" class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class=" fas fa-user"></i> Generar Reporte Clientes</button></a>
                 <br>
                 <br>
-                <a href='ReporteReuniones.php'><button type='button' class='btn btn-outline-info btn-sm active'><i class="fas fa-calendar-times"></i> Generar Reporte Reuniones Realizadas</button></a>
+                <a href='ReporteReuniones.php'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class="fas fa-calendar-times"></i> Generar Reporte Reuniones Realizadas</button></a>
                 <br>
                 <br>
-                <a href='ReporteLeads.php'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-headset'></i> Generar Reporte Leads</button></a>
+                <a href='ReporteLeads.php'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class='fa fa-headset' onclick="alert('Reporte Generado')"></i> Generar Reporte Leads</button></a>
                 <br>
                 <br>
-                <a href='ReporteProyectos.php'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fas fa-clipboard-list'></i> Generar Reporte Proyectos</button></a>
+                <a href='ReporteProyectos.php'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class='fas fa-clipboard-list' onclick="alert('Reporte Generado')"></i> Generar Reporte Proyectos</button></a>
               </div>
 
 
@@ -317,6 +317,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+  <script>
+    function saludo() {
+      window.location.href = 'reportes.php';
+      alert("OK");
+    }
+  </script>
 
 </body>
 

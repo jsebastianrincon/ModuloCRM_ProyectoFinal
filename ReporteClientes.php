@@ -29,5 +29,4 @@ while ($rows = mysqli_fetch_assoc($resultset)) {
     $pdf->Cell(24, 7, $column, 0.5);
   }
 }
-
-$pdf->Output();
+($pdf->Output() == true);

@@ -445,7 +445,7 @@ $id_usuario = $_SESSION['id_usuario'];
 
           <!-- Pie Chart -->
           <div class="col-lg-12 col-md-6 mb-5">
-            <div id="piechart" style="width: 980px; height: 500px;"></div>
+            <div id="mychart" style="width: 500px; height: 500px;"></div>
           </div>
 
           <!-- Card Body -->
@@ -467,9 +467,7 @@ $id_usuario = $_SESSION['id_usuario'];
 
 
     <!-- Pie Chart -->
-    <div class="col-lg-12 col-md-6 mb-5">
-      <div id="piechart" style="width: 980px; height: 500px;"></div>
-    </div>
+
 
     <!-- Card Body -->
 
@@ -556,6 +554,8 @@ $id_usuario = $_SESSION['id_usuario'];
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript"></script>
 <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../vendor/chart.js/Chart.js"></script>
+
 <script>
   google.charts.load('current', {
     'packages': ['corechart']
@@ -587,7 +587,7 @@ $id_usuario = $_SESSION['id_usuario'];
           },
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('mychart'));
 
         chart.draw(rows, options);
 

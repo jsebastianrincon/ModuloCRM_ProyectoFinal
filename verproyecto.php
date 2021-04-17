@@ -396,7 +396,10 @@ $id = $_GET['id'];
                     $result = mysqli_query($conexion2, $sql);
                     while ($mostrar = mysqli_fetch_array($result)) {
                       echo "<colspan='24'><div class='btn-group'><th> 
-                               <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fas fa-file-pdf'></i> Generar Factura</button></a> ";
+                               <a href='factura.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active' onclick='hola()'><i class='fas fa-file-pdf' >
+</i> Generar Factura</button></a> ";
+
+
 
                       if ($id_usuario != '2') {
                         if ($tipo_usuario != '1') {
@@ -408,6 +411,11 @@ $id = $_GET['id'];
                         }
                       }
                     }
+
+
+
+                    echo '<script type="text/javascript">function hola(){ alert("Factura Generada")}</script>';
+
                     ?>
                   </div>
                   <!-- End of Page Wrapper -->
