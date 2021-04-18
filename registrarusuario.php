@@ -229,11 +229,11 @@ $id = $_GET['id'];
                       $consultausario = "SELECT id_lead, email_lead,substring(email_lead,1,6) AS user FROM leads WHERE estado_lead = 1 AND id_lead = '$id'";
                       $result = mysqli_query($conexion2, $consultausario);
                       while ($mostrar = mysqli_fetch_array($result)) {
-                        echo "<center>Id: <input type='text' size='12' name='id_cliente' value ='$mostrar[id_lead]'><center></div>";
+                        echo "<center>Id: <input type='text' size='12' name='id_cliente' value ='$mostrar[id_lead]'onkeypress='return soloLetras(event)'><center></div>";
                         echo "<br>";
-                        echo "<center>Usuario: <input type='text' size='12' name='usuario' value ='$mostrar[user]'><center>";
+                        echo "<center>Usuario: <input type='text' size='12' name='usuario' value ='$mostrar[user]'onkeypress='return soloLetras(event)'><center>";
                         echo "<br>";
-                        echo " <center><label>Contraseña: </label> <input type='password' size='15' name='password'></center>";
+                        echo " <center><label>Contraseña: </label> <input type='password' size='15' name='password'onkeypress='return soloLetras(event)'></center>";
                         echo "<br>";
                       }
 
@@ -294,7 +294,26 @@ $id = $_GET['id'];
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  <script>
+    function soloLetras(e) {
+      var key = e.keyCode || e.which,
+        tecla = String.fromCharCode(key).toLowerCase(),
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/1234567890",
+        especiales = [8, 37, 39, 46],
+        tecla_especial = false;
 
+      for (var i in especiales) {
+        if (key == especiales[i]) {
+          tecla_especial = true;
+          break;
+        }
+      }
+
+      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+        return false;
+      }
+    }
+  </script>
 </body>
 
 </html>
