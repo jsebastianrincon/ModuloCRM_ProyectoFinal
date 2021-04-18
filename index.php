@@ -103,10 +103,10 @@ if ($_POST) {
                   <div class="card-body">
                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                       <center>
-                        <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Usuario</label><input class="form-control py-4" id="inputEmailAddress" name="usuario" type="text" placeholder="Enter email address" /></div>
+                        <div class="form-group"><label class="small mb-1" for="inputEmailAddress">Usuario</label><input class="form-control py-4" id="inputEmailAddress" name="usuario" type="text" placeholder="Enter email address" onkeypress="return soloLetras(event)" /></div>
                       </center>
                       <center>
-                        <div class="form-group"><label class="small mb-1" for="inputPassword">Contraseña</label><input class="form-control py-4" id="inputPassword" name="password" type="password" placeholder="Enter password" /></div>
+                        <div class="form-group"><label class="small mb-1" for="inputPassword">Contraseña</label><input class="form-control py-4" id="inputPassword" name="password" type="password" placeholder="Enter password" onkeypress="return soloLetras(event)" /></div>
                       </center>
                       <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
 
@@ -159,6 +159,27 @@ if ($_POST) {
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
+
+    <script>
+      function soloLetras(e) {
+        var key = e.keyCode || e.which,
+          tecla = String.fromCharCode(key).toLowerCase(),
+          letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/1234567890",
+          especiales = [8, 37, 39, 46],
+          tecla_especial = false;
+
+        for (var i in especiales) {
+          if (key == especiales[i]) {
+            tecla_especial = true;
+            break;
+          }
+        }
+
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+          return false;
+        }
+      }
+    </script>
 </body>
 
 </html>
