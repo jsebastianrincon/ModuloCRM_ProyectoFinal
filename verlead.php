@@ -287,7 +287,7 @@ $id = $_GET['id'];
             </div>
             <!-  End of Content Wrapper -->
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-              <h1 class="h3 mb-0 text-gray-800">Informacion de Contacto Telefonico</h1>
+              <h1 class="h3 mb-0 text-gray-800">Informacion de Contacto</h1>
             </div>
             <div class="container p-8">
               <div class="group">
