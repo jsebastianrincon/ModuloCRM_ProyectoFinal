@@ -127,7 +127,7 @@ $id = $_GET['id'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="proyectos.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>

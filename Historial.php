@@ -442,121 +442,120 @@ $id_usuario = $_SESSION['id_usuario'];
               <a class="scroll-to-top rounded" href="#page-top">
                 <i class="fas fa-angle-up"></i>
               </a>
-
-
-
               <!-- Bootstrap core JavaScript-->
-              <script src="vendor/jquery/jquery.min.js"></script>
-              <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-              <!-- Core plugin JavaScript-->
-              <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+              <br>
+              <br>
+              <!---Reuniones Vencidas--->
+              <?php
 
-              <!-- Custom scripts for all pages-->
-              <script src="js/sb-admin-2.min.js"></script>
+              if ($id_usuario != '2') {
 
-              <!-- Page level plugins -->
-              <script src="vendor/chart.js/Chart.min.js"></script>
-
-              <!-- Page level custom scripts -->
-              <script src="js/demo/chart-area-demo.js"></script>
-              <script src="js/demo/chart-pie-demo.js"></script>
-              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-              <!-- Bootstrap core JavaScript-->
-              <script src="vendor/jquery/jquery.min.js"></script>
-              <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-              <!-- Core plugin JavaScript-->
-              <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-              <!-- Custom scripts for all pages-->
-              <script src="js/sb-admin-2.min.js"></script>
-
-              <!-- Page level plugins -->
-              <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-              <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-              <!-- Page level custom scripts -->
-              <script src="js/demo/datatables-demo.js"></script>
-            </div>
-            <br>
-            <br>
-            <!---Reuniones Vencidas--->
-            <?php
-
-            if ($id_usuario != '2') {
-
-              if ($tipo_usuario != '1') {
-              } else {
-                echo "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
-                echo "<h1 class='h3 mb-0 text-gray-800'>Reuniones Vencidas</h1>
+                if ($tipo_usuario != '1') {
+                } else {
+                  echo "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+                  echo "<h1 class='h3 mb-0 text-gray-800'>Reuniones Vencidas</h1>
                 </div>";
-                echo "<fieldset>";
-                echo "<div class='container p-8'>";
-                echo "<div class='group'>";
-                echo "<div class='card card-body'>";
-                echo "<div class='form-group' id='responsive-form'>";
+                  echo "<fieldset>";
+                  echo "<div class='container p-8'>";
+                  echo "<div class='group'>";
+                  echo "<div class='card card-body'>";
+                  echo "<div class='form-group' id='responsive-form'>";
 
-                echo "<fieldset>";
+                  echo "<fieldset>";
 
-                echo "<div class='col md-8 col md-offset-2'>";
+                  echo "<div class='col md-8 col md-offset-2'>";
 
-                echo "</div>";
+                  echo "</div>";
 
-                echo "<div class='card-header py-3'>";
+                  echo "<div class='card-header py-3'>";
 
-                echo "</div>";
-                echo "<div class='card-body'>";
-                echo " <div class='table-responsive'>";
-                echo " <table id='data_table' class='table table-bordered' cellspacing='0' width='100%'>";
-                echo "    <thead>";
-                echo "      <tr>";
-                echo "        <th>";
-                echo "          <center style='visibility: hidden'>--------------------</center>";
-                echo "          <center>Cliente </center>";
-                echo "        </th>";
-                echo "        <th>";
-                echo "          <center style='visibility: hidden'>--------------------</center>";
-                echo "          <center>Nombre </center>";
-                echo "        </th>";
-                echo "        <th>";
-                echo "          <center style='visibility: hidden'>---------------------</center>";
-                echo "          <center>Fecha </center>";
-                echo "        </th>";
-                echo "        <th>";
-                echo "          <center style='visibility: hidden'>---------------------</center>";
-                echo "          <center>Hora </center>";
-                echo "        </th>";
-                echo "        <th>";
-                echo "          <center style='visibility: hidden'>--------------------</center>";
-                echo "          <center>Asignado</center>";
-                echo "        </th>";
-                echo "        <th>";
-                echo "          <center style='visibility: hidden'>--------------------------</center>";
-                echo "          <center>Descripcion</center>";
-                echo "        </th>";
+                  echo "</div>";
+                  echo "<div class='card-body'>";
+                  echo " <div class='table-responsive'>";
+                  echo " <table id='data_table' class='table table-bordered' cellspacing='0' width='100%'>";
+                  echo "    <thead>";
+                  echo "      <tr>";
+                  echo "        <th>";
+                  echo "          <center style='visibility: hidden'>--------------------</center>";
+                  echo "          <center>Cliente </center>";
+                  echo "        </th>";
+                  echo "        <th>";
+                  echo "          <center style='visibility: hidden'>--------------------</center>";
+                  echo "          <center>Nombre </center>";
+                  echo "        </th>";
+                  echo "        <th>";
+                  echo "          <center style='visibility: hidden'>---------------------</center>";
+                  echo "          <center>Fecha </center>";
+                  echo "        </th>";
+                  echo "        <th>";
+                  echo "          <center style='visibility: hidden'>---------------------</center>";
+                  echo "          <center>Hora </center>";
+                  echo "        </th>";
+                  echo "        <th>";
+                  echo "          <center style='visibility: hidden'>--------------------</center>";
+                  echo "          <center>Asignado</center>";
+                  echo "        </th>";
+                  echo "        <th>";
+                  echo "          <center style='visibility: hidden'>--------------------------</center>";
+                  echo "          <center>Descripcion</center>";
+                  echo "        </th>";
 
-                echo "      </tr>";
-                echo "    </thead>";
-
-
-
-                $sql = 'SELECT * FROM reuniones WHERE fecha_reunion < CURDATE() ';
+                  echo "      </tr>";
+                  echo "    </thead>";
 
 
-                $result = mysqli_query($conexion2, $sql);
 
-                while ($mostrar = mysqli_fetch_array($result)) {
-                  print_r($mostrar);
+                  $sql = 'SELECT * FROM reuniones WHERE fecha_reunion < CURDATE() ';
+
+
+                  $result = mysqli_query($conexion2, $sql);
+
+                  while ($mostrar = mysqli_fetch_array($result)) {
+                    print_r($mostrar);
+                  }
+
+
+                  echo "</table>";
+                  echo "</div>";
                 }
-
-
-                echo "</table>";
-                echo "</div>";
               }
-            }
-            ?>
+              ?>
 
 </body>
 
 </html>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="js/demo/datatables-demo.js"></script>
+</div>
