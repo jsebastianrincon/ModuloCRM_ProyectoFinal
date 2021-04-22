@@ -128,7 +128,7 @@ $id_usuario = $_SESSION['id_usuario'];
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="charts.html">
+          <a class="nav-link" href="proyectos.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>
 
@@ -145,11 +145,7 @@ $id_usuario = $_SESSION['id_usuario'];
             </div>
         </li>
         <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Reportes</span></a>
-        </li>
+
       <?php } ?>
 
       <!-- Divider -->
