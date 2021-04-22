@@ -248,8 +248,9 @@ $id_proyecto = $_GET['id'];
                       $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto = '$id_proyecto'";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
-                        echo "<br>";
+                        echo '<div style="visibility:hidden; display:none;">';
                         echo "Cliente Proyecto: $mostrar[cliente_proyecto]";
+                        echo '</div>';
                         echo "<br>";
                         echo "<br>";
                         echo "Codigo Proyecto: <input type='text' size='30' name='codigo_proyecto' value ='$mostrar[codigo_proyecto]' onkeypress='return soloLetras(event)'> ";

@@ -260,6 +260,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                         <body>
                           <select name='id_usuario'>
+                            <option value="">Seleccione Cliente</option>
                             <?php
                             while ($row = mysqli_fetch_array($resultado)) :;
                             ?>
@@ -271,6 +272,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         </body>
 
                         <label>Cod Cliente: </label><label style="color: red;">(*)</label>
+
                         <name='id_usuario'>
 
                           <?php
@@ -294,6 +296,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
                           <body>
                             <select name='cliente_proyecto' required>
+                              <option value="">Seleccione Id</option>
                               <?php
                               while ($row = mysqli_fetch_array($resultado)) :;
                               ?>
@@ -304,11 +307,13 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             </select>
                           </body>
 
+                          <br>
+                          <br>
+
                           </html>
 
                           <label>Codigo Proyecto: </label><label style="color: red;">(*)</label><input type="text" size="25" name="codigo_proyecto" required placeholder="Ingrese Codigo Para El Proyecto" onkeypress="return soloLetras(event)">
-                          <br>
-                          <br>
+
                           <?php
                           $fecha_americana = "10/27/2008";
                           $fecha = DateTime::createFromFormat("m/d/Y", $fecha_americana, new DateTimeZone("Europe/Madrid"));
@@ -320,6 +325,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           ?>
                           <label>Abierto Hasta:<label style=" color: red;">(*)</label> </label>
                           <input type="date" size="40" name="fecha_fin_proyecto" required>
+                          <br>
+                          <br>
                           <label>Tema: <label style="color: red;">(*)</label></label><input type="text" size="31" name="tema_proyecto" required placeholder="Ingrese Informacion " onkeypress="return soloLetras(event)">
                           <br>
                           <br>

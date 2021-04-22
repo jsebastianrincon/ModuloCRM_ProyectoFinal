@@ -266,11 +266,6 @@ $id_usuario = $_SESSION['id_usuario'];
 
                       <div class="card-header py-3">
                         <?php
-                        $sql = "SELECT * FROM  usuarios where id_usuario = $id_usuario";
-                        $result = mysqli_query($conexion2, $sql);
-                        while ($mostrar = mysqli_fetch_array($result)) {
-                          $id_usuario = $mostrar['id_usuario'];
-                        }
 
                         if ($id_usuario != '2') {
                           if ($tipo_usuario != '1') {
@@ -341,79 +336,80 @@ $id_usuario = $_SESSION['id_usuario'];
                             </thead>
                             <!-- Mostrar Datos en tabla de leads... -->
                             <?php
-                            $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
-                            $result = mysqli_query($conexion2, $sql);
 
-                            while ($mostrar = mysqli_fetch_array($result)) {
-
-                              if ($id_usuario == '1') {
+                            if ($id_usuario == '1') {
+                              if ($tipo_usuario == '1') {
                                 $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
-                                echo "<tr>";
-                                echo "<td>";
-                                echo $mostrar['cliente_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['nombre_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['fecha_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['hora_reunion'];
-                                echo "</td>";
-                                echo "<td>";
-                                echo $mostrar['asignado_reunion'];
-                                echo "<td>";
-                                echo $mostrar['descripcion_reunion'];
-                                echo "</td>";
-                                if ($id_usuario != '2') {
-                                  if ($tipo_usuario != '1') {
-                                    echo '';
-                                  } else {
-                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                                $result = mysqli_query($conexion2, $sql);
+                                while ($mostrar = mysqli_fetch_array($result)) {
+                                  echo "<tr>";
+                                  echo "<td>";
+                                  echo $mostrar['cliente_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar['nombre_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar['fecha_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar['hora_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar['asignado_reunion'];
+                                  echo "<td>";
+                                  echo $mostrar['descripcion_reunion'];
+                                  echo "</td>";
+                                  if ($id_usuario != '2') {
+                                    if ($tipo_usuario != '1') {
+                                      echo '';
+                                    } else {
+                                      echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                                                                               <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                             </td>";
-                                    echo "<br>";
+                                      echo "<br>";
+                                    }
                                   }
                                 }
                               } else {
-                                $sql1 = "SELECT * FROM reuniones WHERE id_usuario = " . $id_usuario . " AND fecha_reunion > CURDATE()";
-
-                                $result1 = mysqli_query($conexion2, $sql1);
-
-                                while ($mostrar1 = mysqli_fetch_array($result1)) {
-
-                                  $id_us_reunion = $mostrar1['id_usuario'];
-
-                                  if ($id_usuario == $id_us_reunion) {
-                                    echo "<tr>";
-                                    echo "<td>";
-                                    echo $mostrar['cliente_reunion'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $mostrar['nombre_reunion'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $mostrar['fecha_reunion'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $mostrar['hora_reunion'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                    echo $mostrar['asignado_reunion'];
-                                    echo "<td>";
-                                    echo $mostrar['descripcion_reunion'];
-                                    echo "</td>";
-                                    if ($id_usuario != '2') {
-                                      if ($tipo_usuario != '1') {
-                                        echo '';
-                                      } else {
-                                        echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                                echo '';
+                              }
+                            } else {
+                              //validacion rol
+                              $sql1 = "SELECT * FROM reuniones WHERE id_usuario = " . $id_usuario . " AND fecha_reunion > CURDATE()";
+                              $result1 = mysqli_query($conexion2, $sql1);
+                              while ($mostrar1 = mysqli_fetch_array($result1)) {
+                                $id_us_reunion = $mostrar1['id_usuario'];
+                                if ($id_usuario == $id_us_reunion) {
+                                  echo "<tr>";
+                                  echo "<td>";
+                                  echo $mostrar1['cliente_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar1['nombre_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar1['fecha_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar1['hora_reunion'];
+                                  echo "</td>";
+                                  echo "<td>";
+                                  echo $mostrar1['asignado_reunion'];
+                                  echo "<td>";
+                                  echo $mostrar1['descripcion_reunion'];
+                                  echo "</td>";
+                                  if ($id_usuario != '2') {
+                                    if ($tipo_usuario != '1') {
+                                      echo '';
+                                    } else {
+                                      echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                                                                               <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                             </td>";
-                                        echo "<br>";
-                                      }
+                                      echo "<br>";
                                     }
+                                  } else {
+                                    echo '';
                                   }
                                 }
                               }

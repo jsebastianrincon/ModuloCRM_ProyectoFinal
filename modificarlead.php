@@ -259,8 +259,10 @@ $id_lead = $_GET['id'];
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
                         //echo "<input type='text' name='nombre'>";
+                        echo '<div style="visibility:hidden; display:none;">';
                         echo 'Id :';
                         echo "<td>" . $mostrar['id_lead'] . "</td>";
+                        echo '</div>';
                         echo " <br>";
                         echo " <br>";
                         echo 'Primer Nombre:';

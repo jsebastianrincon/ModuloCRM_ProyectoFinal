@@ -238,7 +238,7 @@ $id = $_GET['id'];
                         while ($mostrar = mysqli_fetch_array($result)) {
                           //Impresion tabla
 
-                          echo "Nombres:";
+                          echo "<b>Nombres: </b>";
                           echo $mostrar['nombre_lead'], ' ', $mostrar['segundo_nombre_lead'];
                           echo '<br>';
                           echo "Apellidos:    ";
