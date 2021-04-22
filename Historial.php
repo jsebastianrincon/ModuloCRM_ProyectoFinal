@@ -484,7 +484,7 @@ $id_usuario = $_SESSION['id_usuario'];
             <!---Reuniones Vencidas--->
             <?php
 
-            if ($id_usuario != '1') {
+            if ($id_usuario != '2') {
 
               if ($tipo_usuario != '1') {
               } else {

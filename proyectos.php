@@ -457,7 +457,7 @@ $id_usuario = $_SESSION['id_usuario'];
               echo "<th>";
               if ($id_usuario != '2') {
                 if ($tipo_usuario != '1') {
-                  echo "";
+                  echo '';
                 } else {
                   echo "<a href='propuestas.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Propuesta</i></button></a>";
                 }
