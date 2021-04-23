@@ -271,27 +271,27 @@ $id = $_GET['id'];
                       while ($mostrar = mysqli_fetch_array($result)) {
                         //Impresion tabla
 
-                        echo "Codigo Proyecto:";
+                        echo "<b>Codigo Proyecto:</b>";
                         echo $mostrar['codigo_proyecto'];
                         echo '<br>';
-                        echo "Tema Proyecto:";
+                        echo "<b>Tema Proyecto:</b>";
                         echo $mostrar['tema_proyecto'];
                         echo '<br>';
-                        echo "Nombre Cliente:";
+                        echo "<b>Nombre Cliente:</b>";
                         echo $mostrar['cliente_proyecto'];
                         echo '<br>';
-                        echo "Fecha Inicio:    ";
+                        echo "<b>Fecha Inicio:    </b>";
                         echo $mostrar['fecha_ini_proyecto'];
                         echo '<br>';
-                        echo "Fecha Fin: ";
+                        echo "<b>Fecha Fin: </b>";
                         echo $mostrar['fecha_fin_proyecto'];
                         echo '<br>';
-                        echo "Estado: ";
+                        echo "<b>Estado:</b> ";
                         if ($mostrar['estado_proyecto'] = '2') {
                           echo 'Activo';
                         }
                         echo '<br>';
-                        echo "Descripcion: ";
+                        echo "<b>Descripcion:</b> ";
                         echo $mostrar['descripcion_proyecto'];
                         echo "</td>";
                       }
@@ -337,16 +337,16 @@ $id = $_GET['id'];
                           while ($mostrar = mysqli_fetch_array($result)) {
                             //Impresion tabla
                             echo '<br>';
-                            echo "Nombre Requerimiento: ";
+                            echo "<b>Nombre Requerimiento: </b>";
                             echo $mostrar['nombre_requerimiento'];
                             echo '<br>';
-                            echo "Descripcion Requerimiento: ";
+                            echo "<b>Descripcion Requerimiento:</b> ";
                             echo $mostrar['descripcion_requerimiento'];
                             echo '<br>';
-                            echo "Tiempo Requerimiento: ";
+                            echo "<b>Tiempo Requerimiento:</b> ";
                             echo $mostrar['tiempo_requerimiento'],  '  Hora(s)';
                             echo '<br>';
-                            echo "Costo Requimiento: ", "$ ";
+                            echo "<b>Costo Requimiento:</b> ", "$ ";
                             echo number_format($mostrar['costo_requerimiento']);
                             echo '<br>';
                           }
@@ -356,7 +356,7 @@ $id = $_GET['id'];
                           $sql_total_tiempo = "SELECT SUM(tiempo_requerimiento) as total_tiempo from requerimientos_proyectos WHERE id_proyecto =$id ";
                           $total_tiempo = mysqli_query($conexion2, $sql_total_tiempo);
                           $rows_tiempo = mysqli_fetch_array($total_tiempo);
-                          echo "Tiempo Total Proyecto: " . $rows_tiempo['total_tiempo'], ' Horas';
+                          echo "<b>Tiempo Total Proyecto:</b> " . $rows_tiempo['total_tiempo'], ' Horas';
 
                           echo '<br>';
 
@@ -364,9 +364,9 @@ $id = $_GET['id'];
                           $total = mysqli_query($conexion2, $sql_total);
 
                           $rows = mysqli_fetch_array($total);
-                          echo "Costo Parcial Proyecto: $ " . number_format($rows['total']);
+                          echo "<b>Costo Parcial Proyecto: $ </b>" . number_format($rows['total']);
                           echo "<br>";
-                          echo "IVA 19%";
+                          echo "<b>IVA</b> 19%";
                           if (!$total) {
                             var_dump(mysqli_error($conexion2));
                             exit;
@@ -381,7 +381,7 @@ $id = $_GET['id'];
                           $prueba = number_format($rows_tiempo[0] + $rows['total']);
 
 
-                          echo "Total Proyecto: $ " . $prueba;
+                          echo "<b>Total Proyecto:</b> $ " . $prueba;
                           echo '<br>';
                           echo '<br>';
 

@@ -231,7 +231,7 @@ $id_lead = $_GET['id'];
                       while ($mostrar = mysqli_fetch_array($result)) {
                         echo '<br>';
                         echo ' <center>';
-                        echo 'Correo Electronico: ';
+                        echo '<b>Correo Electronico:</b> ';
                         echo "<input type='text' size='30' name='email_lead' value ='$mostrar[email_lead]' onkeypress='return soloLetras(event)'> ";
                         echo '<br>';
                         echo '<br>';
