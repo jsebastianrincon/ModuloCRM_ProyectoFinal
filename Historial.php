@@ -508,8 +508,25 @@ $id_usuario = $_SESSION['id_usuario'];
                   $result = mysqli_query($conexion2, $sql);
 
                   while ($mostrar = mysqli_fetch_array($result)) {
-                    print_r($mostrar);
-                  }
+                    echo "<td>";
+                    echo $mostrar['cliente_reunion'];
+                    echo "</td>";
+                    echo "<td>";
+                    echo $mostrar['nombre_reunion'];
+                    echo "</td>";
+                    echo "<td>";
+                    echo $mostrar['fecha_reunion'];
+                    echo "</td>";
+                    echo "<td>";
+                    echo $mostrar['hora_reunion'];
+                    echo "</td>";
+                    echo "<td>";
+                    echo $mostrar['asignado_reunion'];
+                    echo "</td>";
+                    echo "<td>";
+                    echo $mostrar['descripcion_reunion'];
+                    echo "</td>";
+                }
 
 
                   echo "</table>";
