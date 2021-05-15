@@ -423,9 +423,7 @@ $id_usuario = $_SESSION['id_usuario'];
                           $num_rows = $values['TOTAL'];
                           echo $num_rows;
                           ?>
-                          <?php
 
-                          ?>
                         </div>
                       </div>
                       <div class="col-auto">
@@ -436,6 +434,68 @@ $id_usuario = $_SESSION['id_usuario'];
                   </div>
                 </div>
               </div>
+              <?php
+              $conteoA = 'SELECT COUNT(id_lead) AS Leads FROM leads WHERE estado_lead = 0 ';
+              $totalA = mysqli_query($conexion2, $conteoA);
+              $rowsA = implode(mysqli_fetch_array($totalA));
+              echo "<br>";
+              echo "<br>";
+
+              $conteoB = 'SELECT COUNT(id_lead) AS Clientes FROM leads WHERE estado_lead = 1 ';
+              $totalB = mysqli_query($conexion2, $conteoB);
+              $final = $totalB;
+              $rowsB = implode(mysqli_fetch_array($totalB));
+
+              ?>
+
+              <!-- script para funcionamiento de la grafica -->
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+              <!-- END -->
+              <div style="width:90%;float:left;">
+                <h4>
+                  <center>PERSONAL REGISTRADO</center>
+                </h4>
+                <canvas id="nombreGrafica"></canvas>
+              </div>
+              <?php
+
+              echo "
+                <script> /*Grafica tipo barra*/
+                    var ctx = document.getElementById('nombreGrafica').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type:'pie',   /// tipo de gráfica (pie), (bar),  (line)
+                        data:{
+                            labels:['Clientes','Leads'], /*dibuja las columnas*/
+                            datasets:[{
+                                label:'Encabezado ', /*titulo principal*/
+                                data:['$rowsA','$rowsB'],  /*imprime los datos o variables a imprimir en las columnas*/
+                                backgroundColor:[ /*Colores para la grafica, se puede mandar variable de color programado*/
+                                        'red',
+                                        'blue'
+                                        
+                                    ],
+                                borderWidth:2, /*se le da color del borde de la gráfica o alrededor de la grafica*/
+                                borderColor: '#777',
+                                hoverBorderWidth:4,
+                                hoverBorderColor: 'yellow'
+                            }]
+                        },
+                        options:{
+                            scales:{
+                                yAxes:[{
+                                    ticks:{
+                                        beginAtZero:true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                </script>
+</body>
+</html>
+";
+
+              ?>
           </div>
 
 
@@ -446,6 +506,7 @@ $id_usuario = $_SESSION['id_usuario'];
           <!-- Pie Chart -->
           <div class="col-lg-12 col-md-6 mb-5">
             <div id="mychart" style="width: 500px; height: 500px;"></div>
+
           </div>
 
           <!-- Card Body -->
@@ -453,6 +514,7 @@ $id_usuario = $_SESSION['id_usuario'];
         </div>
       </div>
     </div>
+
   <?php } ?>
 
   <?php if ($tipo_usuario == 2) { ?>
@@ -556,48 +618,7 @@ $id_usuario = $_SESSION['id_usuario'];
 <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="../vendor/chart.js/Chart.js"></script>
 
-<script>
-  google.charts.load('current', {
-    'packages': ['corechart']
-  });
-  google.charts.setOnLoadCallback(drawChart);
 
-  function drawChart() {
-    axios.get('https://127.0.0.1/ModuloCRM_ProyectoFinal/consultagraficacircular.php')
-      .then((response) => {
-
-        var data = response.data;
-        var clientes = parseInt(data[0][0])
-        var leads = parseInt(data[1][0])
-        var rows = google.visualization.arrayToDataTable([
-
-          ['Tipo', 'Cantidad'],
-          ['Leads', leads],
-          ['Clientes', clientes]
-
-        ]);
-
-        var options = {
-
-          title: 'Leads-Clientes Registrados',
-          fontSize: 20,
-          legend: {
-            alignment: 'center',
-
-          },
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('mychart'));
-
-        chart.draw(rows, options);
-
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-  }
-</script>
 </body>
 
 </html>
