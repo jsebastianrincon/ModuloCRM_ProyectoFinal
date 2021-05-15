@@ -10,8 +10,6 @@ if (!isset($_SESSION['id_usuario'])) {
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 $id_usuario = $_SESSION['id_usuario'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -383,13 +381,6 @@ $id_usuario = $_SESSION['id_usuario'];
                               $num_rows = $values['TOTAL'];
                               echo $num_rows;
                               ?>
-
-
-                            </div>
-                          </div>
-                          <div class="col">
-                            <div>
-
                             </div>
                           </div>
                         </div>
@@ -401,7 +392,6 @@ $id_usuario = $_SESSION['id_usuario'];
                   </div>
                 </div>
               </div>
-
               <!-- Pending Requests Card Example -->
               <div class="col-xl-2 col-md-6 mb-5">
                 <div class="card border-left-warning shadow h-100 py-2">
@@ -423,12 +413,7 @@ $id_usuario = $_SESSION['id_usuario'];
                           $num_rows = $values['TOTAL'];
                           echo $num_rows;
                           ?>
-
                         </div>
-                      </div>
-                      <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
-
                       </div>
                     </div>
                   </div>
@@ -453,19 +438,18 @@ $id_usuario = $_SESSION['id_usuario'];
               <!-- END -->
               <div style="width:90%;float:left;">
                 <h4>
-                  <center>PERSONAL REGISTRADO</center>
+                  <center>ESTADISTICAS PERSONAL REGISTRADO</center>
                 </h4>
                 <canvas id="nombreGrafica"></canvas>
               </div>
               <?php
-
               echo "
-                <script> /*Grafica tipo barra*/
+                <script>
                     var ctx = document.getElementById('nombreGrafica').getContext('2d');
                     var myChart = new Chart(ctx, {
                         type:'pie',   /// tipo de gráfica (pie), (bar),  (line)
                         data:{
-                            labels:['Clientes','Leads'], /*dibuja las columnas*/
+                            labels:['Leads','Clientes'],
                             datasets:[{
                                 label:'Encabezado ', /*titulo principal*/
                                 data:['$rowsA','$rowsB'],  /*imprime los datos o variables a imprimir en las columnas*/
@@ -494,88 +478,26 @@ $id_usuario = $_SESSION['id_usuario'];
 </body>
 </html>
 ";
-
               ?>
           </div>
-
-
-          <!-- Content Row -->
-
-
-
-          <!-- Pie Chart -->
-          <div class="col-lg-12 col-md-6 mb-5">
-            <div id="mychart" style="width: 500px; height: 500px;"></div>
-
-          </div>
-
-          <!-- Card Body -->
-
         </div>
       </div>
     </div>
-
   <?php } ?>
-
   <?php if ($tipo_usuario == 2) { ?>
-    <!-- Earnings (Monthly) Card Example -->
-
-
-
-
-
-    <!-- Content Row -->
-
-
-
-    <!-- Pie Chart -->
-
-
-    <!-- Card Body -->
-
   </div>
   </div>
   </div>
 <?php } ?>
 <!-- Content Row -->
 <div class="row">
-
   <!-- Content Column -->
   <div class="col-lg-6 mb-4">
 
-
     <body>
-
-
     </body>
-
-
-
-
   </div>
-
-
 </div>
-
-</div>
-<!-- /.container-fluid -->
-
-</div>
-<!-- End of Main Content -->
-
-
-
-</div>
-<!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-  <i class="fas fa-angle-up"></i>
-</a>
-
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
