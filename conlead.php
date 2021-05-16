@@ -5,5 +5,4 @@ $conexion2 = mysqli_connect(
   'root',
   '',
   'crmpry'
-
 );

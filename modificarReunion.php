@@ -9,11 +9,7 @@ if (!isset($_SESSION['id_usuario'])) {
 //$nombre = $_SESSION['nombre'];
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
-
 $id_reunion = $_GET['id'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +85,6 @@ $id_reunion = $_GET['id'];
         <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
-
             <span>Leads</span>
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -102,10 +97,6 @@ $id_reunion = $_GET['id'];
             </div>
           </div>
         </li>
-
-
-
-
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -114,16 +105,11 @@ $id_reunion = $_GET['id'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
-
             </div>
           </div>
         </li>
-
         <!-- Nav Item - Charts -->
-
-
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
@@ -142,26 +128,18 @@ $id_reunion = $_GET['id'];
 
     </ul>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -181,22 +159,14 @@ $id_reunion = $_GET['id'];
                 </form>
               </div>
             </li>
-
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-
               <!-- Dropdown - Alerts -->
-
             </li>
-
-
-
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -206,11 +176,6 @@ $id_reunion = $_GET['id'];
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
-
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Modificar Informacion
-                </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -218,12 +183,9 @@ $id_reunion = $_GET['id'];
                 </a>
               </div>
             </li>
-
           </ul>
-
         </nav>
         <!-- End of Topbar -->
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -263,30 +225,19 @@ $id_reunion = $_GET['id'];
                         echo " <br>";
                       }
                       ?>
-
-
-
                       <input type="submit" class="btn btn-success btn-block" name="actualizar" value="Actualizar">
           </fieldset>
-
         </div> <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
-
-
-
     </div>
     <!-- End of Content Wrapper -->
-
   </div>
   <!-- End of Page Wrapper -->
-
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -309,20 +260,15 @@ $id_reunion = $_GET['id'];
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
   <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>
-
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
-
 </body>
 
 </html>

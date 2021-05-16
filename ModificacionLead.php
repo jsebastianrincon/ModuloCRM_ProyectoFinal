@@ -38,9 +38,4 @@ if ($resultado == FALSE) {
   </script>";
 }
 
-//header("Location: AñadirLead.php");
-
-//mysqli_close($connexion);
-
-
 ?>

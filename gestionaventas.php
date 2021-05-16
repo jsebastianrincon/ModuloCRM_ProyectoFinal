@@ -10,8 +10,6 @@ if (!isset($_SESSION['id_usuario'])) {
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -105,18 +103,11 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
               <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
-
-
             </div>
           </div>
         </li>
-
-        <!-- Nav Item - Charts -->
-
-
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
@@ -126,9 +117,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <?php } ?>
 
       <?php if ($tipo_usuario == 2) { ?>
-        <!-- Nav Item - Charts -->
-
-
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
@@ -136,34 +124,25 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
             <span>Reportes</span></a>
         </li>
       <?php } ?>
-
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
-    <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -183,24 +162,17 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </form>
               </div>
             </li>
-
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-
             </li>
-
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
-
             </li>
-
             <div class="topbar-divider d-none d-sm-block"></div>
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -222,15 +194,12 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 </a>
               </div>
             </li>
-
           </ul>
-
         </nav>
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
           <!-- Titulo Gestion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Gestion De Ventas</h1>
@@ -248,9 +217,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                       <div class="col md-8 col md-offset-2">
                         <!-- Tabla de Leads Registrados -->
                       </div>
-
-
-
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -261,38 +227,25 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               <center style="visibility: hidden">----------------</center>
                               <center>Codigo Proyecto </center>
                             </th>
-
-
-
                             <th>
                               <center style="visibility: hidden">---------------</center>
                               <center>Fecha Inicio Proyecto </center>
                             </th>
-
                             <th>
                               <center style="visibility: hidden">---------------</center>
                               <center>Fecha Fin Proyecto</center>
                             </th>
-
                             <th>
                               <center style="visibility: hidden">------------------</center>
                               <center>Estado Proyecto</center>
                             </th>
-
-
-
                             <th>
                               <center style="visibility: hidden">----------------</center>
                               <center>Tema Proyecto</center>
                             </th>
-
-
-
                             <th>
-
                               <center style="visibility: hidden">-------------------------------------------------</center>
                               <center>Acciones</center>
-
                             </th>
                           </tr>
                         </thead>
@@ -306,8 +259,6 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           echo "<td>";
                           echo $mostrar['codigo_proyecto'];
                           echo "</td>";
-
-
                           echo "<td>";
                           echo $mostrar['fecha_ini_proyecto'];
                           echo "</td>";
@@ -319,49 +270,30 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                             echo 'Activo';
                           }
                           echo "</td>";
-
                           echo "<td>";
                           echo $mostrar['tema_proyecto'];
                           echo "</td>";
-
-
-
                           echo "<colspan='24'><div class='btn-group'><th>
                               <a href='verproyecto.php?id=$mostrar[id_proyecto] & $mostrar[tema_proyecto] & $mostrar[codigo_proyecto]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
                               <a href='modificarproyecto.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                               <a href='añadirrequerimientos.php?id=$mostrar[id_proyecto]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-edit'></i>Añadir Requerimientos</button></a>";
-
                           echo "</td>";
                         }
-
                         ?>
                       </table>
-
-
-
-
                     </div>
                   </div>
                 </div> <!-- /.container-fluid -->
-
               </div>
               <!-- End of Main Content -->
-
-
-
             </div>
             <!-- End of Content Wrapper -->
-
         </div>
         <!-- End of Page Wrapper -->
-
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
           <i class="fas fa-angle-up"></i>
         </a>
-
-
-
         <!-- Bootstrap core JavaScript-->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

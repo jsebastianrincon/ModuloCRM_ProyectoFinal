@@ -253,171 +253,161 @@ $id_usuario = $_SESSION['id_usuario'];
           </div>
           <!-- Gestion de leads -->
           <fieldset>
-            <div class="container p-8">
+            <div class="container p-9">
               <div class="group">
                 <div class="card card-body">
                   <div class="form-group" id="responsive-form">
+                    <div class="col md-8 col md-offset-2">
+                      <!-- Tabla de Leads Registrados -->
+                    </div>
 
-                    <fieldset>
+                    <div class="card-header py-3">
+                      <?php
 
-                      <div class="col md-8 col md-offset-2">
-                        <!-- Tabla de Leads Registrados -->
-                      </div>
-
-                      <div class="card-header py-3">
-                        <?php
-
-                        if ($id_usuario != '2') {
-                          if ($tipo_usuario != '1') {
-                            echo '';
-                            $row = '';
-                          } else {
-                            echo "<a href='reuniones.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Reunion</i></button></a>";
-                            $fila = '<th>
+                      if ($id_usuario != '2') {
+                        if ($tipo_usuario != '1') {
+                          echo '';
+                          $row = '';
+                        } else {
+                          echo "<a href='reuniones.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Reunion</i></button></a>";
+                          $fila = '<th>
                                   <center style="visibility: hidden">---------------------------</center>
                                   <center>Accion</center>
                                 </th>';
-                          }
                         }
-                        echo "<br>";
-                        echo "<br>";
+                      }
+                      echo "<th>";
+                      ?>
 
-                        echo "<th>";
-                        ?>
+                    </div>
+                    <div class="card-body">
 
-                      </div>
-                      <div class="card-body">
-
-                        <div class="table-responsive">
-                          <table id="data_table" class="table table-bordered" cellspacing="0" width="100%">
-                            <thead>
-                              <tr>
-
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Cliente </center>
-                                </th>
-
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Nombre </center>
-                                </th>
-
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Fecha </center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">---------------------</center>
-                                  <center>Hora </center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">--------------------</center>
-                                  <center>Asignado</center>
-                                </th>
-                                <th>
-                                  <center style="visibility: hidden">--------------------------</center>
-                                  <center>Descripcion</center>
-                                </th>
-                                <?php
+                      <div class="table-responsive">
+                        <table id="data_table" class="table table-bordered" cellspacing="0">
+                          <thead>
+                            <tr>
+                              <th>
+                                <center style="visibility: hidden">----------------------</center>
+                                <center>Cliente </center>
+                              </th>
+                              <th>
+                                <center style="visibility: hidden">-------------------</center>
+                                <center>Nombre </center>
+                              </th>
+                              <th>
+                                <center style="visibility: hidden">-------------</center>
+                                <center>Fecha </center>
+                              </th>
+                              <th>
+                                <center style="visibility: hidden">----------</center>
+                                <center>Hora </center>
+                              </th>
+                              <th>
+                                <center style="visibility: hidden">----------------</center>
+                                <center>Asignado</center>
+                              </th>
+                              <th>
+                                <center style="visibility: hidden">----------------------------</center>
+                                <center>Descripcion</center>
+                              </th>
+                              <?php
+                              if ($id_usuario != '2') {
+                                if ($tipo_usuario != '1') {
+                                  echo '';
+                                } else {
+                                  echo  "<th>
+                                        <center style='visibility: hidden'>---------------------------</center>
+                                        <center>Accion</center>
+                                      </th>";
+                                  echo "<br>";
+                                }
+                              }
+                              ?>
+                            </tr>
+                          </thead>
+                          <!-- Mostrar Datos en tabla de leads... -->
+                          <?php
+                          if ($id_usuario == '1') {
+                            if ($tipo_usuario == '1') {
+                              $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
+                              $result = mysqli_query($conexion2, $sql);
+                              while ($mostrar = mysqli_fetch_array($result)) {
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $mostrar['cliente_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['nombre_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['fecha_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['hora_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar['asignado_reunion'];
+                                echo "<td>";
+                                echo $mostrar['descripcion_reunion'];
+                                echo "</td>";
                                 if ($id_usuario != '2') {
                                   if ($tipo_usuario != '1') {
                                     echo '';
                                   } else {
-                                    echo  "<th>
-                                        <center style='visibility: hidden'>---------------------------</center>
-                                        <center>Accion</center>
-                                      </th>";
+                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                                                                              <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
+                                                                                                            </td>";
                                     echo "<br>";
                                   }
                                 }
-                                ?>
-                              </tr>
-                            </thead>
-                            <!-- Mostrar Datos en tabla de leads... -->
-                            <?php
-
-                            if ($id_usuario == '1') {
-                              if ($tipo_usuario == '1') {
-                                $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
-                                $result = mysqli_query($conexion2, $sql);
-                                while ($mostrar = mysqli_fetch_array($result)) {
-                                  echo "<tr>";
-                                  echo "<td>";
-                                  echo $mostrar['cliente_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar['nombre_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar['fecha_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar['hora_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar['asignado_reunion'];
-                                  echo "<td>";
-                                  echo $mostrar['descripcion_reunion'];
-                                  echo "</td>";
-                                  if ($id_usuario != '2') {
-                                    if ($tipo_usuario != '1') {
-                                      echo '';
-                                    } else {
-                                      echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                                                                              <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
-                                                                                                            </td>";
-                                      echo "<br>";
-                                    }
-                                  }
-                                }
-                              } else {
-                                echo '';
                               }
                             } else {
-                              //validacion rol
-                              $sql1 = "SELECT * FROM reuniones WHERE id_usuario = " . $id_usuario . " AND fecha_reunion > CURDATE()";
-                              $result1 = mysqli_query($conexion2, $sql1);
-                              while ($mostrar1 = mysqli_fetch_array($result1)) {
-                                $id_us_reunion = $mostrar1['id_usuario'];
-                                if ($id_usuario == $id_us_reunion) {
-                                  echo "<tr>";
-                                  echo "<td>";
-                                  echo $mostrar1['cliente_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar1['nombre_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar1['fecha_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar1['hora_reunion'];
-                                  echo "</td>";
-                                  echo "<td>";
-                                  echo $mostrar1['asignado_reunion'];
-                                  echo "<td>";
-                                  echo $mostrar1['descripcion_reunion'];
-                                  echo "</td>";
-                                  if ($id_usuario != '2') {
-                                    if ($tipo_usuario != '1') {
-                                      echo '';
-                                    } else {
-                                      echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                              echo '';
+                            }
+                          } else {
+                            //validacion rol
+                            $sql1 = "SELECT * FROM reuniones WHERE id_usuario = " . $id_usuario . " AND fecha_reunion > CURDATE()";
+                            $result1 = mysqli_query($conexion2, $sql1);
+                            while ($mostrar1 = mysqli_fetch_array($result1)) {
+                              $id_us_reunion = $mostrar1['id_usuario'];
+                              if ($id_usuario == $id_us_reunion) {
+                                echo "<tr>";
+                                echo "<td>";
+                                echo $mostrar1['cliente_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar1['nombre_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar1['fecha_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar1['hora_reunion'];
+                                echo "</td>";
+                                echo "<td>";
+                                echo $mostrar1['asignado_reunion'];
+                                echo "<td>";
+                                echo $mostrar1['descripcion_reunion'];
+                                echo "</td>";
+                                if ($id_usuario != '2') {
+                                  if ($tipo_usuario != '1') {
+                                    echo '';
+                                  } else {
+                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
                                                                               <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                             </td>";
-                                      echo "<br>";
-                                    }
-                                  } else {
-                                    echo '';
+                                    echo "<br>";
                                   }
+                                } else {
+                                  echo '';
                                 }
                               }
                             }
-                            ?>
-                          </table>
-                        </div>
+                          }
+                          ?>
+                        </table>
                       </div>
+                    </div>
                   </div> <!-- /.container-fluid -->
 
                 </div>
@@ -453,7 +443,7 @@ $id_usuario = $_SESSION['id_usuario'];
                   echo "<h1 class='h3 mb-0 text-gray-800'>Reuniones Vencidas</h1>
                 </div>";
                   echo "<fieldset>";
-                  echo "<div class='container p-8'>";
+                  echo "<div class='container p-9'>";
                   echo "<div class='group'>";
                   echo "<div class='card card-body'>";
                   echo "<div class='form-group' id='responsive-form'>";
@@ -473,7 +463,7 @@ $id_usuario = $_SESSION['id_usuario'];
                   echo "    <thead>";
                   echo "      <tr>";
                   echo "        <th>";
-                  echo "          <center style='visibility: hidden'>--------------------</center>";
+                  echo "         <center style='visibility: hidden'>----------------------</center>";
                   echo "          <center>Cliente </center>";
                   echo "        </th>";
                   echo "        <th>";
@@ -481,19 +471,19 @@ $id_usuario = $_SESSION['id_usuario'];
                   echo "          <center>Nombre </center>";
                   echo "        </th>";
                   echo "        <th>";
-                  echo "          <center style='visibility: hidden'>---------------------</center>";
+                  echo "          <center style='visibility: hidden'>--------------</center>";
                   echo "          <center>Fecha </center>";
                   echo "        </th>";
                   echo "        <th>";
-                  echo "          <center style='visibility: hidden'>---------------------</center>";
+                  echo "          <center style='visibility: hidden'>----------</center>";
                   echo "          <center>Hora </center>";
                   echo "        </th>";
                   echo "        <th>";
-                  echo "          <center style='visibility: hidden'>--------------------</center>";
+                  echo "          <center style='visibility: hidden'>----------------</center>";
                   echo "          <center>Asignado</center>";
                   echo "        </th>";
                   echo "        <th>";
-                  echo "          <center style='visibility: hidden'>--------------------------</center>";
+                  echo "          <center style='visibility: hidden'>------------------------</center>";
                   echo "          <center>Descripcion</center>";
                   echo "        </th>";
 
@@ -508,6 +498,7 @@ $id_usuario = $_SESSION['id_usuario'];
                   $result = mysqli_query($conexion2, $sql);
 
                   while ($mostrar = mysqli_fetch_array($result)) {
+                    echo "<tr>";
                     echo "<td>";
                     echo $mostrar['cliente_reunion'];
                     echo "</td>";
@@ -526,7 +517,7 @@ $id_usuario = $_SESSION['id_usuario'];
                     echo "<td>";
                     echo $mostrar['descripcion_reunion'];
                     echo "</td>";
-                }
+                  }
 
 
                   echo "</table>";

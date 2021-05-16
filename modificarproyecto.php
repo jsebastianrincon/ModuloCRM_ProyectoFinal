@@ -6,14 +6,9 @@ if (!isset($_SESSION['id_usuario'])) {
   header("Location: index.php");
 }
 //Validacion variables de session
-
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
-
 $id_proyecto = $_GET['id'];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +37,8 @@ $id_proyecto = $_GET['id'];
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
         <div class="sidebar-brand-icon">
@@ -56,19 +49,15 @@ $id_proyecto = $_GET['id'];
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
       <!-- Nav Item - Dashboard -->
       <li class="nav-item inactive">
         <a class="nav-link" href="principal.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
-
       <!-- Heading -->
-
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
         <li class="nav-item">
@@ -78,23 +67,18 @@ $id_proyecto = $_GET['id'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
-
               <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
           </div>
         </li>
-
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
-
             <span>Leads</span>
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
@@ -102,10 +86,6 @@ $id_proyecto = $_GET['id'];
             </div>
           </div>
         </li>
-
-
-
-
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item active">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -114,55 +94,35 @@ $id_proyecto = $_GET['id'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
               <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
-
-
             </div>
           </div>
         </li>
-
-        <!-- Nav Item - Charts -->
-
-        <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
       <?php } ?>
-
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -182,24 +142,16 @@ $id_proyecto = $_GET['id'];
                 </form>
               </div>
             </li>
-
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
               </a>
-              <!-- Dropdown - Alerts -->
-
-
             </li>
-
             <div class="topbar-divider d-none d-sm-block"></div>
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -209,7 +161,6 @@ $id_proyecto = $_GET['id'];
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
-
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Modificar Informacion
@@ -221,14 +172,10 @@ $id_proyecto = $_GET['id'];
                 </a>
               </div>
             </li>
-
           </ul>
-
         </nav>
         <!-- End of Topbar -->
-
         <!-- Begin Page Content -->
-
         <div class="container-fluid">
           <a href='gestionaventas.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
             </button></a>
@@ -269,25 +216,15 @@ $id_proyecto = $_GET['id'];
                         echo "<br>";
                       }
                       ?>
-
-
-
                       <input type="submit" class="btn btn-success btn-block" name="actualizar" value="Actualizar">
           </fieldset>
-
         </div> <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
-
-
-
     </div>
     <!-- End of Content Wrapper -->
-
   </div>
   <!-- End of Page Wrapper -->
-
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
@@ -336,20 +273,17 @@ $id_proyecto = $_GET['id'];
         letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
         especiales = [8, 37, 39, 46],
         tecla_especial = false;
-
       for (var i in especiales) {
         if (key == especiales[i]) {
           tecla_especial = true;
           break;
         }
       }
-
       if (letras.indexOf(tecla) == -1 && !tecla_especial) {
         return false;
       }
     }
   </script>
-
 </body>
 
 </html>

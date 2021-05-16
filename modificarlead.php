@@ -6,13 +6,8 @@ if (!isset($_SESSION['id_usuario'])) {
   header("Location: index.php");
 }
 //Validacion variables de session
-
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
-
-
-
 $id_lead = $_GET['id'];
 
 ?>
@@ -63,10 +58,8 @@ $id_lead = $_GET['id'];
         </div>
         <div class="sidebar-brand-text mx-3">CRM Movip S.A.S</div>
       </a>
-
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
       <!-- Nav Item - Dashboard -->
       <li class="nav-item inactive">
         <a class="nav-link" href="principal.php">
@@ -88,14 +81,10 @@ $id_lead = $_GET['id'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
-
               <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
           </div>
         </li>
-
-
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -111,10 +100,6 @@ $id_lead = $_GET['id'];
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
             </div>
         </li>
-
-
-
-
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -123,19 +108,11 @@ $id_lead = $_GET['id'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
               <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
-
-
             </div>
           </div>
         </li>
-
-
-        <!-- Nav Item - Charts -->
-
-
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
@@ -143,37 +120,26 @@ $id_lead = $_GET['id'];
             <span>Reportes</span></a>
         </li>
       <?php } ?>
-
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -193,20 +159,12 @@ $id_lead = $_GET['id'];
                 </form>
               </div>
             </li>
-
-            <!-- Nav Item - Alerts -->
-
-            <!-- Dropdown - Alerts -->
-
             </li>
-
             <div class="topbar-divider d-none d-sm-block"></div>
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -216,7 +174,6 @@ $id_lead = $_GET['id'];
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
-
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Modificar Informacion
@@ -228,32 +185,22 @@ $id_lead = $_GET['id'];
                 </a>
               </div>
             </li>
-
           </ul>
-
         </nav>
-
         <!-- End of Topbar -->
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
           <!-- Titulo Formulario de adicion de leads -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-
             <h1 class="h3 mb-0 text-gray-800">Modificar Lead</h1>
-
           </div>
           <!-- Formulario para Adicion de leads -->
-
           <fieldset>
             <div class="container p-4">
               <div class="group">
-
                 <div class="card card-body">
                   <form class="form-contact" action="ModificacionLead.php" method="POST">
                     <div class="form-group" id="responsive-form">
-
                       <?php
                       $sql = "SELECT * FROM crmpry.leads WHERE id_lead = '$id_lead'";
                       $result = mysqli_query($conexion2, $sql);
@@ -297,7 +244,6 @@ $id_lead = $_GET['id'];
                         echo "<input type='text' size='32' name='compañia_lead' value ='$mostrar[compañia_lead]' onkeypress='return soloLetras(event)'> ";
                         echo " <br>";
                         echo " <br>";
-
                         echo 'Asignado : ';
                         echo "<input type='text' size='20' name='asignado_lead' value ='$mostrar[asignado_lead]' onkeypress='return soloLetras(event)'> ";
                         echo 'Recurso : ';
@@ -309,37 +255,23 @@ $id_lead = $_GET['id'];
                         echo "<input type='text' name='comentario_lead' size='50' value ='$mostrar[comentario_lead]' onkeypress='return soloLetras(event)'></textarea>";
                       }
                       ?>
-
-
-
                       <br>
                       <br>
                       <input type="submit" class="btn btn-success btn-block" name="actualizar" value="Actualizar">
-
           </fieldset>
-
-
-
         </div>
       </div>
     </div> <!-- /.container-fluid -->
-
   </div>
   <!-- End of Main Content -->
-
-
-
   </div>
   <!-- End of Content Wrapper -->
-
   </div>
   <!-- End of Page Wrapper -->
-
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-
   <!-- Logout Modal-->
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -362,16 +294,12 @@ $id_lead = $_GET['id'];
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
   <!-- Page level plugins -->
   <script src="vendor/chart.js/Chart.min.js"></script>
-
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
@@ -382,14 +310,12 @@ $id_lead = $_GET['id'];
         letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/0123456789_",
         especiales = [8, 37, 39, 46],
         tecla_especial = false;
-
       for (var i in especiales) {
         if (key == especiales[i]) {
           tecla_especial = true;
           break;
         }
       }
-
       if (letras.indexOf(tecla) == -1 && !tecla_especial) {
         return false;
       }

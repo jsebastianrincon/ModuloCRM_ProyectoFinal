@@ -41,7 +41,6 @@ $id_usuario = $_SESSION['id_usuario'];
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
         <div class="sidebar-brand-icon">
@@ -49,23 +48,17 @@ $id_usuario = $_SESSION['id_usuario'];
         </div>
         <div class="sidebar-brand-text mx-3">CRM Movip S.A.S</div>
       </a>
-
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
-
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="principal.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
-
       <!-- Heading -->
-
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
         <li class="nav-item">
@@ -75,12 +68,10 @@ $id_usuario = $_SESSION['id_usuario'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
           </div>
         </li>
-
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -89,7 +80,6 @@ $id_usuario = $_SESSION['id_usuario'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
@@ -104,18 +94,12 @@ $id_usuario = $_SESSION['id_usuario'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
               <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
-
-
             </div>
           </div>
         </li>
-
         <!-- Nav Item - Charts -->
-
-
         <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
@@ -123,14 +107,12 @@ $id_usuario = $_SESSION['id_usuario'];
             <span>Reportes</span></a>
         </li>
       <?php } ?>
-
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
           <a class="nav-link" href="proyectos.php">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>
-
         </li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="reuniones.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -139,41 +121,32 @@ $id_usuario = $_SESSION['id_usuario'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Tables -->
-
       <?php } ?>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -194,12 +167,10 @@ $id_usuario = $_SESSION['id_usuario'];
               </div>
             </li>
 
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -216,7 +187,6 @@ $id_usuario = $_SESSION['id_usuario'];
                 </a>";
                 }
                 ?>
-
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -225,10 +195,7 @@ $id_usuario = $_SESSION['id_usuario'];
               </div>
             </li>
           </ul>
-
         </nav>
-        <!-- End of Topbar -->
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
           <div>
@@ -246,12 +213,8 @@ $id_usuario = $_SESSION['id_usuario'];
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-
           </div>
-
           <div>
-
-
           </div>
           <!-- Content Row -->
           <div class="row">
@@ -263,7 +226,6 @@ $id_usuario = $_SESSION['id_usuario'];
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Leads Actuales</div>
-
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
                           <?php
                           $servername = "localhost";
@@ -279,7 +241,6 @@ $id_usuario = $_SESSION['id_usuario'];
                           echo $num_rows;
                           ?>
                           <?php
-
                           ?>
                         </div>
                       </div>
@@ -290,7 +251,6 @@ $id_usuario = $_SESSION['id_usuario'];
                   </div>
                 </div>
               </div>
-
               <!-- Earnings (Monthly) Card Example -->
               <div class="col-xl-3 col-md-6 mb-5">
                 <div class="card border-left-success shadow h-100 py-2">
@@ -331,7 +291,6 @@ $id_usuario = $_SESSION['id_usuario'];
                     <div class="row no-gutters align-items-center">
                       <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Clientes</div>
-
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
                           <?php
                           $servername = "localhost";
@@ -347,7 +306,6 @@ $id_usuario = $_SESSION['id_usuario'];
                           echo $num_rows;
                           ?>
                           <?php
-
                           ?>
                         </div>
                       </div>
@@ -432,10 +390,8 @@ $id_usuario = $_SESSION['id_usuario'];
               $rowsB = implode(mysqli_fetch_array($totalB));
 
               ?>
-
               <!-- script para funcionamiento de la grafica -->
               <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
-              <!-- END -->
               <div style="width:90%;float:left;">
                 <h4>
                   <center>ESTADISTICAS PERSONAL REGISTRADO</center>
@@ -456,8 +412,7 @@ $id_usuario = $_SESSION['id_usuario'];
                                 backgroundColor:[ /*Colores para la grafica, se puede mandar variable de color programado*/
                                         'red',
                                         'blue'
-                                        
-                                    ],
+                                ],
                                 borderWidth:2, /*se le da color del borde de la gráfica o alrededor de la grafica*/
                                 borderColor: '#777',
                                 hoverBorderWidth:4,
@@ -508,7 +463,6 @@ $id_usuario = $_SESSION['id_usuario'];
           <span aria-hidden="true">×</span>
         </button>
       </div>
-
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
         <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
@@ -539,7 +493,6 @@ $id_usuario = $_SESSION['id_usuario'];
 <script type="text/javascript"></script>
 <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="../vendor/chart.js/Chart.js"></script>
-
 
 </body>
 

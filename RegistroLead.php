@@ -27,7 +27,6 @@ mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de
 
 $instruccion_SQL = "INSERT INTO leads (nombre_lead, segundo_nombre_lead,primer_apellido_lead,segundo_apellido_lead,tipodocumento_lead,documento_lead,telefono_lead,email_lead,departamento_lead,ciudad_lead,direccion_lead,estado_lead,compañia_lead,asignado_lead,recurso_lead,comentario_lead) VALUES ('$nombre_lead','$segundo_nombre_lead','$primer_apellido_lead','$segundo_apellido_lead','$tipodocumento_lead','$documento_lead','$telefono_lead','$email_lead','$departamento_lead','$ciudad_lead','$direccion_lead','0','$compañia_lead','$asignado_lead','$recurso_lead','$comentario_lead')";
 
-
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 
 if ($resultado == FALSE) {
@@ -37,12 +36,4 @@ if ($resultado == FALSE) {
   window.location.href= 'AñadirLead.php';
   </script>";
 }
-
-
-
-//header("Location: AñadirLead.php");
-
-//mysqli_close($connexion);
-
-
 ?>

@@ -10,7 +10,6 @@ if (!isset($_SESSION['id_usuario'])) {
 
 $tipo_usuario = $_SESSION['tipo_usuario'];
 //echo $tipo_usuario;
-
 $id = $_GET['id'];
 
 ?>
@@ -151,30 +150,22 @@ $id = $_GET['id'];
       </div>
 
     </ul>
-    <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -184,7 +175,6 @@ $id = $_GET['id'];
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
-
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Modificar Informacion
@@ -196,9 +186,7 @@ $id = $_GET['id'];
                 </a>
               </div>
             </li>
-
           </ul>
-
         </nav>
         <!-- End of Topbar -->
 
@@ -211,7 +199,6 @@ $id = $_GET['id'];
           </div>
           <div>
             <div>
-
             </div>
           </div>
           <!-- Gestion de leads -->
@@ -220,13 +207,10 @@ $id = $_GET['id'];
               <div class="group">
                 <div class="card card-body">
                   <div class="form-group" id="responsive-form">
-
                     <fieldset>
-
                       <div class="col md-8 col md-offset-2">
                         <!-- Tabla de Leads Registrados -->
                       </div>
-
                       <div class="card-header py-3">
                         <form class="form-contact" action="registrofactura.php" method="POST">
                           <div class="form-group" id="responsive-form">
@@ -257,48 +241,31 @@ $id = $_GET['id'];
                             }
                             echo "<br>";
                             echo "<br>";
-
                             ?>
                             <input type="submit" class="btn btn-success btn-block" name="" value="Añadir Detalles">
                             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-
                             </div>
-
                           </div>
-
                       </div>
-
                   </div> <!-- /.container-fluid -->
-
                 </div>
                 <!-- End of Main Content -->
-
               </div>
-
-
-
               <!-- End of Page Wrapper -->
 
               <!-- Scroll to Top Button-->
               <a class="scroll-to-top rounded" href="#page-top">
                 <i class="fas fa-angle-up"></i>
               </a>
-
-
-
               <!-- Bootstrap core JavaScript-->
               <script src="vendor/jquery/jquery.min.js"></script>
               <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
               <!-- Core plugin JavaScript-->
               <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
               <!-- Custom scripts for all pages-->
               <script src="js/sb-admin-2.min.js"></script>
-
               <!-- Page level plugins -->
               <script src="vendor/chart.js/Chart.min.js"></script>
-
               <!-- Page level custom scripts -->
               <script src="js/demo/chart-area-demo.js"></script>
               <script src="js/demo/chart-pie-demo.js"></script>
@@ -306,20 +273,15 @@ $id = $_GET['id'];
               <!-- Bootstrap core JavaScript-->
               <script src="vendor/jquery/jquery.min.js"></script>
               <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
               <!-- Core plugin JavaScript-->
               <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
               <!-- Custom scripts for all pages-->
               <script src="js/sb-admin-2.min.js"></script>
-
               <!-- Page level plugins -->
               <script src="vendor/datatables/jquery.dataTables.min.js"></script>
               <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
               <!-- Page level custom scripts -->
               <script src="js/demo/datatables-demo.js"></script>
-
               <script>
                 function soloLetras(e) {
                   var key = e.keyCode || e.which,
@@ -334,13 +296,11 @@ $id = $_GET['id'];
                       break;
                     }
                   }
-
                   if (letras.indexOf(tecla) == -1 && !tecla_especial) {
                     return false;
                   }
                 }
               </script>
-
 </body>
 
 </html>

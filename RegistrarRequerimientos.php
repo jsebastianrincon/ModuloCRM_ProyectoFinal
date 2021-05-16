@@ -13,7 +13,6 @@ mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de
  datos");
 
 $instruccion_SQL = "INSERT INTO requerimientos_proyectos(id_proyecto,proyecto_requerimiento, nombre_requerimiento,descripcion_requerimiento,costo_requerimiento,tiempo_requerimiento) VALUES ('$id_proyecto','$proyecto_requerimiento','$nombre_requerimiento','$descripcion_requerimiento','$costo_requerimiento','$tiempo_requerimiento')";
-
 $resultado = mysqli_query($mysqli, $instruccion_SQL);
 
 if ($resultado == FALSE) {

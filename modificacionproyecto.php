@@ -1,5 +1,3 @@
-<!-- Desarrollo de Formulario de Adicion de Leads -->
-
 <?php
 
 
@@ -28,12 +26,3 @@ if ($resultado == FALSE) {
   window.location.href= 'gestionaventas.php';
   </script>";
 }
-
-
-
-//header("Location: AñadirLead.php");
-
-//mysqli_close($connexion);
-
-
-?>

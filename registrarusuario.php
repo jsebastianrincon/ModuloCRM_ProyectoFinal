@@ -8,13 +8,10 @@ if (!isset($_SESSION['id_usuario'])) {
 //Validacion variables de session
 
 $tipo_usuario = $_SESSION['tipo_usuario'];
-//echo $tipo_usuario;
 
 $id = $_GET['id'];
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,24 +25,19 @@ $id = $_GET['id'];
   <meta name="author" content="">
 
   <title>Agendar Reuniones</title>
-
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
         <div class="sidebar-brand-icon">
@@ -53,22 +45,17 @@ $id = $_GET['id'];
         </div>
         <div class="sidebar-brand-text mx-3">CRM Movip S.A.S</div>
       </a>
-
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
       <!-- Nav Item - Dashboard -->
       <li class="nav-item inactive">
         <a class="nav-link" href="principal.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">
-
       <!-- Heading -->
-
       <?php if ($tipo_usuario == 1) { ?>
         <!-- Nav Item -Clientes -->
         <li class="nav-item active">
@@ -78,8 +65,6 @@ $id = $_GET['id'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
-
               <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
           </div>
@@ -93,7 +78,6 @@ $id = $_GET['id'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
               <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
               <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
@@ -108,31 +92,18 @@ $id = $_GET['id'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
               <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
-
-
             </div>
           </div>
         </li>
-
-        <!-- Nav Item - Charts -->
-
-
-        <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
       <?php } ?>
-
       <?php if ($tipo_usuario == 2) { ?>
-        <!-- Nav Item - Charts -->
-
-
-        <!-- Nav Item - Tables -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
@@ -141,44 +112,25 @@ $id = $_GET['id'];
       <?php } ?>
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-
     </ul>
-    <!-- End of Sidebar -->
-
-    <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
-            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-
-
-
-
-            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -188,7 +140,6 @@ $id = $_GET['id'];
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
-
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Modificar Informacion
@@ -200,9 +151,7 @@ $id = $_GET['id'];
                 </a>
               </div>
             </li>
-
           </ul>
-
         </nav>
         <!-- End of Topbar -->
 
@@ -218,13 +167,6 @@ $id = $_GET['id'];
                 <div class="card card-body">
                   <form class="form-contact" action="AsignarUsuario.php" method='POST'>
                     <div class="form-group" id="responsive-form">
-
-
-
-
-
-
-
                       <?php
                       $consultausario = "SELECT id_lead, email_lead,substring(email_lead,1,6) AS user FROM leads WHERE estado_lead = 1 AND id_lead = '$id'";
                       $result = mysqli_query($conexion2, $consultausario);
@@ -236,7 +178,6 @@ $id = $_GET['id'];
                         echo " <center><label>Contraseña: </label> <input type='password' size='15' name='password'onkeypress='return soloLetras(event)'></center>";
                         echo "<br>";
                       }
-
                       ?>
                       <input type="submit" class="btn btn-success btn-block" name="submit" value="Asignar Usuario">
           </fieldset>
@@ -301,14 +242,12 @@ $id = $_GET['id'];
         letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/1234567890",
         especiales = [8, 37, 39, 46],
         tecla_especial = false;
-
       for (var i in especiales) {
         if (key == especiales[i]) {
           tecla_especial = true;
           break;
         }
       }
-
       if (letras.indexOf(tecla) == -1 && !tecla_especial) {
         return false;
       }

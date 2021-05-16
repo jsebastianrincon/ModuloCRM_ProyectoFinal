@@ -24,7 +24,3 @@ if ($resultado == FALSE) {
   window.location.href= 'Historial.php';
   </script>";
 }
-
-//header("Location: AñadirLead.php");
-
-//mysqli_close($connexion);

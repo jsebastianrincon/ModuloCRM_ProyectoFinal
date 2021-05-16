@@ -1,7 +1,6 @@
 <?php
 
 /* CARGAR CONEXION PARA LA VALIDACION DE LA SESION */
-
 include("conlead.php");
 session_start();
 
@@ -9,21 +8,16 @@ if (!isset($_SESSION['id_usuario'])) {
   header("Location: index.php");
 }
 /* VALIDACION VARIABLES DE SESION */
-
 $tipo_usuario = $_SESSION['tipo_usuario'];
 
 /* DECLARACION VARIABLES ID PARA EL USUARIO Y EL PROYECTO */
-
 $id = $_GET['id'];
 $id_proyecto = $_GET['id'];
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,14 +30,12 @@ $id_proyecto = $_GET['id'];
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="css/kanso.css">
+
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-
 </head>
 
 <body id="page-top">
-
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -72,8 +64,8 @@ $id_proyecto = $_GET['id'];
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-
       <?php if ($tipo_usuario == 1) { ?>
+
         <!-- Nav Item -Clientes -->
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -82,8 +74,6 @@ $id_proyecto = $_GET['id'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
-
               <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
             </div>
           </div>
@@ -104,6 +94,7 @@ $id_proyecto = $_GET['id'];
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
             </div>
         </li>
+
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item active">
           <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
@@ -115,16 +106,11 @@ $id_proyecto = $_GET['id'];
 
               <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
               <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
-
-
             </div>
           </div>
         </li>
 
-        <!-- Nav Item - Charts -->
-
-
-        <!-- Nav Item - Tables -->
+        <!-- Reportes  -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
@@ -134,7 +120,6 @@ $id_proyecto = $_GET['id'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
-
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
@@ -142,11 +127,10 @@ $id_proyecto = $_GET['id'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
               <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
             </div>
         </li>
-        <!-- Nav Item - Tables -->
+        <!-- Reportes  -->
         <li class="nav-item">
           <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
@@ -156,32 +140,23 @@ $id_proyecto = $_GET['id'];
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
     </ul>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-
       <!-- Main Content -->
       <div id="content">
-
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
-
-
-
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -201,18 +176,12 @@ $id_proyecto = $_GET['id'];
                 </form>
               </div>
             </li>
-
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
-
-
-
               <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-
-
                 </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
@@ -222,7 +191,6 @@ $id_proyecto = $_GET['id'];
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
-
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Modificar Informacion
@@ -234,15 +202,11 @@ $id_proyecto = $_GET['id'];
                 </a>
               </div>
             </li>
-
           </ul>
-
         </nav>
         <!-- End of Topbar -->
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
         </div>
         <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -262,10 +226,7 @@ $id_proyecto = $_GET['id'];
                   <p style="color: red;">(*) Campos Requeridos</p>
                   <form class="form-contact" action="RegistrarRequerimientos.php" method='POST'>
                     <br>
-
-
                     <label>&nbsp Añadir Requerimiento &nbsp &nbsp &nbsp &nbsp &nbsp</label>
-
                     <br>
                     <br>
                     <th>
@@ -273,7 +234,6 @@ $id_proyecto = $_GET['id'];
                         <?php
 
                         /* FUNCIONALIDAD PARA LISTAR LA INFORMACION DEL PROYECTO AL QUE SE LE RELACIONARAN LOS REQUERIMIENTOS */
-
                         $sql = "SELECT * FROM crmpry.proyectos WHERE id_proyecto = '$id_proyecto'";
                         $result = mysqli_query($conexion2, $sql);
                         while ($mostrar = mysqli_fetch_array($result)) {
@@ -282,14 +242,10 @@ $id_proyecto = $_GET['id'];
                       </label>";
                           echo "<input type='text' size='50' name='id_proyecto' value ='$mostrar[id_proyecto]' onkeypress='return soloLetras(event)'> ";
                           echo "<br>";
-                          echo "  <label><label style='color: red;'>(*)</label>
-                          
-                        &nbsp Proyecto Requerimiento: &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                      </label>";
+                          echo "  <label><label style='color: red;'>(*)</label>&nbsp Proyecto Requerimiento: &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>";
                           echo "<input type='text' size='50' name='proyecto_requerimiento' value ='$mostrar[tema_proyecto]' onkeypress='return soloLetras(event)'> ";
                         }
                         ?>
-
                         <br>
                         <label>
                           <label style="color: red;">(*)</label>
@@ -320,34 +276,19 @@ $id_proyecto = $_GET['id'];
                     <input type="submit" class="btn btn-success btn-block" name="submit" value="Guardar">
                     <br>
                     <br>
-
           </fieldset>
         </div>
       </div>
-
-
-    </div> <!-- /.container-fluid -->
+    </div>
     <div>
       <br>
     </div>
   </div>
-  <!-- End of Main Content -->
-
-
-
   </div>
-  <!-- End of Content Wrapper -->
-
   </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-
-
-
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -405,8 +346,6 @@ $id_proyecto = $_GET['id'];
     }
   </script>
   <!-------- Script Tabla dinamica------------>
-
-
 </body>
 
 </html>

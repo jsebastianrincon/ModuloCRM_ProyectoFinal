@@ -3,12 +3,9 @@
 require "conexion.php";
 
 session_start();
-
 if ($_POST) {
-
   $usuario = $_POST['usuario'];
   $password = $_POST['password'];
-
 
   $sql = "SELECT id_usuario, usuario, password, tipo_usuario FROM usuarios WHERE usuario='$usuario' ";
 
@@ -20,13 +17,10 @@ if ($_POST) {
     $password_bd = $row['password'];
     $pass_c = ($password);
     $pass_c = sha1($password);
-
     if ($password_bd == $pass_c) {
-
       $_SESSION['id_usuario'] = $row['id_usuario'];
       // $_SESSION['nombre'] = $row['nombre'];
       $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
-
       $result = mysqli_query($mysqli, $sql);
       while ($mostrar = mysqli_fetch_array($result)) {
         header("Location: principal.php?id=$mostrar[id_usuario]");
@@ -38,7 +32,6 @@ if ($_POST) {
     echo "<script type=\"text/javascript\">alert(\"Usuario o Contraseña Incorrectos\");</script>";
   }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -64,18 +57,9 @@ if ($_POST) {
 </head>
 
 <body class="bg-gradient-primary">
-
   <div class="container">
-
     <!-- Outer Row -->
-
-
-
-
     <div class="card o-hidden border-0 shadow-lg my-5">
-
-
-
       <!DOCTYPE html>
       <html lang="en">
 
@@ -109,30 +93,22 @@ if ($_POST) {
                         <div class="form-group"><label class="small mb-1" for="inputPassword">Contraseña</label><input class="form-control py-4" id="inputPassword" name="password" type="password" placeholder="Enter password" onkeypress="return soloLetras(event)" /></div>
                       </center>
                       <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-
-
                         <button type="submit" class="btn btn-primary"> Iniciar Sesion</button>
-
                       </div>
                     </form>
                   </div>
                   </form>
                 </div>
-
               </div>
             </div>
         </div>
-
         </main>
       </div>
       <div id="layoutAuthentication_footer">
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid">
-
           </div>
-
         </footer>
-
         <style>
           .btn-whatsapp {
             display: block;
@@ -148,7 +124,6 @@ if ($_POST) {
             z-index: 999;
           }
         </style>
-
         <div class="btn-whatsapp">
           <a href="https://api.whatsapp.com/send?phone=+57 3124672351" target="_blank">
             <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
@@ -174,7 +149,6 @@ if ($_POST) {
             break;
           }
         }
-
         if (letras.indexOf(tecla) == -1 && !tecla_especial) {
           return false;
         }

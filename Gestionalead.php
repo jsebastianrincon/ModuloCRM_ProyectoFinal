@@ -374,7 +374,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           echo "</td>";
                           echo "<td>";
                           if ($mostrar['estado_lead'] = '1') {
-                            echo 'Lead';
+                            echo '<center> Lead </center>';
                           }
 
                           echo "</td>";
