@@ -52,7 +52,7 @@ $id_lead = $_GET['id'];
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -115,7 +115,7 @@ $id_lead = $_GET['id'];
         </li>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>

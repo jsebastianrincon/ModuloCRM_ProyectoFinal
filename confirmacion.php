@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     echo "ERROR";
   } else {
     echo "<script> alert('Confirmacion Enviada');
-  window.location.href= 'gestionarclientes.php';
+  window.location.href= 'gestionarclientes';
   </script>";
   }
 }

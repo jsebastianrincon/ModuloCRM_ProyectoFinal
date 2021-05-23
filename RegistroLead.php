@@ -33,7 +33,7 @@ if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Registro de Lead Almacenado Correctamente');
-  window.location.href= 'AñadirLead.php';
+  window.location.href= 'AñadirLead';
   </script>";
 }
 ?>

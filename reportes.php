@@ -100,7 +100,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </div>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -178,7 +178,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="verperfil.php">
+                <a class="dropdown-item" href="verperfil">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
@@ -235,7 +235,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
+          <a class="btn btn-primary" href="index">Cerrar Sesion</a>
         </div>
       </div>
     </div>

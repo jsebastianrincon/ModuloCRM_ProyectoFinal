@@ -43,7 +43,7 @@ $id_reunion = $_GET['id'];
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -251,7 +251,7 @@ $id_reunion = $_GET['id'];
         <div class="modal-body">¿Desea Cerrar Sesion?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
+          <a class="btn btn-primary" href="index">Cerrar Sesion</a>
         </div>
       </div>
     </div>

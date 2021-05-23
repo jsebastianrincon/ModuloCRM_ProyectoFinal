@@ -21,6 +21,6 @@ if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Reunion Actualizada Correctamente');
-  window.location.href= 'Historial.php';
+  window.location.href= 'Historial';
   </script>";
 }

@@ -34,7 +34,7 @@ if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Lead Actualizado Correctamente');
-  window.location.href= 'Gestionalead.php';
+  window.location.href= 'Gestionalead';
   </script>";
 }
 

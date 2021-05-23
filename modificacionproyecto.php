@@ -23,6 +23,6 @@ if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Proyecto Modificado Correctamente');
-  window.location.href= 'gestionaventas.php';
+  window.location.href= 'gestionaventas';
   </script>";
 }

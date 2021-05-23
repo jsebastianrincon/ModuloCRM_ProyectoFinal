@@ -106,7 +106,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
         </li>
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>

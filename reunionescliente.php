@@ -52,7 +52,7 @@ $id_usuario = $_SESSION['id_usuario'];
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="principal.php">
+        <a class="nav-link" href="principal">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -72,7 +72,7 @@ $id_usuario = $_SESSION['id_usuario'];
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
+              <a class="collapse-item" href="gestionarclientes">Gestion de Clientes</a>
             </div>
           </div>
         </li>
@@ -86,10 +86,10 @@ $id_usuario = $_SESSION['id_usuario'];
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
-              <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="AñadirLead">Añadir Leads</a>
+              <a class="collapse-item" href="GestionaLead">Gestionar Leads</a>
+              <a class="collapse-item" href="Reuniones">Programar Reuniones</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
@@ -100,13 +100,13 @@ $id_usuario = $_SESSION['id_usuario'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
-              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
+              <a class="collapse-item" href="propuestas">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas">Gestionar Ventas</a>
             </div>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -125,7 +125,7 @@ $id_usuario = $_SESSION['id_usuario'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Tables -->
@@ -181,7 +181,7 @@ $id_usuario = $_SESSION['id_usuario'];
                 $sql = "SELECT * FROM usuarios WHERE id_usuario = $id_usuario";
                 $result = mysqli_query($mysqli, $sql);
                 while ($mostrar = mysqli_fetch_array($result)) {
-                  echo "<a class='dropdown-item' href='verperfil.php?id=$mostrar[id_usuario] '>
+                  echo "<a class='dropdown-item' href='verperfil?id=$mostrar[id_usuario] '>
                   <i class='fas fa-user fa-sm fa-fw mr-2 text-gray-400'></i>
                   Perfil
                 </a>";
@@ -233,7 +233,7 @@ $id_usuario = $_SESSION['id_usuario'];
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-        <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
+        <a class="btn btn-primary" href="index">Cerrar Sesion</a>
       </div>
     </div>
   </div>

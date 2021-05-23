@@ -10,7 +10,7 @@ use Picqer\Barcode\BarcodeGeneratorHTML;
 use Picqer\Barcode\BarcodeGeneratorJPG;
 use Picqer\Barcode\BarcodeGeneratorSVG;
 
-require('reportes\fpdf.php');
+require('reports\fpdf.php');
 
 
 include('conlead.php');

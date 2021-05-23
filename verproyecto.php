@@ -100,7 +100,7 @@ $id = $_GET['id'];
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>

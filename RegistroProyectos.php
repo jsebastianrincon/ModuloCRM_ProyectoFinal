@@ -22,6 +22,6 @@ if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Proyecto Almacenado Correctamente');
-  window.location.href= 'propuestas.php';
+  window.location.href= 'propuestas';
   </script>";
 }

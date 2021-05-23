@@ -26,7 +26,7 @@ if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Reunion Programada');
-  window.location.href= 'Reuniones.php';
+  window.location.href= 'Reuniones';
   </script>";
 }
 ?>

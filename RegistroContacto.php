@@ -18,6 +18,6 @@ if ($resultado_telefono == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Registro de Contacto Almacenado Correctamente');
-  window.location.href= 'GestionaLead.php';
+  window.location.href= 'GestionaLead';
   </script>";
 }

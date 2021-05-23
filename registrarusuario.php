@@ -98,14 +98,14 @@ $id = $_GET['id'];
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
       <?php } ?>
       <?php if ($tipo_usuario == 2) { ?>
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -213,7 +213,7 @@ $id = $_GET['id'];
         <div class="modal-body">¿Desea Cerrar Sesion?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.php">Cerrar Sesion</a>
+          <a class="btn btn-primary" href="index">Cerrar Sesion</a>
         </div>
       </div>
     </div>

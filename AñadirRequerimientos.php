@@ -112,7 +112,7 @@ $id_proyecto = $_GET['id'];
 
         <!-- Reportes  -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -127,12 +127,12 @@ $id_proyecto = $_GET['id'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Reportes  -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -210,7 +210,7 @@ $id_proyecto = $_GET['id'];
         </div>
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <a href='gestionaventas.php'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
+          <a href='gestionaventas'><button type='button' class='btn btn-sm btn-primary'><i class="fas fa-arrow-left"></i></i>
             </button></a>
           <br>
           <br>

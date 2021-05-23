@@ -19,6 +19,6 @@ if ($resultado == FALSE) {
   echo "error en la consulta";
 } else {
   echo "<script> alert('Requerimiento Asignado Correctamente');
-  window.location.href= 'gestionaventas.php';
+  window.location.href= 'gestionaventas';
   </script>";
 }

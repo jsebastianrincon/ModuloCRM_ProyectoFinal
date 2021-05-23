@@ -95,7 +95,7 @@ $id = $_GET['id'];
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>
@@ -103,7 +103,7 @@ $id = $_GET['id'];
 
       <?php if ($tipo_usuario == 2) { ?>
         <li class="nav-item">
-          <a class="nav-link" href="reportes.php">
+          <a class="nav-link" href="reportes">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>

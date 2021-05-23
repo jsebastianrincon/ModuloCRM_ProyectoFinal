@@ -16,6 +16,6 @@ if ($resultado == FALSE) {
   echo "error al convertir cliente";
 } else {
   echo "<script> alert('Cliente Añadido Satisfactoriamente');
-  window.location.href= 'Gestionalead.php';
+  window.location.href= 'Gestionalead;
   </script>";
 }
