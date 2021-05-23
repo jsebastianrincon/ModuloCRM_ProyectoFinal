@@ -47,7 +47,7 @@ $id_usuario = $_SESSION['id_usuario'];
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -60,7 +60,7 @@ $id_usuario = $_SESSION['id_usuario'];
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item inactive">
-        <a class="nav-link" href="principal.php">
+        <a class="nav-link" href="principal">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -81,7 +81,7 @@ $id_usuario = $_SESSION['id_usuario'];
             <div class="bg-white py-2 collapse-inner rounded">
 
 
-              <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
+              <a class="collapse-item" href="gestionarclientes">Gestion de Clientes</a>
             </div>
           </div>
         </li>
@@ -95,10 +95,10 @@ $id_usuario = $_SESSION['id_usuario'];
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
-              <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="AñadirLead">Añadir Leads</a>
+              <a class="collapse-item" href="GestionaLead">Gestionar Leads</a>
+              <a class="collapse-item" href="Reuniones">Programar Reuniones</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
@@ -110,8 +110,8 @@ $id_usuario = $_SESSION['id_usuario'];
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
-              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
+              <a class="collapse-item" href="propuestas">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas">Gestionar Ventas</a>
 
 
             </div>
@@ -131,20 +131,20 @@ $id_usuario = $_SESSION['id_usuario'];
       <?php if ($tipo_usuario == 2) { ?>
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-          <a class="nav-link" href="proyectos.php">
+          <a class="nav-link" href="proyectos">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Proyectos</span></a>
         </li>
 
         <li class="nav-item active">
-          <a class="nav-link collapsed" href="reuniones.php" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <a class="nav-link collapsed" href="reuniones" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-headset"></i>
             <span>Reuniones</span>
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Tables -->
@@ -269,7 +269,7 @@ $id_usuario = $_SESSION['id_usuario'];
                           echo '';
                           $row = '';
                         } else {
-                          echo "<a href='reuniones.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Reunion</i></button></a>";
+                          echo "<a href='reuniones'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Reunion</i></button></a>";
                           $fila = '<th>
                                   <center style="visibility: hidden">---------------------------</center>
                                   <center>Accion</center>
@@ -354,8 +354,8 @@ $id_usuario = $_SESSION['id_usuario'];
                                   if ($tipo_usuario != '1') {
                                     echo '';
                                   } else {
-                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                                                                              <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
+                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                                                                              <a href='eliminarReunion?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                             </td>";
                                     echo "<br>";
                                   }
@@ -393,8 +393,8 @@ $id_usuario = $_SESSION['id_usuario'];
                                   if ($tipo_usuario != '1') {
                                     echo '';
                                   } else {
-                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion.php?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                                                                              <a href='eliminarReunion.php?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
+                                    echo "<colspan='8'><div class='btn-group'><th><a href='modificarreunion?id= $mostrar[id_reunion] '><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                                                                              <a href='eliminarReunion?id= $mostrar[id_reunion] '> <button type='button' class='btn btn-outline-danger btn-sm active'><i class='fa fa-eye-slash'></i>Eliminar</button></a>
                                                                                                             </td>";
                                     echo "<br>";
                                   }

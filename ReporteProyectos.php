@@ -1,5 +1,5 @@
 <?php
-require('reportes\fpdf.php');
+require('reports\fpdf.php');
 include('conlead.php');
 
 $sql = "SELECT codigo_proyecto AS Codigo, fecha_ini_proyecto AS Fecha_Inicio, tema_proyecto AS Tema, descripcion_proyecto AS Descripcion_Proyecto FROM proyectos";

@@ -24,7 +24,7 @@ $id = $_GET['id'];
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Agendar Reuniones</title>
+  <title>Registro de usuario</title>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -39,7 +39,7 @@ $id = $_GET['id'];
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -49,7 +49,7 @@ $id = $_GET['id'];
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item inactive">
-        <a class="nav-link" href="principal.php">
+        <a class="nav-link" href="principal">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -65,7 +65,7 @@ $id = $_GET['id'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
+              <a class="collapse-item" href="gestionarclientes">Gestion de Clientes</a>
             </div>
           </div>
         </li>
@@ -78,10 +78,10 @@ $id = $_GET['id'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
-              <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="AñadirLead">Añadir Leads</a>
+              <a class="collapse-item" href="GestionaLead">Gestionar Leads</a>
+              <a class="collapse-item" href="Reuniones">Programar Reuniones</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
@@ -92,8 +92,8 @@ $id = $_GET['id'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
-              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
+              <a class="collapse-item" href="propuestas">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas">Gestionar Ventas</a>
             </div>
           </div>
         </li>
@@ -136,7 +136,7 @@ $id = $_GET['id'];
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="verperfil">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>

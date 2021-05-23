@@ -42,7 +42,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -52,7 +52,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
       <hr class="sidebar-divider my-0">
       <!-- Nav Item - Dashboard -->
       <li class="nav-item ">
-        <a class="nav-link" href="principal.php">
+        <a class="nav-link" href="principal">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -68,7 +68,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </a>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
+              <a class="collapse-item" href="gestionarclientes">Gestion de Clientes</a>
             </div>
           </div>
         </li>
@@ -80,10 +80,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
-              <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="AñadirLead">Añadir Leads</a>
+              <a class="collapse-item" href="GestionaLead">Gestionar Leads</a>
+              <a class="collapse-item" href="Reuniones">Programar Reuniones</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
@@ -94,8 +94,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </a>
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
-              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
+              <a class="collapse-item" href="propuestas">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas">Gestionar Ventas</a>
             </div>
           </div>
         </li>
@@ -119,7 +119,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           </a>
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Tables -->
@@ -204,16 +204,16 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                 <h1 class="h3 mb-0 text-gray-800">Reportes</h1>
               </div>
               <div>
-                <a href='ReporteClientes.php'><button type='button' id="reportecliente" class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class=" fas fa-user"></i> Generar Reporte Clientes</button></a>
+                <a href='ReporteClientes'><button type='button' id="reportecliente" class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class=" fas fa-user"></i> Generar Reporte Clientes</button></a>
                 <br>
                 <br>
-                <a href='ReporteReuniones.php'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class="fas fa-calendar-times"></i> Generar Reporte Reuniones Realizadas</button></a>
+                <a href='ReporteReuniones'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class="fas fa-calendar-times"></i> Generar Reporte Reuniones Realizadas</button></a>
                 <br>
                 <br>
-                <a href='ReporteLeads.php'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class='fa fa-headset' onclick="alert('Reporte Generado')"></i> Generar Reporte Leads</button></a>
+                <a href='ReporteLeads'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class='fa fa-headset' onclick="alert('Reporte Generado')"></i> Generar Reporte Leads</button></a>
                 <br>
                 <br>
-                <a href='ReporteProyectos.php'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class='fas fa-clipboard-list' onclick="alert('Reporte Generado')"></i> Generar Reporte Proyectos</button></a>
+                <a href='ReporteProyectos'><button type='button' class='btn btn-outline-info btn-sm active' onclick="alert('Reporte Generado')"><i class='fas fa-clipboard-list' onclick="alert('Reporte Generado')"></i> Generar Reporte Proyectos</button></a>
               </div>
             </div>
           </div>

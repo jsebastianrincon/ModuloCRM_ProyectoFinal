@@ -45,7 +45,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -57,7 +57,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item inactive">
-        <a class="nav-link" href="principal.php">
+        <a class="nav-link" href="principal">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -77,7 +77,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
+              <a class="collapse-item" href="gestionarclientes">Gestion de Clientes</a>
             </div>
           </div>
         </li>
@@ -91,10 +91,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
-              <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="AñadirLead">Añadir Leads</a>
+              <a class="collapse-item" href="GestionaLead">Gestionar Leads</a>
+              <a class="collapse-item" href="Reuniones">Programar Reuniones</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
@@ -106,8 +106,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
-              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
+              <a class="collapse-item" href="propuestas">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas">Gestionar Ventas</a>
 
 
             </div>
@@ -286,7 +286,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                   <div class="form-group" id="responsive-form">
                     <?php
                     echo "<th>";
-                    echo "<a href='añadirlead.php'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Lead</i></button></a>"; ?>
+                    echo "<a href='añadirlead'><button type='button' class='btn btn-outline-primary btn-sm active'>+ Añadir Lead</i></button></a>"; ?>
                     <fieldset>
 
                       <div class="col md-8 col md-offset-2">
@@ -381,10 +381,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
 
                           echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='verlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
-                              <a href='modificarlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                              <a href='ConvertirCliente.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>
-                              <a href='AsignarInformacionContacto.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-phone-square-alt'></i> Agregar Informacion Contacto</button></a>";
+                              <a href='verlead?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-primary btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
+                              <a href='modificarlead?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                              <a href='ConvertirCliente?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-success btn-sm active'><i class='fa fa-id-badge'></i> Convertir en cliente</button></a>
+                              <a href='AsignarInformacionContacto?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-phone-square-alt'></i> Agregar Informacion Contacto</button></a>";
 
                           echo "</td>";
                         }

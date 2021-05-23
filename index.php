@@ -23,7 +23,7 @@ if ($_POST) {
       $_SESSION['tipo_usuario'] = $row['tipo_usuario'];
       $result = mysqli_query($mysqli, $sql);
       while ($mostrar = mysqli_fetch_array($result)) {
-        header("Location: principal.php?id=$mostrar[id_usuario]");
+        header("Location: principal?id=$mostrar[id_usuario]");
       }
     } else {
       echo "<script type=\"text/javascript\">alert(\"Usuario o Contraseña Incorrectos\");</script>";

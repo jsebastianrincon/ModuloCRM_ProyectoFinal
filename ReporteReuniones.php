@@ -1,5 +1,5 @@
 <?php
-require('reportes\fpdf.php');
+require('reports\fpdf.php');
 include('conlead.php');
 
 $sql = "SELECT nombre_reunion AS Motivo_De_La_Reunion ,fecha_reunion AS Fecha,hora_reunion AS Hora, asignado_reunion AS Asignado FROM reuniones WHERE fecha_reunion < CURDATE()";

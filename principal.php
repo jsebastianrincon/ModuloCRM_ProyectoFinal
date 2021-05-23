@@ -42,7 +42,7 @@ $id_usuario = $_SESSION['id_usuario'];
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -102,7 +102,7 @@ $id_usuario = $_SESSION['id_usuario'];
         <!-- Nav Item - Charts -->
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="reportes">
+          <a class="nav-link" href="reportes.php">
             <i class="fas fa-fw fa-table"></i>
             <span>Reportes</span></a>
         </li>

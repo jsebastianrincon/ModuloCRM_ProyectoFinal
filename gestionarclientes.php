@@ -21,7 +21,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
   <meta name="description" content="">
   <meta name="author" content="Juan Sebastian">
 
-  <title>Gestion de Leads</title>
+  <title>Gestion de Clientes</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="principal">
         <div class="sidebar-brand-icon">
           <i class="fas fa-user-friends"></i>
         </div>
@@ -53,7 +53,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="principal.php">
+        <a class="nav-link" href="principal">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -73,7 +73,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="gestionarclientes.php">Gestion de Clientes</a>
+              <a class="collapse-item" href="gestionarclientes">Gestion de Clientes</a>
             </div>
           </div>
         </li>
@@ -87,10 +87,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="AñadirLead.php">Añadir Leads</a>
-              <a class="collapse-item" href="GestionaLead.php">Gestionar Leads</a>
-              <a class="collapse-item" href="Reuniones.php">Programar Reuniones</a>
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="AñadirLead">Añadir Leads</a>
+              <a class="collapse-item" href="GestionaLead">Gestionar Leads</a>
+              <a class="collapse-item" href="Reuniones">Programar Reuniones</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Pages Collapse Menu -->
@@ -102,8 +102,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="propuestas.php">Añadir Propuesta</a>
-              <a class="collapse-item" href="gestionaventas.php">Gestionar Ventas</a>
+              <a class="collapse-item" href="propuestas">Añadir Propuesta</a>
+              <a class="collapse-item" href="gestionaventas">Gestionar Ventas</a>
             </div>
           </div>
         </li>
@@ -130,7 +130,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-              <a class="collapse-item" href="Historial.php">Historial de Contactos</a>
+              <a class="collapse-item" href="Historial">Historial de Contactos</a>
             </div>
         </li>
         <!-- Nav Item - Tables -->
@@ -190,7 +190,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="verperfil.php">
+                <a class="dropdown-item" href="verperfil">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Perfil
                 </a>
@@ -287,9 +287,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           }
                           echo "</td>";
                           echo "<colspan='24'><div class='btn-group'><th>
-                              <a href='vercliente.php?id=$mostrar[id_lead] + $mostrar[email_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
-                              <a href='modificarlead.php?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
-                              <a href='formcorreo.php?id=$mostrar[id_lead] + $mostrar[email_lead]'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>";
+                              <a href='vercliente?id=$mostrar[id_lead] + $mostrar[email_lead]'><button type='button' class='btn btn-outline-info btn-sm active'><i class='fa fa-eye'></i>Ver</button></a>
+                              <a href='modificarlead?id=$mostrar[id_lead]'><button type='button' class='btn btn-outline-warning btn-sm active'><i class='fa fa-edit'></i>Modificar</button></a>
+                              <a href='formcorreo?id=$mostrar[id_lead] + $mostrar[email_lead]'><button type='button' class='btn btn-sm btn-primary'><i class='fa fa-envelope '></i> Enviar Confirmacion</button></a>";
                           echo "</td>";
                         }
                         ?>

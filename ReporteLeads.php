@@ -1,6 +1,6 @@
 <?php
 
-require('reportes\fpdf.php');
+require('reports\fpdf.php');
 include('conlead.php');
 
 $sql = "SELECT nombre_lead AS Primer_Nombre, segundo_nombre_lead AS Segundo_Nombre, primer_apellido_lead AS Primer_Apellido, documento_lead AS Documento, telefono_lead AS Telefono, email_lead AS Correo_Electronico       , direccion_lead AS Direccion, compañia_lead AS Empresa FROM leads WHERE estado_lead = 0 && id_lead > 1 ";
