@@ -2,8 +2,10 @@
 include("conlead.php");
 session_start();
 
-if (!isset($_SESSION['id_usuario'])) {
-  header("Location: index");
+if (!isset($_SESSION["id_usuario"])) {
+  header("../../index.php");
+  echo '<script language="javascript">confirm("Sesión Finalizada por Inactividad");
+    window.location.href="index.php"</script>';
 }
 //Validacion variables de session
 $tipo_usuario = $_SESSION['tipo_usuario'];
