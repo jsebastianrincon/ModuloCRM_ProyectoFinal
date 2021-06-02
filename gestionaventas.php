@@ -242,7 +242,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                               <center>Estado Proyecto</center>
                             </th>
                             <th>
-                              <center style="visibility: hidden">----------------</center>
+                              <center style="visibility: hidden">--------------------------------</center>
                               <center>Tema Proyecto</center>
                             </th>
                             <th>
