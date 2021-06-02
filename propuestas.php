@@ -204,8 +204,8 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
                         $instruccion_SQL = "SELECT concat_ws (' ', id_usuario, '-', nombre_lead , segundo_nombre_lead ,primer_apellido_lead,segundo_apellido_lead) 
                                                 FROM leads 
-                                                LEFT JOIN usuarios ON usuarios.id_cliente = leads.id_lead 
-                                                WHERE leads.estado_lead = 1 ORDER BY leads.primer_apellido_lead ";
+                                                LEFT JOIN usuarios ON usuarios.id_usuario = leads.id_lead 
+                                                WHERE leads.estado_lead = 1 AND id_lead >1 ORDER BY leads.primer_apellido_lead ";
                         $resultado = mysqli_query($connexion, $instruccion_SQL);
                         ?>
                         <html>
@@ -227,10 +227,10 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           require("conlead.php");
                           $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
                           mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
-                          $instruccion_SQL = "SELECT (id_usuario)
+                          $instruccion_SQL = "SELECT (id_lead)
                                                 FROM leads 
-                                                LEFT JOIN usuarios ON usuarios.id_cliente = leads.id_lead 
-                                                WHERE leads.estado_lead = 1 ORDER BY leads.primer_apellido_lead ";
+                                                LEFT JOIN usuarios ON usuarios.id_usuario = leads.id_lead 
+                                                WHERE leads.estado_lead = 1 AND id_lead >1 ORDER BY leads.primer_apellido_lead ";
                           $resultado = mysqli_query($connexion, $instruccion_SQL);
                           ?>
                           <html>
@@ -256,7 +256,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           $fecha = DateTime::createFromFormat("m/d/Y", $fecha_americana, new DateTimeZone("Europe/Madrid"));
                           $fecha_actual = date("y-m-d");
                           $fecha_f = date("y-m-d", strtotime($fecha_actual));
-                          $time = strtotime($fecha_f);
+                          $time = strtotime($fecha_f) - 1;
                           $fecha = date('Y-m-d', $time);
                           echo "Fecha:<input type='text' size='10' name='fecha_ini_proyecto' value='$fecha' onkeypress='return soloLetras(event)'><label style='color: red;'>(*)</label></center>";
                           ?>

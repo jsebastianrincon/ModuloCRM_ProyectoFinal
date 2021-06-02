@@ -19,7 +19,7 @@ $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
 
 mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de 
  datos");
-$instruccion_SQL = "INSERT INTO reuniones (id_usuario,cliente_reunion,nombre_reunion,fecha_reunion,hora_reunion,asignado_reunion,descripcion_reunion,estado_reunion) VALUES ('$id_usuario','$cliente_reunion','$nombre_reunion','$fecha_reunion','$hora_reunion','$asignado_reunion','$descripcion_reunion','$estado_reunion')";
+$instruccion_SQL = "INSERT INTO reuniones (nombre_reunion,id_usuario,fecha_reunion,hora_reunion,asignado_reunion,estado_reunion,descripcion_reunion) VALUES ('$nombre_reunion','$fecha_reunion','$hora_reunion','$asignado_reunion','$cliente_reunion','$descripcion_reunion','$estado_reunion')";
 $resultado = mysqli_query($connexion, $instruccion_SQL);
 
 if ($resultado == FALSE) {

@@ -231,15 +231,31 @@ $id = $_GET['id'];
                       $sql = "SELECT * FROM telefonos WHERE id_lead = $id ORDER BY priorida_telefono";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
+                        echo "Tipo Contacto: ";
                         echo $mostrar['tipo_telefono'];
                         echo "<br>";
+                        echo "Contacto: ";
                         echo $mostrar['telefono_telefono'];
                         echo "<br>";
                         echo "Prioridad: ";
-                        echo $mostrar['priorida_telefono'];
+                        if ($mostrar['priorida_telefono'] = 3) {
+                          echo "Alta";
+                        } else {
+                          if ($mostrar['priorida_telefono'] = 2) {
+                            echo "Media";
+                          } else {
+                            if ($mostrar['priorida_telefono'] = 1) {
+                              echo "Baja";
+                            }
+                          }
+                          echo "<br>";
+                          echo "<br>";
+                        }
+
                         echo "<br>";
                         echo "<br>";
                       }
+
                       ?>
                     </div>
                   </div>

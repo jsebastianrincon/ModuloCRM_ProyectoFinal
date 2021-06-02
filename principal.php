@@ -380,13 +380,13 @@ $id_usuario = $_SESSION['id_usuario'];
                 </div>
               </div>
               <?php
-              $conteoA = 'SELECT COUNT(id_lead) AS Leads FROM leads WHERE estado_lead = 0 ';
+              $conteoA = 'SELECT COUNT(id_lead) AS Leads FROM leads WHERE estado_lead = 0 AND id_lead >1 ';
               $totalA = mysqli_query($conexion2, $conteoA);
               $rowsA = implode(mysqli_fetch_array($totalA));
               echo "<br>";
               echo "<br>";
 
-              $conteoB = 'SELECT COUNT(id_lead) AS Clientes FROM leads WHERE estado_lead = 1 ';
+              $conteoB = 'SELECT COUNT(id_lead) AS Clientes FROM leads WHERE estado_lead = 1 AND id_lead >1';
               $totalB = mysqli_query($conexion2, $conteoB);
               $final = $totalB;
               $rowsB = implode(mysqli_fetch_array($totalB));
