@@ -460,11 +460,11 @@ $id_usuario = $_SESSION['id_usuario'];
                   <?php
                   //Impresion tabla
 
-                  $sql = "SELECT * FROM proyectos WHERE id_usuario = " . $id_usuario . "";
+                  $sql = "SELECT * FROM proyectos WHERE cliente_proyecto = " . $id_usuario . "";
                   $result = mysqli_query($conexion2, $sql);
 
                   while ($mostrar = mysqli_fetch_array($result)) {
-                    $id_us_proyecto = $mostrar['id_usuario'];
+                    $id_us_proyecto = $mostrar['cliente_proyecto'];
 
                     if ($id_usuario == $id_us_proyecto) {
                       echo "<tr>";

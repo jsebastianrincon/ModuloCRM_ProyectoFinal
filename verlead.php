@@ -238,23 +238,14 @@ $id = $_GET['id'];
                         echo $mostrar['telefono_telefono'];
                         echo "<br>";
                         echo "Prioridad: ";
-                        if ($mostrar['priorida_telefono'] = 3) {
-                          echo "Alta";
-                        } else {
-                          if ($mostrar['priorida_telefono'] = 2) {
-                            echo "Media";
-                          } else {
-                            if ($mostrar['priorida_telefono'] = 1) {
-                              echo "Baja";
-                            }
-                          }
-                          echo "<br>";
-                          echo "<br>";
-                        }
-
+                        echo $mostrar['priorida_telefono'];
                         echo "<br>";
                         echo "<br>";
                       }
+
+                      echo "<br>";
+                      echo "<br>";
+
 
                       ?>
                     </div>

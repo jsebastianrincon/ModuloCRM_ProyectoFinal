@@ -219,87 +219,115 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           $resultado = mysqli_query($connexion, $instruccion_SQL);
                           ?>
                           <html>
+                          <select name='id_usuario'>
+                            <option value="">Seleccione Cliente</option>
+                            <?php
+                            while ($row = mysqli_fetch_array($resultado)) :;
+                            ?>
+                              <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
+                                                                      ?></option>
+                            <?php endwhile; ?>
+                          </select>
+                          <br>
+                          <br>
+</body>
+<label>Cod Cliente: </label><label style="color: red;">(*)</label>
+<br>
+<name='id_usuario'>
+  <?php
+  require("conlead.php");
+  $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
+  mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
+  $instruccion_SQL = "SELECT (id_lead)
+                                                FROM leads 
+                                                LEFT JOIN usuarios ON usuarios.id_usuario = leads.id_lead 
+                                                WHERE leads.estado_lead = 1 AND id_lead >1 ORDER BY leads.primer_apellido_lead ";
+  $resultado = mysqli_query($connexion, $instruccion_SQL);
+  ?>
 
-                          <body>
-                            <select name='cliente_reunion' required>
-                              <?php
-                              while ($row = mysqli_fetch_array($resultado)) :;
-                              ?>
-                                <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
-                                                                        ?></option>
-                              <?php endwhile; ?>
-                            </select>
-                          </body>
+  <body>
+    <select name='cliente_reunion' required>
+      <?php
+      while ($row = mysqli_fetch_array($resultado)) :;
+      ?>
+        <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
+                                                ?></option>
+      <?php endwhile; ?>
+    </select>
+  </body>
 
-                          </html>
-                          <center><label>Estado: </label>
-                            <br>
-                            <input type="text" size="15" name="estado_reunion" onkeypress="return soloLetras(event)">
-                          </center>
-                      </center>
-                      <br>
-                      <center><label style="color: red;">(*)</label><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required onkeypress="return soloLetras(event)"></textarea></center>
-                      <br>
-                      <br>
-                      <input type="submit" class="btn btn-success btn-block" name="submit" value="Programar Reunion">
-          </fieldset>
-        </div>
+  <br>
+  <br>
+
+</html>
+<center><label>Estado: </label>
+  <br>
+  <input type="text" size="15" name="estado_reunion" onkeypress="return soloLetras(event)">
+</center>
+</center>
+<br>
+<center><label style="color: red;">(*)</label><label>Descripcion: </label><br><textarea name="descripcion_reunion" rows="2" cols="30" placeholder="Ingrese Descripcion..." required onkeypress="return soloLetras(event)"></textarea></center>
+<br>
+<br>
+<input type="submit" class="btn btn-success btn-block" name="submit" value="Programar Reunion">
+</fieldset>
+</div>
+</div>
+</div>
+</div>
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">¿Desea Cerrar Sesion?</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="index">Cerrar Sesion</a>
       </div>
     </div>
   </div>
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Cerrar Sesion</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">¿Desea Cerrar Sesion?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index">Cerrar Sesion</a>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-  <script>
-    function soloLetras(e) {
-      var key = e.keyCode || e.which,
-        tecla = String.fromCharCode(key).toLowerCase(),
-        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/",
-        especiales = [8, 37, 39, 46],
-        tecla_especial = false;
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+<!-- Page level plugins -->
+<script src="vendor/chart.js/Chart.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
+<script>
+  function soloLetras(e) {
+    var key = e.keyCode || e.which,
+      tecla = String.fromCharCode(key).toLowerCase(),
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz@-/",
+      especiales = [8, 37, 39, 46],
+      tecla_especial = false;
 
-      for (var i in especiales) {
-        if (key == especiales[i]) {
-          tecla_especial = true;
-          break;
-        }
-      }
-      if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-        return false;
+    for (var i in especiales) {
+      if (key == especiales[i]) {
+        tecla_especial = true;
+        break;
       }
     }
-  </script>
+    if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+      return false;
+    }
+  }
+</script>
 </body>
 
 </html>

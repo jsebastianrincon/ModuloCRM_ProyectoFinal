@@ -244,11 +244,18 @@ $id_proyecto = $_GET['id'];
                       </label>";
                           echo "<input type='text' size='50' name='id_proyecto' value ='$mostrar[id_proyecto]' onkeypress='return soloLetras(event)'> ";
                           echo "<br>";
+                          echo "  <label><label style='color: red;'>(*)</label>&nbsp Id Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>";
+                          echo "<input type='text' size='50' name='id_requerimiento' value ='' onkeypress='return soloLetras(event)'> ";
+
+                          echo "<br>";
                           echo "  <label><label style='color: red;'>(*)</label>&nbsp Proyecto Requerimiento: &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>";
                           echo "<input type='text' size='50' name='proyecto_requerimiento' value ='$mostrar[tema_proyecto]' onkeypress='return soloLetras(event)'> ";
                         }
                         ?>
+
                         <br>
+
+
                         <label>
                           <label style="color: red;">(*)</label>
                           &nbsp Nombre Requerimiento: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
