@@ -189,7 +189,32 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                         <br>
                         <input type="text" size="40" name="nombre_reunion" onkeypress="return soloLetras(event)" required>
                       </center>
-                      <br>
+                      <center><label>Cod Cliente: </label><label style="color: red;">(*)</label>
+                        <br>
+                        <name='id_usuario'>
+                          <?php
+                          require("conlead.php");
+                          $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
+                          mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
+                          $instruccion_SQL = "SELECT (id_lead)
+                                                FROM leads 
+                                                LEFT JOIN usuarios ON usuarios.id_usuario = leads.id_lead 
+                                                WHERE leads.estado_lead = 1 AND id_lead >1 ORDER BY leads.primer_apellido_lead ";
+                          $resultado = mysqli_query($connexion, $instruccion_SQL);
+                          ?>
+
+                          <body>
+                            <select name='cliente_reunion' required>
+                              <?php
+                              while ($row = mysqli_fetch_array($resultado)) :;
+                              ?>
+                                <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
+                                                                        ?></option>
+                              <?php endwhile; ?>
+                            </select>
+                            <br>
+                            <br>
+                      </center>
                       <center><label style="color: red;">(*)</label><label>Fecha: </label>
                         <input type="date" size="40" name="fecha_reunion" required>
                         <label style="color: red;">(*)</label><label>Hora: </label><input type="time" size="50" name="hora_reunion" required>
@@ -231,33 +256,9 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                           <br>
                           <br>
 </body>
-<label>Cod Cliente: </label><label style="color: red;">(*)</label>
-<br>
-<name='id_usuario'>
-  <?php
-  require("conlead.php");
-  $connexion = mysqli_connect('localhost', 'root', '', 'crmpry');
-  mysqli_select_db($connexion, 'crmpry') or die("No se encuentra la Base de  datos");
-  $instruccion_SQL = "SELECT (id_lead)
-                                                FROM leads 
-                                                LEFT JOIN usuarios ON usuarios.id_usuario = leads.id_lead 
-                                                WHERE leads.estado_lead = 1 AND id_lead >1 ORDER BY leads.primer_apellido_lead ";
-  $resultado = mysqli_query($connexion, $instruccion_SQL);
-  ?>
 
-  <body>
-    <select name='cliente_reunion' required>
-      <?php
-      while ($row = mysqli_fetch_array($resultado)) :;
-      ?>
-        <option value="<?php echo $row[0]; ?>"><?php echo $row[0];
-                                                ?></option>
-      <?php endwhile; ?>
-    </select>
-  </body>
+</body>
 
-  <br>
-  <br>
 
 </html>
 <center><label>Estado: </label>
