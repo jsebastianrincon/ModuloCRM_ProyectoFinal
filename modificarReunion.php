@@ -205,7 +205,7 @@ $id_reunion = $_GET['id'];
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
                         echo "<br>";
-                        echo "<center>Cliente:<input type='text' size='50' name='cliente_reunion' value ='$mostrar[cliente_reunion]'></center>";
+                        echo "<center>Cliente:<input type='text' size='50' name='id_reunion' value ='$mostrar[id_reunion]'></center>";
                         echo "<br>";
                         echo "<br>";
                         echo "<center>Reunion:<input type='text' size='50' name='nombre_reunion' value ='$mostrar[nombre_reunion]'></center>";

@@ -332,11 +332,13 @@ $id_usuario = $_SESSION['id_usuario'];
                           if ($id_usuario == '1') {
                             if ($tipo_usuario == '1') {
                               $sql = "SELECT * FROM reuniones WHERE fecha_reunion > CURDATE()  ";
+                              $sql2 = "SELECT * FROM usuarios";
                               $result = mysqli_query($conexion2, $sql);
-                              while ($mostrar = mysqli_fetch_array($result)) {
+                              $result2 = mysqli_query($conexion2, $sql2);
+                              while ($mostrar = mysqli_fetch_array($result) and $mostrar2 = mysqli_fetch_array($result)) {
                                 echo "<tr>";
                                 echo "<td>";
-                                echo $mostrar['cliente_reunion'];
+                                echo $mostrar2['usuario'];
                                 echo "</td>";
                                 echo "<td>";
                                 echo $mostrar['nombre_reunion'];
@@ -369,13 +371,14 @@ $id_usuario = $_SESSION['id_usuario'];
                           } else {
                             //validacion rol
                             $sql1 = "SELECT * FROM reuniones WHERE id_usuario = " . $id_usuario . " AND fecha_reunion > CURDATE()";
+
                             $result1 = mysqli_query($conexion2, $sql1);
                             while ($mostrar1 = mysqli_fetch_array($result1)) {
                               $id_us_reunion = $mostrar1['id_usuario'];
                               if ($id_usuario == $id_us_reunion) {
                                 echo "<tr>";
                                 echo "<td>";
-                                echo $mostrar1['cliente_reunion'];
+                                echo $mostrar1['id_usuario'];
                                 echo "</td>";
                                 echo "<td>";
                                 echo $mostrar1['nombre_reunion'];
