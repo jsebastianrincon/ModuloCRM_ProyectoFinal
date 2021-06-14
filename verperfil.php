@@ -180,11 +180,35 @@ $id_usuario = $_SESSION['id_usuario'];
                       <br>
                       <?php
 
-                      $sql = "SELECT * FROM  usuarios where id_usuario = $id_usuario";
+                      $sql = "SELECT * FROM leads where id_lead = $id_usuario";
                       $result = mysqli_query($conexion2, $sql);
                       while ($mostrar = mysqli_fetch_array($result)) {
-                        echo "Nombre Usuario: ";
-                        echo $mostrar['usuario'];
+                        echo "Nombre: ";
+                        echo $mostrar['nombre_lead'],' ',$mostrar['segundo_nombre_lead'];
+                        echo "<br>";
+                        echo "Apellidos: ";
+                        echo $mostrar['primer_apellido_lead'],' ',$mostrar['segundo_nombre_lead'];
+                        echo "<br>";
+                        echo "Documento:";
+                        echo $mostrar['documento_lead'];
+                        echo "<br>";
+                        echo "Telefono:";
+                        echo $mostrar['telefono_lead'];
+                        echo "<br>";
+                        echo "Email:";
+                        echo $mostrar['email_lead'];
+                        echo "<br>";
+                        echo "Departamento:";
+                        echo $mostrar['departamento_lead'];
+                        echo"<br>";
+                        echo "Ciudad:";
+                        echo $mostrar['ciudad_lead'];
+                        echo"<br>";
+                        echo "Direccion:";
+                        echo $mostrar['direccion_lead'];
+                        echo"<br>";
+                        echo "Compañia:";
+                        echo $mostrar['compañia_lead'];
                       }
                       ?>
                   </div>

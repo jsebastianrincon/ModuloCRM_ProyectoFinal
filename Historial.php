@@ -335,10 +335,10 @@ $id_usuario = $_SESSION['id_usuario'];
                               $sql2 = "SELECT * FROM usuarios";
                               $result = mysqli_query($conexion2, $sql);
                               $result2 = mysqli_query($conexion2, $sql2);
-                              while ($mostrar = mysqli_fetch_array($result) and $mostrar2 = mysqli_fetch_array($result)) {
+                              while ($mostrar = mysqli_fetch_array($result) and $mostrar2 = mysqli_fetch_array($result2)) {
                                 echo "<tr>";
                                 echo "<td>";
-                                echo $mostrar2['usuario'];
+                                echo $mostrar['id_usuario'];
                                 echo "</td>";
                                 echo "<td>";
                                 echo $mostrar['nombre_reunion'];
